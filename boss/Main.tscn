@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://c32cgqasi44jp"]
 
-[node name="Node" type="Node" unique_id=1547384490]
+[ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Player/NPC.tscn" id="2_uu6xs"]
+
+[node name="Main" type="Node" unique_id=1547384490]
+
+[node name="Entities" type="Node2D" parent="." unique_id=917500302]
+
+[node name="Player" type="Node2D" parent="Entities" unique_id=477171764]
+
+[node name="Inspector" parent="Entities/Player" unique_id=2082265465 instance=ExtResource("1_glv2v")]
+position = Vector2(346, 204)
+
+[node name="Enemies" type="Node2D" parent="Entities" unique_id=1693633475]
+
+[node name="NPC" parent="Entities/Enemies" unique_id=742967132 instance=ExtResource("2_uu6xs")]
+position = Vector2(107, 116)
