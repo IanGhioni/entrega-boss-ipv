@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cc4bob5aed0e1"]
 
+[ext_resource type="Script" uid="uid://doioip0au2nhl" path="res://scenes/menu.gd" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://ddaqechvip3h3" path="res://assets/backgroundMenu.jpeg" id="1_yqeox"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vjb58")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=574165438]
 layout_mode = 1
@@ -64,3 +66,7 @@ layout_mode = 2
 size_flags_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
 text = "Salir"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
