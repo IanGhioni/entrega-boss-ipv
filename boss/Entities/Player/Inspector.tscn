@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://dsfx3dtjp5ba2" path="res://Entities/Player/inspector.gd" id="1_jo3jf"]
 [ext_resource type="Texture2D" uid="uid://c6m26en6af5lr" path="res://assets/Inspector_test.jpeg" id="1_wn4fl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn4fl"]
-size = Vector2(101, 89)
-
 [node name="Inspector" type="CharacterBody2D" unique_id=2082265465]
 script = ExtResource("1_jo3jf")
 
@@ -13,7 +10,3 @@ script = ExtResource("1_jo3jf")
 position = Vector2(6, -3.9999924)
 scale = Vector2(0.44666666, 0.39333335)
 texture = ExtResource("1_wn4fl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2041854432]
-position = Vector2(6.5, -4.5)
-shape = SubResource("RectangleShape2D_wn4fl")
