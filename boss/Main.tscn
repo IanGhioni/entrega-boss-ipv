@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c32cgqasi44jp"]
 
+[ext_resource type="PackedScene" uid="uid://cc4bob5aed0e1" path="res://scenes/menu.tscn" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Player/NPC.tscn" id="2_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://bajiwhbykgtuv" path="res://assets/npc_test.jpeg" id="3_r0du0"]
@@ -8,6 +9,10 @@
 size = Vector2(423, 74)
 
 [node name="Main" type="Node" unique_id=1547384490]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1815789259]
+
+[node name="Menu" parent="CanvasLayer" unique_id=559569269 instance=ExtResource("1_cm0pq")]
 
 [node name="Entities" type="Node2D" parent="." unique_id=917500302]
 
