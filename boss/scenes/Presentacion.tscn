@@ -3,9 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bgrcdri48jq7k" path="res://assets/backgroundPresentacion.jpeg" id="1_dlmm7"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="1_ovlsl"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="2_dlmm7"]
+[ext_resource type="Script" uid="uid://c4esfst1f1lrd" path="res://scenes/menu_.gd" id="4_xfpmx"]
+[ext_resource type="Resource" uid="uid://gb2waadkm7ln" path="res://dialogues/dialogo_inicial.dialogue" id="5_igud0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_toa2b"]
 size = Vector2(1147, 80)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igud0"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Presentacion" type="Control" unique_id=306015025]
 layout_mode = 3
@@ -39,3 +44,35 @@ position = Vector2(17, 497)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1368839629]
 position = Vector2(557.5, 110)
 shape = SubResource("RectangleShape2D_toa2b")
+
+[node name="Menu_" type="Control" parent="." unique_id=1024915021]
+anchors_preset = 0
+offset_left = 645.0
+offset_top = 173.0
+offset_right = 685.0
+offset_bottom = 213.0
+script = ExtResource("4_xfpmx")
+dialogo_inicial = ExtResource("5_igud0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_" unique_id=1616573010]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.4500003
+anchor_top = 3.519
+anchor_right = 7.4500003
+anchor_bottom = 3.519
+offset_left = -200.0
+offset_top = -63.76001
+offset_right = 200.0
+offset_bottom = 63.73999
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="Menu_/VBoxContainer" unique_id=963623266]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_igud0")
+text = "Preguntar doc"
+
+[connection signal="pressed" from="Menu_/VBoxContainer/Play" to="Menu_" method="_on_doc_pressed"]
