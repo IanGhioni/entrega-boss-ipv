@@ -1,14 +1,12 @@
 ~ start
-Persona: Hola buen dia.
-Inspector: Hola, que tal? Documentacion por favor. ¿?
-Persona: Si, como no...
-~ secuencia_inicial
-Inspector:  ¿Tu DNI es: ?
-- 99.999.999 (Aceptar)
-	Inspector: Joya, pasa...
-- 10.100.100 (Rechazar)
+Alto elfo: Hola buen dia.
+Inspector: Hola, que tal? Simbolos por favor...
+Alto elfo: Si, como no...
+~ secuencia_inicial 
+Alto elfo: Mis simbolos son {{Rules.simbolos}}
+- Rechazar
 	Inspector: Mhmhm, no flaco. 
-- Eh? => secuencia_inicial
-- Escapar => END
+- Aceptar 
+	Inspector: Todo ok, pasa nomas... 
 => END
 

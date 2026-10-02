@@ -7,15 +7,16 @@ var is_dialogue_active = false;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_on_dialogue_started);
-	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended);
 
 func _on_dialogue_started(dialogue):
 	is_dialogue_active = true;
 	
 func _on_dialogue_ended(dialogue):
-	await get_tree().create_timer(0.2).timeout;
+	#Evita que se reproduzca de vuelta el dialogo
+	await get_tree().create_timer(0.2).timeout; 
 	is_dialogue_active = false
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept") and not is_dialogue_active:
 		DialogueManager.show_dialogue_balloon(dialogo_inicial,"start");
