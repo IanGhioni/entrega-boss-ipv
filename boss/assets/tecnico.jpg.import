@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf4nwcle1ilgx"
-path="res://.godot/imported/silueta.png-9fc4bdf5ff95736cf8832ba2f2959c96.ctex"
+uid="uid://bycmtycye135i"
+path="res://.godot/imported/tecnico.jpg-bbc17cde9b3d210f29d1c3095fdf4dff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/silueta.png"
-dest_files=["res://.godot/imported/silueta.png-9fc4bdf5ff95736cf8832ba2f2959c96.ctex"]
+source_file="res://assets/tecnico.jpg"
+dest_files=["res://.godot/imported/tecnico.jpg-bbc17cde9b3d210f29d1c3095fdf4dff.ctex"]
 
 [params]
 

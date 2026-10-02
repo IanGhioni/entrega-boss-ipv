@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddchu008movu5"
-path="res://.godot/imported/Grey.png-4ec0800f50d48c7381c922c7b36fe6ed.ctex"
+uid="uid://bf0whikohbu2t"
+path="res://.godot/imported/fondo-ultra-mega-temporal.jpg-d6c0a460be3eb6ed6543101397e9d7d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Grey.png"
-dest_files=["res://.godot/imported/Grey.png-4ec0800f50d48c7381c922c7b36fe6ed.ctex"]
+source_file="res://assets/fondo-ultra-mega-temporal.jpg"
+dest_files=["res://.godot/imported/fondo-ultra-mega-temporal.jpg-d6c0a460be3eb6ed6543101397e9d7d9.ctex"]
 
 [params]
 

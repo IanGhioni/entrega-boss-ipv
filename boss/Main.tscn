@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://hraygvbsta31"]
+
+[ext_resource type="Texture2D" uid="uid://bf0whikohbu2t" path="res://assets/fondo-ultra-mega-temporal.jpg" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://b5nrjvqiek7b3" path="res://assets/inspector.jpg" id="2_r0du0"]
+[ext_resource type="Texture2D" uid="uid://bycmtycye135i" path="res://assets/tecnico.jpg" id="3_cm0pq"]
+[ext_resource type="Texture2D" uid="uid://b2sgqnbkuqh1i" path="res://assets/visitante_1.jpg" id="4_fos0i"]
+[ext_resource type="Texture2D" uid="uid://dxsnqjup34gsn" path="res://assets/visitante_2.jpg" id="5_3dxm6"]
+
+[node name="Main" type="Node" unique_id=965000417]
+
+[node name="BackgroundContainer" type="Node" parent="." unique_id=343238973]
+
+[node name="Parallax2D" type="Parallax2D" parent="BackgroundContainer" unique_id=1445720422]
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundContainer/Parallax2D" unique_id=1677536328]
+position = Vector2(578, 285)
+scale = Vector2(0.799, 0.7)
+texture = ExtResource("1_glv2v")
+
+[node name="PlayerContainer" type="Node" parent="." unique_id=1376614627]
+
+[node name="Inspector" type="Sprite2D" parent="PlayerContainer" unique_id=686871488]
+position = Vector2(632, 416)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_r0du0")
+
+[node name="Tecnico" type="Sprite2D" parent="PlayerContainer" unique_id=1291458039]
+position = Vector2(475, 346)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_cm0pq")
+
+[node name="VisitorsContainer" type="Node" parent="." unique_id=1952053068]
+
+[node name="visitante_1" type="Sprite2D" parent="VisitorsContainer" unique_id=1324944419]
+position = Vector2(376, 489)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_fos0i")
+
+[node name="Visitante_2" type="Sprite2D" parent="VisitorsContainer" unique_id=1451149466]
+position = Vector2(226, 611)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_3dxm6")
