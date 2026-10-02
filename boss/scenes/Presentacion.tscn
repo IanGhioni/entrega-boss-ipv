@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dgo7bjcxfngo0"]
 
-[ext_resource type="Texture2D" uid="uid://bgrcdri48jq7k" path="res://assets/backgroundPresentacion.jpeg" id="1_dlmm7"]
+[ext_resource type="PackedScene" uid="uid://wtw85h8ymjxd" path="res://Background.tscn" id="1_dlmm7"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="1_ovlsl"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="2_dlmm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_toa2b"]
-size = Vector2(1147, 80)
+size = Vector2(1147, 104)
 
 [node name="Presentacion" type="Control" unique_id=306015025]
 layout_mode = 3
@@ -15,27 +15,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=390827953]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_dlmm7")
-stretch_mode = 5
+[node name="Control" parent="." unique_id=340376222 instance=ExtResource("1_dlmm7")]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=950768903]
 
 [node name="Inspector" parent="Node2D" unique_id=2082265465 instance=ExtResource("1_ovlsl")]
-position = Vector2(632, 422)
+position = Vector2(639, 479)
 
 [node name="NPC" parent="Node2D" unique_id=742967132 instance=ExtResource("2_dlmm7")]
-position = Vector2(174, 418)
+position = Vector2(190, 455)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=551590082]
 position = Vector2(17, 497)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1368839629]
-position = Vector2(557.5, 110)
+position = Vector2(557.5, 98)
 shape = SubResource("RectangleShape2D_toa2b")

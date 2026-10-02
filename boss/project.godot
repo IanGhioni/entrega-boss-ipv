@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="boss"
-run/main_scene="uid://c32cgqasi44jp"
+run/main_scene="uid://cc4bob5aed0e1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
