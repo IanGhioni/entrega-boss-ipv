@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Player/NPC.tscn" id="2_uu6xs"]
+[ext_resource type="Texture2D" uid="uid://bajiwhbykgtuv" path="res://assets/npc_test.jpeg" id="3_r0du0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_toa2b"]
+size = Vector2(423, 74)
 
 [node name="Main" type="Node" unique_id=1547384490]
 
@@ -10,9 +14,22 @@
 [node name="Player" type="Node2D" parent="Entities" unique_id=477171764]
 
 [node name="Inspector" parent="Entities/Player" unique_id=2082265465 instance=ExtResource("1_glv2v")]
-position = Vector2(346, 204)
+position = Vector2(342, 239)
 
 [node name="Enemies" type="Node2D" parent="Entities" unique_id=1693633475]
 
 [node name="NPC" parent="Entities/Enemies" unique_id=742967132 instance=ExtResource("2_uu6xs")]
-position = Vector2(107, 116)
+position = Vector2(65, 259)
+
+[node name="Plataformas" type="Node2D" parent="Entities" unique_id=1944016924]
+
+[node name="RigidBody2D" type="StaticBody2D" parent="Entities/Plataformas" unique_id=1089878236]
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Plataformas/RigidBody2D" unique_id=959392118]
+position = Vector2(213, 344)
+scale = Vector2(1.8777778, 0.5222222)
+texture = ExtResource("3_r0du0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Plataformas/RigidBody2D" unique_id=2013053352]
+position = Vector2(213.5, 325)
+shape = SubResource("RectangleShape2D_toa2b")
