@@ -3,6 +3,26 @@
 [ext_resource type="Script" uid="uid://doioip0au2nhl" path="res://scenes/menu.gd" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://ddaqechvip3h3" path="res://assets/backgroundMenu.jpeg" id="1_yqeox"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
+bg_color = Color(0.7490196, 0.69411767, 0.5647059, 0.5372549)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6039216, 0.57254905, 0.4392157, 0)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 1
+expand_margin_left = 100.0
+expand_margin_top = 20.0
+expand_margin_right = 100.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -13,6 +33,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 script = ExtResource("1_vjb58")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=397728608]
@@ -25,39 +47,57 @@ grow_vertical = 2
 texture = ExtResource("1_yqeox")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1897052801]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1188308042]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -77.0
-offset_right = 200.0
-offset_bottom = 50.5
+offset_left = -89.5
+offset_top = -126.0
+offset_right = 89.5
+offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_vjb58")
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=373411954]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1909803647]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ContainerButtons" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=610145448]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/v_separation = 50
+
+[node name="Play" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=373411954]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ytvr")
 text = "Jugar"
 
-[node name="HowToPlay" type="Button" parent="VBoxContainer" unique_id=524596963]
+[node name="HowToPlay" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=524596963]
 layout_mode = 2
 size_flags_vertical = 2
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
 text = "Como jugar"
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=591299730]
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=591299730]
 layout_mode = 2
 size_flags_vertical = 2
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
 text = "Salir"
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/HowToPlay" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/HowToPlay" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/Quit" to="." method="_on_quit_pressed"]
