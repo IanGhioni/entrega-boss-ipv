@@ -12,6 +12,8 @@ texture_margin_bottom = 48.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gbcni"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ebccb"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_con2f"]
 texture = ExtResource("2_ebccb")
 texture_margin_left = 24.0
@@ -27,6 +29,9 @@ Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_funo8")
 Button/styles/normal = SubResource("StyleBoxEmpty_gbcni")
+HeaderLarge/font_sizes/font_size = 48
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_funo8")
+MediumPanelContainer/base_type = &"PanelContainer"
+MediumPanelContainer/styles/panel = SubResource("StyleBoxTexture_ebccb")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_con2f")
