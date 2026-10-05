@@ -1,30 +1,8 @@
 [gd_scene format=3 uid="uid://cc4bob5aed0e1"]
 
 [ext_resource type="Script" uid="uid://doioip0au2nhl" path="res://scenes/menu.gd" id="1_vjb58"]
-[ext_resource type="Texture2D" uid="uid://ddaqechvip3h3" path="res://assets/backgroundMenu.jpeg" id="1_yqeox"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
-bg_color = Color(0.7490196, 0.69411767, 0.5647059, 0.5372549)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.6039216, 0.57254905, 0.4392157, 0)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 1
-expand_margin_left = 100.0
-expand_margin_top = 20.0
-expand_margin_right = 100.0
-expand_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
-bg_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://c8gw2udd5scnj" path="res://assets/backgroundMenu_desenfocado.png" id="2_con2f"]
+[ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://themes/menu_theme.tres" id="3_con2f"]
 
 [node name="Menu" type="Control" unique_id=559569269]
 layout_mode = 3
@@ -44,8 +22,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yqeox")
+texture = ExtResource("2_con2f")
 expand_mode = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=713532712]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 56.0
+offset_right = 756.0
+offset_bottom = 193.0
+theme = ExtResource("3_con2f")
+theme_type_variation = &"BigPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2" unique_id=322412539]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer2/MarginContainer" unique_id=1188321019]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.90588236, 0.7372549, 0.5372549, 0.13725491)
+text = "Con esa cara no pasas"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2" unique_id=131739488]
+layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1188308042]
 layout_mode = 1
@@ -54,48 +53,40 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -89.5
-offset_top = -126.0
-offset_right = 89.5
-offset_bottom = 126.0
+offset_left = -254.5
+offset_top = -120.5
+offset_right = 254.5
+offset_bottom = 234.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_vjb58")
+theme = ExtResource("3_con2f")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1909803647]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
 
 [node name="ContainerButtons" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=610145448]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/v_separation = 50
+size_flags_stretch_ratio = 4.0
+theme_override_constants/v_separation = 45
 
 [node name="Play" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=373411954]
 layout_mode = 2
-size_flags_vertical = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_4ytvr")
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 text = "Jugar"
 
 [node name="HowToPlay" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=524596963]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
 text = "Como jugar"
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=591299730]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
 text = "Salir"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
