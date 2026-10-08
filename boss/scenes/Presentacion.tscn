@@ -5,9 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="2_dlmm7"]
 [ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_igud0"]
 [ext_resource type="Theme" uid="uid://bqywoxobwqm4x" path="res://themes/presentacion_theme.tres" id="2_ohp4u"]
+[ext_resource type="PackedScene" uid="uid://dgvf3j1q0atvv" path="res://documentationScenes/documentacionElfo.tscn" id="6_ohp4u"]
+[ext_resource type="PackedScene" uid="uid://4d0ym2dyibn1" path="res://documentationScenes/documentacion-template.tscn" id="7_vif71"]
+[ext_resource type="Texture2D" uid="uid://crltryfeg57kj" path="res://assets/documentación/sellos/selloB.png" id="8_ywfac"]
+[ext_resource type="Texture2D" uid="uid://c81r2rv6qufp" path="res://assets/documentación/sellos/selloA.png" id="9_ywfac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_toa2b"]
 size = Vector2(1147, 104)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vno4"]
+font_size = 90
 
 [node name="Presentacion" type="Control" unique_id=1286153324]
 layout_mode = 3
@@ -32,6 +39,26 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "Preguntar por documentacíon."
 
+[node name="Aceptar" type="Button" parent="." unique_id=740938732]
+layout_mode = 0
+offset_left = 885.0
+offset_top = 246.0
+offset_right = 1131.0
+offset_bottom = 277.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Aceptar"
+
+[node name="Rechazar" type="Button" parent="." unique_id=1008721645]
+layout_mode = 0
+offset_left = 887.0
+offset_top = 293.0
+offset_right = 1133.0
+offset_bottom = 324.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Rechazar"
+
 [node name="Node2D" type="Node2D" parent="." unique_id=950768903]
 
 [node name="Inspector" parent="Node2D" unique_id=2082265465 instance=ExtResource("1_ovlsl")]
@@ -48,4 +75,49 @@ position = Vector2(17, 497)
 position = Vector2(557.5, 98)
 shape = SubResource("RectangleShape2D_toa2b")
 
+[node name="DocumentacionElfica" parent="." unique_id=2007756729 instance=ExtResource("6_ohp4u")]
+position = Vector2(599, 303)
+scale = Vector2(1.42, 1.42)
+nombre = "Walter Drogonis"
+clase = "Mago"
+
+[node name="DocumentacionElfica2" parent="." unique_id=771278149 instance=ExtResource("6_ohp4u")]
+position = Vector2(599, 303)
+scale = Vector2(1.42, 1.42)
+nombre = "Markosu"
+clase = "Paladin"
+
+[node name="DocumentacionElfica3" parent="." unique_id=849163278 instance=ExtResource("6_ohp4u")]
+position = Vector2(599, 303)
+scale = Vector2(1.42, 1.42)
+nombre = "Iancho"
+clase = "Santero"
+
+[node name="Documentacion" parent="." unique_id=457691265 instance=ExtResource("7_vif71")]
+position = Vector2(599, 303)
+scale = Vector2(1.425, 1.425)
+nombre = "Juli"
+clase = "Barbaro"
+raza = "Humano"
+sello = ExtResource("8_ywfac")
+
+[node name="Documentacion2" parent="." unique_id=1426579110 instance=ExtResource("7_vif71")]
+position = Vector2(599, 303)
+scale = Vector2(1.425, 1.425)
+nombre = "Nahuel"
+clase = "Paladin"
+raza = "Humano"
+sello = ExtResource("9_ywfac")
+
+[node name="Label" type="Label" parent="." unique_id=989889035]
+layout_mode = 0
+offset_left = 1085.0
+offset_top = 85.0
+offset_right = 1142.0
+offset_bottom = 209.0
+text = "0"
+label_settings = SubResource("LabelSettings_1vno4")
+
 [connection signal="pressed" from="PanelContainer/GridContainer/Button" to="Node2D/Inspector" method="_on_preguntar_doc_pressed"]
+[connection signal="pressed" from="Aceptar" to="Node2D/Inspector" method="_on_aceptar_pressed"]
+[connection signal="pressed" from="Rechazar" to="Node2D/Inspector" method="_on_rechazar_pressed"]

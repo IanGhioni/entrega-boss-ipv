@@ -2,10 +2,5 @@
 Alto elfo: Hola buen dia.
 Inspector: Hola, que tal? Simbolos por favor...
 Alto elfo: Si, como no...
-~ secuencia_inicial 
-Alto elfo: Mis simbolos son {{Rules.simbolos}}
-- Rechazar
-	Inspector: Mhmhm, no flaco. 
-- Aceptar 
-	Inspector: Todo ok, pasa nomas... 
+
 => END

@@ -1,9 +1,13 @@
 extends Node
 
+var puedeMostrarDocuElfo: bool;
 var simbolos: Array;
+
+
 func _ready() -> void:
 	randomize();
 	generar_simbolos();
+
 
 func generar_simbolos():
 	var i: int = 0;

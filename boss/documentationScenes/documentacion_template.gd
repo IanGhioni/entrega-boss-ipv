@@ -4,6 +4,7 @@ extends Node2D
 @export var clase: String;
 @export var raza: String;
 @export var sello: Texture2D
+var isValid: bool = true;
 
 func _ready() -> void:
 	$CampoNombre.text = nombre;

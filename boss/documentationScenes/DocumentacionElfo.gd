@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	
 	var my_random_number = randf_range(0., 11.0)
-	if (my_random_number > 3):
+	if (my_random_number > 6):
 		generarCadenaValida();
 		isValid = true;
 	else:
