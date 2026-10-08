@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://bqywoxobwqm4x"]
+
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://fonts/Anaktoria.ttf" id="1_hfw2n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igud0"]
+bg_color = Color(0.499896, 0.40592304, 0.32902506, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6dtt"]
+bg_color = Color(0.57254905, 0.4509804, 0.36078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi57y"]
+bg_color = Color(0.7565454, 0.6826761, 0.5633087, 1)
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_hfw2n")
+Button/styles/hover = SubResource("StyleBoxFlat_igud0")
+Button/styles/normal = SubResource("StyleBoxFlat_s6dtt")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_gi57y")
