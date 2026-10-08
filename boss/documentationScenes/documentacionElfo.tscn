@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dgvf3j1q0atvv"]
+
+[ext_resource type="PackedScene" uid="uid://4d0ym2dyibn1" path="res://documentationScenes/documentacion-template.tscn" id="1_cafrh"]
+[ext_resource type="Script" uid="uid://bmmu6y6jo3f0k" path="res://documentationScenes/DocumentacionElfo.gd" id="1_eaiw2"]
+[ext_resource type="Texture2D" uid="uid://cwqg0m3nsv7rs" path="res://assets/documentación/sellos/selloD.png" id="3_jkvxk"]
+
+[node name="DocumentacionElfica" type="Node2D" unique_id=2007756729]
+script = ExtResource("1_eaiw2")
+
+[node name="Documentacion" parent="." unique_id=457691265 instance=ExtResource("1_cafrh")]
+position = Vector2(0, -2)
+raza = "Elfo"
+sello = ExtResource("3_jkvxk")
+
+[node name="Simbolo1" type="Sprite2D" parent="." unique_id=267828414]
+position = Vector2(-105.99999, 106.935)
+scale = Vector2(0.1, 0.1)
+
+[node name="Simbolo2" type="Sprite2D" parent="." unique_id=873595992]
+position = Vector2(-51.000004, 106.935)
+scale = Vector2(0.1, 0.1)
+
+[node name="Simbolo3" type="Sprite2D" parent="." unique_id=105552857]
+position = Vector2(7.6293945e-06, 106.935)
+scale = Vector2(0.1, 0.1)
+
+[node name="Simbolo4" type="Sprite2D" parent="." unique_id=744069117]
+position = Vector2(55.000004, 106.935)
+scale = Vector2(0.1, 0.1)
+
+[node name="Simbolo5" type="Sprite2D" parent="." unique_id=2031595340]
+position = Vector2(116.99999, 106.935)
+scale = Vector2(0.1, 0.1)

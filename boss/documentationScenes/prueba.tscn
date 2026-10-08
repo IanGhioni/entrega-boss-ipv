@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://clhjsat6688uw"]
+
+[ext_resource type="PackedScene" uid="uid://dgvf3j1q0atvv" path="res://documentationScenes/documentacionElfo.tscn" id="1_btidq"]
+
+[node name="Node2D" type="Node2D" unique_id=1971642114]
+
+[node name="DocumentacionElfica" parent="." unique_id=2007756729 instance=ExtResource("1_btidq")]
+position = Vector2(565, 300)
+nombre = "Walterosku"
+clase = "MAguito"
