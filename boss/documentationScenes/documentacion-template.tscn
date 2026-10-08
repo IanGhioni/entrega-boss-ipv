@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://4d0ym2dyibn1"]
+
+[ext_resource type="Script" uid="uid://brnwl71e3tkea" path="res://documentationScenes/documentacion_template.gd" id="1_bwcgr"]
+[ext_resource type="Texture2D" uid="uid://h80xqj5ua8lg" path="res://assets/documentación/documentación-plantilla.png" id="2_dh07n"]
+[ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://fonts/Brixton-Outline.ttf" id="3_pjcqn"]
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://fonts/Anaktoria.ttf" id="4_hofr1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_idfvx"]
+font = ExtResource("3_pjcqn")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vno4"]
+font = ExtResource("4_hofr1")
+font_size = 20
+font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+
+[node name="Documentacion" type="Node2D" unique_id=457691265]
+script = ExtResource("1_bwcgr")
+
+[node name="Papiro" type="Sprite2D" parent="." unique_id=956434851]
+texture = ExtResource("2_dh07n")
+
+[node name="Sello" type="Sprite2D" parent="." unique_id=425422709]
+position = Vector2(119.00001, -124.99999)
+scale = Vector2(0.088, 0.088)
+
+[node name="Titulo" type="Label" parent="." unique_id=48746846]
+offset_left = -132.0
+offset_top = -144.0
+offset_right = 79.0
+offset_bottom = -87.0
+text = "Documentacion de 
+Berasachusetts"
+label_settings = SubResource("LabelSettings_idfvx")
+metadata/_edit_use_anchors_ = true
+
+[node name="Nombre" type="Label" parent="." unique_id=543252608]
+offset_left = -130.0
+offset_top = -64.0
+offset_right = -62.0
+offset_bottom = -38.0
+text = "Nombre:"
+label_settings = SubResource("LabelSettings_1vno4")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoNombre" type="Label" parent="." unique_id=1774460677]
+offset_left = -59.0
+offset_top = -64.0
+offset_right = 136.0
+offset_bottom = -38.0
+label_settings = SubResource("LabelSettings_1vno4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Clase" type="Label" parent="." unique_id=702574464]
+offset_left = -130.0
+offset_top = -36.0
+offset_right = -62.0
+offset_bottom = -10.0
+text = "Clase:"
+label_settings = SubResource("LabelSettings_1vno4")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoClase" type="Label" parent="." unique_id=1052690319]
+offset_left = -81.0
+offset_top = -38.0
+offset_right = 130.0
+offset_bottom = -12.0
+label_settings = SubResource("LabelSettings_1vno4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Raza" type="Label" parent="." unique_id=1454852707]
+offset_left = -130.0
+offset_top = -10.0
+offset_right = -62.0
+offset_bottom = 16.0
+text = "Raza:"
+label_settings = SubResource("LabelSettings_1vno4")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoRaza" type="Label" parent="." unique_id=1327428515]
+offset_left = -81.0
+offset_top = -9.0
+offset_right = 130.0
+offset_bottom = 17.0
+label_settings = SubResource("LabelSettings_1vno4")
+metadata/_edit_use_anchors_ = true

@@ -1,10 +1,25 @@
 [gd_scene format=3 uid="uid://cc4bob5aed0e1"]
 
 [ext_resource type="Script" uid="uid://doioip0au2nhl" path="res://scenes/menu.gd" id="1_vjb58"]
-[ext_resource type="Texture2D" uid="uid://ddaqechvip3h3" path="res://assets/backgroundMenu.jpeg" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://c8gw2udd5scnj" path="res://assets/backgroundMenu_desenfocado.png" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://c3k2gyqs5v38l" path="res://assets/menu_panel_header_texture.jpg" id="3_4ytvr"]
+[ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://themes/menu_theme.tres" id="3_con2f"]
+[ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://fonts/Brixton-Outline.ttf" id="4_mhnvy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktaku"]
+texture = ExtResource("3_4ytvr")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+expand_margin_left = 75.0
+expand_margin_right = 75.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3eks"]
+line_spacing = 16.0
+font = ExtResource("4_mhnvy")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Control" unique_id=559569269]
 layout_mode = 3
@@ -13,6 +28,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 script = ExtResource("1_vjb58")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=397728608]
@@ -22,42 +39,73 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yqeox")
+texture = ExtResource("2_con2f")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1897052801]
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=713532712]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 39.0
+offset_right = 239.5
+offset_bottom = 176.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ktaku")
+
+[node name="Label" type="Label" parent="PanelContainer2" unique_id=1188321019]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Con esa cara no pasas"
+label_settings = SubResource("LabelSettings_g3eks")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1188308042]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -77.0
-offset_right = 200.0
-offset_bottom = 50.5
+offset_left = -254.5
+offset_top = -127.5
+offset_right = 254.5
+offset_bottom = 227.5
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+theme = ExtResource("3_con2f")
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=373411954]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1909803647]
 layout_mode = 2
-size_flags_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ContainerButtons" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=610145448]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 4.0
+theme_override_constants/v_separation = 45
+
+[node name="Play" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=373411954]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 text = "Jugar"
 
-[node name="HowToPlay" type="Button" parent="VBoxContainer" unique_id=524596963]
+[node name="HowToPlay" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=524596963]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
 text = "Como jugar"
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=591299730]
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=591299730]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
 text = "Salir"
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/HowToPlay" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/HowToPlay" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/Quit" to="." method="_on_quit_pressed"]

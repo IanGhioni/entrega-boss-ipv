@@ -3,29 +3,40 @@
 [ext_resource type="PackedScene" uid="uid://wtw85h8ymjxd" path="res://Background.tscn" id="1_dlmm7"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="1_ovlsl"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="2_dlmm7"]
-[ext_resource type="Script" uid="uid://c4esfst1f1lrd" path="res://scenes/menu_.gd" id="4_xfpmx"]
-[ext_resource type="Resource" uid="uid://gb2waadkm7ln" path="res://dialogues/dialogo_inicial.dialogue" id="5_igud0"]
+[ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_igud0"]
+[ext_resource type="Theme" uid="uid://bqywoxobwqm4x" path="res://themes/presentacion_theme.tres" id="2_ohp4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_toa2b"]
 size = Vector2(1147, 104)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igud0"]
-bg_color = Color(0, 0, 0, 1)
-
-[node name="Presentacion" type="Control" unique_id=306015025]
+[node name="Presentacion" type="Control" unique_id=1286153324]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 
 [node name="Control" parent="." unique_id=340376222 instance=ExtResource("1_dlmm7")]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1249062066]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 423.0
+offset_right = 1119.0
+offset_bottom = 457.0
+theme = ExtResource("2_ohp4u")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer" unique_id=2070056798]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/GridContainer" unique_id=2067804694]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Preguntar por documentacíon."
 
 [node name="Node2D" type="Node2D" parent="." unique_id=950768903]
 
 [node name="Inspector" parent="Node2D" unique_id=2082265465 instance=ExtResource("1_ovlsl")]
 position = Vector2(639, 479)
+preguntar_doc = ExtResource("2_igud0")
 
 [node name="NPC" parent="Node2D" unique_id=742967132 instance=ExtResource("2_dlmm7")]
 position = Vector2(190, 455)
@@ -37,34 +48,4 @@ position = Vector2(17, 497)
 position = Vector2(557.5, 98)
 shape = SubResource("RectangleShape2D_toa2b")
 
-[node name="Menu_" type="Control" parent="." unique_id=1024915021]
-anchors_preset = 0
-offset_left = 645.0
-offset_top = 173.0
-offset_right = 685.0
-offset_bottom = 213.0
-script = ExtResource("4_xfpmx")
-dialogo_inicial = ExtResource("5_igud0")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu_" unique_id=1616573010]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 7.4500003
-anchor_top = 3.519
-anchor_right = 7.4500003
-anchor_bottom = 3.519
-offset_left = -200.0
-offset_top = -63.76001
-offset_right = 200.0
-offset_bottom = 63.73999
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Play" type="Button" parent="Menu_/VBoxContainer" unique_id=963623266]
-layout_mode = 2
-size_flags_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_igud0")
-text = "Preguntar doc"
-
-[connection signal="pressed" from="Menu_/VBoxContainer/Play" to="Menu_" method="_on_doc_pressed"]
+[connection signal="pressed" from="PanelContainer/GridContainer/Button" to="Node2D/Inspector" method="_on_preguntar_doc_pressed"]
