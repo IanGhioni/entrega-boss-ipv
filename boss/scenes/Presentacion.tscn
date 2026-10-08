@@ -62,7 +62,7 @@ text = "Rechazar"
 [node name="Node2D" type="Node2D" parent="." unique_id=950768903]
 
 [node name="Inspector" parent="Node2D" unique_id=2082265465 instance=ExtResource("1_ovlsl")]
-position = Vector2(639, 479)
+position = Vector2(746, 458)
 preguntar_doc = ExtResource("2_igud0")
 
 [node name="NPC" parent="Node2D" unique_id=742967132 instance=ExtResource("2_dlmm7")]
@@ -76,24 +76,28 @@ position = Vector2(557.5, 98)
 shape = SubResource("RectangleShape2D_toa2b")
 
 [node name="DocumentacionElfica" parent="." unique_id=2007756729 instance=ExtResource("6_ohp4u")]
+visible = false
 position = Vector2(599, 303)
 scale = Vector2(1.42, 1.42)
 nombre = "Walter Drogonis"
 clase = "Mago"
 
 [node name="DocumentacionElfica2" parent="." unique_id=771278149 instance=ExtResource("6_ohp4u")]
+visible = false
 position = Vector2(599, 303)
 scale = Vector2(1.42, 1.42)
 nombre = "Markosu"
 clase = "Paladin"
 
 [node name="DocumentacionElfica3" parent="." unique_id=849163278 instance=ExtResource("6_ohp4u")]
+visible = false
 position = Vector2(599, 303)
 scale = Vector2(1.42, 1.42)
 nombre = "Iancho"
 clase = "Santero"
 
 [node name="Documentacion" parent="." unique_id=457691265 instance=ExtResource("7_vif71")]
+visible = false
 position = Vector2(599, 303)
 scale = Vector2(1.425, 1.425)
 nombre = "Juli"
@@ -102,6 +106,7 @@ raza = "Humano"
 sello = ExtResource("8_ywfac")
 
 [node name="Documentacion2" parent="." unique_id=1426579110 instance=ExtResource("7_vif71")]
+visible = false
 position = Vector2(599, 303)
 scale = Vector2(1.425, 1.425)
 nombre = "Nahuel"
