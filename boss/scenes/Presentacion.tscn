@@ -33,9 +33,9 @@ anchors_preset = 0
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1249062066]
 layout_mode = 0
 offset_left = 896.0
-offset_top = 423.0
+offset_top = 480.0
 offset_right = 1119.0
-offset_bottom = 457.0
+offset_bottom = 514.0
 theme = ExtResource("2_ohp4u")
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer" unique_id=2070056798]
