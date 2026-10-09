@@ -5,6 +5,8 @@ var inventario: Array;
 var terminoInspeccion: bool = false
 var is_dialogue_active:bool = false;
 var npcActual;
+const Ballon = preload("res://dialogues/balloon.tscn");
+
 @export var preguntar_doc: DialogueResource
 @onready var documentacion = $"../../DocumentacionElfica"
 @onready var aceptar = $"../../Aceptar"
@@ -39,7 +41,9 @@ func _on_preguntar_doc_pressed() -> void:
 	rechazar.visible = true;
 	npcActual = lista.pop_front();
 	print(npcActual.isValid)
-	DialogueManager.show_dialogue_balloon(preguntar_doc,"start");
+	var Ballon: Node = Ballon.instantiate();
+	get_tree().current_scene.add_child(Ballon);
+	Ballon.start(preguntar_doc,"start");
 	
 func ocultarDocumentacion():
 	npcActual.visible = false;
