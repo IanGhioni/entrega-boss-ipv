@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dfp2y77kvavq1"]
 
 [ext_resource type="Script" uid="uid://dsfx3dtjp5ba2" path="res://Entities/Player/inspector.gd" id="1_jo3jf"]
-[ext_resource type="Texture2D" uid="uid://c6m26en6af5lr" path="res://assets/Inspector_test.jpeg" id="1_wn4fl"]
+[ext_resource type="Texture2D" uid="uid://clrf00v6tanyj" path="res://assets/inspector.png" id="2_jo3jf"]
 
 [node name="Inspector" type="CharacterBody2D" unique_id=2082265465]
 script = ExtResource("1_jo3jf")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=928321720]
 position = Vector2(6, -3.9999924)
-scale = Vector2(0.44666666, 0.39333335)
-texture = ExtResource("1_wn4fl")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_jo3jf")
