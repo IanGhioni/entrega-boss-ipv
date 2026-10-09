@@ -21,6 +21,10 @@ font = ExtResource("3_dh3ur")
 font_size = 48
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_hscs5"]
+font_size = 17
+font_color = Color(0, 0, 0, 1)
+
 [node name="ComoJugar" type="Control" unique_id=316983917]
 layout_mode = 3
 anchors_preset = 0
@@ -72,13 +76,38 @@ offset_bottom = 633.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_tialy")
-metadata/_edit_group_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2058604326]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_bottom = 25
+
+[node name="ContainerRules" type="Control" parent="PanelContainer/MarginContainer" unique_id=1717632715]
+layout_mode = 2
+
+[node name="Reglas" type="Label" parent="PanelContainer/MarginContainer/ContainerRules" unique_id=2090987955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -5.695
+anchor_right = 0.5
+anchor_bottom = -5.695
+offset_left = -245.5
+offset_top = -226.50499
+offset_right = 247.5
+offset_bottom = 226.49501
+text = "¿Cómo jugar?
+
+\"Con esa cara no pasas\" es un juego cooperativo entre dos personas,  junto a tu compañero controlas un puesto de avanzada al cual empieza a llegar gente para cruzar la frontera a su reino. Su labor es servir como inspector y técnico
+
+El objetivo es colaborar entre sí con sus diferentes herramientas para permitir el acceso a los aventureros que tengan todos los documentos completos y en regla.
+
+Para eso, el técnico dispone de un manual que le indica quién tiene permitida la entrada, el inspector no puede ver en ningún momento este manual y el técnico no puede ver en ningún momento quién llega.
+
+A base de descripciones de los visitantes y de los documentos que puedan pedir, irán descubriendo si dejaron entrar correctamente a los aventureros."
+label_settings = SubResource("LabelSettings_hscs5")
+autowrap_mode = 2
 
 [node name="ContainerButtons" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=1750207857]
 layout_mode = 2
