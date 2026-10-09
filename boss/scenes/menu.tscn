@@ -32,7 +32,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 script = ExtResource("1_vjb58")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=397728608]
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=397728608]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,7 +42,7 @@ grow_vertical = 2
 texture = ExtResource("2_con2f")
 expand_mode = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=713532712]
+[node name="Titulo" type="PanelContainer" parent="." unique_id=713532712]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -54,7 +54,7 @@ offset_bottom = 176.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ktaku")
 
-[node name="Label" type="Label" parent="PanelContainer2" unique_id=1188321019]
+[node name="TextoTitulo" type="Label" parent="Titulo" unique_id=1188321019]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Con esa cara no pasas"
