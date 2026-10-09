@@ -9,7 +9,7 @@ var npcActual;
 @onready var documentacion = $"../../DocumentacionElfica"
 @onready var aceptar = $"../../Aceptar"
 @onready var rechazar = $"../../Rechazar"
-@onready var label: Label = $"../../Label"
+@onready var label: Label = $"../../PanelContainer2/Label"
 @onready var lista = [$"../../DocumentacionElfica", $"../../Documentacion", $"../../Documentacion2", $"../../DocumentacionElfica2",  $"../../DocumentacionElfica3"]
 var counter = 0;
 
