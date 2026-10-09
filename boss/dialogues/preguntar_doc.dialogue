@@ -1,0 +1,15 @@
+~ start
+Alto elfo: Hola buen dia.
+Inspector: Hola, que tal? Documentación por favor...
+Alto elfo: Si, como no...
+=> END
+
+~ aceptar
+Inspector: Todo parece en orden,pasa mostro.
+Alto elfo: Soy un elfo, pero gracias
+=> END
+
+~ rechazar
+Inspector: No pasas che, no tenes los papeles en regla.
+Alto elfo: :(
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bey6re30uv5mq"
+path="res://.godot/imported/preguntar_doc.dialogue-58851547c5453aff5dad71e6c5704346.tres"
+
+[deps]
+
+source_file="res://dialogues/preguntar_doc.dialogue"
+dest_files=["res://.godot/imported/preguntar_doc.dialogue-58851547c5453aff5dad71e6c5704346.tres"]
+
+[params]
+
+defaults=true

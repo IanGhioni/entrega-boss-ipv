@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://ca0uvhgp425yh"
+path="res://.godot/imported/dejarPasar.dialogue-7208b295089cd6468cf343b6e077d99f.tres"
+
+[deps]
+
+source_file="res://dialogues/dejarPasar.dialogue"
+dest_files=["res://.godot/imported/dejarPasar.dialogue-7208b295089cd6468cf343b6e077d99f.tres"]
+
+[params]
+
+defaults=true

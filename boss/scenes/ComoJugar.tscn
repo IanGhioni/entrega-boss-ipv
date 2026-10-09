@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://dh8uexm8qlt0j"]
+
+[ext_resource type="Script" uid="uid://bg2tb1wrp4521" path="res://scenes/como_jugar.gd" id="1_hscs5"]
+[ext_resource type="Texture2D" uid="uid://c8gw2udd5scnj" path="res://assets/backgroundMenu_desenfocado.png" id="1_ut7ls"]
+[ext_resource type="Texture2D" uid="uid://c3k2gyqs5v38l" path="res://assets/menu_panel_header_texture.jpg" id="2_hscs5"]
+[ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://fonts/Brixton-Outline.ttf" id="3_dh3ur"]
+[ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://themes/menu_theme.tres" id="4_tialy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktaku"]
+texture = ExtResource("2_hscs5")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+expand_margin_left = 75.0
+expand_margin_right = 75.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3eks"]
+line_spacing = 16.0
+font = ExtResource("3_dh3ur")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hscs5"]
+font_size = 17
+font_color = Color(0, 0, 0, 1)
+
+[node name="ComoJugar" type="Control" unique_id=316983917]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hscs5")
+
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=1133605750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1185.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ut7ls")
+expand_mode = 2
+
+[node name="Titulo" type="PanelContainer" parent="." unique_id=461624274]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 264.0
+offset_top = 47.0
+offset_right = 950.0
+offset_bottom = 184.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ktaku")
+
+[node name="TextoTitulo" type="Label" parent="Titulo" unique_id=1227488637]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Con esa cara no pasas"
+label_settings = SubResource("LabelSettings_g3eks")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=498752026]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 292.0
+offset_top = 9.0
+offset_right = 923.0
+offset_bottom = 633.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_tialy")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2058604326]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ContainerRules" type="Control" parent="PanelContainer/MarginContainer" unique_id=1717632715]
+layout_mode = 2
+
+[node name="Reglas" type="Label" parent="PanelContainer/MarginContainer/ContainerRules" unique_id=2090987955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -5.695
+anchor_right = 0.5
+anchor_bottom = -5.695
+offset_left = -245.5
+offset_top = -226.50499
+offset_right = 247.5
+offset_bottom = 226.49501
+text = "¿Cómo jugar?
+
+\"Con esa cara no pasas\" es un juego cooperativo entre dos personas,  junto a tu compañero controlas un puesto de avanzada al cual empieza a llegar gente para cruzar la frontera a su reino. Su labor es servir como inspector y técnico
+
+El objetivo es colaborar entre sí con sus diferentes herramientas para permitir el acceso a los aventureros que tengan todos los documentos completos y en regla.
+
+Para eso, el técnico dispone de un manual que le indica quién tiene permitida la entrada, el inspector no puede ver en ningún momento este manual y el técnico no puede ver en ningún momento quién llega.
+
+A base de descripciones de los visitantes y de los documentos que puedan pedir, irán descubriendo si dejaron entrar correctamente a los aventureros."
+label_settings = SubResource("LabelSettings_hscs5")
+autowrap_mode = 2
+
+[node name="ContainerButtons" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=1750207857]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 4.0
+theme_override_constants/v_separation = 45
+
+[node name="Volver" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=302381860]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Volver al menú"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/Volver" to="." method="_on_volver_pressed"]
