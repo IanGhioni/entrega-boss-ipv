@@ -32,6 +32,10 @@ func _on_pressed_decline(x) -> void:
 	else:
 		npcActual.visible = true
 	var formatString = "%s"
+	
+	if lista.is_empty():
+		$"../../PanelContainer".visible = false;
+	
 	label.text = formatString % counter;
 	await get_tree().create_timer(0.2).timeout; 
 
