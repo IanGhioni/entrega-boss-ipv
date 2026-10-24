@@ -5,11 +5,69 @@
 [ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="2_bosb2"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="2_dlmm7"]
 [ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_igud0"]
-[ext_resource type="Theme" uid="uid://bqywoxobwqm4x" path="res://themes/presentacion_theme.tres" id="2_ohp4u"]
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://fonts/Anaktoria.ttf" id="2_vh5ls"]
 [ext_resource type="PackedScene" uid="uid://dgvf3j1q0atvv" path="res://documentationScenes/documentacionElfo.tscn" id="6_ohp4u"]
 [ext_resource type="PackedScene" uid="uid://4d0ym2dyibn1" path="res://documentationScenes/documentacion-template.tscn" id="7_vif71"]
 [ext_resource type="Texture2D" uid="uid://crltryfeg57kj" path="res://assets/documentación/sellos/selloB.png" id="8_ywfac"]
 [ext_resource type="Texture2D" uid="uid://c81r2rv6qufp" path="res://assets/documentación/sellos/selloA.png" id="9_ywfac"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27kq1"]
+bg_color = Color(0.05882353, 0.09019608, 0.16470589, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.101960786, 0.13725491, 0.22745098, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of656"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.8, 0.69803923, 0.36078432, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7058824, 0.50980395, 0.019607844, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_right = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mypxk"]
+bg_color = Color(0.7294118, 0.61960787, 0.25490198, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7058824, 0.50980395, 0.019607844, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_right = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phu0m"]
+bg_color = Color(0.7294118, 0.61960787, 0.25490198, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7058824, 0.50980395, 0.019607844, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_right = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3g8g"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_right = 6
+corner_detail = 6
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywfac"]
 texture = ExtResource("2_bosb2")
@@ -28,46 +86,75 @@ size = Vector2(1147, 104)
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Control" parent="." unique_id=340376222 instance=ExtResource("1_dlmm7")]
+[node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_dlmm7")]
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1249062066]
+[node name="ButtonsContainer" type="Control" parent="." unique_id=1765387972]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container" type="PanelContainer" parent="ButtonsContainer" unique_id=1810073617]
+custom_minimum_size = Vector2(300, 250)
 layout_mode = 0
-offset_left = 896.0
-offset_top = 480.0
-offset_right = 1119.0
-offset_bottom = 514.0
-theme = ExtResource("2_ohp4u")
+offset_left = 851.0
+offset_top = 136.0
+offset_right = 1151.0
+offset_bottom = 386.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_27kq1")
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer" unique_id=2070056798]
+[node name="MarginContainer" type="MarginContainer" parent="ButtonsContainer/Container" unique_id=1446497332]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="ContainerPila" type="VBoxContainer" parent="ButtonsContainer/Container/MarginContainer" unique_id=1265005427]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PanelContainer/GridContainer" unique_id=2067804694]
+[node name="AskDocButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=2067804694]
+custom_minimum_size = Vector2(280, 40)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-text = "Preguntar por documentacíon."
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_disabled_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
+theme_override_fonts/font = ExtResource("2_vh5ls")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_of656")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mypxk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_phu0m")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a3g8g")
+text = "Preguntar por documentación"
 
-[node name="Aceptar" type="Button" parent="." unique_id=740938732]
-layout_mode = 0
-offset_left = 885.0
-offset_top = 246.0
-offset_right = 1131.0
-offset_bottom = 277.0
+[node name="AceptarButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=934188949]
+custom_minimum_size = Vector2(280, 40)
+layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-text = "Aceptar"
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_disabled_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
+theme_override_fonts/font = ExtResource("2_vh5ls")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_of656")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mypxk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_phu0m")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a3g8g")
+text = "Dejar pasar"
 
-[node name="Rechazar" type="Button" parent="." unique_id=1008721645]
-layout_mode = 0
-offset_left = 887.0
-offset_top = 293.0
-offset_right = 1133.0
-offset_bottom = 324.0
+[node name="RechazarButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=523350728]
+custom_minimum_size = Vector2(280, 40)
+layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-text = "Rechazar"
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_disabled_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
+theme_override_fonts/font = ExtResource("2_vh5ls")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_of656")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mypxk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_phu0m")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a3g8g")
+text = "Sacar de la fila"
 
-[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1782599149]
+[node name="ContadorContainer" type="PanelContainer" parent="." unique_id=1782599149]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -82,7 +169,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ywfac")
 
-[node name="Label" type="Label" parent="PanelContainer2" unique_id=989889035]
+[node name="Label" type="Label" parent="ContadorContainer" unique_id=989889035]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "0"
@@ -143,6 +230,6 @@ clase = "Paladin"
 raza = "Humano"
 sello = ExtResource("9_ywfac")
 
-[connection signal="pressed" from="PanelContainer/GridContainer/Button" to="Node2D/Inspector" method="_on_preguntar_doc_pressed"]
-[connection signal="pressed" from="Aceptar" to="Node2D/Inspector" method="_on_aceptar_pressed"]
-[connection signal="pressed" from="Rechazar" to="Node2D/Inspector" method="_on_rechazar_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Node2D/Inspector" method="_on_ask_doc_button_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Node2D/Inspector" method="_on_aceptar_button_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" to="Node2D/Inspector" method="_on_rechazar_button_pressed"]
