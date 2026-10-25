@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="3_8h18v"]
 [ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="4_dwntm"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="5_ilnbs"]
-[ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="6_350db"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="7_1fek8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27kq1"]
@@ -134,6 +133,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_of656")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mypxk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_phu0m")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_a3g8g")
+disabled = true
 text = "Dejar pasar"
 
 [node name="RechazarButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=523350728]
@@ -150,6 +150,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_of656")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mypxk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_phu0m")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_a3g8g")
+disabled = true
 text = "Sacar de la fila"
 
 [node name="ContadorContainer" type="PanelContainer" parent="." unique_id=1782599149]
@@ -177,7 +178,6 @@ label_settings = SubResource("LabelSettings_1vno4")
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("5_ilnbs")]
 position = Vector2(746, 458)
-preguntar_doc = ExtResource("6_350db")
 
 [node name="NPC" parent="Personajes" unique_id=742967132 instance=ExtResource("7_1fek8")]
 position = Vector2(190, 455)

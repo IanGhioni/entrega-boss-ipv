@@ -18,11 +18,7 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 @onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
 
 func _ready() -> void:
-	DialogueManager.dialogue_started.connect(_on_ask_doc_button_pressed);
 	DialogueManager.dialogue_ended.connect(_on_pressed_decline);
-	
-	aceptar_button.disabled = true
-	rechazar_button.disabled = true
 
 # Observer de fin de un dialogo
 func _on_pressed_decline(_x) -> void:
@@ -48,7 +44,7 @@ func _on_ask_doc_button_pressed() -> void:
 	
 	var Ballon: Node = Ballon.instantiate();
 	get_tree().current_scene.add_child(Ballon);
-	Ballon.start(preguntar_doc,"start");
+	Ballon.start(preguntar_doc, "start");
 
 func _on_aceptar_button_pressed() -> void:
 	_accion_de_fila();

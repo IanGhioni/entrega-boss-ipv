@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
-Rules="*uid://daddt5tlq4xk5"
 
 [dialogue_manager]
 
@@ -36,7 +35,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/dialogo_inicial.dialogue", "res://dialogues/preguntar_doc.dialogue", "res://dialogues/dejarPasar.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/preguntar_doc.dialogue", "res://dialogues/test.dialogue")
 
 [physics]
 
