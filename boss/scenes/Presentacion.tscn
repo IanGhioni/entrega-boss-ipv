@@ -177,10 +177,10 @@ label_settings = SubResource("LabelSettings_1vno4")
 [node name="Personajes" type="Node2D" parent="." unique_id=950768903]
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("5_ilnbs")]
-position = Vector2(746, 458)
+position = Vector2(447, 404)
 
 [node name="NPC" parent="Personajes" unique_id=742967132 instance=ExtResource("7_1fek8")]
-position = Vector2(190, 455)
+position = Vector2(625, 440)
 
 [node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
 

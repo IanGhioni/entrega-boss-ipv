@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
+Rules="*uid://daddt5tlq4xk5"
 
 [dialogue_manager]
 
@@ -35,7 +36,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/preguntar_doc.dialogue", "res://dialogues/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/preguntar_doc.dialogue", "res://dialogues/dialogo_inicial.dialogue", "res://dialogues/dejarPasar.dialogue")
 
 [physics]
 
@@ -43,6 +44,7 @@ locale/translations_pot_files=PackedStringArray("res://dialogues/preguntar_doc.d
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
