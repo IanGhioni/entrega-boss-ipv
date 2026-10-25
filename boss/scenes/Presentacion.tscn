@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://dgo7bjcxfngo0"]
 
-[ext_resource type="PackedScene" uid="uid://wtw85h8ymjxd" path="res://Background.tscn" id="1_dlmm7"]
-[ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="1_ovlsl"]
-[ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="2_bosb2"]
-[ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="2_dlmm7"]
-[ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_igud0"]
-[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://fonts/Anaktoria.ttf" id="2_vh5ls"]
-[ext_resource type="PackedScene" uid="uid://dgvf3j1q0atvv" path="res://documentationScenes/documentacionElfo.tscn" id="6_ohp4u"]
-[ext_resource type="PackedScene" uid="uid://4d0ym2dyibn1" path="res://documentationScenes/documentacion-template.tscn" id="7_vif71"]
-[ext_resource type="Texture2D" uid="uid://crltryfeg57kj" path="res://assets/documentación/sellos/selloB.png" id="8_ywfac"]
-[ext_resource type="Texture2D" uid="uid://c81r2rv6qufp" path="res://assets/documentación/sellos/selloA.png" id="9_ywfac"]
+[ext_resource type="Script" uid="uid://dkc8f7f0d6b5" path="res://documentos/presentacion.gd" id="1_jwdva"]
+[ext_resource type="PackedScene" uid="uid://wtw85h8ymjxd" path="res://Background.tscn" id="2_gy0o1"]
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="3_8h18v"]
+[ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="4_dwntm"]
+[ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="5_ilnbs"]
+[ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="6_350db"]
+[ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="7_1fek8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27kq1"]
 bg_color = Color(0.05882353, 0.09019608, 0.16470589, 1)
@@ -70,7 +67,7 @@ corner_radius_bottom_right = 6
 corner_detail = 6
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywfac"]
-texture = ExtResource("2_bosb2")
+texture = ExtResource("4_dwntm")
 
 [sub_resource type="LabelSettings" id="LabelSettings_1vno4"]
 font_size = 90
@@ -79,14 +76,12 @@ shadow_size = 3
 shadow_color = Color(0.44162306, 0.44162303, 0.44162297, 0.85882354)
 shadow_offset = Vector2(6, 3)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_toa2b"]
-size = Vector2(1147, 104)
-
 [node name="Presentacion" type="Control" unique_id=1286153324]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_jwdva")
 
-[node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_dlmm7")]
+[node name="Background" parent="." unique_id=340376222 instance=ExtResource("2_gy0o1")]
 
 [node name="ButtonsContainer" type="Control" parent="." unique_id=1765387972]
 anchors_preset = 0
@@ -114,9 +109,10 @@ custom_minimum_size = Vector2(280, 40)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 theme_override_colors/font_disabled_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
-theme_override_fonts/font = ExtResource("2_vh5ls")
+theme_override_fonts/font = ExtResource("3_8h18v")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_of656")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mypxk")
@@ -129,9 +125,10 @@ custom_minimum_size = Vector2(280, 40)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 theme_override_colors/font_disabled_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
-theme_override_fonts/font = ExtResource("2_vh5ls")
+theme_override_fonts/font = ExtResource("3_8h18v")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_of656")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mypxk")
@@ -144,9 +141,10 @@ custom_minimum_size = Vector2(280, 40)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 theme_override_colors/font_disabled_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
-theme_override_fonts/font = ExtResource("2_vh5ls")
+theme_override_fonts/font = ExtResource("3_8h18v")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_of656")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mypxk")
@@ -169,67 +167,31 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ywfac")
 
-[node name="Label" type="Label" parent="ContadorContainer" unique_id=989889035]
+[node name="Contador" type="Label" parent="ContadorContainer" unique_id=989889035]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "0"
 label_settings = SubResource("LabelSettings_1vno4")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=950768903]
+[node name="Personajes" type="Node2D" parent="." unique_id=950768903]
 
-[node name="Inspector" parent="Node2D" unique_id=2082265465 instance=ExtResource("1_ovlsl")]
+[node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("5_ilnbs")]
 position = Vector2(746, 458)
-preguntar_doc = ExtResource("2_igud0")
+preguntar_doc = ExtResource("6_350db")
 
-[node name="NPC" parent="Node2D" unique_id=742967132 instance=ExtResource("2_dlmm7")]
+[node name="NPC" parent="Personajes" unique_id=742967132 instance=ExtResource("7_1fek8")]
 position = Vector2(190, 455)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=551590082]
-position = Vector2(17, 497)
+[node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1368839629]
-position = Vector2(557.5, 98)
-shape = SubResource("RectangleShape2D_toa2b")
+[node name="Puntos" type="Node2D" parent="." unique_id=384639048]
 
-[node name="DocumentacionElfica" parent="." unique_id=2007756729 instance=ExtResource("6_ohp4u")]
-visible = false
-position = Vector2(599, 303)
-scale = Vector2(1.42, 1.42)
-nombre = "Walter Drogonis"
-clase = "Mago"
+[node name="Punto1" type="Marker2D" parent="Puntos" unique_id=1726543701]
+position = Vector2(275, 235)
 
-[node name="DocumentacionElfica2" parent="." unique_id=771278149 instance=ExtResource("6_ohp4u")]
-visible = false
-position = Vector2(599, 303)
-scale = Vector2(1.42, 1.42)
-nombre = "Markosu"
-clase = "Paladin"
+[node name="Punto2" type="Marker2D" parent="Puntos" unique_id=178473864]
+position = Vector2(627, 238)
 
-[node name="DocumentacionElfica3" parent="." unique_id=849163278 instance=ExtResource("6_ohp4u")]
-visible = false
-position = Vector2(599, 303)
-scale = Vector2(1.42, 1.42)
-nombre = "Iancho"
-clase = "Santero"
-
-[node name="Documentacion" parent="." unique_id=457691265 instance=ExtResource("7_vif71")]
-visible = false
-position = Vector2(599, 303)
-scale = Vector2(1.425, 1.425)
-nombre = "Juli"
-clase = "Barbaro"
-raza = "Humano"
-sello = ExtResource("8_ywfac")
-
-[node name="Documentacion2" parent="." unique_id=1426579110 instance=ExtResource("7_vif71")]
-visible = false
-position = Vector2(599, 303)
-scale = Vector2(1.425, 1.425)
-nombre = "Nahuel"
-clase = "Paladin"
-raza = "Humano"
-sello = ExtResource("9_ywfac")
-
-[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Node2D/Inspector" method="_on_ask_doc_button_pressed"]
-[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Node2D/Inspector" method="_on_aceptar_button_pressed"]
-[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" to="Node2D/Inspector" method="_on_rechazar_button_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Personajes/Inspector" method="_on_aceptar_button_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" to="Personajes/Inspector" method="_on_rechazar_button_pressed"]

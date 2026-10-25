@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://bqywoxobwqm4x"]
 
-[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://fonts/Anaktoria.ttf" id="1_hfw2n"]
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="1_hfw2n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igud0"]
 bg_color = Color(0.499896, 0.40592304, 0.32902506, 1)

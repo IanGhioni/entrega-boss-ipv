@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://bkd5kml1ya7u8"]
 
-[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://fonts/Anaktoria.ttf" id="1_funo8"]
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="1_funo8"]
 [ext_resource type="Texture2D" uid="uid://dcoqnuwyw1lnb" path="res://assets/menu_panel_texture.jpg" id="2_ebccb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1wg4"]

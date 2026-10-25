@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8gw2udd5scnj" path="res://assets/backgroundMenu_desenfocado.png" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://c3k2gyqs5v38l" path="res://assets/menu_panel_header_texture.jpg" id="3_4ytvr"]
 [ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://themes/menu_theme.tres" id="3_con2f"]
-[ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://fonts/Brixton-Outline.ttf" id="4_mhnvy"]
+[ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://assets/fonts/Brixton-Outline.ttf" id="4_mhnvy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktaku"]
 texture = ExtResource("3_4ytvr")
