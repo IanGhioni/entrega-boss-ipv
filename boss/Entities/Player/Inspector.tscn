@@ -2,11 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dsfx3dtjp5ba2" path="res://Entities/Player/inspector.gd" id="1_jo3jf"]
 [ext_resource type="Texture2D" uid="uid://clrf00v6tanyj" path="res://assets/inspector.png" id="2_jo3jf"]
+[ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_uedj5"]
 
 [node name="Inspector" type="CharacterBody2D" unique_id=2082265465]
 script = ExtResource("1_jo3jf")
+preguntar_doc = ExtResource("2_uedj5")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=928321720]
-position = Vector2(6, -3.9999924)
+[node name="InspectorSprite" type="Sprite2D" parent="." unique_id=925064212]
+position = Vector2(-123, -8.4703295e-22)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_jo3jf")
+
+[node name="TecnicoSprite" type="Sprite2D" parent="." unique_id=928321720]
+position = Vector2(-0.9999999, -1.4210855e-14)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jo3jf")
