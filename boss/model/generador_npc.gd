@@ -41,9 +41,9 @@ const SELLOS_POR_RAZA := {
 	"Tritón":      ["E", "G", "H", "N", "X", "Z"],
 }
 const LETRAS := "ABDEFGHMNQUWXZ"
-const SIMBOLOS_VALIDOS: Array[int] = [1, 2, 3, 4, 5]
 const SIMBOLOS_TOTAL := 17
-const PROB_INVALIDO := 0.5
+const SIMBOLOS_CANTIDAD := 5
+const PROB_INVALIDO := 0.55
 
 static func generar() -> NPCData:
 	var npc := NPCData.new()
@@ -68,7 +68,7 @@ static func _doc_valido() -> DocData:
 	d.sello = SELLOS_POR_RAZA[d.raza].pick_random()
 
 	if d.raza == "Elfo":
-		d.simbolos = SIMBOLOS_VALIDOS.duplicate()
+		d.simbolos = _cadena_valida()
 	return d
 
 static func _defectos_aplicables(d: DocData) -> Array:
@@ -91,12 +91,7 @@ static func _aplicar(d: DocData, defecto: String) -> void:
 			var candidatas := Array(LETRAS.split("")).filter(func(l): return l not in validos)
 			d.sello = candidatas.pick_random()
 		"simbolos_incorrectos":
-			var s: Array[int] = []
-			while s.size() < 5 or s == SIMBOLOS_VALIDOS:
-				s.clear()
-				for i in 5:
-					s.append(randi_range(1, SIMBOLOS_TOTAL))
-			d.simbolos = s
+			d.simbolos = _cadena_invalida()
 
 static func validar(npc: NPCData) -> Array[String]:
 	var m: Array[String] = []
@@ -108,9 +103,41 @@ static func validar(npc: NPCData) -> Array[String]:
 	if SELLOS_POR_RAZA.has(d.raza) and d.sello not in SELLOS_POR_RAZA[d.raza]:
 		m.append("Sello familiar no admitido para su raza")
 
-	if d.raza == "Elfo" and d.simbolos != SIMBOLOS_VALIDOS:
+	if d.raza == "Elfo" and not _es_cadena_valida(d.simbolos):
 		m.append("Símbolos élficos incorrectos")
 	return m
 
 static func _clases_permitidas(raza: String) -> Array:
 	return RAZAS_POR_CLASE.keys().filter(func(c): return raza in RAZAS_POR_CLASE[c])
+
+# 5 números distintos entre 1 y 17, de menor a mayor.
+static func _cadena_valida() -> Array[int]:
+	var pool: Array = range(1, SIMBOLOS_TOTAL + 1)
+	pool.shuffle()
+	var s: Array[int] = []
+	for i in SIMBOLOS_CANTIDAD:
+		s.append(pool[i])
+	s.sort()
+	return s
+
+# Parte de una cadena válida y le rompe la regla de una de dos formas.
+static func _cadena_invalida() -> Array[int]:
+	var s := _cadena_valida()
+	var i := randi_range(0, SIMBOLOS_CANTIDAD - 2)
+	if randf() < 0.5:
+		s[i + 1] = s[i]            # repite un valor
+	else:
+		var tmp := s[i]            # invierte dos consecutivos
+		s[i] = s[i + 1]
+		s[i + 1] = tmp
+	return s
+
+static func _es_cadena_valida(s: Array[int]) -> bool:
+	if s.size() != SIMBOLOS_CANTIDAD:
+		return false
+	for i in s.size():
+		if s[i] < 1 or s[i] > SIMBOLOS_TOTAL:
+			return false
+		if i > 0 and s[i] <= s[i - 1]:
+			return false
+	return true
