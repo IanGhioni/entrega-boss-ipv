@@ -1295,6 +1295,7 @@ scale = Vector2(3, 3)
 metadata/_edit_lock_ = true
 
 [node name="Sky" type="Sprite2D" parent="Fondo" unique_id=1980711402]
+texture_filter = 1
 position = Vector2(211.66667, 123.49999)
 scale = Vector2(0.5390625, 0.756262)
 texture = ExtResource("1_jqsg2")
@@ -1307,7 +1308,7 @@ texture = ExtResource("2_8xc84")
 metadata/_edit_lock_ = true
 
 [node name="Sun" type="Sprite2D" parent="Fondo" unique_id=1222808046]
-position = Vector2(150.66667, 25.666668)
+position = Vector2(138, 20.333334)
 scale = Vector2(0.495, 0.495)
 texture = ExtResource("9_ui31t")
 
@@ -1389,7 +1390,8 @@ frame = 20
 metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=733380201]
-position = Vector2(235.66667, 86)
+position = Vector2(235.75003, 82.916664)
+scale = Vector2(1.286459, 1.328125)
 sprite_frames = SubResource("SpriteFrames_veb20")
 autoplay = "default"
 frame_progress = 0.58526087
@@ -1477,14 +1479,14 @@ vframes = 17
 frame = 3
 
 [node name="FloweringTree" type="Sprite2D" parent="." unique_id=633733371]
-position = Vector2(294, 99)
+position = Vector2(342, 104.333336)
 scale = Vector2(0.91840315, 1.0252976)
 texture = ExtResource("14_oifh0")
 
 [node name="Pasto" type="Sprite2D" parent="." unique_id=1111651820]
 
 [node name="TallGrass2" type="Sprite2D" parent="Pasto" unique_id=1322158823]
-position = Vector2(298.3333, 148.99998)
+position = Vector2(298.00003, 149.33334)
 scale = Vector2(0.5069444, 1.4739581)
 texture = ExtResource("14_qkwuj")
 
@@ -1504,7 +1506,7 @@ scale = Vector2(0.6770836, 1.4739581)
 texture = ExtResource("14_qkwuj")
 
 [node name="TallGrass9" type="Sprite2D" parent="Pasto" unique_id=1246646437]
-position = Vector2(357.5, 151.33333)
+position = Vector2(344.66666, 151)
 scale = Vector2(0.6770836, 1.4739581)
 texture = ExtResource("14_qkwuj")
 
@@ -1519,8 +1521,8 @@ scale = Vector2(0.86805564, 1.5559893)
 texture = ExtResource("14_qkwuj")
 
 [node name="TallGrass6" type="Sprite2D" parent="Pasto" unique_id=1555160650]
-position = Vector2(188.33334, 151.00002)
-scale = Vector2(0.86805564, 1.1953124)
+position = Vector2(207.33334, 152)
+scale = Vector2(0.5381944, 1.1953124)
 texture = ExtResource("14_qkwuj")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1174872833]
