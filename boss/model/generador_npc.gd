@@ -67,7 +67,7 @@ static func _doc_valido() -> DocData:
 	d.clase = _clases_permitidas(d.raza).pick_random()
 	d.sello = SELLOS_POR_RAZA[d.raza].pick_random()
 
-	if d.raza == "Elfo":
+	if d.raza == "Elfo" || d.raza == "Drow":
 		d.simbolos = _cadena_valida()
 	return d
 
