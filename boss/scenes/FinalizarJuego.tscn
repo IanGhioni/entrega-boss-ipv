@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://chbyuxkdld8np"]
+
+[ext_resource type="Texture2D" uid="uid://c3k2gyqs5v38l" path="res://assets/menu_panel_header_texture.jpg" id="1_7lf6o"]
+[ext_resource type="Script" uid="uid://f1try7jse8ky" path="res://scenes/finalizar_juego.gd" id="1_bsdhf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p6ors"]
+texture = ExtResource("1_7lf6o")
+
+[node name="FinalizarJuego" type="Control" unique_id=71790519]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsdhf")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1755634213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p6ors")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=561889533]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=959848269]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "El juego ha finalizado"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer" unique_id=412251222]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+text = "Volver a jugar"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/Button" to="." method="_on_button_pressed"]

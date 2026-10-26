@@ -29,9 +29,9 @@ func _on_pressed_decline(_x) -> void:
 	
 	if cant_rondas == max_rondas:
 		ask_doc_button.disabled = true
-
-	await get_tree().create_timer(0.2).timeout
-
+		await get_tree().create_timer(0.2).timeout
+		get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");
+		
 func _on_ask_doc_button_pressed() -> void:
 	is_dialogue_active = true;
 	aceptar_button.disabled = false;
