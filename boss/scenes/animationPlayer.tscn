@@ -138,4 +138,4 @@ position = Vector2(511, 378)
 position = Vector2(-100, 378)
 
 [node name="Salida" type="Marker2D" parent="." unique_id=1118765187]
-position = Vector2(1206, -251)
+position = Vector2(1312.665, 378)

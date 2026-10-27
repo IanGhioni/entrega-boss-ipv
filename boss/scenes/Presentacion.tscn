@@ -9,10 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="7_bosb2"]
 [ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Decor.png" id="7_o0ldx"]
 [ext_resource type="PackedScene" uid="uid://b66ddft02sk8s" path="res://Entities/NPCs/mago.tscn" id="8_fkkrn"]
+[ext_resource type="PackedScene" uid="uid://dly5friiawrgf" path="res://Entities/NPCs/mercader.tscn" id="8_o1l7e"]
 [ext_resource type="PackedScene" uid="uid://dm7waf1f7blb4" path="res://Entities/NPCs/npc.tscn" id="8_vh5ls"]
 [ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="8_vif71"]
 [ext_resource type="PackedScene" uid="uid://77dejf0lfjpk" path="res://Entities/NPCs/paladin.tscn" id="9_kfjds"]
 [ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Torch.png" id="9_ywfac"]
+[ext_resource type="PackedScene" uid="uid://b60447dvmsxeh" path="res://Entities/NPCs/magoJoven.tscn" id="11_dkkva"]
+[ext_resource type="PackedScene" uid="uid://hnlsp22hx8yy" path="res://Entities/NPCs/nigromante.tscn" id="12_o1l7e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27kq1"]
 bg_color = Color(0.05882353, 0.09019608, 0.16470589, 1)
@@ -241,20 +244,10 @@ position = Vector2(375.00003, 347.00003)
 position = Vector2(1204, 386)
 
 [node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("7_bosb2")]
-personajes_visuales = Array[PackedScene]([ExtResource("8_fkkrn"), ExtResource("9_kfjds"), ExtResource("8_fkkrn"), ExtResource("9_kfjds"), ExtResource("8_fkkrn")])
+personajes_visuales = Array[PackedScene]([ExtResource("8_fkkrn"), ExtResource("11_dkkva"), ExtResource("8_o1l7e"), ExtResource("9_kfjds"), ExtResource("12_o1l7e")])
 escena_npc = ExtResource("8_vh5ls")
 
 [node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
-
-[node name="Table" type="Sprite2D" parent="." unique_id=923925115]
-visible = false
-visibility_layer = 2
-position = Vector2(359.00003, 429)
-scale = Vector2(3.694605, 3.204192)
-texture = ExtResource("7_o0ldx")
-hframes = 8
-vframes = 17
-frame = 21
 
 [node name="Puntos" type="Node2D" parent="." unique_id=384639048]
 

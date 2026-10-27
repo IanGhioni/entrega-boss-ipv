@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://esp0j3y8l55q"]
+
+[ext_resource type="Texture2D" uid="uid://cu4wdjc2yqb81" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniArcherMan.png" id="1_b8jof"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1f2x"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2unma"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d64ap"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dycly"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu4g5"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q1bv"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o1ie"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ckx"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1dh4"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgm02"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7tik"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvs3d"]
+atlas = ExtResource("1_b8jof")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igyk7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1f2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2unma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d64ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dycly")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu4g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q1bv")
+}],
+"loop": 1,
+"name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o1ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ckx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1dh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgm02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7tik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvs3d")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[node name="Archero" type="AnimatedSprite2D" unique_id=1204063223]
+scale = Vector2(6.83, 6.83)
+sprite_frames = SubResource("SpriteFrames_igyk7")
+animation = &"walk"
+frame_progress = 0.103232175
+flip_h = true

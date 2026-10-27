@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://b60447dvmsxeh"]
+
+[ext_resource type="Texture2D" uid="uid://e054mm50gjgg" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniMage.png" id="1_6vxgh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oxy7"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0xak"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8aea"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e851w"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38522"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnhsn"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmqqi"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kte4"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v05v0"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f78di"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijppu"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lu5k"]
+atlas = ExtResource("1_6vxgh")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yamtn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oxy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0xak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8aea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e851w")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38522")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnhsn")
+}],
+"loop": 1,
+"name": &"talk",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmqqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kte4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v05v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f78di")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijppu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lu5k")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[node name="MagoJoven" type="AnimatedSprite2D" unique_id=855896646]
+scale = Vector2(6.83, 6.83)
+sprite_frames = SubResource("SpriteFrames_yamtn")
+animation = &"idle"
+flip_h = true

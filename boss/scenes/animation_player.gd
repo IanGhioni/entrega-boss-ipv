@@ -1,37 +1,50 @@
+
 extends Node2D
 
 @export var personajes_visuales: Array[PackedScene]
 @export var escena_npc: PackedScene
+@export var tamanio: int = 5
+
 @onready var posicion_inicial: Marker2D = $InicioFila
 @onready var frente_mesa: Marker2D = $FrenteMesa
-@export var distancia_entre_npc: float = 115.0
 @onready var entrada: Marker2D = $Entrada
 @onready var salida: Marker2D = $Salida
 
+@export var distancia_entre_npc: float = 115.0
+
 var procesando_fila: bool = false
 var fila: Array[Node2D] = []
-var npc_actual;
+var npc_actual
+
+var sprites_posibles: Array[String] = ["arquero","ballestero","elfo","picaro","enano","mago","magoJoven","mercader","nigromante","paladin"]
 
 
 func _ready() -> void:
-	if personajes_visuales.is_empty() or escena_npc == null:
+	if escena_npc == null:
+		push_error("No se asignó la escena NPC.")
 		return
 
-	for i in range(personajes_visuales.size()):
+	if tamanio <= 0:
+		return
+
+	for i in range(tamanio):
 		var npc = escena_npc.instantiate()
 		add_child(npc)
 
-		npc.global_position = (
-			posicion_inicial.global_position
-			+ Vector2(distancia_entre_npc * i, 0)
-		)
+		npc.global_position = (posicion_inicial.global_position + Vector2(distancia_entre_npc * i, 0))
 
-		var visual_elegido = personajes_visuales.pick_random()
-		npc.configurar(visual_elegido)
+		var nombre_sprite = sprites_posibles.pick_random()
+		var ruta_sprite = "res://Entities/NPCs/" + nombre_sprite + ".tscn"
+		var escena_visual = load(ruta_sprite) as PackedScene
 
+		if escena_visual == null:
+			push_error("No se pudo cargar la escena: " + ruta_sprite)
+			npc.queue_free()
+			continue
+
+		npc.configurar(escena_visual)
 		fila.append(npc)
-		print(fila)
-		
+
 
 func _process(delta: float) -> void:
 	pass

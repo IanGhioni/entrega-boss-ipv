@@ -5,7 +5,7 @@ var is_dialogue_active:bool = false;
 var npcActual;
 var cant_aciertos: int = 0;
 var cant_rondas: int = 0;
-var max_rondas: int = 5;
+var max_rondas: int = 15;
 
 const Ballon = preload("res://dialogues/balloon.tscn");
 
@@ -20,6 +20,7 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 
 func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(_on_pressed_decline);
+	fila_animation.tamanio = max_rondas;
 
 # Observer de fin de un dialogo
 func _on_pressed_decline(_x) -> void:
