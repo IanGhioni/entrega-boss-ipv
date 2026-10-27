@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://chbyuxkdld8np"]
+
+[ext_resource type="Script" uid="uid://f1try7jse8ky" path="res://scenes/finalizar_juego.gd" id="1_bsdhf"]
+[ext_resource type="Shader" uid="uid://bqe41hq1kq7va" path="res://assets/shaders/menu.gdshader" id="2_12s3c"]
+[ext_resource type="Texture2D" uid="uid://b2k8lbusgcok7" path="res://assets/Captura de pantalla 2026-10-27 164053.png" id="3_3adj8"]
+[ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="4_sp00f"]
+[ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://assets/themes/menu_theme.tres" id="5_xql2c"]
+[ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="6_xr1xt"]
+[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-013.png" id="7_85ak3"]
+[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-014.png" id="8_ci7af"]
+[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Panel/panel-013.png" id="9_sadjd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pmkph"]
+shader = ExtResource("2_12s3c")
+shader_parameter/blur = 2.0
+shader_parameter/brillo = 0.30000001425
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_of656"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb6vr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_asbnv"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("7_85ak3")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sy67a"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("8_ci7af")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfiop"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("9_sadjd")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[node name="FinalizarJuego" type="Control" unique_id=71790519]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsdhf")
+
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=80753020]
+texture_filter = 4
+material = SubResource("ShaderMaterial_pmkph")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3adj8")
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1755634213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_of656")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=561889533]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Titulo" parent="." unique_id=1903387969 instance=ExtResource("4_sp00f")]
+layout_mode = 0
+offset_left = -229.0
+offset_top = -25.0
+offset_right = -189.0
+offset_bottom = 15.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=2117669791]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -240.0
+offset_right = 433.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_xql2c")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rb6vr")
+
+[node name="ContainerButtons" type="VBoxContainer" parent="PanelContainer2" unique_id=1750245893]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 4.0
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="PanelContainer2/ContainerButtons" unique_id=959848269]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 45
+text = "Fin del día"
+
+[node name="Play" type="Button" parent="PanelContainer2/ContainerButtons" unique_id=240933830]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.35644272, 0.096592925, 0.15599337, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_asbnv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sy67a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rfiop")
+text = "Siguiente día"
+
+[node name="BackMenuButton" type="Button" parent="PanelContainer2/ContainerButtons" unique_id=2056438185]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.35644272, 0.096592925, 0.15599337, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_asbnv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sy67a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rfiop")
+text = "Volver al menú"
+
+[node name="Quit" type="Button" parent="PanelContainer2/ContainerButtons" unique_id=2121297139]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_asbnv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sy67a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rfiop")
+text = "Salir"
+
+[connection signal="pressed" from="PanelContainer2/ContainerButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer2/ContainerButtons/BackMenuButton" to="." method="_on_back_menu_button_pressed"]
+[connection signal="pressed" from="PanelContainer2/ContainerButtons/Quit" to="." method="_on_quit_pressed"]
