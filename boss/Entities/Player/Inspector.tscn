@@ -12,8 +12,10 @@ preguntar_doc = ExtResource("2_uedj5")
 position = Vector2(-123, -8.4703295e-22)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jo3jf")
+flip_h = true
 
 [node name="TecnicoSprite" type="Sprite2D" parent="." unique_id=928321720]
 position = Vector2(-0.9999999, -1.4210855e-14)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jo3jf")
+flip_h = true
