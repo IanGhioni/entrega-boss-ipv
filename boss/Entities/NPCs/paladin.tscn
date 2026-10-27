@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://77dejf0lfjpk"]
+
+[ext_resource type="Texture2D" uid="uid://c3br3kw1gywl6" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniPrinceMan.png" id="1_irmre"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpv45"]
+atlas = ExtResource("1_irmre")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj3f0"]
+atlas = ExtResource("1_irmre")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ikal"]
+atlas = ExtResource("1_irmre")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6td6"]
+atlas = ExtResource("1_irmre")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n11o"]
+atlas = ExtResource("1_irmre")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqw0u"]
+atlas = ExtResource("1_irmre")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf410"]
+atlas = ExtResource("1_irmre")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yyk1"]
+atlas = ExtResource("1_irmre")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ww1q"]
+atlas = ExtResource("1_irmre")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjtf0"]
+atlas = ExtResource("1_irmre")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vno4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpv45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj3f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ikal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6td6")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n11o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqw0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf410")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yyk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ww1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjtf0")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[node name="Paladin" type="AnimatedSprite2D" unique_id=2051076361]
+scale = Vector2(6.83, 6.83)
+sprite_frames = SubResource("SpriteFrames_1vno4")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true

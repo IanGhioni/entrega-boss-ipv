@@ -1486,7 +1486,6 @@ texture = ExtResource("2_dpw2a")
 hframes = 7
 vframes = 8
 frame = 20
-metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Walls" unique_id=1905248556]
 position = Vector2(41.666664, 92)
@@ -1501,7 +1500,6 @@ texture = ExtResource("2_dpw2a")
 hframes = 7
 vframes = 8
 frame = 20
-metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Walls" unique_id=1415066050]
 position = Vector2(204.33334, 97.66667)
@@ -1510,13 +1508,12 @@ autoplay = "default"
 frame_progress = 0.5794949
 
 [node name="Wall3" type="Sprite2D" parent="Walls" unique_id=1162205589]
-position = Vector2(177, 136.66666)
+position = Vector2(177, 136.99998)
 scale = Vector2(1.5084746, 1.1029413)
 texture = ExtResource("2_dpw2a")
 hframes = 7
 vframes = 8
 frame = 20
-metadata/_edit_lock_ = true
 
 [node name="TallGrass3" type="Sprite2D" parent="Walls" unique_id=388107836]
 position = Vector2(386, 150)
@@ -1524,7 +1521,7 @@ scale = Vector2(0.8680556, 1.4739584)
 texture = ExtResource("14_qkwuj")
 
 [node name="AlchemyDecor" type="Sprite2D" parent="Walls" unique_id=345581514]
-position = Vector2(176.5, 116.41666)
+position = Vector2(176.5, 116.749985)
 scale = Vector2(0.74479175, 0.7539691)
 texture = ExtResource("3_jqsg2")
 hframes = 3

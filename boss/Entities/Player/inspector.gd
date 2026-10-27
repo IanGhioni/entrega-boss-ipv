@@ -16,6 +16,7 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 @onready var ask_doc_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton"
 @onready var aceptar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton"
 @onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
+@onready var fila_animation: Node2D = $"../../FilaAnimationController"
 
 func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(_on_pressed_decline);
@@ -33,6 +34,8 @@ func _on_pressed_decline(_x) -> void:
 	await get_tree().create_timer(0.2).timeout
 
 func _on_ask_doc_button_pressed() -> void:
+	await fila_animation.atender_siguiente()
+	fila_animation.mover_fila()
 	is_dialogue_active = true;
 	aceptar_button.disabled = false;
 	rechazar_button.disabled = false;
@@ -47,14 +50,26 @@ func _on_ask_doc_button_pressed() -> void:
 	Ballon.start(preguntar_doc, "start");
 
 func _on_aceptar_button_pressed() -> void:
-	_accion_de_fila();
-	actualizarContador(true);
-	DialogueManager.show_dialogue_balloon(preguntar_doc, "aceptar");
+	_accion_de_fila()
+
+	var dialogo_terminado = DialogueManager.dialogue_ended
+
+	DialogueManager.show_dialogue_balloon(preguntar_doc,"aceptar")
+
+	await dialogo_terminado
+	actualizarContador(true)
+	fila_animation.dejar_pasar()
 
 func _on_rechazar_button_pressed() -> void:
 	_accion_de_fila();
+	var dialogo_terminado = DialogueManager.dialogue_ended
+
+	DialogueManager.show_dialogue_balloon(preguntar_doc,"rechazar")
+
+	await dialogo_terminado
 	actualizarContador(false);
-	DialogueManager.show_dialogue_balloon(preguntar_doc, "rechazar");
+	fila_animation.no_dejar_pasar()
+
 
 # Método común entre aceptar/rechazar a alguien
 func _accion_de_fila() -> void:

@@ -120,6 +120,7 @@ vframes = 17
 frame = 9
 
 [node name="InspectorSprite" type="AnimatedSprite2D" parent="." unique_id=1188422115]
+visible = false
 position = Vector2(-83, 0)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_idfvx")
@@ -128,6 +129,7 @@ autoplay = "idle"
 frame_progress = 0.39959317
 
 [node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=1797999094]
+visible = false
 position = Vector2(4, 0)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_1vno4")
