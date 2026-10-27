@@ -1,25 +1,57 @@
 [gd_scene format=3 uid="uid://cc4bob5aed0e1"]
 
 [ext_resource type="Script" uid="uid://doioip0au2nhl" path="res://scenes/menu.gd" id="1_vjb58"]
-[ext_resource type="Texture2D" uid="uid://c8gw2udd5scnj" path="res://assets/backgroundMenu_desenfocado.png" id="2_con2f"]
-[ext_resource type="Texture2D" uid="uid://c3k2gyqs5v38l" path="res://assets/menu_panel_header_texture.jpg" id="3_4ytvr"]
+[ext_resource type="Shader" uid="uid://bqe41hq1kq7va" path="res://assets/shaders/menu.gdshader" id="2_13sgg"]
 [ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://assets/themes/menu_theme.tres" id="3_con2f"]
-[ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://assets/fonts/Brixton-Outline.ttf" id="4_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://b2k8lbusgcok7" path="res://assets/Captura de pantalla 2026-10-27 164053.png" id="3_i6lef"]
+[ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="4_i6lef"]
+[ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="7_i6lef"]
+[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Panel/panel-013.png" id="8_13sgg"]
+[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-013.png" id="8_70i5f"]
+[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-014.png" id="9_70i5f"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktaku"]
-texture = ExtResource("3_4ytvr")
-texture_margin_left = 24.0
-texture_margin_top = 24.0
-texture_margin_right = 24.0
-texture_margin_bottom = 24.0
-expand_margin_left = 75.0
-expand_margin_right = 75.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxupc"]
+shader = ExtResource("2_13sgg")
+shader_parameter/blur = 2.000000095
+shader_parameter/brillo = 0.670000031825
 
-[sub_resource type="LabelSettings" id="LabelSettings_g3eks"]
-line_spacing = 16.0
-font = ExtResource("4_mhnvy")
-font_size = 48
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oucw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ousb"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("8_70i5f")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i6lef"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("9_70i5f")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvt2x"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("8_13sgg")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
 
 [node name="Menu" type="Control" unique_id=559569269]
 layout_mode = 3
@@ -33,35 +65,23 @@ size_flags_vertical = 6
 script = ExtResource("1_vjb58")
 
 [node name="BackgroundImage" type="TextureRect" parent="." unique_id=397728608]
+texture_filter = 4
+material = SubResource("ShaderMaterial_nxupc")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_con2f")
+texture = ExtResource("3_i6lef")
 expand_mode = 1
 
-[node name="Titulo" type="PanelContainer" parent="." unique_id=713532712]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -239.5
-offset_top = 39.0
-offset_right = 239.5
-offset_bottom = 176.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_ktaku")
-
-[node name="TextoTitulo" type="Label" parent="Titulo" unique_id=1188321019]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Con esa cara no pasas"
-label_settings = SubResource("LabelSettings_g3eks")
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+[node name="Titulo" parent="." unique_id=1903387969 instance=ExtResource("4_i6lef")]
+layout_mode = 0
+offset_left = -229.0
+offset_top = -25.0
+offset_right = -189.0
+offset_bottom = 15.0
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1188308042]
 layout_mode = 1
@@ -70,42 +90,67 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -254.5
-offset_top = -127.5
-offset_right = 254.5
-offset_bottom = 227.5
+offset_left = -76.0
+offset_top = -240.0
+offset_right = 433.0
+offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_con2f")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8oucw")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1909803647]
-layout_mode = 2
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_bottom = 25
-
-[node name="ContainerButtons" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=610145448]
+[node name="ContainerButtons" type="VBoxContainer" parent="PanelContainer" unique_id=532826490]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 4.0
-theme_override_constants/v_separation = 45
+theme_override_constants/separation = 60
 
-[node name="Play" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=373411954]
+[node name="Play" type="Button" parent="PanelContainer/ContainerButtons" unique_id=373411954]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.35644272, 0.096592925, 0.15599337, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("7_i6lef")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_4ousb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i6lef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kvt2x")
 text = "Jugar"
 
-[node name="HowToPlay" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=524596963]
+[node name="HowToPlay" type="Button" parent="PanelContainer/ContainerButtons" unique_id=1224966245]
 layout_mode = 2
-size_flags_vertical = 2
-text = "Como jugar"
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("7_i6lef")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_4ousb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i6lef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kvt2x")
+text = "Reglas"
 
-[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=591299730]
+[node name="Quit" type="Button" parent="PanelContainer/ContainerButtons" unique_id=2091157976]
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("7_i6lef")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_4ousb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i6lef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kvt2x")
 text = "Salir"
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/HowToPlay" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="PanelContainer/ContainerButtons/Quit" to="." method="_on_quit_pressed"]
