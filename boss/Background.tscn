@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cuiejjwmoi27y" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/sun.png" id="9_ui31t"]
 [ext_resource type="Texture2D" uid="uid://c6rewll1nxrms" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/cloud5.png" id="10_lslbr"]
 [ext_resource type="Texture2D" uid="uid://bfccbai125gjc" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/cloud3.png" id="11_3l5rj"]
+[ext_resource type="Texture2D" uid="uid://iasg783c1p1w" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/birds1.png" id="11_ib6ks"]
+[ext_resource type="Script" uid="uid://5gl5uqjpobvp" path="res://animation_player.gd" id="11_pi7vv"]
 [ext_resource type="Texture2D" uid="uid://cvdg2fcg40lcr" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/cloud4.png" id="12_chgmw"]
 [ext_resource type="Texture2D" uid="uid://cdij8x15lh20i" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Large Tent.png" id="12_fdanu"]
 [ext_resource type="Texture2D" uid="uid://54vc2gtmdwtd" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="14_chgmw"]
@@ -19,6 +21,121 @@
 [ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="14_qkwuj"]
 [ext_resource type="Texture2D" uid="uid://dkfnoir1fi0cu" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Small Tent.png" id="15_cjcy6"]
 [ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Torch.png" id="17_fdanu"]
+
+[sub_resource type="Animation" id="Animation_mpl36"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pajaros:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13.333336, 28.333332)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pajaros:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fondo/Sun:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(57.666687, 52.666668)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fondo/Sun:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ib6ks"]
+resource_name = "birds-flying"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pajaros:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-13.333336, 28.333332), Vector2(403.99997, 28.333332)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pajaros:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pi7vv"]
+resource_name = "sun"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fondo/Sun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(57.666687, 52.666668), Vector2(201.66667, 15.333332), Vector2(322.33334, 52.666668)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fondo/Sun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pi7vv"]
+_data = {
+&"RESET": SubResource("Animation_mpl36"),
+&"birds-flying": SubResource("Animation_ib6ks"),
+&"sun": SubResource("Animation_pi7vv")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdi0d"]
 atlas = ExtResource("17_fdanu")
@@ -1301,16 +1418,16 @@ scale = Vector2(0.5390625, 0.756262)
 texture = ExtResource("1_jqsg2")
 metadata/_edit_lock_ = true
 
+[node name="Sun" type="Sprite2D" parent="Fondo" unique_id=1222808046]
+position = Vector2(57.666687, 52.666668)
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("9_ui31t")
+
 [node name="Mountains" type="Sprite2D" parent="Fondo" unique_id=1298288425]
 position = Vector2(211.66667, 123.49999)
 scale = Vector2(0.5390625, 0.756262)
 texture = ExtResource("2_8xc84")
 metadata/_edit_lock_ = true
-
-[node name="Sun" type="Sprite2D" parent="Fondo" unique_id=1222808046]
-position = Vector2(138, 20.333334)
-scale = Vector2(0.495, 0.495)
-texture = ExtResource("9_ui31t")
 
 [node name="Castillo" type="Sprite2D" parent="Fondo" unique_id=1911301687]
 position = Vector2(136.33334, 124.000015)
@@ -1350,75 +1467,72 @@ texture = ExtResource("10_lslbr")
 position = Vector2(220, 34.666676)
 texture = ExtResource("12_chgmw")
 
-[node name="Wall" type="Sprite2D" parent="." unique_id=1510213366]
-position = Vector2(13.833338, 130.83334)
-scale = Vector2(1.5084745, 1.1029412)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1073218242]
+libraries/ = SubResource("AnimationLibrary_pi7vv")
+autoplay = &"birds-flying"
+script = ExtResource("11_pi7vv")
+
+[node name="Pajaros" type="Sprite2D" parent="." unique_id=322339063]
+position = Vector2(-13.333336, 28.333332)
+scale = Vector2(1.1000001, 1)
+texture = ExtResource("11_ib6ks")
+
+[node name="Walls" type="Node2D" parent="." unique_id=1453151384]
+
+[node name="Wall" type="Sprite2D" parent="Walls" unique_id=1510213366]
+position = Vector2(13.833339, 130.83334)
+scale = Vector2(1.5084746, 1.1029413)
 texture = ExtResource("2_dpw2a")
 hframes = 7
 vframes = 8
 frame = 20
 metadata/_edit_lock_ = true
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1905248556]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Walls" unique_id=1905248556]
 position = Vector2(41.666664, 92)
 sprite_frames = SubResource("SpriteFrames_veb20")
 autoplay = "default"
 frame_progress = 0.5794949
 
-[node name="Wall2" type="Sprite2D" parent="." unique_id=2087427220]
-position = Vector2(76.33333, 131.33333)
-scale = Vector2(1.5084745, 1.1029412)
+[node name="Wall2" type="Sprite2D" parent="Walls" unique_id=2087427220]
+position = Vector2(76.33333, 131.33334)
+scale = Vector2(1.5084746, 1.1029413)
 texture = ExtResource("2_dpw2a")
 hframes = 7
 vframes = 8
 frame = 20
 metadata/_edit_lock_ = true
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1415066050]
-position = Vector2(204.33334, 97.666664)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Walls" unique_id=1415066050]
+position = Vector2(204.33334, 97.66667)
 sprite_frames = SubResource("SpriteFrames_veb20")
 autoplay = "default"
 frame_progress = 0.5794949
 
-[node name="Wall3" type="Sprite2D" parent="." unique_id=1162205589]
+[node name="Wall3" type="Sprite2D" parent="Walls" unique_id=1162205589]
 position = Vector2(177, 136.66666)
-scale = Vector2(1.5084745, 1.1029412)
+scale = Vector2(1.5084746, 1.1029413)
 texture = ExtResource("2_dpw2a")
 hframes = 7
 vframes = 8
 frame = 20
 metadata/_edit_lock_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=733380201]
-position = Vector2(235.75003, 82.916664)
-scale = Vector2(1.286459, 1.328125)
-sprite_frames = SubResource("SpriteFrames_veb20")
-autoplay = "default"
-frame_progress = 0.58526087
-
-[node name="TallGrass3" type="Sprite2D" parent="." unique_id=388107836]
-position = Vector2(243.33331, 149.66667)
-scale = Vector2(0.8680556, 1.4739583)
+[node name="TallGrass3" type="Sprite2D" parent="Walls" unique_id=388107836]
+position = Vector2(386, 150)
+scale = Vector2(0.8680556, 1.4739584)
 texture = ExtResource("14_qkwuj")
 
-[node name="Wall4" type="Sprite2D" parent="." unique_id=2059879933]
-position = Vector2(240.66666, 132.31252)
-scale = Vector2(1.5084745, 1.3621324)
-texture = ExtResource("2_dpw2a")
-hframes = 26
-vframes = 8
-frame = 77
-
-[node name="AlchemyDecor" type="Sprite2D" parent="." unique_id=345581514]
+[node name="AlchemyDecor" type="Sprite2D" parent="Walls" unique_id=345581514]
 position = Vector2(176.5, 116.41666)
 scale = Vector2(0.74479175, 0.7539691)
 texture = ExtResource("3_jqsg2")
 hframes = 3
 vframes = 3
 
-[node name="AlchemyDecor2" type="Sprite2D" parent="." unique_id=581020719]
-position = Vector2(11.000001, 112.5)
-scale = Vector2(0.7604167, 0.87301594)
+[node name="AlchemyDecor2" type="Sprite2D" parent="Walls" unique_id=581020719]
+position = Vector2(11.000002, 112.5)
+scale = Vector2(0.7604167, 0.873016)
 texture = ExtResource("3_jqsg2")
 hframes = 3
 vframes = 3
@@ -1440,31 +1554,6 @@ autoplay = "default"
 frame_progress = 0.73522663
 flip_h = true
 
-[node name="Chair2" type="Sprite2D" parent="." unique_id=1994722784]
-position = Vector2(122.000015, 144)
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("2_dpw2a")
-hframes = 13
-vframes = 17
-frame = 9
-
-[node name="Chair" type="Sprite2D" parent="." unique_id=1449641878]
-position = Vector2(99.99998, 144.33334)
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("2_dpw2a")
-hframes = 13
-vframes = 17
-frame = 9
-
-[node name="Table" type="Sprite2D" parent="." unique_id=589595215]
-visibility_layer = 2
-position = Vector2(120, 145)
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("2_dpw2a")
-hframes = 8
-vframes = 17
-frame = 21
-
 [node name="SmallTent" type="Sprite2D" parent="." unique_id=1484989862]
 position = Vector2(24.666666, 129.33334)
 scale = Vector2(0.90625, 0.94791675)
@@ -1482,48 +1571,6 @@ frame = 3
 position = Vector2(342, 104.333336)
 scale = Vector2(0.91840315, 1.0252976)
 texture = ExtResource("14_oifh0")
-
-[node name="Pasto" type="Sprite2D" parent="." unique_id=1111651820]
-
-[node name="TallGrass2" type="Sprite2D" parent="Pasto" unique_id=1322158823]
-position = Vector2(298.00003, 149.33334)
-scale = Vector2(0.5069444, 1.4739581)
-texture = ExtResource("14_qkwuj")
-
-[node name="TallGrass3" type="Sprite2D" parent="Pasto" unique_id=568040187]
-position = Vector2(236.00002, 152.66667)
-scale = Vector2(0.5069444, 1.4739581)
-texture = ExtResource("14_qkwuj")
-
-[node name="TallGrass4" type="Sprite2D" parent="Pasto" unique_id=1419193584]
-position = Vector2(390.66666, 145.29167)
-scale = Vector2(0.86805564, 1.2473959)
-texture = ExtResource("14_qkwuj")
-
-[node name="TallGrass8" type="Sprite2D" parent="Pasto" unique_id=1535874703]
-position = Vector2(357.5, 151.33333)
-scale = Vector2(0.6770836, 1.4739581)
-texture = ExtResource("14_qkwuj")
-
-[node name="TallGrass9" type="Sprite2D" parent="Pasto" unique_id=1246646437]
-position = Vector2(344.66666, 151)
-scale = Vector2(0.6770836, 1.4739581)
-texture = ExtResource("14_qkwuj")
-
-[node name="TallGrass5" type="Sprite2D" parent="Pasto" unique_id=20411648]
-position = Vector2(37.333332, 152.33333)
-scale = Vector2(0.86805564, 1.1953124)
-texture = ExtResource("14_qkwuj")
-
-[node name="TallGrass7" type="Sprite2D" parent="Pasto" unique_id=2137969034]
-position = Vector2(3.333333, 146.66666)
-scale = Vector2(0.86805564, 1.5559893)
-texture = ExtResource("14_qkwuj")
-
-[node name="TallGrass6" type="Sprite2D" parent="Pasto" unique_id=1555160650]
-position = Vector2(207.33334, 152)
-scale = Vector2(0.5381944, 1.1953124)
-texture = ExtResource("14_qkwuj")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1174872833]
 texture_filter = 1
