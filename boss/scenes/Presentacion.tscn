@@ -266,7 +266,7 @@ sprite_frames = SubResource("SpriteFrames_bosb2")
 autoplay = "default"
 
 [node name="Wall4" type="Sprite2D" parent="." unique_id=1169578887]
-position = Vector2(723, 385.99997)
+position = Vector2(722, 385.99997)
 scale = Vector2(4.188469, 3.7821314)
 texture = ExtResource("7_o0ldx")
 hframes = 26

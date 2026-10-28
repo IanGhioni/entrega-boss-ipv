@@ -104,7 +104,7 @@ script = ExtResource("1_jo3jf")
 preguntar_doc = ExtResource("2_uedj5")
 
 [node name="Chair2" type="Sprite2D" parent="." unique_id=1425754029]
-position = Vector2(-98.00001, 87)
+position = Vector2(-98.35285, 94.79791)
 scale = Vector2(4.400001, 4.400001)
 texture = ExtResource("3_blj0n")
 hframes = 13
@@ -112,7 +112,7 @@ vframes = 17
 frame = 9
 
 [node name="Chair3" type="Sprite2D" parent="." unique_id=630497411]
-position = Vector2(-15, 87.00001)
+position = Vector2(-16.589642, 94.79793)
 scale = Vector2(4.400001, 4.400001)
 texture = ExtResource("3_blj0n")
 hframes = 13
