@@ -18,6 +18,26 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_irmre")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_irmre"]
+atlas = ExtResource("1_irmre")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q42lt"]
+atlas = ExtResource("1_irmre")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_804vt"]
+atlas = ExtResource("1_irmre")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uglpl"]
+atlas = ExtResource("1_irmre")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24qvd"]
+atlas = ExtResource("1_irmre")
+region = Rect2(64, 128, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6n11o"]
 atlas = ExtResource("1_irmre")
 region = Rect2(0, 32, 32, 32)
@@ -63,6 +83,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_irmre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q42lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_804vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uglpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24qvd")
+}],
+"loop": 1,
+"name": &"talk",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6n11o")
 }, {
 "duration": 1.0,
@@ -88,6 +128,7 @@ animations = [{
 [node name="Paladin" type="AnimatedSprite2D" unique_id=2051076361]
 scale = Vector2(6.83, 6.83)
 sprite_frames = SubResource("SpriteFrames_1vno4")
-animation = &"idle"
+animation = &"talk"
 autoplay = "idle"
+frame_progress = 0.29541218
 flip_h = true
