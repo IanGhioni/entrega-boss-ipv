@@ -138,6 +138,8 @@ animations = [{
 [node name="Presentacion" type="Control" unique_id=1286153324]
 layout_mode = 3
 anchors_preset = 0
+offset_top = -45.0
+offset_bottom = -45.0
 script = ExtResource("1_jwdva")
 escenas_documentos = null
 
@@ -238,7 +240,7 @@ label_settings = SubResource("LabelSettings_1vno4")
 [node name="Personajes" type="Node2D" parent="." unique_id=950768903]
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("5_ilnbs")]
-position = Vector2(375.00003, 347.00003)
+position = Vector2(387, 341.00003)
 
 [node name="NPC" parent="Personajes" unique_id=742967132 instance=ExtResource("7_1fek8")]
 position = Vector2(1204, 386)
@@ -264,7 +266,7 @@ sprite_frames = SubResource("SpriteFrames_bosb2")
 autoplay = "default"
 
 [node name="Wall4" type="Sprite2D" parent="." unique_id=1169578887]
-position = Vector2(723, 394.99997)
+position = Vector2(723, 385.99997)
 scale = Vector2(4.188469, 3.7821314)
 texture = ExtResource("7_o0ldx")
 hframes = 26
