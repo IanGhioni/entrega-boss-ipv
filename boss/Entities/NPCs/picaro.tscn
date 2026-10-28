@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dsy05b66kqs5u"]
+
+[ext_resource type="Texture2D" uid="uid://dtjbr30f3n2ii" path="res://assets/ExternalAssets/MinifolksVillagers2/Original/Without Outline/MiniSuspiciousMerchant.png" id="1_5oln2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vulm"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui870"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6jv8"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40ic8"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph3uh"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5tm5"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljmpm"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yvgu"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbfja"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijq6e"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q868"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ncu7"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rclmi"]
+atlas = ExtResource("1_5oln2")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trvj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vulm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui870")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6jv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40ic8")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph3uh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5tm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljmpm")
+}],
+"loop": 2,
+"name": &"talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yvgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbfja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijq6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q868")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ncu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rclmi")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[node name="Picaro" type="AnimatedSprite2D" unique_id=639283145]
+scale = Vector2(6.83, 6.83)
+sprite_frames = SubResource("SpriteFrames_trvj4")
+animation = &"walk"
+frame_progress = 0.43548772
+flip_h = true

@@ -6,6 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="4_dwntm"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="5_ilnbs"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="7_1fek8"]
+[ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="7_bosb2"]
+[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Decor.png" id="7_o0ldx"]
+[ext_resource type="PackedScene" uid="uid://b66ddft02sk8s" path="res://Entities/NPCs/mago.tscn" id="8_fkkrn"]
+[ext_resource type="PackedScene" uid="uid://dly5friiawrgf" path="res://Entities/NPCs/mercader.tscn" id="8_o1l7e"]
+[ext_resource type="PackedScene" uid="uid://dm7waf1f7blb4" path="res://Entities/NPCs/npc.tscn" id="8_vh5ls"]
+[ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="8_vif71"]
+[ext_resource type="PackedScene" uid="uid://77dejf0lfjpk" path="res://Entities/NPCs/paladin.tscn" id="9_kfjds"]
+[ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Torch.png" id="9_ywfac"]
+[ext_resource type="PackedScene" uid="uid://b60447dvmsxeh" path="res://Entities/NPCs/magoJoven.tscn" id="11_dkkva"]
+[ext_resource type="PackedScene" uid="uid://hnlsp22hx8yy" path="res://Entities/NPCs/nigromante.tscn" id="12_o1l7e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27kq1"]
 bg_color = Color(0.05882353, 0.09019608, 0.16470589, 1)
@@ -75,9 +85,61 @@ shadow_size = 3
 shadow_color = Color(0.44162306, 0.44162303, 0.44162297, 0.85882354)
 shadow_offset = Vector2(6, 3)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdi0d"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17wma"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36fx1"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvlju"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v517j"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d2mi"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bosb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdi0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17wma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36fx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvlju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v517j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d2mi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Presentacion" type="Control" unique_id=1286153324]
 layout_mode = 3
 anchors_preset = 0
+offset_top = -45.0
+offset_bottom = -45.0
 script = ExtResource("1_jwdva")
 escenas_documentos = null
 
@@ -178,10 +240,14 @@ label_settings = SubResource("LabelSettings_1vno4")
 [node name="Personajes" type="Node2D" parent="." unique_id=950768903]
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("5_ilnbs")]
-position = Vector2(447, 404)
+position = Vector2(387, 341.00003)
 
 [node name="NPC" parent="Personajes" unique_id=742967132 instance=ExtResource("7_1fek8")]
-position = Vector2(625, 440)
+position = Vector2(1204, 386)
+
+[node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("7_bosb2")]
+personajes_visuales = Array[PackedScene]([ExtResource("8_fkkrn"), ExtResource("11_dkkva"), ExtResource("8_o1l7e"), ExtResource("9_kfjds"), ExtResource("12_o1l7e")])
+escena_npc = ExtResource("8_vh5ls")
 
 [node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
 
@@ -192,6 +258,69 @@ position = Vector2(275, 235)
 
 [node name="Punto2" type="Marker2D" parent="Puntos" unique_id=178473864]
 position = Vector2(627, 238)
+
+[node name="Torch" type="AnimatedSprite2D" parent="." unique_id=1178871327]
+position = Vector2(709, 256)
+scale = Vector2(3.5720148, 3.687706)
+sprite_frames = SubResource("SpriteFrames_bosb2")
+autoplay = "default"
+
+[node name="Wall4" type="Sprite2D" parent="." unique_id=1169578887]
+position = Vector2(722, 385.99997)
+scale = Vector2(4.188469, 3.7821314)
+texture = ExtResource("7_o0ldx")
+hframes = 26
+vframes = 8
+frame = 77
+
+[node name="Pasto" type="Sprite2D" parent="." unique_id=45139868]
+position = Vector2(44, 257)
+scale = Vector2(3.0208337, 1.3122786)
+
+[node name="TallGrass4" type="Sprite2D" parent="Pasto" unique_id=420017727]
+position = Vector2(259.31967, 154.92734)
+scale = Vector2(0.43260494, 1.0402395)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass2" type="Sprite2D" parent="Pasto" unique_id=735597737]
+position = Vector2(291.24643, 154.1401)
+scale = Vector2(0.4535004, 1.1017208)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass8" type="Sprite2D" parent="Pasto" unique_id=2116551306]
+position = Vector2(350.74643, 156.1401)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass10" type="Sprite2D" parent="Pasto" unique_id=1817532016]
+position = Vector2(366.7861, 150.8826)
+scale = Vector2(0.6057028, 1.4434731)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass9" type="Sprite2D" parent="Pasto" unique_id=1228628786]
+position = Vector2(323.75168, 155.45483)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass5" type="Sprite2D" parent="Pasto" unique_id=2063886087]
+position = Vector2(24.36366, 157.21342)
+scale = Vector2(0.78650594, 0.904909)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass7" type="Sprite2D" parent="Pasto" unique_id=528906378]
+position = Vector2(-24.629435, 152.64122)
+scale = Vector2(0.7765418, 1.1630355)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass6" type="Sprite2D" parent="Pasto" unique_id=679159205]
+position = Vector2(189.65146, 160.02696)
+scale = Vector2(0.4200383, 0.66861904)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass3" type="Sprite2D" parent="Pasto" unique_id=1784658073]
+position = Vector2(223.25002, 151.41006)
+scale = Vector2(0.42335156, 1.2487328)
+texture = ExtResource("8_vif71")
 
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Personajes/Inspector" method="_on_aceptar_button_pressed"]

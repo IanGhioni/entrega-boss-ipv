@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://4mc5gcpecfsn"]
+
+[ext_resource type="Script" uid="uid://bhynxe5h3y5fh" path="res://scenes/animation_player.gd" id="1_vr8km"]
+[ext_resource type="Texture2D" uid="uid://dn8sr0e0a7tjx" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniSpearMan.png" id="3_8dkua"]
+[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Decor.png" id="4_8dkua"]
+[ext_resource type="Texture2D" uid="uid://dn71hf07pa6bs" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniSwordMan.png" id="4_vr8km"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vh5ls"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtwn5"]
+atlas = ExtResource("3_8dkua")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uedj5"]
+atlas = ExtResource("3_8dkua")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blj0n"]
+atlas = ExtResource("3_8dkua")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2ell"]
+atlas = ExtResource("3_8dkua")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3r4p"]
+atlas = ExtResource("3_8dkua")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r110g"]
+atlas = ExtResource("3_8dkua")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ol3ou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtwn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uedj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blj0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ell")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3r4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r110g")
+}],
+"loop": 1,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnidr"]
+atlas = ExtResource("4_vr8km")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km34j"]
+atlas = ExtResource("4_vr8km")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yumx"]
+atlas = ExtResource("4_vr8km")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blh8r"]
+atlas = ExtResource("4_vr8km")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glufm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnidr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km34j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yumx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blh8r")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="FilaAnimationController" type="Node2D" unique_id=1166857726]
+script = ExtResource("1_vr8km")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=135490105]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_vh5ls")
+autoplay = &"walk_cycle"
+
+[node name="InspectorSprite" type="AnimatedSprite2D" parent="." unique_id=1406044214]
+position = Vector2(299, 339)
+scale = Vector2(7.4401035, 7.4401035)
+sprite_frames = SubResource("SpriteFrames_ol3ou")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.25296572
+
+[node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=1452189736]
+position = Vector2(386, 339)
+scale = Vector2(7.571346, 7.610898)
+sprite_frames = SubResource("SpriteFrames_glufm")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Table" type="Sprite2D" parent="." unique_id=1654680504]
+position = Vector2(360.00003, 429.00003)
+scale = Vector2(3.694605, 3.204192)
+texture = ExtResource("4_8dkua")
+hframes = 8
+vframes = 17
+frame = 21
+
+[node name="InicioFila" type="Marker2D" parent="." unique_id=321879381]
+position = Vector2(784, 378)
+
+[node name="FrenteMesa" type="Marker2D" parent="." unique_id=2145662669]
+position = Vector2(511, 378)
+
+[node name="Entrada" type="Marker2D" parent="." unique_id=1175833735]
+position = Vector2(-100, 378)
+
+[node name="Salida" type="Marker2D" parent="." unique_id=1118765187]
+position = Vector2(1312.665, 378)

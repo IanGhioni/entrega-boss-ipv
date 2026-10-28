@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dly5friiawrgf"]
+
+[ext_resource type="Texture2D" uid="uid://duga80ueo02vc" path="res://assets/ExternalAssets/MinifolksVillagers2/Original/Without Outline/MiniMerchant.png" id="1_3n3jm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g4lm"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwkki"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3b6x"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehv27"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_andm6"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esesf"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkp20"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7m2l"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrom3"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x222j"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffn6f"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdf0v"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihsv8"]
+atlas = ExtResource("1_3n3jm")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47iwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g4lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwkki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3b6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehv27")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_andm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esesf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkp20")
+}],
+"loop": 2,
+"name": &"talk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7m2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrom3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x222j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffn6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdf0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihsv8")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[node name="Mercader" type="AnimatedSprite2D" unique_id=1967655165]
+scale = Vector2(6.83, 6.83)
+sprite_frames = SubResource("SpriteFrames_47iwa")
+animation = &"walk"
+flip_h = true
