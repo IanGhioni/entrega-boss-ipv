@@ -1,7 +1,7 @@
 extends Control
 
 @export var escenas_documentos: Dictionary = {
-	"comun": preload("res://documentos/documentacion.tscn"),
+	"comun": preload("res://Entities/documentos/documentacion.tscn"),
 }
 
 @onready var mesa_documentos: Node2D = $MesaDocumentos

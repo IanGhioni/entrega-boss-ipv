@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://88fomgi6pgjk"]
 
-[ext_resource type="Script" uid="uid://b7bncuykxlo07" path="res://documentos/documentacion.gd" id="1_771ts"]
+[ext_resource type="Script" uid="uid://b7bncuykxlo07" path="res://Entities/documentos/documentacion.gd" id="1_771ts"]
 [ext_resource type="Texture2D" uid="uid://h80xqj5ua8lg" path="res://assets/documentacion/documentación-plantilla.png" id="2_fg35m"]
 [ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://assets/fonts/Brixton-Outline.ttf" id="3_e1ovm"]
 [ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="4_te1nm"]

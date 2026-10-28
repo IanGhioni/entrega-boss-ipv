@@ -1,26 +1,27 @@
-[gd_scene format=4 uid="uid://wtw85h8ymjxd"]
+[gd_scene format=4 uid="uid://mvors4jv2j0d"]
 
-[ext_resource type="Texture2D" uid="uid://843ojpcamf6n" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_n0gga"]
-[ext_resource type="Texture2D" uid="uid://cuiejjwmoi27y" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/sun.png" id="2_vhax3"]
-[ext_resource type="Texture2D" uid="uid://1t21gbembbip" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="3_tbwwl"]
-[ext_resource type="Texture2D" uid="uid://caxivny1ubcoc" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/Background Castle .png" id="4_axwfq"]
-[ext_resource type="Texture2D" uid="uid://b0jujv4qrrcq4" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="5_cw7fk"]
-[ext_resource type="Texture2D" uid="uid://cdx1ihjrosxrb" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="6_nvd4n"]
-[ext_resource type="Texture2D" uid="uid://c4eil1gyhgwhl" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="7_71rs5"]
-[ext_resource type="Texture2D" uid="uid://bfccbai125gjc" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/cloud3.png" id="8_hhlgo"]
-[ext_resource type="Texture2D" uid="uid://c6rewll1nxrms" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/cloud5.png" id="9_fivmk"]
-[ext_resource type="Texture2D" uid="uid://cvdg2fcg40lcr" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/cloud4.png" id="10_t3q0d"]
-[ext_resource type="Texture2D" uid="uid://iasg783c1p1w" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/birds1.png" id="11_nh0tw"]
-[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Decor.png" id="12_cxicb"]
-[ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Torch.png" id="13_3fna7"]
-[ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="14_fepix"]
-[ext_resource type="Texture2D" uid="uid://bnkcklk3jo4xv" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Alchemy Decor.png" id="15_fexb0"]
-[ext_resource type="Texture2D" uid="uid://cdij8x15lh20i" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Large Tent.png" id="16_5lmet"]
-[ext_resource type="Texture2D" uid="uid://dkfnoir1fi0cu" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Small Tent.png" id="17_txnnn"]
-[ext_resource type="Texture2D" uid="uid://dnjl6kgw44s81" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Flowering Tree.png" id="18_1dq52"]
-[ext_resource type="Texture2D" uid="uid://ct0yfmoupshc5" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniHorseMan.png" id="19_7oxbp"]
-[ext_resource type="Texture2D" uid="uid://dw7nvrlycic4v" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/House Tiles.png" id="20_ie6b1"]
-[ext_resource type="Texture2D" uid="uid://54vc2gtmdwtd" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="21_jnvah"]
+[ext_resource type="Texture2D" uid="uid://843ojpcamf6n" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_jqsg2"]
+[ext_resource type="Texture2D" uid="uid://dw7nvrlycic4v" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/House Tiles.png" id="1_l3thc"]
+[ext_resource type="Texture2D" uid="uid://1t21gbembbip" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="2_8xc84"]
+[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Decor.png" id="2_dpw2a"]
+[ext_resource type="Texture2D" uid="uid://bnkcklk3jo4xv" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Alchemy Decor.png" id="3_jqsg2"]
+[ext_resource type="Texture2D" uid="uid://caxivny1ubcoc" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/Background Castle .png" id="3_mxry3"]
+[ext_resource type="Texture2D" uid="uid://b0jujv4qrrcq4" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="3_ynkqc"]
+[ext_resource type="Texture2D" uid="uid://cdx1ihjrosxrb" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="4_ahmgh"]
+[ext_resource type="Texture2D" uid="uid://c4eil1gyhgwhl" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="5_nsm5t"]
+[ext_resource type="Texture2D" uid="uid://cuiejjwmoi27y" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/sun.png" id="9_ui31t"]
+[ext_resource type="Texture2D" uid="uid://c6rewll1nxrms" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/cloud5.png" id="10_lslbr"]
+[ext_resource type="Texture2D" uid="uid://bfccbai125gjc" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/cloud3.png" id="11_3l5rj"]
+[ext_resource type="Texture2D" uid="uid://iasg783c1p1w" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/birds1.png" id="11_ib6ks"]
+[ext_resource type="Script" uid="uid://5gl5uqjpobvp" path="res://animation_player.gd" id="11_pi7vv"]
+[ext_resource type="Texture2D" uid="uid://cvdg2fcg40lcr" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/cloud4.png" id="12_chgmw"]
+[ext_resource type="Texture2D" uid="uid://cdij8x15lh20i" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Large Tent.png" id="12_fdanu"]
+[ext_resource type="Texture2D" uid="uid://54vc2gtmdwtd" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="14_chgmw"]
+[ext_resource type="Texture2D" uid="uid://dnjl6kgw44s81" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Flowering Tree.png" id="14_oifh0"]
+[ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="14_qkwuj"]
+[ext_resource type="Texture2D" uid="uid://dkfnoir1fi0cu" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Small Tent.png" id="15_cjcy6"]
+[ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Torch.png" id="17_fdanu"]
+[ext_resource type="Texture2D" uid="uid://ct0yfmoupshc5" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniHorseMan.png" id="20_mpl36"]
 
 [sub_resource type="Animation" id="Animation_mpl36"]
 length = 0.001
@@ -138,27 +139,27 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdi0d"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17wma"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36fx1"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gvlju"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v517j"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5d2mi"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(160, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_veb20"]
@@ -188,27 +189,27 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oifh0"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3qut"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ib6ks"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pi7vv"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(96, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mpl36"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(128, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hu88w"]
-atlas = ExtResource("13_3fna7")
+atlas = ExtResource("17_fdanu")
 region = Rect2(160, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vno4"]
@@ -238,47 +239,47 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77lsm"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p8jrk"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvoqa"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6tpg"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytehg"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwna6"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4hiv"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l22we"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kk6e"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(0, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mv4v0"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(32, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8aqjf"]
-atlas = ExtResource("19_7oxbp")
+atlas = ExtResource("20_mpl36")
 region = Rect2(64, 128, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_idfvx"]
@@ -323,7 +324,7 @@ animations = [{
 }]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpw2a"]
-texture = ExtResource("20_ie6b1")
+texture = ExtResource("1_l3thc")
 6:0/0 = 0
 7:0/0 = 0
 20:0/0 = 0
@@ -580,7 +581,7 @@ texture = ExtResource("20_ie6b1")
 25:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqsg2"]
-texture = ExtResource("21_jnvah")
+texture = ExtResource("14_chgmw")
 0:0/0 = 0
 0:0/0/terrain_set = 1
 0:0/0/terrain = 0
@@ -1500,73 +1501,74 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 position = Vector2(211.66667, 123.49999)
 scale = Vector2(0.5390625, 0.756262)
-texture = ExtResource("1_n0gga")
+texture = ExtResource("1_jqsg2")
 metadata/_edit_lock_ = true
 
 [node name="Sun" type="Sprite2D" parent="Fondo" unique_id=1222808046]
 position = Vector2(57.666687, 52.666668)
 scale = Vector2(0.495, 0.495)
-texture = ExtResource("2_vhax3")
+texture = ExtResource("9_ui31t")
 
 [node name="Mountains" type="Sprite2D" parent="Fondo" unique_id=1298288425]
 position = Vector2(211.66667, 123.49999)
 scale = Vector2(0.5390625, 0.756262)
-texture = ExtResource("3_tbwwl")
+texture = ExtResource("2_8xc84")
 metadata/_edit_lock_ = true
 
 [node name="Castillo" type="Sprite2D" parent="Fondo" unique_id=1911301687]
 position = Vector2(136.33334, 124.000015)
 scale = Vector2(0.5169271, 0.6907513)
-texture = ExtResource("4_axwfq")
+texture = ExtResource("3_mxry3")
 metadata/_edit_lock_ = true
 
 [node name="TreeBG" type="Sprite2D" parent="Fondo" unique_id=654793510]
 position = Vector2(214.16667, 137.16666)
 scale = Vector2(0.5439453, 0.6772639)
-texture = ExtResource("5_cw7fk")
+texture = ExtResource("3_ynkqc")
 metadata/_edit_lock_ = true
 
 [node name="CloseTreeBG" type="Sprite2D" parent="Fondo" unique_id=1397501875]
 position = Vector2(200.33334, 153.5)
 scale = Vector2(0.5169271, 0.5828516)
-texture = ExtResource("6_nvd4n")
+texture = ExtResource("4_ahmgh")
 metadata/_edit_lock_ = true
 
 [node name="CloserTreeBG" type="Sprite2D" parent="Fondo" unique_id=1851044539]
 position = Vector2(200.33334, 134.83331)
 scale = Vector2(0.5169271, 0.69075143)
-texture = ExtResource("7_71rs5")
+texture = ExtResource("5_nsm5t")
 metadata/_edit_lock_ = true
 
 [node name="Clouds" type="Node2D" parent="." unique_id=2127478087]
 
 [node name="Cloud2" type="Sprite2D" parent="Clouds" unique_id=712333468]
 position = Vector2(101.333336, 43.666664)
-texture = ExtResource("8_hhlgo")
+texture = ExtResource("11_3l5rj")
 
 [node name="Cloud1" type="Sprite2D" parent="Clouds" unique_id=396292085]
 position = Vector2(349, 22.666668)
-texture = ExtResource("9_fivmk")
+texture = ExtResource("10_lslbr")
 
 [node name="Cloud3" type="Sprite2D" parent="Clouds" unique_id=439743353]
 position = Vector2(220, 34.666676)
-texture = ExtResource("10_t3q0d")
+texture = ExtResource("12_chgmw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1073218242]
 libraries/ = SubResource("AnimationLibrary_pi7vv")
 autoplay = &"birds-flying"
+script = ExtResource("11_pi7vv")
 
 [node name="Pajaros" type="Sprite2D" parent="." unique_id=322339063]
 position = Vector2(-13.333336, 28.333332)
 scale = Vector2(1.1000001, 1)
-texture = ExtResource("11_nh0tw")
+texture = ExtResource("11_ib6ks")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1453151384]
 
 [node name="Wall" type="Sprite2D" parent="Walls" unique_id=1510213366]
 position = Vector2(13.833339, 130.83334)
 scale = Vector2(1.5084746, 1.1029413)
-texture = ExtResource("12_cxicb")
+texture = ExtResource("2_dpw2a")
 hframes = 7
 vframes = 8
 frame = 20
@@ -1580,7 +1582,7 @@ frame_progress = 0.5794949
 [node name="Wall2" type="Sprite2D" parent="Walls" unique_id=2087427220]
 position = Vector2(76.33333, 131.33334)
 scale = Vector2(1.5084746, 1.1029413)
-texture = ExtResource("12_cxicb")
+texture = ExtResource("2_dpw2a")
 hframes = 7
 vframes = 8
 frame = 20
@@ -1594,7 +1596,7 @@ frame_progress = 0.5794949
 [node name="Wall3" type="Sprite2D" parent="Walls" unique_id=1162205589]
 position = Vector2(177, 136.99998)
 scale = Vector2(1.5084746, 1.1029413)
-texture = ExtResource("12_cxicb")
+texture = ExtResource("2_dpw2a")
 hframes = 7
 vframes = 8
 frame = 20
@@ -1602,25 +1604,25 @@ frame = 20
 [node name="TallGrass3" type="Sprite2D" parent="Walls" unique_id=388107836]
 position = Vector2(386, 150)
 scale = Vector2(0.8680556, 1.4739584)
-texture = ExtResource("14_fepix")
+texture = ExtResource("14_qkwuj")
 
 [node name="AlchemyDecor" type="Sprite2D" parent="Walls" unique_id=345581514]
 position = Vector2(176.5, 116.749985)
 scale = Vector2(0.74479175, 0.7539691)
-texture = ExtResource("15_fexb0")
+texture = ExtResource("3_jqsg2")
 hframes = 3
 vframes = 3
 
 [node name="AlchemyDecor2" type="Sprite2D" parent="Walls" unique_id=581020719]
 position = Vector2(11.000002, 112.5)
 scale = Vector2(0.7604167, 0.873016)
-texture = ExtResource("15_fexb0")
+texture = ExtResource("3_jqsg2")
 hframes = 3
 vframes = 3
 
 [node name="LargeTent" type="Sprite2D" parent="." unique_id=459335499]
 position = Vector2(108.666664, 96.00001)
-texture = ExtResource("16_5lmet")
+texture = ExtResource("12_fdanu")
 
 [node name="Torch1" type="AnimatedSprite2D" parent="LargeTent" unique_id=1901990084]
 position = Vector2(60, -3.3333359)
@@ -1638,12 +1640,12 @@ flip_h = true
 [node name="SmallTent" type="Sprite2D" parent="." unique_id=1484989862]
 position = Vector2(24.666666, 129.33334)
 scale = Vector2(0.90625, 0.94791675)
-texture = ExtResource("17_txnnn")
+texture = ExtResource("15_cjcy6")
 
 [node name="Barrels" type="Sprite2D" parent="." unique_id=2022263574]
 position = Vector2(56.666668, 143.66667)
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("12_cxicb")
+texture = ExtResource("2_dpw2a")
 hframes = 13
 vframes = 17
 frame = 3
@@ -1651,7 +1653,7 @@ frame = 3
 [node name="FloweringTree" type="Sprite2D" parent="." unique_id=633733371]
 position = Vector2(342, 104.333336)
 scale = Vector2(0.91840315, 1.0252976)
-texture = ExtResource("18_1dq52")
+texture = ExtResource("14_oifh0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FloweringTree" unique_id=234224414]
 position = Vector2(-162.964, 13.654556)
