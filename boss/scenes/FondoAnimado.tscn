@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://br3syiwuo7nrp"]
+
+[ext_resource type="PackedScene" uid="uid://wtw85h8ymjxd" path="res://scenes/Background.tscn" id="1_6p75r"]
+[ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Torch.png" id="2_pc8n3"]
+[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Decor.png" id="3_u48nx"]
+[ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="4_6m4p3"]
+[ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="5_pc8n3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdi0d"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17wma"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36fx1"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvlju"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v517j"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d2mi"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pc8n3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdi0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17wma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36fx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvlju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v517j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d2mi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="FondoAnimado" type="Node2D" unique_id=245480886]
+
+[node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_6p75r")]
+
+[node name="Chair3" type="Sprite2D" parent="." unique_id=1788619101]
+position = Vector2(371, 411)
+scale = Vector2(4.400001, 4.400001)
+texture = ExtResource("3_u48nx")
+hframes = 13
+vframes = 17
+frame = 9
+
+[node name="Chair2" type="Sprite2D" parent="." unique_id=708288244]
+position = Vector2(288, 410)
+scale = Vector2(4.400001, 4.400001)
+texture = ExtResource("3_u48nx")
+hframes = 13
+vframes = 17
+frame = 9
+
+[node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("5_pc8n3")]
+modo_menu = true
+
+[node name="Torch" type="AnimatedSprite2D" parent="." unique_id=2040803118]
+position = Vector2(709, 256)
+scale = Vector2(3.5720148, 3.687706)
+sprite_frames = SubResource("SpriteFrames_pc8n3")
+autoplay = "default"
+
+[node name="Wall4" type="Sprite2D" parent="." unique_id=1404384296]
+position = Vector2(722, 385.99997)
+scale = Vector2(4.188469, 3.7821314)
+texture = ExtResource("3_u48nx")
+hframes = 26
+vframes = 8
+frame = 77
+
+[node name="Pasto" type="Sprite2D" parent="." unique_id=788589543]
+position = Vector2(44, 257)
+scale = Vector2(3.0208337, 1.3122786)
+
+[node name="TallGrass4" type="Sprite2D" parent="Pasto" unique_id=9328672]
+position = Vector2(259.31967, 154.92734)
+scale = Vector2(0.43260494, 1.0402395)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass2" type="Sprite2D" parent="Pasto" unique_id=627842133]
+position = Vector2(291.24643, 154.1401)
+scale = Vector2(0.4535004, 1.1017208)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass8" type="Sprite2D" parent="Pasto" unique_id=1864514072]
+position = Vector2(350.74643, 156.1401)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass10" type="Sprite2D" parent="Pasto" unique_id=459542653]
+position = Vector2(366.7861, 150.8826)
+scale = Vector2(0.6057028, 1.4434731)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass9" type="Sprite2D" parent="Pasto" unique_id=1362528914]
+position = Vector2(323.75168, 155.45483)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass5" type="Sprite2D" parent="Pasto" unique_id=123986191]
+position = Vector2(24.36366, 157.21342)
+scale = Vector2(0.78650594, 0.904909)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass7" type="Sprite2D" parent="Pasto" unique_id=806414918]
+position = Vector2(-24.629435, 152.64122)
+scale = Vector2(0.7765418, 1.1630355)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass6" type="Sprite2D" parent="Pasto" unique_id=481612590]
+position = Vector2(189.65146, 160.02696)
+scale = Vector2(0.4200383, 0.66861904)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass3" type="Sprite2D" parent="Pasto" unique_id=1052530919]
+position = Vector2(223.25002, 151.41006)
+scale = Vector2(0.42335156, 1.2487328)
+texture = ExtResource("4_6m4p3")

@@ -112,7 +112,7 @@ scale = Vector2(7.4401035, 7.4401035)
 sprite_frames = SubResource("SpriteFrames_ol3ou")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.25296572
+frame_progress = 0.6301722
 
 [node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=1452189736]
 position = Vector2(386, 339)
@@ -120,6 +120,7 @@ scale = Vector2(7.571346, 7.610898)
 sprite_frames = SubResource("SpriteFrames_glufm")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.39590594
 
 [node name="Table" type="Sprite2D" parent="." unique_id=1654680504]
 position = Vector2(360.00003, 429.00003)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgo7bjcxfngo0"]
 
-[ext_resource type="Script" uid="uid://dkc8f7f0d6b5" path="res://documentos/presentacion.gd" id="1_jwdva"]
-[ext_resource type="PackedScene" uid="uid://wtw85h8ymjxd" path="res://Background.tscn" id="2_gy0o1"]
+[ext_resource type="Script" uid="uid://dkc8f7f0d6b5" path="res://Entities/documentos/presentacion.gd" id="1_jwdva"]
+[ext_resource type="PackedScene" uid="uid://wtw85h8ymjxd" path="res://scenes/Background.tscn" id="2_gy0o1"]
 [ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="3_8h18v"]
 [ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="4_dwntm"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="5_ilnbs"]
@@ -217,6 +217,7 @@ disabled = true
 text = "Sacar de la fila"
 
 [node name="ContadorContainer" type="PanelContainer" parent="." unique_id=1782599149]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
