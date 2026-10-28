@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsy05b66kqs5u"]
 
-[ext_resource type="Texture2D" uid="uid://dtjbr30f3n2ii" path="res://assets/ExternalAssets/MinifolksVillagers2/Original/Without Outline/MiniSuspiciousMerchant.png" id="1_5oln2"]
+[ext_resource type="Texture2D" uid="uid://dtjbr30f3n2ii" path="res://assets/Personajes/MinifolksVillagers2/Original/Without Outline/MiniSuspiciousMerchant.png" id="1_5oln2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vulm"]
 atlas = ExtResource("1_5oln2")

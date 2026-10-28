@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hnlsp22hx8yy"]
 
-[ext_resource type="Texture2D" uid="uid://cejwv10dp36yp" path="res://assets/ExternalAssets/MinifolksVillagers2/Original/Without Outline/MiniGraveDigger.png" id="1_fbyti"]
+[ext_resource type="Texture2D" uid="uid://cejwv10dp36yp" path="res://assets/Personajes/MinifolksVillagers2/Original/Without Outline/MiniGraveDigger.png" id="1_fbyti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmo8b"]
 atlas = ExtResource("1_fbyti")

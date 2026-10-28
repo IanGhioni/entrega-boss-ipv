@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://doioip0au2nhl" path="res://scenes/menu.gd" id="1_vjb58"]
 [ext_resource type="PackedScene" uid="uid://br3syiwuo7nrp" path="res://scenes/FondoAnimado.tscn" id="2_70i5f"]
-[ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://assets/themes/menu_theme.tres" id="3_con2f"]
 [ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="4_i6lef"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="7_i6lef"]
-[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Panel/panel-013.png" id="8_13sgg"]
-[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-013.png" id="8_70i5f"]
-[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-014.png" id="9_70i5f"]
+[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="8_13sgg"]
+[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="8_70i5f"]
+[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-014.png" id="9_70i5f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oucw"]
 
@@ -90,7 +89,6 @@ offset_right = 433.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_con2f")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8oucw")
 
 [node name="ContainerButtons" type="VBoxContainer" parent="PanelContainer" unique_id=532826490]

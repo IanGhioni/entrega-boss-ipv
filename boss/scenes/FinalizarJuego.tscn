@@ -4,11 +4,10 @@
 [ext_resource type="Shader" uid="uid://bqe41hq1kq7va" path="res://assets/shaders/menu.gdshader" id="2_12s3c"]
 [ext_resource type="Texture2D" uid="uid://b2k8lbusgcok7" path="res://assets/Captura de pantalla 2026-10-27 164053.png" id="3_3adj8"]
 [ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="4_sp00f"]
-[ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://assets/themes/menu_theme.tres" id="5_xql2c"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="6_xr1xt"]
-[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-013.png" id="7_85ak3"]
-[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-014.png" id="8_ci7af"]
-[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Panel/panel-013.png" id="9_sadjd"]
+[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="7_85ak3"]
+[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-014.png" id="8_ci7af"]
+[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="9_sadjd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pmkph"]
 shader = ExtResource("2_12s3c")
@@ -112,7 +111,6 @@ offset_right = 433.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("5_xql2c")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rb6vr")
 
 [node name="ContainerButtons" type="VBoxContainer" parent="PanelContainer2" unique_id=1750245893]

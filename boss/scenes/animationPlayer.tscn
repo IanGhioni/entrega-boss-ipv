@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://4mc5gcpecfsn"]
 
 [ext_resource type="Script" uid="uid://bhynxe5h3y5fh" path="res://scenes/animation_player.gd" id="1_vr8km"]
-[ext_resource type="Texture2D" uid="uid://dn8sr0e0a7tjx" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniSpearMan.png" id="3_8dkua"]
-[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Decor.png" id="4_8dkua"]
-[ext_resource type="Texture2D" uid="uid://dn71hf07pa6bs" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniSwordMan.png" id="4_vr8km"]
+[ext_resource type="Texture2D" uid="uid://dn8sr0e0a7tjx" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniSpearMan.png" id="3_8dkua"]
+[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="4_8dkua"]
+[ext_resource type="Texture2D" uid="uid://dn71hf07pa6bs" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniSwordMan.png" id="4_vr8km"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vh5ls"]
 
