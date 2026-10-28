@@ -2,6 +2,9 @@ extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
 
+var fila_animation: Node
+
+
 ## The dialogue resource
 @export var dialogue_resource: DialogueResource
 
@@ -133,6 +136,8 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
+	
+	actualizar_animacion_hablante()
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
@@ -213,6 +218,19 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
+	
+
+func actualizar_animacion_hablante() -> void:
+	fila_animation.dejar_de_hablar_inspector()
+	fila_animation.dejar_de_hablar_npc_actual()
+	
+	match dialogue_line.character.to_lower():
+		"inspector":
+			fila_animation.hablar_inspector()
+
+		"alto elfo":
+			fila_animation.hablar_npc_actual()
+
 
 
 #endregion

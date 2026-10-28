@@ -5,7 +5,7 @@ var is_dialogue_active:bool = false;
 var npcActual;
 var cant_aciertos: int = 0;
 var cant_rondas: int = 0;
-var max_rondas: int = 15;
+var max_rondas: int = 5;
 
 const Ballon = preload("res://dialogues/balloon.tscn");
 
@@ -19,6 +19,7 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 @onready var fila_animation: Node2D = $"../../FilaAnimationController"
 
 func _ready() -> void:
+	
 	DialogueManager.dialogue_ended.connect(_on_pressed_decline);
 	fila_animation.tamanio = max_rondas;
 
@@ -46,29 +47,36 @@ func _on_ask_doc_button_pressed() -> void:
 	npcActual = GeneradorNPC.generar()
 	print("Motivo: ", npcActual.motivos)
 	
-	var Ballon: Node = Ballon.instantiate();
-	get_tree().current_scene.add_child(Ballon);
-	Ballon.start(preguntar_doc, "start");
+	var Balloon = crear_balloon()
+	Balloon.start(preguntar_doc, "start");
+	await DialogueManager.dialogue_ended
+	fila_animation.dejar_de_hablar_inspector()
+	fila_animation.dejar_de_hablar_npc_actual()
 
 func _on_aceptar_button_pressed() -> void:
 	_accion_de_fila()
 
-	var dialogo_terminado = DialogueManager.dialogue_ended
+	var balloon = crear_balloon()
+	balloon.start(preguntar_doc, "aceptar")
 
-	DialogueManager.show_dialogue_balloon(preguntar_doc,"aceptar")
-
-	await dialogo_terminado
+	await DialogueManager.dialogue_ended
+	
+	fila_animation.dejar_de_hablar_inspector()
+	fila_animation.dejar_de_hablar_npc_actual()
 	actualizarContador(true)
 	fila_animation.dejar_pasar()
 
 func _on_rechazar_button_pressed() -> void:
-	_accion_de_fila();
-	var dialogo_terminado = DialogueManager.dialogue_ended
+	_accion_de_fila()
 
-	DialogueManager.show_dialogue_balloon(preguntar_doc,"rechazar")
+	var balloon = crear_balloon()
+	balloon.start(preguntar_doc, "rechazar")
 
-	await dialogo_terminado
-	actualizarContador(false);
+	await DialogueManager.dialogue_ended
+	
+	fila_animation.dejar_de_hablar_inspector()
+	fila_animation.dejar_de_hablar_npc_actual()
+	actualizarContador(false)
 	fila_animation.no_dejar_pasar()
 
 
@@ -89,3 +97,9 @@ func actualizarContador(botonApretado) -> void:
 	else:
 		cant_aciertos -= 1
 	contador.text = str(cant_aciertos)
+
+func crear_balloon() -> Node:
+	var Balloon: Node = Ballon.instantiate();
+	Balloon.fila_animation = fila_animation
+	get_tree().current_scene.add_child(Balloon);
+	return Balloon

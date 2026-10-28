@@ -1,10 +1,10 @@
-
 extends Node2D
 
 @export var personajes_visuales: Array[PackedScene]
 @export var escena_npc: PackedScene
 @export var tamanio: int = 5
 
+@onready var inspector: AnimatedSprite2D = $InspectorSprite
 @onready var posicion_inicial: Marker2D = $InicioFila
 @onready var frente_mesa: Marker2D = $FrenteMesa
 @onready var entrada: Marker2D = $Entrada
@@ -80,10 +80,20 @@ func mover_fila() -> void:
 
 	procesando_fila = false
 
-	
-	
+func hablar_inspector() -> void:
+	inspector.play("talk")
+
+func dejar_de_hablar_inspector() -> void:
+	inspector.play("idle")
+
 func dejar_pasar() -> void:
 	npc_actual.caminar_hacia(entrada.global_position, 5.0)
 	
 func no_dejar_pasar() -> void:
 	npc_actual.caminar_hacia(salida.global_position, 5.0)
+	
+func hablar_npc_actual() -> void:
+	npc_actual.hablar()
+
+func dejar_de_hablar_npc_actual() -> void:
+	npc_actual.dejar_de_hablar()

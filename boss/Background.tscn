@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="14_qkwuj"]
 [ext_resource type="Texture2D" uid="uid://dkfnoir1fi0cu" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Small Tent.png" id="15_cjcy6"]
 [ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Torch.png" id="17_fdanu"]
+[ext_resource type="Texture2D" uid="uid://ct0yfmoupshc5" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniHorseMan.png" id="20_mpl36"]
 
 [sub_resource type="Animation" id="Animation_mpl36"]
 length = 0.001
@@ -235,6 +236,91 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77lsm"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8jrk"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvoqa"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6tpg"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytehg"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwna6"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4hiv"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l22we"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kk6e"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv4v0"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aqjf"]
+atlas = ExtResource("20_mpl36")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_idfvx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77lsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8jrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvoqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6tpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytehg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwna6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4hiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l22we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kk6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv4v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aqjf")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 6.0
 }]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpw2a"]
@@ -1568,6 +1654,13 @@ frame = 3
 position = Vector2(342, 104.333336)
 scale = Vector2(0.91840315, 1.0252976)
 texture = ExtResource("14_oifh0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FloweringTree" unique_id=234224414]
+position = Vector2(-162.964, 13.654556)
+scale = Vector2(2.929108, 2.77978)
+sprite_frames = SubResource("SpriteFrames_idfvx")
+autoplay = "default"
+frame_progress = 0.3108299
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1174872833]
 texture_filter = 1

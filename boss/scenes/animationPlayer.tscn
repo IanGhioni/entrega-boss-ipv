@@ -59,7 +59,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"talk",
-"speed": 2.0
+"speed": 5.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnidr"]
@@ -108,14 +108,15 @@ autoplay = &"walk_cycle"
 
 [node name="InspectorSprite" type="AnimatedSprite2D" parent="." unique_id=1406044214]
 position = Vector2(299, 339)
-scale = Vector2(8, 8)
+scale = Vector2(7.4401035, 7.4401035)
 sprite_frames = SubResource("SpriteFrames_ol3ou")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.9821857
 
 [node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=1452189736]
 position = Vector2(386, 339)
-scale = Vector2(8, 8)
+scale = Vector2(7.571346, 7.610898)
 sprite_frames = SubResource("SpriteFrames_glufm")
 animation = &"idle"
 autoplay = "idle"
