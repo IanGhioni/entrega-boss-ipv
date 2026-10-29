@@ -25,6 +25,7 @@ var fila_animation: Node
 
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+@onready var retrato: TextureRect = %Retrato
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -137,6 +138,10 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue");
 	
+	character_label.visible = not dialogue_line.character.is_empty()
+	character_label.text = tr(dialogue_line.character, "dialogue");
+
+	actualizar_retrato()
 	actualizar_animacion_hablante()
 
 	dialogue_label.hide()
@@ -231,6 +236,11 @@ func actualizar_animacion_hablante() -> void:
 		"npc":
 			fila_animation.hablar_npc_actual()
 
+func actualizar_retrato() -> void:
+	var habla_npc := dialogue_line.character == GameManager.getNombreNpcActual()
+	retrato.visible = habla_npc
+	if habla_npc:
+		retrato.texture = GameManager.getRetrato(GameManager.retratoNpcActual)
 
 
 #endregion

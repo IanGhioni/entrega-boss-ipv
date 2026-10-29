@@ -47,10 +47,12 @@ func _on_ask_doc_button_pressed() -> void:
 	# Generamos un nuevo NPC
 	npcActual = GeneradorNPC.generar()
 	print("Motivo: ", npcActual.motivos)
-	print(npcActual.docs[0].raza)
+	
 	GameManager.actualizarDataNpcActual(npcActual.docs[0]);
 	GameManager.actualizarNombreNpcDialogo(npcActual.docs[0].nombre);
 	GameManager.actualizarMotivos(npcActual.motivos);
+	GameManager.actualizarRetratoNpc(GameManager.retratoAleatorio())
+	
 	var Balloon = crear_balloon()
 	Balloon.start(preguntar_doc, "start");
 	
