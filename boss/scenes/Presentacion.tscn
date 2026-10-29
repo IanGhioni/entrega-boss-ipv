@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://cflgn7k6r72r" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glyphs.ttf" id="3_ax2d3"]
 [ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="4_dwntm"]
 [ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="4_olwyj"]
+[ext_resource type="AudioStream" uid="uid://ctwjm7vbcfxqq" path="res://assets/music/game_theme.mp3" id="4_xpv45"]
 [ext_resource type="Texture2D" uid="uid://c7no2ykwub7ct" path="res://assets/Bordes/PNG/Default/Panel/panel-014.png" id="5_2eiu6"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="5_ilnbs"]
 [ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="6_xpv45"]
@@ -178,22 +179,31 @@ script = ExtResource("1_jwdva")
 [node name="Timer" type="Timer" parent="." unique_id=1257900424]
 
 [node name="Hourglass" type="AnimatedSprite2D" parent="Timer" unique_id=404467013]
-position = Vector2(1196, 47.206978)
+position = Vector2(1113, 56.388996)
 scale = Vector2(0.23850383, 0.23850383)
 sprite_frames = SubResource("SpriteFrames_idfvx")
 autoplay = "default"
 frame_progress = 0.006113568
 
 [node name="TextTimer" type="Label" parent="Timer" unique_id=405606019]
-offset_left = 1086.0
-offset_top = 32.206978
-offset_right = 1126.0
-offset_bottom = 56.206978
+offset_left = 1003.0
+offset_top = 41.388996
+offset_right = 1043.0
+offset_bottom = 65.38899
 scale = Vector2(2.159995, 1.9200001)
 label_settings = SubResource("LabelSettings_idfvx")
 horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=898732257]
+process_mode = 3
+position = Vector2(575, 345)
+stream = ExtResource("4_xpv45")
+volume_db = -7.776
+autoplay = true
+parameters/looping = true
+metadata/_edit_lock_ = true
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("2_gy0o1")]
 
