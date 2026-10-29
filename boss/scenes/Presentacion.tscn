@@ -167,7 +167,9 @@ animations = [{
 [node name="Presentacion" type="Control" unique_id=1286153324]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 2.0
 offset_top = -45.0
+offset_right = 2.0
 offset_bottom = -45.0
 script = ExtResource("1_jwdva")
 

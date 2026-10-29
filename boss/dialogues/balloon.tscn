@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://neffr4mxavci"]
 
 [ext_resource type="Script" uid="uid://dn4nmudqo4yof" path="res://dialogues/balloon.gd" id="1_36de5"]
+[ext_resource type="Texture2D" uid="uid://dl8q2o4aw4qd1" path="res://assets/Bordes/PNG/Default/Transparent border/panel-transparent-border-011.png" id="2_7c2jb"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="2_pa16h"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://dm3fosooele0d" path="res://assets/personajes_imagen.jpeg" id="3_ooonl"]
+[ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="4_7c2jb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 20.0
@@ -77,7 +79,16 @@ MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqa88"]
-texture = ExtResource("2_pa16h")
+texture = ExtResource("2_7c2jb")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.8921164, 0.72550815, 0.39966336, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27kq1"]
+texture = ExtResource("3_ooonl")
+region_rect = Rect2(1330, 40, 179, 179)
 
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
@@ -139,6 +150,7 @@ anchor_bottom = 1.0
 offset_top = -219.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/margin_right = 300
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=2145270309]
 clip_children = 2
@@ -150,7 +162,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_gqa88")
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1685890612]
+z_index = 1
 layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Panel" type="Panel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=617353385]
+texture_filter = 1
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_27kq1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1890134056]
 layout_mode = 2
@@ -161,7 +181,10 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.6666667, 0.52156866, 0.22352941, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/normal_font = ExtResource("4_7c2jb")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Character"
@@ -172,7 +195,11 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.66642, 0.5206235, 0.22187185, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/normal_font = ExtResource("4_7c2jb")
 theme_override_font_sizes/normal_font_size = 25
 text = "Dialogue..."
 
