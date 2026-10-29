@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc4bob5aed0e1"]
 
 [ext_resource type="Script" uid="uid://doioip0au2nhl" path="res://scenes/menu.gd" id="1_vjb58"]
+[ext_resource type="AudioStream" uid="uid://cdou73uk22hcx" path="res://assets/music/menu_theme.mp3" id="2_13sgg"]
 [ext_resource type="PackedScene" uid="uid://br3syiwuo7nrp" path="res://scenes/FondoAnimado.tscn" id="2_70i5f"]
 [ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="4_i6lef"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="7_i6lef"]
@@ -56,6 +57,14 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 script = ExtResource("1_vjb58")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=721697432]
+position = Vector2(604, 301)
+scale = Vector2(56.919518, 23.715733)
+stream = ExtResource("2_13sgg")
+volume_db = -7.776
+autoplay = true
+parameters/looping = true
 
 [node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_70i5f")]
 position = Vector2(0, -45)
