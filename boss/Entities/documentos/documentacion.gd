@@ -5,6 +5,11 @@ extends DocumentoBase
 @onready var campo_raza: Label = %CampoRaza
 @onready var sello: Sprite2D = %Sello
 @onready var simbolos := [%Simbolo1, %Simbolo2, %Simbolo3, %Simbolo4, %Simbolo5]
+var clickeado = false
+
+func _process(delta: float) -> void:
+	if clickeado:
+		position = get_global_mouse_position();
 
 func setup(d: DocData) -> void:
 	campo_nombre.text = d.nombre
@@ -18,3 +23,9 @@ func setup(d: DocData) -> void:
 			simbolos[i].visible = true
 		else:
 			simbolos[i].visible = false
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if Input.is_action_pressed("left_click"):
+		clickeado = true;
+	if Input.is_action_just_released("left_click"):
+		clickeado = false

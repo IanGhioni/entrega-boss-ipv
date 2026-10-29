@@ -5,6 +5,9 @@
 [ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://assets/fonts/Brixton-Outline.ttf" id="3_e1ovm"]
 [ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="4_te1nm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptwlb"]
+size = Vector2(321, 368)
+
 [sub_resource type="LabelSettings" id="LabelSettings_uf4da"]
 font = ExtResource("3_e1ovm")
 font_size = 25
@@ -21,6 +24,12 @@ metadata/_custom_type_script = "uid://chaae57ebenim"
 
 [node name="Papiro" type="Sprite2D" parent="." unique_id=2106017129]
 texture = ExtResource("2_fg35m")
+
+[node name="Area2D" type="Area2D" parent="Papiro" unique_id=728584437]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Papiro/Area2D" unique_id=159730309]
+position = Vector2(-0.5, 8)
+shape = SubResource("RectangleShape2D_ptwlb")
 
 [node name="Sello" type="Sprite2D" parent="." unique_id=1830168448]
 unique_name_in_owner = true
@@ -141,3 +150,5 @@ scale = Vector2(0.1, 0.1)
 unique_name_in_owner = true
 position = Vector2(116.99999, 106.935)
 scale = Vector2(0.1, 0.1)
+
+[connection signal="input_event" from="Papiro/Area2D" to="." method="_on_area_2d_input_event"]
