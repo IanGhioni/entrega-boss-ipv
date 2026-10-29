@@ -677,8 +677,9 @@ animations = [{
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_6p75r")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1348338497]
-position = Vector2(579.00006, 351.00003)
+position = Vector2(595, 351)
 scale = Vector2(0.3600012, 0.3600012)
+offset = Vector2(-55, 0)
 zoom = Vector2(1.1, 1.1)
 
 [node name="Chair3" type="Sprite2D" parent="." unique_id=1788619101]
@@ -709,7 +710,7 @@ scale = Vector2(7.4401035, 7.4401035)
 sprite_frames = SubResource("SpriteFrames_wdi0k")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.92545646
+frame_progress = 0.513912
 
 [node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=960373658]
 position = Vector2(386, 339)
