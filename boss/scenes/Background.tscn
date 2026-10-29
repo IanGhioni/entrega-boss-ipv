@@ -235,7 +235,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_ib6ks"]
 resource_name = "birds-flying"
-length = 30.0
+length = 40.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -244,10 +244,10 @@ tracks/0/path = NodePath("Pajaros:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 15, 15.314914, 15.6851, 15.883325),
+"times": PackedFloat32Array(0, 22.383343, 22.698256, 23.068441, 23.266666),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-13.333336, 28.333332), Vector2(403.99997, 28.333332), Vector2(411.66672, 278.3333), Vector2(-46.333252, 249.33334), Vector2(-13.333336, 28.333332)]
+"values": [Vector2(-13.333336, 28.333332), Vector2(500, 28.333), Vector2(411.66672, 278.3333), Vector2(-46.333252, 249.33334), Vector2(-13.333336, 28.333332)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1927,7 +1927,7 @@ texture = ExtResource("11_ib6ks")
 position = Vector2(20.333334, 116)
 sprite_frames = SubResource("SpriteFrames_15vbq")
 autoplay = "default"
-frame_progress = 0.17496443
+frame_progress = 0.18279816
 
 [node name="Walls" type="Node2D" parent="." unique_id=1453151384]
 
