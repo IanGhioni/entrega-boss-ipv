@@ -12,9 +12,8 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 @export var preguntar_doc: DialogueResource
 
 @onready var presentacion: Control = $"../.."
-#@onready var contador: Label = $"../../ContadorContainer/Contador"
 
-@onready var ask_doc_button: Button = $"../../ContainerSiguiente/PanelContainer/Siguiente"
+@onready var ask_doc_button: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
 @onready var aceptar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton"
 @onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
 
