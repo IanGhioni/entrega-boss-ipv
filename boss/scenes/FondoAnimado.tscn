@@ -759,7 +759,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Torch" type="AnimatedSprite2D" parent="." unique_id=2040803118]
-position = Vector2(709, 256)
+position = Vector2(708, 248)
 scale = Vector2(3.5720148, 3.687706)
 sprite_frames = SubResource("SpriteFrames_pc8n3")
 autoplay = "default"
@@ -771,7 +771,6 @@ texture = ExtResource("3_u48nx")
 hframes = 26
 vframes = 8
 frame = 77
-metadata/_edit_lock_ = true
 
 [node name="Pasto" type="Sprite2D" parent="." unique_id=788589543]
 position = Vector2(44, 257)
