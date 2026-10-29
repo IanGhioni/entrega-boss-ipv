@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://b60447dvmsxeh" path="res://Entities/NPCs/magoJoven.tscn" id="11_dkkva"]
 [ext_resource type="PackedScene" uid="uid://hnlsp22hx8yy" path="res://Entities/NPCs/nigromante.tscn" id="12_o1l7e"]
 [ext_resource type="PackedScene" uid="uid://cnm4qd1h1172u" path="res://scenes/PauseMenu.tscn" id="20_2eiu6"]
+[ext_resource type="Texture2D" uid="uid://u7py5bmy28ur" path="res://assets/Ribbons/10.png" id="24_c6td6"]
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="25_3ikal"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ax2d3"]
 atlas = ExtResource("2_olwyj")
@@ -168,6 +170,76 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pqw0u"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6n11o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yj3f0"]
+font = ExtResource("25_3ikal")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_3ikal"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Multa:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-381, 597.00006)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Multa:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_c6td6"]
+resource_name = "mostar_multa"
+length = 4.9666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Multa:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4.02, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-381, 597.00006), Vector2(133, 597), Vector2(133, 597), Vector2(-381, 597.00006)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Multa:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6n11o"]
+_data = {
+&"RESET": SubResource("Animation_3ikal"),
+&"mostar_multa": SubResource("Animation_c6td6")
+}
 
 [node name="Presentacion" type="Control" unique_id=1286153324]
 layout_mode = 3
@@ -400,6 +472,48 @@ scale = Vector2(0.42335156, 1.2487328)
 texture = ExtResource("8_vif71")
 
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("20_2eiu6")]
+visible = false
+
+[node name="Multa" type="Node2D" parent="." unique_id=1495516202]
+position = Vector2(-381, 597.00006)
+scale = Vector2(7.6427755, 5.2634206)
+
+[node name="MultaFondo" type="Sprite2D" parent="Multa" unique_id=749569146]
+position = Vector2(6.7217007, -0.5137112)
+rotation = -1.5690024
+scale = Vector2(1.1501637, 1.6911923)
+texture = ExtResource("24_c6td6")
+region_enabled = true
+region_rect = Rect2(90.42928, 5.1530056, 27.649788, 42.41648)
+
+[node name="MultaTitulo" type="Label" parent="Multa" unique_id=2133984477]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_pqw0u")
+offset_left = -16.15566
+offset_top = -14.383571
+offset_right = 51.844337
+offset_bottom = 22.616428
+scale = Vector2(0.18241833, 0.26228026)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("25_3ikal")
+theme_override_font_sizes/font_size = 29
+horizontal_alignment = 1
+
+[node name="MultaTexto" type="Label" parent="Multa" unique_id=1380440303]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_6n11o")
+offset_left = -13.443396
+offset_top = -6.335626
+offset_right = 356.94193
+offset_bottom = 102.90754
+scale = Vector2(0.14104384, 0.16928431)
+label_settings = SubResource("LabelSettings_yj3f0")
+autowrap_mode = 2
+justification_flags = 35
+
+[node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=707517928]
+libraries/ = SubResource("AnimationLibrary_6n11o")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
