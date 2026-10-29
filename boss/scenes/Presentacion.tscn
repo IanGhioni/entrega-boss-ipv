@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dkc8f7f0d6b5" path="res://Entities/documentos/presentacion.gd" id="1_jwdva"]
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="2_gy0o1"]
 [ext_resource type="Texture2D" uid="uid://d3sbbxo6wr0ws" path="res://assets/hourglass.png" id="2_olwyj"]
+[ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="3_2eiu6"]
 [ext_resource type="FontFile" uid="uid://cflgn7k6r72r" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glyphs.ttf" id="3_ax2d3"]
 [ext_resource type="AudioStream" uid="uid://ctwjm7vbcfxqq" path="res://assets/music/game_theme.mp3" id="4_xpv45"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="5_ilnbs"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="7_bosb2"]
 [ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="7_o0ldx"]
 [ext_resource type="Texture2D" uid="uid://c0bt35a8u8bt8" path="res://assets/Buttons/Green_Buttons_Pixel.png" id="7_olwyj"]
+[ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="7_yj3f0"]
 [ext_resource type="Texture2D" uid="uid://ccmdkguf5lne5" path="res://assets/Buttons/Red_Buttons_Pixel.png" id="8_ax2d3"]
 [ext_resource type="PackedScene" uid="uid://b66ddft02sk8s" path="res://Entities/NPCs/mago.tscn" id="8_fkkrn"]
 [ext_resource type="PackedScene" uid="uid://dly5friiawrgf" path="res://Entities/NPCs/mercader.tscn" id="8_o1l7e"]
@@ -76,7 +78,13 @@ font_color = Color(0, 0, 0, 1)
 texture = ExtResource("9_xpv45")
 region_rect = Rect2(137, 2, 14, 18)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13sgg"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvrp7"]
+texture = ExtResource("7_yj3f0")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.8901961, 0.7254902, 0.4, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27kq1"]
 texture = ExtResource("7_olwyj")
@@ -230,31 +238,34 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
 
 [node name="ButtonsContainer" type="Control" parent="." unique_id=1765387972]
 z_index = 10
-anchors_preset = 0
-offset_left = 218.0
-offset_top = 391.0
-offset_right = 258.0
-offset_bottom = 429.0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 853.0
+offset_top = 444.0
+offset_right = 853.0
+offset_bottom = 444.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Container" type="PanelContainer" parent="ButtonsContainer" unique_id=1810073617]
-custom_minimum_size = Vector2(300, 250)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 21.275002
-anchor_top = 3.5790002
-anchor_right = 21.275002
-anchor_bottom = 3.5790002
-offset_left = -6.1035156e-05
-offset_top = -0.0020141602
-offset_right = 299.99994
-offset_bottom = 249.99799
-theme_override_styles/panel = SubResource("StyleBoxEmpty_13sgg")
+custom_minimum_size = Vector2(260, 100)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 74.0
+offset_right = 281.0
+offset_bottom = 214.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rvrp7")
 
-[node name="MarginContainer" type="MarginContainer" parent="ButtonsContainer/Container" unique_id=1446497332]
+[node name="MarginContainer" type="CenterContainer" parent="ButtonsContainer/Container" unique_id=1765178653]
+clip_contents = true
 layout_mode = 2
-theme_override_constants/margin_top = 10
 
 [node name="ContainerPila" type="VBoxContainer" parent="ButtonsContainer/Container/MarginContainer" unique_id=1265005427]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(500, 120)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -270,6 +281,16 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_olwyj")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_c6td6")
 disabled = true
 
+[node name="AceptarLabel" type="Label" parent="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" unique_id=289206345]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 11.0
+offset_right = 339.0
+offset_bottom = 34.0
+theme_override_colors/font_shadow_color = Color(0.8901961, 0.7254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("3_2eiu6")
+text = "Aceptar"
+
 [node name="RechazarButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=869819300]
 custom_minimum_size = Vector2(0, 50)
 custom_maximum_size = Vector2(50, 50)
@@ -280,6 +301,16 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_yj3f0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3ikal")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_6n11o")
 disabled = true
+
+[node name="RechazarLabel" type="Label" parent="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" unique_id=1733097096]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 12.0
+offset_right = 339.0
+offset_bottom = 35.0
+theme_override_colors/font_shadow_color = Color(0.8901961, 0.7254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("3_2eiu6")
+text = "Rechazar"
 
 [node name="Personajes" type="Node2D" parent="." unique_id=950768903]
 
