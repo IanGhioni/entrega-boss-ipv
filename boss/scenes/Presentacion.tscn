@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Torch.png" id="9_ywfac"]
 [ext_resource type="PackedScene" uid="uid://b60447dvmsxeh" path="res://Entities/NPCs/magoJoven.tscn" id="11_dkkva"]
 [ext_resource type="PackedScene" uid="uid://hnlsp22hx8yy" path="res://Entities/NPCs/nigromante.tscn" id="12_o1l7e"]
+[ext_resource type="PackedScene" uid="uid://cnm4qd1h1172u" path="res://scenes/PauseMenu.tscn" id="20_2eiu6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13sgg"]
 
@@ -319,6 +320,8 @@ texture = ExtResource("8_vif71")
 position = Vector2(223.25002, 151.41006)
 scale = Vector2(0.42335156, 1.2487328)
 texture = ExtResource("8_vif71")
+
+[node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("20_2eiu6")]
 
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Personajes/Inspector" method="_on_aceptar_button_pressed"]
