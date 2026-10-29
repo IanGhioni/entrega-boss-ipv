@@ -47,8 +47,10 @@ func _on_ask_doc_button_pressed() -> void:
 	npcActual = GeneradorNPC.generar()
 	print("Motivo: ", npcActual.motivos)
 	
+	GameManager.actualizarNombreNpcDialogo(npcActual.docs[0].nombre);
 	var Balloon = crear_balloon()
 	Balloon.start(preguntar_doc, "start");
+	
 	await DialogueManager.dialogue_ended
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
