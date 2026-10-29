@@ -3,14 +3,16 @@ extends Control
 @export var escenas_documentos: Dictionary = {
 	"comun": preload("res://Entities/documentos/documentacion.tscn"),
 }
+@export var time_level: int; 
 
 @onready var mesa_documentos: Node2D = $MesaDocumentos
 @onready var puntos: Array[Node] = $Puntos.get_children()
 @onready var label: Label = $Timer/TextTimer
 @onready var timer: Timer = $Timer
 
+
 func _ready() -> void:
-	timer.start(10)
+	timer.start(time_level)
 	
 func _process(delta: float) -> void:
 	label.text = str(int(timer.time_left))
