@@ -135,7 +135,7 @@ func apply_dialogue_line() -> void:
 	balloon.grab_focus()
 
 	character_label.visible = not dialogue_line.character.is_empty()
-	character_label.text = tr(dialogue_line.character, "dialogue")
+	character_label.text = tr(dialogue_line.character, "dialogue");
 	
 	actualizar_animacion_hablante()
 
@@ -228,7 +228,7 @@ func actualizar_animacion_hablante() -> void:
 		"inspector":
 			fila_animation.hablar_inspector()
 
-		"alto elfo":
+		"npc":
 			fila_animation.hablar_npc_actual()
 
 
