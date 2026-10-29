@@ -212,7 +212,7 @@ metadata/_edit_lock_ = true
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("2_gy0o1")]
 
-[node name="ContainerSiguiente" type="Control" parent="." unique_id=1080081428]
+[node name="ContainerSiguienteButton" type="Control" parent="." unique_id=1080081428]
 z_index = 1
 anchors_preset = 0
 offset_left = 684.0
@@ -220,13 +220,13 @@ offset_top = 280.0
 offset_right = 724.0
 offset_bottom = 320.0
 
-[node name="PanelContainer" type="PanelContainer" parent="ContainerSiguiente" unique_id=1565412015]
+[node name="PanelContainer" type="PanelContainer" parent="ContainerSiguienteButton" unique_id=1565412015]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_27kq1")
 
-[node name="Siguiente" type="Button" parent="ContainerSiguiente/PanelContainer" unique_id=1250635226]
+[node name="Siguiente" type="Button" parent="ContainerSiguienteButton/PanelContainer" unique_id=1250635226]
 custom_minimum_size = Vector2(50, 50)
 custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
@@ -402,6 +402,6 @@ texture = ExtResource("8_vif71")
 visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="ContainerSiguiente/PanelContainer/Siguiente" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
+[connection signal="pressed" from="ContainerSiguienteButton/PanelContainer/Siguiente" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Personajes/Inspector" method="_on_aceptar_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" to="Personajes/Inspector" method="_on_rechazar_button_pressed"]
