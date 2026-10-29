@@ -4,7 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://c8gw2udd5scnj" path="res://assets/backgroundMenu_desenfocado.png" id="1_ut7ls"]
 [ext_resource type="Texture2D" uid="uid://c3k2gyqs5v38l" path="res://assets/menu_panel_header_texture.jpg" id="2_hscs5"]
 [ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://assets/fonts/Brixton-Outline.ttf" id="3_dh3ur"]
-[ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://assets/themes/menu_theme.tres" id="4_tialy"]
+[ext_resource type="Texture2D" uid="uid://d1kus4q5f8ydg" path="res://assets/Ribbons/01.png" id="5_hscs5"]
+[ext_resource type="FontFile" uid="uid://h2jydu8td8rh" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glpyhs.ttf" id="6_a4wee"]
+[ext_resource type="Texture2D" uid="uid://bx171ccqkyxd7" path="res://assets/Bordes/PNG/Default/Border/panel-border-001.png" id="6_mo2q4"]
+[ext_resource type="FontFile" uid="uid://cflgn7k6r72r" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glyphs.ttf" id="6_rhwk6"]
+[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="7_a4wee"]
+[ext_resource type="Texture2D" uid="uid://dqjmrkdqdiec0" path="res://assets/Bordes/PNG/Default/Border/panel-border-030.png" id="7_s5bvu"]
+[ext_resource type="Texture2D" uid="uid://d2mi0xi58y2l8" path="res://assets/Bordes/PNG/Default/Border/panel-border-015.png" id="8_jni8x"]
+[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-014.png" id="8_mo2q4"]
+[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="9_s5bvu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktaku"]
 texture = ExtResource("2_hscs5")
@@ -21,9 +29,51 @@ font = ExtResource("3_dh3ur")
 font_size = 48
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_70i5f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhwk6"]
+font = ExtResource("6_a4wee")
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_hscs5"]
 font_size = 17
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ousb"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("7_a4wee")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i6lef"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("8_mo2q4")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvt2x"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("9_s5bvu")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
 
 [node name="ComoJugar" type="Control" unique_id=316983917]
 layout_mode = 3
@@ -31,6 +81,7 @@ anchors_preset = 0
 script = ExtResource("1_hscs5")
 
 [node name="BackgroundImage" type="TextureRect" parent="." unique_id=1133605750]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,16 +117,48 @@ uppercase = true
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=498752026]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 292.0
-offset_top = 9.0
-offset_right = 923.0
-offset_bottom = 633.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.5
+offset_top = -312.0
+offset_right = 315.5
+offset_bottom = 312.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_tialy")
+scale = Vector2(1, 0.88951784)
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer" unique_id=1740967824]
+material = SubResource("CanvasItemMaterial_70i5f")
+position = Vector2(316.5, 308.75003)
+scale = Vector2(32.948185, 29.976591)
+texture = ExtResource("5_hscs5")
+region_enabled = true
+region_rect = Rect2(94.14096, 17.367973, 19.412766, 21.256107)
+
+[node name="PanelBorder015" type="Sprite2D" parent="PanelContainer" unique_id=1977112023]
+modulate = Color(1, 0, 0, 0.10980392)
+position = Vector2(316.5, 308.75)
+scale = Vector2(13.347001, 13.293802)
+texture = ExtResource("6_mo2q4")
+region_rect = Rect2(0.7682686, 0.9550619, 46.775997, 46.272873)
+
+[node name="PanelBorder016" type="Sprite2D" parent="PanelContainer" unique_id=1489989313]
+modulate = Color(1, 0, 0, 0.10980392)
+position = Vector2(316.5, 308.75)
+scale = Vector2(13.347001, 13.293802)
+texture = ExtResource("7_s5bvu")
+region_rect = Rect2(0.7682686, 0.9550619, 46.775997, 46.272873)
+
+[node name="PanelBorder017" type="Sprite2D" parent="PanelContainer" unique_id=1552209814]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(316.5, 308.75)
+scale = Vector2(14.5199585, 14.403832)
+texture = ExtResource("8_jni8x")
+region_enabled = true
+region_rect = Rect2(1.5009174, 1.5293655, 45.05822, 44.969612)
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2058604326]
 layout_mode = 2
@@ -86,6 +169,16 @@ theme_override_constants/margin_bottom = 25
 [node name="ContainerRules" type="Control" parent="PanelContainer/MarginContainer" unique_id=1717632715]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ContainerRules" unique_id=84038222]
+layout_mode = 0
+offset_left = 228.5
+offset_top = -527.7706
+offset_right = 362.5
+offset_bottom = -503.77063
+scale = Vector2(1.3699354, 1.9815738)
+text = "¿Como jugar?"
+label_settings = SubResource("LabelSettings_rhwk6")
+
 [node name="Reglas" type="Label" parent="PanelContainer/MarginContainer/ContainerRules" unique_id=2090987955]
 layout_mode = 1
 anchors_preset = -1
@@ -93,13 +186,14 @@ anchor_left = 0.5
 anchor_top = -5.695
 anchor_right = 0.5
 anchor_bottom = -5.695
-offset_left = -245.5
-offset_top = -226.50499
-offset_right = 247.5
-offset_bottom = 226.49501
-text = "¿Cómo jugar?
-
-\"Con esa cara no pasas\" es un juego cooperativo entre dos personas,  junto a tu compañero controlas un puesto de avanzada al cual empieza a llegar gente para cruzar la frontera a su reino. Su labor es servir como inspector y técnico
+offset_left = -259.0
+offset_top = -237.04681
+offset_right = 333.79175
+offset_bottom = 330.80023
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.89147526, 1.0679122)
+text = "\"Con esa cara no pasas\" es un juego cooperativo entre dos personas,  junto a tu compañero controlas un puesto de avanzada al cual empieza a llegar gente para cruzar la frontera a su reino. Su labor es servir como inspector y técnico
 
 El objetivo es colaborar entre sí con sus diferentes herramientas para permitir el acceso a los aventureros que tengan todos los documentos completos y en regla.
 
@@ -119,6 +213,12 @@ theme_override_constants/v_separation = 45
 [node name="Volver" type="Button" parent="PanelContainer/MarginContainer/ContainerButtons" unique_id=302381860]
 layout_mode = 2
 size_flags_vertical = 2
-text = "Volver al menú"
+theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_rhwk6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4ousb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i6lef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kvt2x")
+text = "Cerrar"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/ContainerButtons/Volver" to="." method="_on_volver_pressed"]
