@@ -1,19 +1,12 @@
 [gd_scene format=3 uid="uid://cc4bob5aed0e1"]
 
 [ext_resource type="Script" uid="uid://doioip0au2nhl" path="res://scenes/menu.gd" id="1_vjb58"]
-[ext_resource type="Shader" uid="uid://bqe41hq1kq7va" path="res://assets/shaders/menu.gdshader" id="2_13sgg"]
-[ext_resource type="Theme" uid="uid://bkd5kml1ya7u8" path="res://assets/themes/menu_theme.tres" id="3_con2f"]
-[ext_resource type="Texture2D" uid="uid://b2k8lbusgcok7" path="res://assets/Captura de pantalla 2026-10-27 164053.png" id="3_i6lef"]
+[ext_resource type="PackedScene" uid="uid://br3syiwuo7nrp" path="res://scenes/FondoAnimado.tscn" id="2_70i5f"]
 [ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="4_i6lef"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="7_i6lef"]
-[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Panel/panel-013.png" id="8_13sgg"]
-[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-013.png" id="8_70i5f"]
-[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent center/panel-transparent-center-014.png" id="9_70i5f"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxupc"]
-shader = ExtResource("2_13sgg")
-shader_parameter/blur = 2.000000095
-shader_parameter/brillo = 0.670000031825
+[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="8_13sgg"]
+[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="8_70i5f"]
+[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-014.png" id="9_70i5f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oucw"]
 
@@ -64,17 +57,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 script = ExtResource("1_vjb58")
 
-[node name="BackgroundImage" type="TextureRect" parent="." unique_id=397728608]
-texture_filter = 4
-material = SubResource("ShaderMaterial_nxupc")
+[node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_70i5f")]
+position = Vector2(0, -45)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=870836576]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_i6lef")
-expand_mode = 1
+color = Color(0, 0, 0, 0.24705882)
 
 [node name="Titulo" parent="." unique_id=1903387969 instance=ExtResource("4_i6lef")]
 layout_mode = 0
@@ -90,13 +83,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -76.0
+offset_left = 56.0
 offset_top = -240.0
 offset_right = 433.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_con2f")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8oucw")
 
 [node name="ContainerButtons" type="VBoxContainer" parent="PanelContainer" unique_id=532826490]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://esp0j3y8l55q"]
 
-[ext_resource type="Texture2D" uid="uid://cu4wdjc2yqb81" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniArcherMan.png" id="1_b8jof"]
+[ext_resource type="Texture2D" uid="uid://cu4wdjc2yqb81" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniArcherMan.png" id="1_b8jof"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1f2x"]
 atlas = ExtResource("1_b8jof")
