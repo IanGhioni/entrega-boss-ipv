@@ -14,7 +14,7 @@ extends Control
 func _ready() -> void:
 	timer.start(time_level)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	label.text = str(int(timer.time_left))
 
 func _posicion_libre(indice: int) -> Vector2:

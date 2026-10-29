@@ -238,6 +238,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_of656")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
 
 [node name="ButtonsContainer" type="Control" parent="." unique_id=1765387972]
+visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = 12

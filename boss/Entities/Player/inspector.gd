@@ -14,6 +14,8 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 @onready var presentacion: Control = $"../.."
 
 @onready var ask_doc_button: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
+
+@onready var buttons_container: Control = $"../../ButtonsContainer"
 @onready var aceptar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton"
 @onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
 
@@ -28,8 +30,11 @@ func _ready() -> void:
 func _on_pressed_decline(_x) -> void:
 	if terminoInspeccion:
 		terminoInspeccion = false
+		buttons_container.hide();
 	elif npcActual != null:
 		presentacion.entregar_documentos(npcActual)
+		aceptar_button.disabled = false;
+		rechazar_button.disabled = false;
 	
 	if cant_rondas == max_rondas:
 		ask_doc_button.disabled = true
@@ -40,8 +45,7 @@ func _on_ask_doc_button_pressed() -> void:
 	await fila_animation.atender_siguiente()
 	fila_animation.mover_fila()
 	is_dialogue_active = true;
-	aceptar_button.disabled = false;
-	rechazar_button.disabled = false;
+	buttons_container.show();
 	ask_doc_button.disabled = true;
 	
 	# Generamos un nuevo NPC
