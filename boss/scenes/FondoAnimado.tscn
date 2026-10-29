@@ -510,7 +510,7 @@ tracks/19/keys = {
 "times": PackedFloat32Array(4.366667, 5.4, 20.033333, 21.033333, 25.033333, 27.066668, 28.966667, 30.933332, 45.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"walk", &"idle", &"walk", &"idle", &"walk", &"idle", &"idle", &"walk", &"idle"]
+"values": [&"walk", &"idle", &"walk", &"idle", &"walk", &"talk", &"idle", &"walk", &"idle"]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
@@ -583,7 +583,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"talk",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnidr"]
@@ -710,7 +710,6 @@ scale = Vector2(7.4401035, 7.4401035)
 sprite_frames = SubResource("SpriteFrames_wdi0k")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.513912
 
 [node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=960373658]
 position = Vector2(386, 339)
@@ -733,7 +732,7 @@ metadata/_edit_lock_ = true
 position = Vector2(799, 378.00003)
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.5559111
+frame_progress = 0.0
 
 [node name="MagoJoven" parent="." unique_id=855896646 instance=ExtResource("4_dnoi1")]
 position = Vector2(1389, 378)
@@ -746,18 +745,18 @@ frame_progress = 0.0
 
 [node name="Paladin" parent="." unique_id=2051076361 instance=ExtResource("6_let50")]
 position = Vector2(1139, 378)
-frame_progress = 0.5559111
+animation = &"idle"
+frame_progress = 0.0
 
 [node name="Elfo" parent="." unique_id=62742635 instance=ExtResource("7_rv23c")]
 position = Vector2(1029, 378)
 autoplay = "idle"
-frame_progress = 0.5559111
+frame_progress = 0.0
 
 [node name="Mercader" parent="." unique_id=1967655165 instance=ExtResource("8_wjuth")]
 position = Vector2(918, 378)
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.9299899
 
 [node name="Torch" type="AnimatedSprite2D" parent="." unique_id=2040803118]
 position = Vector2(709, 256)

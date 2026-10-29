@@ -16,12 +16,171 @@
 [ext_resource type="Script" uid="uid://5gl5uqjpobvp" path="res://animation_player.gd" id="11_pi7vv"]
 [ext_resource type="Texture2D" uid="uid://cvdg2fcg40lcr" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/cloud4.png" id="12_chgmw"]
 [ext_resource type="Texture2D" uid="uid://cdij8x15lh20i" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Large Tent.png" id="12_fdanu"]
+[ext_resource type="Texture2D" uid="uid://eduh4cl7othm" path="res://assets/easterEggs/SPRITE_SHEET.png" id="13_tbwwl"]
 [ext_resource type="Texture2D" uid="uid://54vc2gtmdwtd" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="14_chgmw"]
 [ext_resource type="Texture2D" uid="uid://dnjl6kgw44s81" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Flowering Tree.png" id="14_oifh0"]
 [ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="14_qkwuj"]
 [ext_resource type="Texture2D" uid="uid://dkfnoir1fi0cu" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Small Tent.png" id="15_cjcy6"]
 [ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Torch.png" id="17_fdanu"]
 [ext_resource type="Texture2D" uid="uid://ct0yfmoupshc5" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniHorseMan.png" id="20_mpl36"]
+
+[sub_resource type="Animation" id="Animation_vhax3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cloud3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(220, 34.666676)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cloud3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cloud2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(101.333336, 43.666664)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cloud2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cloud1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(349, 22.666668)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cloud1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tbwwl"]
+resource_name = "clouds-moving"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cloud3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(220, 34.666676), Vector2(220, 30.999998)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cloud3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cloud2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.9903561),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(101.333336, 40.666664), Vector2(101.333336, 43.666664)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cloud2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.9903561),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cloud1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(349, 22.666668), Vector2(349, 26.666668)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cloud1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_axwfq"]
+_data = {
+&"RESET": SubResource("Animation_vhax3"),
+&"clouds-moving": SubResource("Animation_tbwwl")
+}
 
 [sub_resource type="Animation" id="Animation_mpl36"]
 length = 0.001
@@ -76,7 +235,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_ib6ks"]
 resource_name = "birds-flying"
-length = 15.0
+length = 30.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -85,10 +244,10 @@ tracks/0/path = NodePath("Pajaros:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 15, 15.314914, 15.6851, 15.883325),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-13.333336, 28.333332), Vector2(403.99997, 28.333332)]
+"values": [Vector2(-13.333336, 28.333332), Vector2(403.99997, 28.333332), Vector2(411.66672, 278.3333), Vector2(-46.333252, 249.33334), Vector2(-13.333336, 28.333332)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -97,10 +256,10 @@ tracks/1/path = NodePath("Pajaros:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 15, 15.314914, 15.6851),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [0.0, 0.0, 0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_pi7vv"]
@@ -137,6 +296,56 @@ _data = {
 &"birds-flying": SubResource("Animation_ib6ks"),
 &"sun": SubResource("Animation_pi7vv")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axwfq"]
+atlas = ExtResource("13_tbwwl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw7fk"]
+atlas = ExtResource("13_tbwwl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvd4n"]
+atlas = ExtResource("13_tbwwl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71rs5"]
+atlas = ExtResource("13_tbwwl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhlgo"]
+atlas = ExtResource("13_tbwwl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fivmk"]
+atlas = ExtResource("13_tbwwl")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15vbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axwfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw7fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvd4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71rs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhlgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fivmk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdi0d"]
 atlas = ExtResource("17_fdanu")
@@ -1491,6 +1700,153 @@ terrain_set_1/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_dpw2a")
 sources/1 = SubResource("TileSetAtlasSource_jqsg2")
 
+[sub_resource type="Animation" id="Animation_axwfq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fondo/Sun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(57.666687, 52.666668)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fondo/Sun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cw7fk"]
+resource_name = "sun-moving"
+length = 140.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fondo/Sun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 70, 140),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(57.666687, 52.666668), Vector2(195.667, 22.187), Vector2(354.33334, 53.333332)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fondo/Sun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 70, 140),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nvd4n"]
+_data = {
+&"RESET": SubResource("Animation_axwfq"),
+&"sun-moving": SubResource("Animation_cw7fk")
+}
+
+[sub_resource type="Animation" id="Animation_nvd4n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EasterEgg:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20.333334, 116)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EasterEgg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EasterEgg:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_t3q0d"]
+resource_name = "new_animation"
+length = 100.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EasterEgg:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 50.44903, 51.032726, 52.983646, 54.034004, 54.35554, 54.591335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(361.33334, 77.333336), Vector2(358, 80), Vector2(358, 61), Vector2(358, 61), Vector2(358.07446, 61.36489), Vector2(359.6667, 59.333332), Vector2(351.33334, 80.33333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EasterEgg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 50.42042, 51.032726, 52.983646, 54.034004, 54.35554, 54.591335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EasterEgg:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.06666666, 51.733334, 52.3, 55.433334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh0tw"]
+_data = {
+&"RESET": SubResource("Animation_nvd4n"),
+&"new_animation": SubResource("Animation_t3q0d")
+}
+
 [node name="Scene" type="Node2D" unique_id=340376222]
 scale = Vector2(3, 3)
 
@@ -1553,7 +1909,11 @@ texture = ExtResource("10_lslbr")
 position = Vector2(220, 34.666676)
 texture = ExtResource("12_chgmw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1073218242]
+[node name="CloudsAnimation" type="AnimationPlayer" parent="Clouds" unique_id=1543549582]
+libraries/ = SubResource("AnimationLibrary_axwfq")
+autoplay = &"clouds-moving"
+
+[node name="PajarosAnimation" type="AnimationPlayer" parent="." unique_id=1073218242]
 libraries/ = SubResource("AnimationLibrary_pi7vv")
 autoplay = &"birds-flying"
 script = ExtResource("11_pi7vv")
@@ -1562,6 +1922,12 @@ script = ExtResource("11_pi7vv")
 position = Vector2(-13.333336, 28.333332)
 scale = Vector2(1.1000001, 1)
 texture = ExtResource("11_ib6ks")
+
+[node name="EasterEgg" type="AnimatedSprite2D" parent="." unique_id=786898201]
+position = Vector2(20.333334, 116)
+sprite_frames = SubResource("SpriteFrames_15vbq")
+autoplay = "default"
+frame_progress = 0.17496443
 
 [node name="Walls" type="Node2D" parent="." unique_id=1453151384]
 
@@ -1651,13 +2017,13 @@ vframes = 17
 frame = 3
 
 [node name="FloweringTree" type="Sprite2D" parent="." unique_id=633733371]
-position = Vector2(342, 104.333336)
+position = Vector2(342, 104)
 scale = Vector2(0.91840315, 1.0252976)
 texture = ExtResource("14_oifh0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FloweringTree" unique_id=234224414]
-position = Vector2(-162.964, 13.654556)
-scale = Vector2(2.929108, 2.77978)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=234224414]
+position = Vector2(192.33334, 118.33331)
+scale = Vector2(2.690102, 2.850102)
 sprite_frames = SubResource("SpriteFrames_idfvx")
 autoplay = "default"
 frame_progress = 0.3108299
@@ -1666,3 +2032,11 @@ frame_progress = 0.3108299
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAKAAoAAQADAAAAAAAKAAsAAQAEAAMAAAAJAAsAAQABAAMAAAAIAAsAAQABAAQAAAAHAAsAAQADAAIAAAAGAAsAAQAEAAIAAAAFAAsAAQAEAAEAAAAEAAsAAQABAAMAAAADAAsAAQABAAQAAAACAAsAAQACAAIAAAABAAsAAQADAAQAAAAAAAsAAQADAAMAAAAYAAsAAQABAAQAAAAXAAsAAQACAAMAAAAWAAsAAQABAAQAAAAVAAsAAQAEAAEAAAAUAAsAAQADAAQAAAATAAsAAQAEAAMAAAASAAsAAQABAAMAAAARAAsAAQABAAEAAAAQAAsAAQAEAAMAAAAPAAsAAQAEAAEAAAAOAAsAAQACAAQAAAANAAsAAQABAAMAAAAMAAsAAQADAAQAAAALAAsAAQACAAMAAAAAAAwAAQAEAAEAAAABAAwAAQAEAAMAAAACAAwAAQADAAQAAAADAAwAAQACAAMAAAAEAAwAAQABAAEAAAAFAAwAAQADAAEAAAAGAAwAAQAEAAIAAAAHAAwAAQABAAEAAAAIAAwAAQADAAQAAAAJAAwAAQACAAEAAAAKAAwAAQABAAMAAAALAAwAAQACAAIAAAAMAAwAAQADAAIAAAANAAwAAQAEAAEAAAAOAAwAAQACAAIAAAAPAAwAAQABAAEAAAAQAAwAAQABAAIAAAARAAwAAQACAAIAAAASAAwAAQADAAEAAAATAAwAAQADAAQAAAAUAAwAAQABAAEAAAAVAAwAAQAEAAMAAAAWAAwAAQADAAMAAAAXAAwAAQAEAAEAAAAYAAwAAQABAAQAAAAZAAwAAQACAAQAAAAaAAwAAQABAAQAAAD//wsAAQAEAAIAAAD+/wsAAQAEAAMAAAAZAAsAAQADAAEAAAAbAAsAAQAFAAQAAAAaAAsAAQADAAIAAAD+/wwAAQABAAQAAAD//wwAAQADAAEAAAAAAA0AAQADAAMAAAABAA0AAQAEAAMAAAACAA0AAQABAAIAAAADAA0AAQAEAAEAAAAEAA0AAQACAAEAAAAFAA0AAQABAAQAAAAGAA0AAQACAAQAAAAHAA0AAQADAAQAAAAIAA0AAQADAAQAAAAJAA0AAQAEAAIAAAAKAA0AAQABAAQAAAALAA0AAQABAAQAAAAMAA0AAQAEAAQAAAANAA0AAQACAAMAAAAOAA0AAQAEAAMAAAAPAA0AAQAEAAMAAAAQAA0AAQACAAQAAAARAA0AAQABAAQAAAASAA0AAQACAAIAAAATAA0AAQACAAEAAAAUAA0AAQAEAAIAAAAVAA0AAQACAAEAAAAWAA0AAQABAAIAAAAXAA0AAQADAAIAAAAYAA0AAQAEAAMAAAAZAA0AAQADAAEAAAAaAA0AAQADAAIAAAAbAA0AAQAFAAMAAAAbAAwAAQACAAMAAAAbAA4AAQAEAAQAAAAaAA4AAQAEAAEAAAAZAA4AAQADAAEAAAAYAA4AAQACAAQAAAAXAA4AAQADAAMAAAAWAA4AAQAEAAMAAAAVAA4AAQAEAAIAAAAUAA4AAQAEAAMAAAATAA4AAQABAAIAAAASAA4AAQABAAQAAAARAA4AAQAEAAMAAAAQAA4AAQAEAAMAAAAPAA4AAQACAAEAAAAOAA4AAQAEAAEAAAANAA4AAQABAAMAAAAMAA4AAQABAAMAAAALAA4AAQABAAQAAAAKAA4AAQAEAAIAAAAJAA4AAQADAAIAAAAIAA4AAQACAAEAAAAHAA4AAQACAAEAAAAGAA4AAQAEAAMAAAAFAA4AAQABAAMAAAAEAA4AAQABAAIAAAADAA4AAQACAAMAAAACAA4AAQADAAIAAAABAA4AAQADAAIAAAAAAA4AAQACAAMAAAD//w4AAQACAAMAAAD+/w4AAQABAAIAAAD9/w0AAQABAAQAAAD+/w0AAQADAAQAAAD//w0AAQADAAMAAAD8/wsAAQABAAUAAAD9/wsAAQAEAAEAAAD9/wwAAQAAAAEAAAD9/woAAQACAAAAAAD+/woAAQAEAAAAAAD//woAAQADAAAAAAAAAAoAAQACAAAAAAABAAoAAQACAAAAAAACAAoAAQABAAAAAAADAAoAAQADAAAAAAAEAAoAAQACAAAAAAAFAAoAAQABAAAAAAAGAAoAAQAEAAAAAAAHAAoAAQACAAAAAAAIAAoAAQABAAAAAAAJAAoAAQABAAAAAAALAAoAAQAEAAAAAAAMAAoAAQACAAAAAAANAAoAAQACAAAAAAAOAAoAAQACAAAAAAAPAAoAAQABAAAAAAAQAAoAAQADAAAAAAARAAoAAQADAAAAAAASAAoAAQACAAAAAAATAAoAAQABAAAAAAAUAAoAAQAEAAAAAAAVAAoAAQABAAAAAAAWAAoAAQABAAAAAAAXAAoAAQACAAAAAAAYAAoAAQADAAAAAAAZAAoAAQABAAAAAAAaAAoAAQACAAAAAAAbAAoAAQAEAAAAAAAdAAoAAQABAAAAAAAcAAoAAQAFAAAAAAA=")
 tile_set = SubResource("TileSet_idfvx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1289413663]
+libraries/ = SubResource("AnimationLibrary_nvd4n")
+autoplay = &"sun-moving"
+
+[node name="EasterEggsAnimation" type="AnimationPlayer" parent="." unique_id=1135512083]
+libraries/ = SubResource("AnimationLibrary_nh0tw")
+autoplay = &"new_animation"
