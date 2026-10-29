@@ -459,7 +459,7 @@ tracks/14/path = NodePath("InspectorSprite:animation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(2, 2.3666666, 5.4, 7.3333335, 8.633333, 11.073042, 12.106376, 15, 16.1, 21.966667, 24, 29, 31.033333, 35.766666, 41.635834, 47, 48.833332),
+"times": PackedFloat32Array(2, 2.3666666, 5.4, 7.3333335, 8.633333, 11.073042, 12.106376, 15, 16.1, 21.966667, 24, 29, 31.033333, 35.766666, 39.433334, 47, 48.833332),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"talk", &"idle", &"idle", &"talk", &"idle", &"idle", &"idle", &"talk", &"idle", &"talk", &"idle", &"talk", &"idle", &"talk", &"idle", &"talk", &"idle"]
