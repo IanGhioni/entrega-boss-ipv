@@ -5,7 +5,7 @@ var is_dialogue_active:bool = false;
 var npcActual;
 var cant_aciertos: int = 0;
 var cant_rondas: int = 0;
-var max_rondas: int = 15;
+@export var max_rondas: int;
 
 const Ballon = preload("res://dialogues/balloon.tscn");
 

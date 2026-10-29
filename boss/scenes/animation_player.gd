@@ -18,8 +18,14 @@ var npc_actual
 
 var sprites_posibles: Array[String] = ["arquero","ballestero","elfo","picaro","enano","mago","magoJoven","mercader","nigromante","paladin"]
 
+@export var modo_menu := false
 
 func _ready() -> void:
+	
+	if modo_menu:
+		_iniciar_modo_menu()
+		return
+	
 	if escena_npc == null:
 		push_error("No se asignó la escena NPC.")
 		return
@@ -44,10 +50,6 @@ func _ready() -> void:
 
 		npc.configurar(escena_visual)
 		fila.append(npc)
-
-
-func _process(delta: float) -> void:
-	pass
 	
 func llevar_primero_a_mesa(destino: Marker2D) -> void:
 	if fila.is_empty():
@@ -97,3 +99,8 @@ func hablar_npc_actual() -> void:
 
 func dejar_de_hablar_npc_actual() -> void:
 	npc_actual.dejar_de_hablar()
+
+func _iniciar_modo_menu() -> void:
+	for sprite in [inspector]:
+		if sprite.sprite_frames.has_animation("idle"):
+			sprite.play("idle")

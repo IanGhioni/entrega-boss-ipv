@@ -1,0 +1,825 @@
+[gd_scene format=3 uid="uid://br3syiwuo7nrp"]
+
+[ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="1_6p75r"]
+[ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Torch.png" id="2_pc8n3"]
+[ext_resource type="PackedScene" uid="uid://esp0j3y8l55q" path="res://Entities/NPCs/arquero.tscn" id="3_dnl66"]
+[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="3_u48nx"]
+[ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="4_6m4p3"]
+[ext_resource type="PackedScene" uid="uid://b60447dvmsxeh" path="res://Entities/NPCs/magoJoven.tscn" id="4_dnoi1"]
+[ext_resource type="PackedScene" uid="uid://hnlsp22hx8yy" path="res://Entities/NPCs/nigromante.tscn" id="5_ewsda"]
+[ext_resource type="Texture2D" uid="uid://dn8sr0e0a7tjx" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniSpearMan.png" id="5_u48nx"]
+[ext_resource type="Texture2D" uid="uid://dn71hf07pa6bs" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniSwordMan.png" id="6_6m4p3"]
+[ext_resource type="PackedScene" uid="uid://77dejf0lfjpk" path="res://Entities/NPCs/paladin.tscn" id="6_let50"]
+[ext_resource type="PackedScene" uid="uid://cgf3y33ava8wa" path="res://Entities/NPCs/elfo.tscn" id="7_rv23c"]
+[ext_resource type="PackedScene" uid="uid://dly5friiawrgf" path="res://Entities/NPCs/mercader.tscn" id="8_wjuth"]
+
+[sub_resource type="Animation" id="Animation_dnl66"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InspectorSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(299, 339)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InspectorSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Archero:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(799, 378.00003)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Archero:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MagoJoven:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1389, 378)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MagoJoven:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Nigromante:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1253, 378)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Nigromante:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Paladin:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1139, 378)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Paladin:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Elfo:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1029, 378)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Elfo:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Mercader:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(918, 378)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Mercader:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("InspectorSprite:animation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Archero:animation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Mercader:animation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Elfo:animation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("MagoJoven:animation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Nigromante:animation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Paladin:animation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+
+[sub_resource type="Animation" id="Animation_dnoi1"]
+resource_name = "simulated_gameplay"
+length = 54.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InspectorSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(299, 339)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InspectorSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Archero:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.33333334, 2.6, 4.633333, 9.333333, 13.966666, 15.008904, 16.586813, 17.006613, 20.033333, 21, 26.1, 27.033333, 33, 34.033333, 44, 45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(800, 378), Vector2(800, 378), Vector2(500, 378), Vector2(500, 378), Vector2(-84.99988, 378.00003), Vector2(-110.00001, 764), Vector2(1223.9999, 704), Vector2(1200, 378), Vector2(1200, 378), Vector2(1100, 378), Vector2(1100, 378), Vector2(1000, 378), Vector2(1000, 378), Vector2(900, 378), Vector2(900, 378), Vector2(800, 378)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Archero:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.6666665, 13.933332, 15.008904, 16.586813, 17.006613),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MagoJoven:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.393075, 5.4, 11.030799, 12.070508, 20.033333, 21, 26, 27.033333, 33.033333, 34.033333, 42, 44.6, 49, 53, 53.166668, 53.390022, 53.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1300, 378), Vector2(1300, 378), Vector2(1200, 378), Vector2(1200, 378), Vector2(1100, 378), Vector2(1100, 378), Vector2(1000, 378), Vector2(1000, 378), Vector2(900, 378), Vector2(900, 378), Vector2(800, 378), Vector2(800, 378), Vector2(500, 378), Vector2(500, 378), Vector2(-85, 378), Vector2(-85, 700), Vector2(1320.9999, 700), Vector2(1300, 378)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MagoJoven:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.393075, 5.4, 11.030799, 12.070508, 53.390022),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Nigromante:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.393075, 5.366667, 11.030799, 12.070508, 20.033333, 21, 26.033333, 27, 32.033333, 33.966667, 39.933334, 44, 44.336037, 44.456505, 44.775276),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1200, 378), Vector2(1200, 378), Vector2(1100, 378), Vector2(1100, 378), Vector2(1000, 378), Vector2(1000, 378), Vector2(900, 378), Vector2(900, 378), Vector2(800, 378), Vector2(800, 378), Vector2(500, 378), Vector2(500, 378), Vector2(-85, 378), Vector2(-92.00001, 759), Vector2(1216.9999, 763), Vector2(1200, 378)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Nigromante:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.393075, 5.366667, 11.030799, 12.070508, 44.336037, 44.456505, 44.775276),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Paladin:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4.393075, 5.4, 11.033334, 12.073043, 20.033333, 21, 25.033333, 27.066668, 30.9, 35, 35.327106, 36.21966, 36.618122, 44.066666, 45.033333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1100, 378), Vector2(1100, 378), Vector2(1000, 378), Vector2(1000, 378), Vector2(900, 378), Vector2(900, 378), Vector2(800, 378), Vector2(800, 378), Vector2(500, 378), Vector2(500, 378), Vector2(-85, 378), Vector2(-97.00001, 700), Vector2(1232.9999, 735), Vector2(1200, 378), Vector2(1200, 378), Vector2(1100, 378)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Paladin:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4.393075, 5.4, 11.033334, 12.073043, 35.327106, 36.21966, 36.618122),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Elfo:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4.393075, 5.4, 11.066667, 12.106376, 17.966667, 20.033333, 24.066668, 28, 29.01352, 30.097336, 31.133333, 32.966667, 34, 43.966667, 45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1000, 378), Vector2(1000, 378), Vector2(900, 378), Vector2(900, 378), Vector2(800, 378), Vector2(800, 378), Vector2(500, 378), Vector2(500, 378), Vector2(-85, 378), Vector2(-68.00001, 734), Vector2(1281, 757.00006), Vector2(1200, 378), Vector2(1200, 378), Vector2(1100, 378), Vector2(1100, 378), Vector2(1000, 378)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Elfo:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4.393075, 5.4, 11.066667, 12.106376, 29.01352, 30.097336, 31.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Mercader:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 4.360291, 5.4, 10.97573, 13.066667, 16.133333, 20.133333, 22.833332, 22.914616, 23.26526, 23.8, 26.033333, 27.033333, 33, 33.966667, 43.966667, 45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(900, 378), Vector2(900, 378), Vector2(800, 378), Vector2(800, 378), Vector2(500, 378), Vector2(500, 378), Vector2(-85, 378), Vector2(-85, 378), Vector2(-60.000008, 773), Vector2(1223.9999, 687), Vector2(1200, 378), Vector2(1200, 378), Vector2(1100, 378), Vector2(1100, 378), Vector2(1000, 378), Vector2(1000, 378), Vector2(900, 378)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Mercader:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 4.360291, 5.4, 10.97573, 20.114616, 20.465261),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("InspectorSprite:animation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(2, 2.3666666, 5.4, 7.3333335, 8.633333, 11.073042, 12.106376, 15, 16.1, 21.966667, 24, 29, 31.033333, 35.766666, 41.635834, 47, 48.833332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"talk", &"idle", &"idle", &"talk", &"idle", &"idle", &"idle", &"talk", &"idle", &"talk", &"idle", &"talk", &"idle", &"talk", &"idle", &"talk", &"idle"]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Archero:animation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(2.5333333, 4.6666665, 7, 9.333333, 20.033333, 21.033333, 33, 34.033333, 44, 45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"walk", &"talk", &"idle", &"walk", &"walk", &"idle", &"walk", &"idle", &"walk", &"idle"]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Mercader:animation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 4.366667, 5.4, 11, 13.033334, 14.966666, 16.1, 26.066668, 27.066668, 44, 45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"idle", &"walk", &"idle", &"walk", &"talk", &"idle", &"walk", &"walk", &"idle", &"walk", &"idle"]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("MagoJoven:animation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(4.366667, 5.4, 20, 21, 33, 34.033333, 42, 44.6, 47, 49),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"walk", &"idle", &"walk", &"idle", &"walk", &"idle", &"walk", &"talk", &"idle", &"walk"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Nigromante:animation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(4.4, 5.4333334, 20.033333, 21.033333, 32.066666, 34, 35.733334, 38.033333, 39.966667, 44.033333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"walk", &"idle", &"walk", &"idle", &"walk", &"talk", &"idle", &"idle", &"walk", &"walk"]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Paladin:animation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(4.366667, 5.4, 20.033333, 21.033333, 25.033333, 27.066668, 28.966667, 30.933332, 45.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"walk", &"idle", &"walk", &"idle", &"walk", &"idle", &"idle", &"walk", &"idle"]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Elfo:animation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(4.4, 5.4333334, 17.966667, 20.066666, 22, 24.066668, 32.966667, 34.033333, 43.966667, 45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"walk", &"idle", &"walk", &"talk", &"idle", &"walk", &"walk", &"idle", &"walk", &"idle"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewsda"]
+_data = {
+&"RESET": SubResource("Animation_dnl66"),
+&"simulated_gameplay": SubResource("Animation_dnoi1")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtwn5"]
+atlas = ExtResource("5_u48nx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uedj5"]
+atlas = ExtResource("5_u48nx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blj0n"]
+atlas = ExtResource("5_u48nx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2ell"]
+atlas = ExtResource("5_u48nx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3r4p"]
+atlas = ExtResource("5_u48nx")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r110g"]
+atlas = ExtResource("5_u48nx")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdi0k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtwn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uedj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blj0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ell")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3r4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r110g")
+}],
+"loop": 1,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnidr"]
+atlas = ExtResource("6_6m4p3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km34j"]
+atlas = ExtResource("6_6m4p3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yumx"]
+atlas = ExtResource("6_6m4p3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blh8r"]
+atlas = ExtResource("6_6m4p3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjvkh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnidr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km34j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yumx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blh8r")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdi0d"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17wma"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36fx1"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvlju"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v517j"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d2mi"]
+atlas = ExtResource("2_pc8n3")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pc8n3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdi0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17wma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36fx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvlju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v517j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d2mi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="FondoAnimado" type="Node2D" unique_id=245480886]
+
+[node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_6p75r")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1348338497]
+position = Vector2(595, 351)
+scale = Vector2(0.3600012, 0.3600012)
+offset = Vector2(-55, 0)
+zoom = Vector2(1.1, 1.1)
+
+[node name="Chair3" type="Sprite2D" parent="." unique_id=1788619101]
+position = Vector2(371, 411)
+scale = Vector2(4.400001, 4.400001)
+texture = ExtResource("3_u48nx")
+hframes = 13
+vframes = 17
+frame = 9
+metadata/_edit_lock_ = true
+
+[node name="Chair2" type="Sprite2D" parent="." unique_id=708288244]
+position = Vector2(288, 410)
+scale = Vector2(4.400001, 4.400001)
+texture = ExtResource("3_u48nx")
+hframes = 13
+vframes = 17
+frame = 9
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1538223747]
+libraries/ = SubResource("AnimationLibrary_ewsda")
+autoplay = &"simulated_gameplay"
+
+[node name="InspectorSprite" type="AnimatedSprite2D" parent="." unique_id=659284110]
+position = Vector2(299, 339)
+scale = Vector2(7.4401035, 7.4401035)
+sprite_frames = SubResource("SpriteFrames_wdi0k")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.513912
+
+[node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=960373658]
+position = Vector2(386, 339)
+scale = Vector2(7.571346, 7.610898)
+sprite_frames = SubResource("SpriteFrames_pjvkh")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.18096264
+
+[node name="Table" type="Sprite2D" parent="TecnicoSprite" unique_id=622767721]
+position = Vector2(-3.433998, 11.82515)
+scale = Vector2(0.48797202, 0.4210005)
+texture = ExtResource("3_u48nx")
+hframes = 8
+vframes = 17
+frame = 21
+metadata/_edit_lock_ = true
+
+[node name="Archero" parent="." unique_id=1204063223 instance=ExtResource("3_dnl66")]
+position = Vector2(799, 378.00003)
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5559111
+
+[node name="MagoJoven" parent="." unique_id=855896646 instance=ExtResource("4_dnoi1")]
+position = Vector2(1389, 378)
+autoplay = "idle"
+
+[node name="Nigromante" parent="." unique_id=436798654 instance=ExtResource("5_ewsda")]
+position = Vector2(1253, 378)
+autoplay = "idle"
+frame_progress = 0.0
+
+[node name="Paladin" parent="." unique_id=2051076361 instance=ExtResource("6_let50")]
+position = Vector2(1139, 378)
+frame_progress = 0.5559111
+
+[node name="Elfo" parent="." unique_id=62742635 instance=ExtResource("7_rv23c")]
+position = Vector2(1029, 378)
+autoplay = "idle"
+frame_progress = 0.5559111
+
+[node name="Mercader" parent="." unique_id=1967655165 instance=ExtResource("8_wjuth")]
+position = Vector2(918, 378)
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.9299899
+
+[node name="Torch" type="AnimatedSprite2D" parent="." unique_id=2040803118]
+position = Vector2(709, 256)
+scale = Vector2(3.5720148, 3.687706)
+sprite_frames = SubResource("SpriteFrames_pc8n3")
+autoplay = "default"
+
+[node name="Wall4" type="Sprite2D" parent="." unique_id=1404384296]
+position = Vector2(722, 385.99997)
+scale = Vector2(4.188469, 3.7821314)
+texture = ExtResource("3_u48nx")
+hframes = 26
+vframes = 8
+frame = 77
+metadata/_edit_lock_ = true
+
+[node name="Pasto" type="Sprite2D" parent="." unique_id=788589543]
+position = Vector2(44, 257)
+scale = Vector2(3.0208337, 1.3122786)
+metadata/_edit_lock_ = true
+
+[node name="TallGrass4" type="Sprite2D" parent="Pasto" unique_id=9328672]
+position = Vector2(259.31967, 154.92734)
+scale = Vector2(0.43260494, 1.0402395)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass2" type="Sprite2D" parent="Pasto" unique_id=627842133]
+position = Vector2(291.24643, 154.1401)
+scale = Vector2(0.4535004, 1.1017208)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass8" type="Sprite2D" parent="Pasto" unique_id=1864514072]
+position = Vector2(350.74643, 156.1401)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass10" type="Sprite2D" parent="Pasto" unique_id=459542653]
+position = Vector2(366.7861, 150.8826)
+scale = Vector2(0.6057028, 1.4434731)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass9" type="Sprite2D" parent="Pasto" unique_id=1362528914]
+position = Vector2(323.75168, 155.45483)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass5" type="Sprite2D" parent="Pasto" unique_id=123986191]
+position = Vector2(24.36366, 157.21342)
+scale = Vector2(0.78650594, 0.904909)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass7" type="Sprite2D" parent="Pasto" unique_id=806414918]
+position = Vector2(-24.629435, 152.64122)
+scale = Vector2(0.7765418, 1.1630355)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass6" type="Sprite2D" parent="Pasto" unique_id=481612590]
+position = Vector2(189.65146, 160.02696)
+scale = Vector2(0.4200383, 0.66861904)
+texture = ExtResource("4_6m4p3")
+
+[node name="TallGrass3" type="Sprite2D" parent="Pasto" unique_id=1052530919]
+position = Vector2(223.25002, 151.41006)
+scale = Vector2(0.42335156, 1.2487328)
+texture = ExtResource("4_6m4p3")

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dsfx3dtjp5ba2" path="res://Entities/Player/inspector.gd" id="1_jo3jf"]
 [ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_uedj5"]
-[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/ExternalAssets/GandalfHardcore FREE Platformer Assets/Decor.png" id="3_blj0n"]
-[ext_resource type="Texture2D" uid="uid://dn8sr0e0a7tjx" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniSpearMan.png" id="3_uedj5"]
-[ext_resource type="Texture2D" uid="uid://dn71hf07pa6bs" path="res://assets/ExternalAssets/MinifolksHumans/Without Outline/MiniSwordMan.png" id="4_uedj5"]
+[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="3_blj0n"]
+[ext_resource type="Texture2D" uid="uid://dn8sr0e0a7tjx" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniSpearMan.png" id="3_uedj5"]
+[ext_resource type="Texture2D" uid="uid://dn71hf07pa6bs" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniSwordMan.png" id="4_uedj5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rtwn5"]
 atlas = ExtResource("3_uedj5")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgwrrcmpele7n"]
 
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="1_n4ktx"]
-[ext_resource type="Texture2D" uid="uid://d1kus4q5f8ydg" path="res://assets/Retro Pixel Ribbons, Banners and Frames 2/01.png" id="2_rm8c4"]
+[ext_resource type="Texture2D" uid="uid://d1kus4q5f8ydg" path="res://assets/Ribbons/01.png" id="2_rm8c4"]
 [ext_resource type="FontFile" uid="uid://pi2t7htfy6ag" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glpyhs_Monospaced.ttf" id="3_bbr75"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70i5f"]
