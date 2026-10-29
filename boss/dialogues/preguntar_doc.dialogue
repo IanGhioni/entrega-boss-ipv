@@ -5,25 +5,24 @@ Inspector: Hola, que tal? Documentación por favor...
 => END
 
 ~ aceptar
-Inspector: Todo parece en orden,pasa mostro.
-if not GameManager.esValido
+Inspector: Todo esta en orden, bienvenido a Berazachusetts.
+if not GameManager.esNpcValido()
+	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Aceptar")}}
 	Inspector: Mhmhmh...
 	Inspector: Uh, revise mal. No cumplia con: 
 	Inspector: {{GameManager.mostrarMotivos()}}
 else 
+	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Aceptar")}}
 	{{GameManager.getNombreNpcActual()}}: Gracias loco, te deseo bondad y prosperidad.
 	Inspector: ...
 => END
 
 ~ rechazar
-Inspector: No pasas che, no tenes los papeles en regla.
-if GameManager.esValido
-	{{GameManager.getNombreNpcActual()}}: Sabes lo que te falta a vos con esa cara. Tengo todo en regla, fijate las restricciones. Suerte...
+Inspector: No podes ingresar al Reino. Tu documentacion no cumple con las reglas.
+if not GameManager.esNpcValido():
+	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Rechazar")}}
 	Inspector: Mhmhmh...
-	Inspector: Uh si... tenia todo en regla... 
+	Inspector: Uh.. si. Tenia todo en regla...
 else
-	{{GameManager.getNombreNpcActual()}}: Imposible, revisa de nuevo...
-	Inspector: No voy a revisar. Vos y tus documentos no cumplen con:
-	Inspector: {{GameManager.mostrarMotivos()}}
-	{{GameManager.getNombreNpcActual()}}: De Berazachuzets tenia que ser...
+	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Rechazar")}}
 => END

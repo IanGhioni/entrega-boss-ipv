@@ -46,7 +46,8 @@ func _on_ask_doc_button_pressed() -> void:
 	# Generamos un nuevo NPC
 	npcActual = GeneradorNPC.generar()
 	print("Motivo: ", npcActual.motivos)
-	
+	print(npcActual.docs[0].raza)
+	GameManager.actualizarDataNpcActual(npcActual.docs[0]);
 	GameManager.actualizarNombreNpcDialogo(npcActual.docs[0].nombre);
 	GameManager.actualizarMotivos(npcActual.motivos);
 	var Balloon = crear_balloon()
@@ -75,7 +76,7 @@ func _on_rechazar_button_pressed() -> void:
 	var balloon = crear_balloon()
 	balloon.start(preguntar_doc, "rechazar")
 	await DialogueManager.dialogue_ended
-	GameManager.actualizarMotivos([]);
+	
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
 	actualizarContador(false)
