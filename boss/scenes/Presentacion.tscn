@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dkc8f7f0d6b5" path="res://Entities/documentos/presentacion.gd" id="1_jwdva"]
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="2_gy0o1"]
+[ext_resource type="Texture2D" uid="uid://d3sbbxo6wr0ws" path="res://assets/hourglass.png" id="2_olwyj"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="3_2eiu6"]
+[ext_resource type="FontFile" uid="uid://cflgn7k6r72r" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glyphs.ttf" id="3_ax2d3"]
 [ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="4_dwntm"]
 [ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="4_olwyj"]
 [ext_resource type="Texture2D" uid="uid://c7no2ykwub7ct" path="res://assets/Bordes/PNG/Default/Panel/panel-014.png" id="5_2eiu6"]
@@ -20,6 +22,53 @@
 [ext_resource type="PackedScene" uid="uid://b60447dvmsxeh" path="res://Entities/NPCs/magoJoven.tscn" id="11_dkkva"]
 [ext_resource type="PackedScene" uid="uid://hnlsp22hx8yy" path="res://Entities/NPCs/nigromante.tscn" id="12_o1l7e"]
 [ext_resource type="PackedScene" uid="uid://cnm4qd1h1172u" path="res://scenes/PauseMenu.tscn" id="20_2eiu6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax2d3"]
+atlas = ExtResource("2_olwyj")
+region = Rect2(0, 0, 199, 389)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpv45"]
+atlas = ExtResource("2_olwyj")
+region = Rect2(199, 0, 199, 389)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj3f0"]
+atlas = ExtResource("2_olwyj")
+region = Rect2(398, 0, 199, 389)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ikal"]
+atlas = ExtResource("2_olwyj")
+region = Rect2(597, 0, 199, 389)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6td6"]
+atlas = ExtResource("2_olwyj")
+region = Rect2(796, 0, 199, 389)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_idfvx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax2d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpv45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj3f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ikal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6td6")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_idfvx"]
+font = ExtResource("3_ax2d3")
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13sgg"]
 
@@ -125,7 +174,26 @@ anchors_preset = 0
 offset_top = -45.0
 offset_bottom = -45.0
 script = ExtResource("1_jwdva")
-escenas_documentos = null
+
+[node name="Timer" type="Timer" parent="." unique_id=1257900424]
+
+[node name="Hourglass" type="AnimatedSprite2D" parent="Timer" unique_id=404467013]
+position = Vector2(1196, 47.206978)
+scale = Vector2(0.23850383, 0.23850383)
+sprite_frames = SubResource("SpriteFrames_idfvx")
+autoplay = "default"
+frame_progress = 0.006113568
+
+[node name="TextTimer" type="Label" parent="Timer" unique_id=405606019]
+offset_left = 1086.0
+offset_top = 32.206978
+offset_right = 1126.0
+offset_bottom = 56.206978
+scale = Vector2(2.159995, 1.9200001)
+label_settings = SubResource("LabelSettings_idfvx")
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("2_gy0o1")]
 
@@ -323,6 +391,7 @@ texture = ExtResource("8_vif71")
 
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("20_2eiu6")]
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Personajes/Inspector" method="_on_aceptar_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" to="Personajes/Inspector" method="_on_rechazar_button_pressed"]

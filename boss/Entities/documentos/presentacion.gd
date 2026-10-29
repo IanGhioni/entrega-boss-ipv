@@ -6,6 +6,14 @@ extends Control
 
 @onready var mesa_documentos: Node2D = $MesaDocumentos
 @onready var puntos: Array[Node] = $Puntos.get_children()
+@onready var label: Label = $Timer/TextTimer
+@onready var timer: Timer = $Timer
+
+func _ready() -> void:
+	timer.start(110)
+	
+func _process(delta: float) -> void:
+	label.text = str(int(timer.time_left))
 
 func _posicion_libre(indice: int) -> Vector2:
 	return puntos[indice % puntos.size()].position
@@ -21,3 +29,7 @@ func entregar_documentos(npc: NPCData) -> void:
 func limpiar_mesa() -> void:
 	for hijo in mesa_documentos.get_children():
 		hijo.queue_free()
+
+
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");
