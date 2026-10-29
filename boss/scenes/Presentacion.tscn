@@ -3,24 +3,23 @@
 [ext_resource type="Script" uid="uid://dkc8f7f0d6b5" path="res://Entities/documentos/presentacion.gd" id="1_jwdva"]
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="2_gy0o1"]
 [ext_resource type="Texture2D" uid="uid://d3sbbxo6wr0ws" path="res://assets/hourglass.png" id="2_olwyj"]
-[ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="3_2eiu6"]
 [ext_resource type="FontFile" uid="uid://cflgn7k6r72r" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glyphs.ttf" id="3_ax2d3"]
-[ext_resource type="Texture2D" uid="uid://byh2d6af14jpe" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 5.png" id="4_dwntm"]
-[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="4_olwyj"]
 [ext_resource type="AudioStream" uid="uid://ctwjm7vbcfxqq" path="res://assets/music/game_theme.mp3" id="4_xpv45"]
-[ext_resource type="Texture2D" uid="uid://c7no2ykwub7ct" path="res://assets/Bordes/PNG/Default/Panel/panel-014.png" id="5_2eiu6"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="5_ilnbs"]
-[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="6_xpv45"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="7_1fek8"]
 [ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="7_bosb2"]
 [ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="7_o0ldx"]
+[ext_resource type="Texture2D" uid="uid://c0bt35a8u8bt8" path="res://assets/Buttons/Green_Buttons_Pixel.png" id="7_olwyj"]
+[ext_resource type="Texture2D" uid="uid://ccmdkguf5lne5" path="res://assets/Buttons/Red_Buttons_Pixel.png" id="8_ax2d3"]
 [ext_resource type="PackedScene" uid="uid://b66ddft02sk8s" path="res://Entities/NPCs/mago.tscn" id="8_fkkrn"]
 [ext_resource type="PackedScene" uid="uid://dly5friiawrgf" path="res://Entities/NPCs/mercader.tscn" id="8_o1l7e"]
 [ext_resource type="PackedScene" uid="uid://dm7waf1f7blb4" path="res://Entities/NPCs/npc.tscn" id="8_vh5ls"]
 [ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="8_vif71"]
 [ext_resource type="PackedScene" uid="uid://77dejf0lfjpk" path="res://Entities/NPCs/paladin.tscn" id="9_kfjds"]
+[ext_resource type="Texture2D" uid="uid://cs8be2nessdpk" path="res://assets/bells.png" id="9_xpv45"]
 [ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Torch.png" id="9_ywfac"]
 [ext_resource type="PackedScene" uid="uid://b60447dvmsxeh" path="res://Entities/NPCs/magoJoven.tscn" id="11_dkkva"]
+[ext_resource type="Texture2D" uid="uid://bro5uixjmtyeu" path="res://assets/Buttons/Gray_Buttons_Pixel.png" id="12_c6td6"]
 [ext_resource type="PackedScene" uid="uid://hnlsp22hx8yy" path="res://Entities/NPCs/nigromante.tscn" id="12_o1l7e"]
 [ext_resource type="PackedScene" uid="uid://cnm4qd1h1172u" path="res://scenes/PauseMenu.tscn" id="20_2eiu6"]
 
@@ -71,53 +70,49 @@ animations = [{
 font = ExtResource("3_ax2d3")
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27kq1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of656"]
+texture = ExtResource("9_xpv45")
+region_rect = Rect2(137, 2, 14, 18)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13sgg"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i6lef"]
-content_margin_top = 20.0
-texture = ExtResource("6_xpv45")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27kq1"]
+texture = ExtResource("7_olwyj")
+region_rect = Rect2(0, 32, 16, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70i5f"]
-content_margin_top = 20.0
-texture = ExtResource("5_2eiu6")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ax2d3"]
+texture = ExtResource("7_olwyj")
+region_rect = Rect2(160, 32, 16, 16)
+modulate_color = Color(0.846616, 0.846616, 0.8466159, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mj5lg"]
-content_margin_top = 20.0
-texture = ExtResource("4_olwyj")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_olwyj"]
+texture = ExtResource("7_olwyj")
+region_rect = Rect2(160, 32, 16, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2eiu6"]
-content_margin_top = 20.0
-texture = ExtResource("6_xpv45")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-modulate_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6td6"]
+texture = ExtResource("12_c6td6")
+region_rect = Rect2(0, 32, 16, 16)
+modulate_color = Color(0.61960787, 0.61960787, 0.61960787, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywfac"]
-texture = ExtResource("4_dwntm")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xpv45"]
+texture = ExtResource("8_ax2d3")
+region_rect = Rect2(0, 16, 16, 16)
 
-[sub_resource type="LabelSettings" id="LabelSettings_1vno4"]
-font_size = 90
-font_color = Color(0.10249347, 0.10249353, 0.10249349, 1)
-shadow_size = 3
-shadow_color = Color(0.44162306, 0.44162303, 0.44162297, 0.85882354)
-shadow_offset = Vector2(6, 3)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yj3f0"]
+texture = ExtResource("8_ax2d3")
+region_rect = Rect2(160, 16, 16, 16)
+modulate_color = Color(0.84705883, 0.84705883, 0.84705883, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ikal"]
+texture = ExtResource("8_ax2d3")
+region_rect = Rect2(160, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6n11o"]
+texture = ExtResource("12_c6td6")
+region_rect = Rect2(0, 16, 16, 16)
+modulate_color = Color(0.61960787, 0.61960787, 0.61960787, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdi0d"]
 atlas = ExtResource("9_ywfac")
@@ -207,12 +202,37 @@ metadata/_edit_lock_ = true
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("2_gy0o1")]
 
-[node name="ButtonsContainer" type="Control" parent="." unique_id=1765387972]
+[node name="ContainerSiguiente" type="Control" parent="." unique_id=1080081428]
+z_index = 1
 anchors_preset = 0
-offset_left = -105.0
-offset_top = -45.0
-offset_right = -65.0
-offset_bottom = -7.0
+offset_left = 684.0
+offset_top = 280.0
+offset_right = 724.0
+offset_bottom = 320.0
+
+[node name="PanelContainer" type="PanelContainer" parent="ContainerSiguiente" unique_id=1565412015]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_27kq1")
+
+[node name="Siguiente" type="Button" parent="ContainerSiguiente/PanelContainer" unique_id=1250635226]
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_of656")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_of656")
+theme_override_styles/hover = SubResource("StyleBoxTexture_of656")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
+
+[node name="ButtonsContainer" type="Control" parent="." unique_id=1765387972]
+z_index = 10
+anchors_preset = 0
+offset_left = 218.0
+offset_top = 391.0
+offset_right = 258.0
+offset_bottom = 429.0
 
 [node name="Container" type="PanelContainer" parent="ButtonsContainer" unique_id=1810073617]
 custom_minimum_size = Vector2(300, 250)
@@ -234,84 +254,30 @@ theme_override_constants/margin_top = 10
 
 [node name="ContainerPila" type="VBoxContainer" parent="ButtonsContainer/Container/MarginContainer" unique_id=1265005427]
 layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="AskDocButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=2067804694]
-custom_minimum_size = Vector2(280, 40)
+[node name="AceptarButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=474619168]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
-theme_override_colors/font_disabled_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
-theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("3_2eiu6")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_i6lef")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_70i5f")
-theme_override_styles/hover = SubResource("StyleBoxTexture_mj5lg")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_2eiu6")
-text = "Pedir documentos"
-
-[node name="AceptarButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=934188949]
-custom_minimum_size = Vector2(280, 40)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
-theme_override_colors/font_disabled_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
-theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("3_2eiu6")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_i6lef")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_70i5f")
-theme_override_styles/hover = SubResource("StyleBoxTexture_mj5lg")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_2eiu6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_27kq1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ax2d3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_olwyj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c6td6")
 disabled = true
-text = "Dejar pasar"
 
-[node name="RechazarButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=523350728]
-custom_minimum_size = Vector2(280, 40)
+[node name="RechazarButton" type="Button" parent="ButtonsContainer/Container/MarginContainer/ContainerPila" unique_id=869819300]
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
-theme_override_colors/font_disabled_color = Color(0.5294118, 0.5294118, 0.5294118, 1)
-theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("3_2eiu6")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_i6lef")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_70i5f")
-theme_override_styles/hover = SubResource("StyleBoxTexture_mj5lg")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_2eiu6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xpv45")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yj3f0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3ikal")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6n11o")
 disabled = true
-text = "Sacar de la fila"
-
-[node name="ContadorContainer" type="PanelContainer" parent="." unique_id=1782599149]
-visible = false
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 1014.0
-offset_top = 2.0
-offset_right = 1152.0
-offset_bottom = 126.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_ywfac")
-
-[node name="Contador" type="Label" parent="ContadorContainer" unique_id=989889035]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "0"
-label_settings = SubResource("LabelSettings_1vno4")
 
 [node name="Personajes" type="Node2D" parent="." unique_id=950768903]
 
@@ -400,8 +366,9 @@ scale = Vector2(0.42335156, 1.2487328)
 texture = ExtResource("8_vif71")
 
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("20_2eiu6")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
+[connection signal="pressed" from="ContainerSiguiente/PanelContainer/Siguiente" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Personajes/Inspector" method="_on_aceptar_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" to="Personajes/Inspector" method="_on_rechazar_button_pressed"]

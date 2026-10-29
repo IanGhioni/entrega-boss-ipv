@@ -12,10 +12,12 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 @export var preguntar_doc: DialogueResource
 
 @onready var presentacion: Control = $"../.."
-@onready var contador: Label = $"../../ContadorContainer/Contador"
-@onready var ask_doc_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton"
+#@onready var contador: Label = $"../../ContadorContainer/Contador"
+
+@onready var ask_doc_button: Button = $"../../ContainerSiguiente/PanelContainer/Siguiente"
 @onready var aceptar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton"
 @onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
+
 @onready var fila_animation: Node2D = $"../../FilaAnimationController"
 
 func _ready() -> void:
@@ -96,7 +98,7 @@ func actualizarContador(botonApretado) -> void:
 		cant_aciertos += 1
 	else:
 		cant_aciertos -= 1
-	contador.text = str(cant_aciertos)
+	#contador.text = str(cant_aciertos)
 
 func crear_balloon() -> Node:
 	var Balloon: Node = Ballon.instantiate();
