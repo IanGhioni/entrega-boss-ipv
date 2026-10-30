@@ -52,6 +52,7 @@ func _on_ask_doc_button_pressed() -> void:
 	
 	# Generamos un nuevo NPC
 	npcActual = GeneradorNPC.generar()
+	GameManager.voz_npc_actual = null
 	print("Motivo: ", npcActual.motivos)
 	
 	GameManager.actualizarDataNpcActual(npcActual.docs[0]);

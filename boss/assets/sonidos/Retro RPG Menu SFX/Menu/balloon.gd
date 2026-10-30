@@ -27,7 +27,20 @@ var fila_animation: Node
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var retrato: TextureRect = %Retrato
 
-@onready var talk_sound: AudioStreamPlayer = %TalkSound
+@onready var inspector_talk_sound: AudioStreamPlayer = %InspectorsTalkSound
+@onready var npc_talk_sound: AudioStreamPlayer = %NpcTalkSound
+
+const SONIDOS_NPC = [
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 2 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 3 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 4 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 5 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 6 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 7 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 8 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 9 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 10 - Oneshot.wav"
+]
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -42,6 +55,8 @@ var will_hide_balloon: bool = false
 var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
+
+var voz_npc_actual: AudioStream
 
 ## The current line
 var dialogue_line: DialogueLine:
@@ -231,13 +246,21 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 func actualizar_animacion_hablante() -> void:
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
-	
-	match dialogue_line.character.to_lower():
-		"inspector":
-			fila_animation.hablar_inspector()
 
-		"npc":
-			fila_animation.hablar_npc_actual()
+	var personaje := dialogue_line.character.to_lower()
+	var nombre_npc := GameManager.getNombreNpcActual().to_lower()
+
+	if personaje == "inspector":
+		fila_animation.hablar_inspector()
+
+	elif personaje == nombre_npc:
+		fila_animation.hablar_npc_actual()
+
+		if GameManager.voz_npc_actual == null:
+			var sonido_random = SONIDOS_NPC.pick_random()
+			GameManager.voz_npc_actual = load(sonido_random)
+
+		npc_talk_sound.stream = GameManager.voz_npc_actual
 
 func actualizar_retrato() -> void:
 	var habla_npc := dialogue_line.character == GameManager.getNombreNpcActual()
@@ -246,11 +269,18 @@ func actualizar_retrato() -> void:
 		retrato.texture = GameManager.getRetrato(GameManager.retratoNpcActual)
 
 func _on_spoke(letter: String, letter_index: int, _speed: float) -> void:
-	if letter_index % 2 != 0:          # suena cada 2 letras, ajustalo a gusto
+	if letter_index % 2 != 0:
 		return
-	if letter.strip_edges().is_empty(): # no suena con espacios
+	if letter.strip_edges().is_empty():
 		return
-	talk_sound.pitch_scale = randf_range(0.9, 1.1)  # variación para que no sea monótono
-	talk_sound.play()
+
+	if dialogue_line.character.to_lower() == "inspector":
+		inspector_talk_sound.pitch_scale = randf_range(0.9, 1.1)
+		inspector_talk_sound.play()
+
+	elif dialogue_line.character.to_lower() == GameManager.getNombreNpcActual().to_lower():
+		npc_talk_sound.pitch_scale = randf_range(0.9, 1.1)
+		npc_talk_sound.play()
+		
 
 #endregion

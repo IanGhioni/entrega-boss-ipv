@@ -9,7 +9,7 @@ const RETRATOS_SHEET: Texture2D = preload("res://assets/personajes_imagen.jpeg")
 const COLUMNAS := 8
 const FILAS := 6
 
-
+var voz_npc_actual: AudioStream = null
 var retratoNpcActual: int = 0
 
 func retratoAleatorio() -> int:

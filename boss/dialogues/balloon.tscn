@@ -235,13 +235,11 @@ response_template = NodePath("ResponseExample")
 layout_mode = 2
 text = "Response example"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1162558754]
+[node name="NpcTalkSound" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
-stream = ExtResource("6_7c2jb")
-volume_db = -10.0
-pitch_scale = 1.1
+volume_db = -15.451
 
-[node name="TalkSound" type="AudioStreamPlayer" parent="." unique_id=1898110265]
+[node name="InspectorsTalkSound" type="AudioStreamPlayer" parent="." unique_id=1898110265]
 unique_name_in_owner = true
 stream = ExtResource("6_7c2jb")
 volume_db = -15.451
