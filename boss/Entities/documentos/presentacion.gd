@@ -10,7 +10,7 @@ extends Control
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
-	timer.start(10)
+	timer.start(100)
 	
 func _process(delta: float) -> void:
 	label.text = str(int(timer.time_left))
