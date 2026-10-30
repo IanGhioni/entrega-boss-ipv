@@ -181,4 +181,3 @@ text = "Expandir"
 
 [connection signal="input_event" from="Papiro/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="pressed" from="ExpandirDoc" to="." method="_on_expandir_doc_pressed"]
-[connection signal="toggled" from="ExpandirDoc" to="." method="_on_expandir_doc_toggled"]
