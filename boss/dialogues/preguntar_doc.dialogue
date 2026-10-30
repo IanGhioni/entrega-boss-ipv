@@ -20,7 +20,6 @@ Inspector: No podes ingresar al Reino. Tu documentacion no cumple con las reglas
 if not GameManager.esNpcValido():
 	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Rechazar")}}
 	Inspector: Mhmhmh...
-	Inspector: Uh.. si. Tenia todo en regla...
 else
 	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Rechazar")}}
 => END
