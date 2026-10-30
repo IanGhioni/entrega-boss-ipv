@@ -15,7 +15,6 @@ extends Control
 
 func _ready() -> void:
 	timer.start(time_level)
-	_conectar_botones(self)
 
 	
 func _process(_delta: float) -> void:
@@ -47,8 +46,10 @@ func _on_timer_timeout() -> void:
 
 @onready var hover_sound: AudioStreamPlayer2D = $ButtonsContainer/HoverSound
 
-func _conectar_botones(nodo: Node) -> void:
-	for hijo in nodo.get_children():
-		if hijo is BaseButton:
-			hijo.mouse_entered.connect(hover_sound.play)
-		_conectar_botones(hijo)
+
+func _on_aceptar_button_mouse_entered() -> void:
+	hover_sound.play();
+
+
+func _on_rechazar_button_mouse_entered() -> void:
+	hover_sound.play();

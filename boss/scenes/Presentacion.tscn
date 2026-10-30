@@ -239,7 +239,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_of656")
 theme_override_styles/hover = SubResource("StyleBoxTexture_of656")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ContainerSiguienteButton/PanelContainer/Siguiente" unique_id=2076625379]
+[node name="SonidoCampana" type="AudioStreamPlayer2D" parent="ContainerSiguienteButton/PanelContainer/Siguiente" unique_id=2076625379]
 stream = ExtResource("8_c6td6")
 volume_db = 12.0
 
@@ -419,4 +419,5 @@ visible = false
 [connection signal="pressed" from="ContainerSiguienteButton/PanelContainer/Siguiente" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
 [connection signal="mouse_entered" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="." method="_on_aceptar_button_mouse_entered"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Personajes/Inspector" method="_on_aceptar_button_pressed"]
+[connection signal="mouse_entered" from="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" to="." method="_on_rechazar_button_mouse_entered"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" to="Personajes/Inspector" method="_on_rechazar_button_pressed"]
