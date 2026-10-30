@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://chbyuxkdld8np"]
 
 [ext_resource type="Script" uid="uid://f1try7jse8ky" path="res://scenes/finalizar_juego.gd" id="1_bsdhf"]
-[ext_resource type="Shader" uid="uid://bqe41hq1kq7va" path="res://assets/shaders/menu.gdshader" id="2_12s3c"]
-[ext_resource type="Texture2D" uid="uid://b2k8lbusgcok7" path="res://assets/Captura de pantalla 2026-10-27 164053.png" id="3_3adj8"]
+[ext_resource type="PackedScene" uid="uid://br3syiwuo7nrp" path="res://scenes/FondoAnimado.tscn" id="2_3adj8"]
 [ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="4_sp00f"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="6_xr1xt"]
 [ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="7_85ak3"]
@@ -11,11 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="9_sadjd"]
 [ext_resource type="AudioStream" uid="uid://da8u3m3k3guk4" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 5.wav" id="10_3adj8"]
 [ext_resource type="AudioStream" uid="uid://duja4p3msqi7m" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Confirm/RPGFX - Menu - Confirm 7.wav" id="11_sp00f"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pmkph"]
-shader = ExtResource("2_12s3c")
-shader_parameter/blur = 2.0
-shader_parameter/brillo = 0.30000001425
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_of656"]
 
@@ -66,17 +60,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bsdhf")
 
-[node name="BackgroundImage" type="TextureRect" parent="." unique_id=80753020]
-texture_filter = 4
-material = SubResource("ShaderMaterial_pmkph")
+[node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_3adj8")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1216712171]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_3adj8")
-expand_mode = 1
+color = Color(0, 0, 0, 0.57254905)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1755634213]
 layout_mode = 1
