@@ -21,7 +21,7 @@ func configurar(escena_visual: PackedScene) -> void:
 	add_child(sprite)
 	sprite.position = Vector2.ZERO
 	sprite.play("idle")
-
+	
 
 func caminar_hacia(
 		destino: Vector2,

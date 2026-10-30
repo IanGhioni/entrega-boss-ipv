@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="8_13sgg"]
 [ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="8_70i5f"]
 [ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-014.png" id="9_70i5f"]
+[ext_resource type="PackedScene" uid="uid://dh8uexm8qlt0j" path="res://scenes/ComoJugar.tscn" id="9_i6lef"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oucw"]
 
@@ -74,8 +75,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -65.0
+offset_right = -193.0
+offset_bottom = -65.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.4759057, 1.4759057)
 color = Color(0, 0, 0, 0.24705882)
 
 [node name="Titulo" parent="." unique_id=1903387969 instance=ExtResource("4_i6lef")]
@@ -113,7 +119,7 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.35644272, 0.096592925, 0.15599337, 1)
+theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("7_i6lef")
 theme_override_font_sizes/font_size = 24
@@ -151,6 +157,17 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_4ousb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i6lef")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kvt2x")
 text = "Salir"
+
+[node name="ComoJugar" parent="." unique_id=316983917 instance=ExtResource("9_i6lef")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6588542
+anchor_top = 0.5154321
+anchor_right = 0.6588542
+anchor_bottom = 0.5154321
+scale = Vector2(0.7588581, 0.7588581)
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_how_to_play_pressed"]

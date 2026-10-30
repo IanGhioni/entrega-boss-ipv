@@ -247,6 +247,7 @@ anchors_preset = 0
 offset_top = -45.0
 offset_bottom = -45.0
 script = ExtResource("1_jwdva")
+time_level = 90
 
 [node name="Timer" type="Timer" parent="." unique_id=1257900424]
 
