@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cgwrrcmpele7n"]
+
+[ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="1_n4ktx"]
+[ext_resource type="Texture2D" uid="uid://d1kus4q5f8ydg" path="res://assets/Ribbons/01.png" id="2_rm8c4"]
+[ext_resource type="FontFile" uid="uid://pi2t7htfy6ag" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glpyhs_Monospaced.ttf" id="3_bbr75"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70i5f"]
+texture = ExtResource("2_rm8c4")
+expand_margin_left = 80.0
+region_rect = Rect2(80, 84, 64, 25)
+
+[node name="Titulo" type="Control" unique_id=1903387969]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -249.0
+offset_top = -43.0
+offset_right = -209.0
+offset_bottom = -3.0
+
+[node name="on esa cara" type="Label" parent="." unique_id=151065888]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 101.0
+offset_right = 646.0
+offset_bottom = 146.0
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_n4ktx")
+theme_override_font_sizes/font_size = 30
+text = "on esa cara"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Ribbon" type="PanelContainer" parent="." unique_id=384896579]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 206.0
+offset_top = 138.0
+offset_right = 722.0
+offset_bottom = 205.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_70i5f")
+
+[node name="MarginContainer" type="MarginContainer" parent="Ribbon" unique_id=758398712]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+
+[node name="no pasas" type="Label" parent="Ribbon/MarginContainer" unique_id=1951343783]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+theme_override_colors/font_shadow_color = Color(0.9372549, 0.48235294, 0.41568628, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_bbr75")
+theme_override_font_sizes/font_size = 30
+text = "no pasas"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="C" type="Label" parent="." unique_id=461902248]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 98.0
+offset_right = 362.0
+offset_bottom = 251.0
+size_flags_horizontal = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_n4ktx")
+theme_override_font_sizes/font_size = 102
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1

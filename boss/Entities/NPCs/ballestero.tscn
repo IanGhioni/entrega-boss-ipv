@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://db1lhmoihumwu"]
+
+[ext_resource type="Texture2D" uid="uid://d1gvmtuct1y7y" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniCrossBowMan.png" id="1_cem4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmfdt"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_natdu"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quq1h"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tawfv"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tebuu"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx8jr"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj7yo"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tw60"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y16ql"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnobm"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvh5i"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxtxk"]
+atlas = ExtResource("1_cem4n")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k5toe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmfdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_natdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quq1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tawfv")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tebuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx8jr")
+}],
+"loop": 1,
+"name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj7yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tw60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y16ql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnobm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvh5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxtxk")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[node name="Ballestero" type="AnimatedSprite2D" unique_id=1558929447]
+scale = Vector2(6.83, 6.83)
+sprite_frames = SubResource("SpriteFrames_k5toe")
+animation = &"idle"
+frame_progress = 0.8271541
+flip_h = true

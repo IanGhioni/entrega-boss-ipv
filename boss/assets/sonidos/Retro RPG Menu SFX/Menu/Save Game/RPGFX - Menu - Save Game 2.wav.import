@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1uwvuegh8mby"
+path="res://.godot/imported/RPGFX - Menu - Save Game 2.wav-e5db11021f381b125488ce06b5f1861e.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Menu/Save Game/RPGFX - Menu - Save Game 2.wav"
+dest_files=["res://.godot/imported/RPGFX - Menu - Save Game 2.wav-e5db11021f381b125488ce06b5f1861e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

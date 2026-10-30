@@ -1,77 +1,165 @@
 extends CharacterBody2D
 
-var inventario: Array;
-
-var terminoInspeccion: bool = false
-var is_dialogue_active:bool = false;
-var npcActual;
 const Ballon = preload("res://dialogues/balloon.tscn");
 
+var terminoInspeccion: bool = false
+var is_dialogue_active: bool = false;
+var npcActual;
+var cant_aciertos: int = 0;
+var cant_rondas: int = 0;
+var globo_actual: Node = null
+
+@export var max_rondas: int;
 @export var preguntar_doc: DialogueResource
-@onready var documentacion = $"../../DocumentacionElfica"
-@onready var aceptar = $"../../Aceptar"
-@onready var rechazar = $"../../Rechazar"
-@onready var label: Label = $"../../PanelContainer2/Label"
-@onready var lista = [$"../../DocumentacionElfica", $"../../Documentacion", $"../../Documentacion2", $"../../DocumentacionElfica2",  $"../../DocumentacionElfica3"]
-var counter = 0;
+
+# Botones
+@onready var siguienteBtn: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
+@onready var ask_doc_button: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
+@onready var aceptar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton"
+@onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
+@onready var buttons_container: Control = $"../../ButtonsContainer"
+
+# Labels
+@onready var multa_texto: Label = $"../../Multa/PanelContainer/VBoxContainer/MultaTexto"
+
+@onready var presentacion: Control = $"../.."
+
+# Animaciones
+@onready var bell_animation: AnimationPlayer = $"../../BellAnimation"
+@onready var fila_animation: Node2D = $"../../FilaAnimationController"
+@onready var animación_de_multa: AnimationPlayer = $"../../AnimaciónDeMulta"
+
+# Sonidos
+@onready var sonido_campana: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/SonidoCampana"
+@onready var action_sound: AudioStreamPlayer2D = $"../../ButtonsContainer/ActionSound"
+
 
 func _ready() -> void:
-	DialogueManager.dialogue_started.connect(_on_preguntar_doc_pressed);
-	DialogueManager.dialogue_ended.connect(_on_pressed_decline);
-	label.text = "0";
 	
-	for i in lista:
-		i.visible = false;
-		
-	aceptar.visible = false
-	rechazar.visible = false
+	DialogueManager.dialogue_ended.connect(_on_pressed_decline);
+	fila_animation.tamanio = max_rondas;
 
-func _on_pressed_decline(x) -> void:
+func eliminar_dialogo() -> void:
+	if is_instance_valid(globo_actual):
+		globo_actual.queue_free()
+		globo_actual = null
+
+# Observer de fin de un dialogo
+func _on_pressed_decline(_x) -> void:
 	if terminoInspeccion:
 		terminoInspeccion = false
-	else:
-		npcActual.visible = true
-	var formatString = "%s"
+		buttons_container.hide();
+	elif npcActual != null:
+		presentacion.entregar_documentos(npcActual)
+		aceptar_button.disabled = false;
+		rechazar_button.disabled = false;
 	
-	if lista.is_empty():
-		$"../../PanelContainer".visible = false;
-	
-	label.text = formatString % counter;
-	await get_tree().create_timer(0.2).timeout; 
+	if cant_rondas == max_rondas:
+		ask_doc_button.disabled = true
+		await get_tree().create_timer(5.0).timeout
+		Transicion.cambiar_escena("res://scenes/FinalizarJuego.tscn")
 
-func _on_preguntar_doc_pressed() -> void:
+func _on_ask_doc_button_pressed() -> void:
+	bell_animation.play("bell-pressed")
+	sonido_campana.play()
+	ask_doc_button.disabled = true;
+	await fila_animation.atender_siguiente()
+	fila_animation.mover_fila()
 	is_dialogue_active = true;
-	aceptar.visible = true;
-	rechazar.visible = true;
-	npcActual = lista.pop_front();
-	print(npcActual.isValid)
-	var Ballon: Node = Ballon.instantiate();
-	get_tree().current_scene.add_child(Ballon);
-	Ballon.start(preguntar_doc,"start");
+	buttons_container.show();
 	
-func ocultarDocumentacion():
-	npcActual.visible = false;
+	# Generamos un nuevo NPC
+	npcActual = GeneradorNPC.generar()
+	GameManager.voz_npc_actual = null
+	print("Motivo: ", npcActual.motivos)
+	
+	GameManager.actualizarDataNpcActual(npcActual.docs[0]);
+	GameManager.actualizarNombreNpcDialogo(npcActual.docs[0].nombre);
+	GameManager.actualizarMotivos(npcActual.motivos);
+	GameManager.actualizarRetratoNpc(GameManager.retratoAleatorio())
+	
+	var Balloon = crear_balloon()
+	Balloon.start(preguntar_doc, "start");
+	
+	await DialogueManager.dialogue_ended
+	fila_animation.dejar_de_hablar_inspector()
+	fila_animation.dejar_de_hablar_npc_actual()
+	siguienteBtn.mouse_default_cursor_shape = Control.CURSOR_ARROW;
+	
+func _on_aceptar_button_pressed() -> void:
+	action_sound.play();
+	_accion_de_fila()
+	
+	var balloon = crear_balloon()
+	balloon.start(preguntar_doc, "aceptar")
+	
+	await DialogueManager.dialogue_ended
+	GameManager.actualizarMotivos([]);
+	fila_animation.dejar_de_hablar_inspector()
+	fila_animation.dejar_de_hablar_npc_actual()
+	actualizar_multa(true)
+	actualizarContador(true)
+	bell_animation.play("bell-idle-alternate")
+	fila_animation.dejar_pasar()
+	siguienteBtn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
 
-func _on_aceptar_pressed() -> void:
-	aceptar.visible = false;
-	rechazar.visible = false;
+func _on_rechazar_button_pressed() -> void:
+	action_sound.play();
+	_accion_de_fila()
+
+	var balloon = crear_balloon()
+	balloon.start(preguntar_doc, "rechazar")
+	await DialogueManager.dialogue_ended
+	
+	fila_animation.dejar_de_hablar_inspector()
+	fila_animation.dejar_de_hablar_npc_actual()
+	actualizar_multa(false)
+	actualizarContador(false)
+	bell_animation.play("bell-idle-alternate")
+	fila_animation.no_dejar_pasar()
+	siguienteBtn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
+
+# Método común entre aceptar/rechazar a alguien
+func _accion_de_fila() -> void:
+	ask_doc_button.disabled = false;
+	aceptar_button.disabled = true;
+	rechazar_button.disabled = true;
 	terminoInspeccion = true;
-	ocultarDocumentacion();
-	actualizarContador(true);
-
-	DialogueManager.show_dialogue_balloon(preguntar_doc, "aceptar");
-
-
-func _on_rechazar_pressed() -> void:
-	aceptar.visible = false;
-	rechazar.visible = false;
-	terminoInspeccion = true;
-	ocultarDocumentacion();
-	actualizarContador(false);
-	DialogueManager.show_dialogue_balloon(preguntar_doc, "rechazar");
+	cant_rondas = cant_rondas + 1;
+	presentacion.limpiar_mesa()
 
 func actualizarContador(botonApretado) -> void:
-	if (npcActual.isValid and botonApretado) or (!npcActual.isValid and !botonApretado):
-		counter += 1;
+	var valido: bool = npcActual.es_valido()
+	if (valido and botonApretado) or (!valido and !botonApretado):
+		VariablesGlobales.sumarAcierto();
+		cant_aciertos += 1
 	else:
-		counter -= 1; 
+		VariablesGlobales.sumarFallo();
+		cant_aciertos -= 1
+	#contador.text = str(cant_aciertos)
+
+func crear_balloon() -> Node:
+	if is_instance_valid(globo_actual):
+		globo_actual.queue_free()
+		
+	var Balloon: Node = Ballon.instantiate();
+	Balloon.fila_animation = fila_animation
+	get_tree().current_scene.add_child(Balloon);
+	
+	# Guardamos la referencia para poder acceder a ella después
+	globo_actual = Balloon 
+	
+	return Balloon
+	
+func actualizar_multa(dejo_pasar: bool) -> void:
+	var valido: bool = npcActual.es_valido()
+
+	if (valido and dejo_pasar) or (!valido and !dejo_pasar):
+		multa_texto.text = ""
+		return
+
+	if dejo_pasar:
+		multa_texto.text = npcActual.obtener_motivos_string()
+	else:
+		multa_texto.text = "Ciudadano con documentación valida"
+	animación_de_multa.play("mostar_multa")

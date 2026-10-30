@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://88fomgi6pgjk"]
+
+[ext_resource type="Script" uid="uid://b7bncuykxlo07" path="res://Entities/documentos/documentacion.gd" id="1_771ts"]
+[ext_resource type="Texture2D" uid="uid://h80xqj5ua8lg" path="res://assets/documentacion/documentación-plantilla.png" id="2_fg35m"]
+[ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://assets/fonts/Brixton-Outline.ttf" id="3_e1ovm"]
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="4_te1nm"]
+[ext_resource type="Texture2D" uid="uid://d1kus4q5f8ydg" path="res://assets/Ribbons/01.png" id="5_4cj47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptwlb"]
+size = Vector2(321, 368)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uf4da"]
+font = ExtResource("3_e1ovm")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3nx7v"]
+font = ExtResource("4_te1nm")
+font_size = 20
+font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4cj47"]
+texture = ExtResource("5_4cj47")
+region_rect = Rect2(176, 80, 41, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ydl0o"]
+texture = ExtResource("5_4cj47")
+region_rect = Rect2(176, 80, 41, 12)
+modulate_color = Color(0.6745098, 0.6745098, 0.6745098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ptwlb"]
+texture = ExtResource("5_4cj47")
+region_rect = Rect2(176, 80, 41, 12)
+modulate_color = Color(0.6745098, 0.6745098, 0.6745098, 1)
+
+[node name="Documentacion" type="Node2D" unique_id=2004003958]
+z_index = 1
+script = ExtResource("1_771ts")
+metadata/_custom_type_script = "uid://chaae57ebenim"
+
+[node name="Papiro" type="Sprite2D" parent="." unique_id=2106017129]
+texture = ExtResource("2_fg35m")
+
+[node name="Area2D" type="Area2D" parent="Papiro" unique_id=728584437]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Papiro/Area2D" unique_id=159730309]
+position = Vector2(-0.5, 8)
+shape = SubResource("RectangleShape2D_ptwlb")
+
+[node name="Sello" type="Sprite2D" parent="." unique_id=1830168448]
+unique_name_in_owner = true
+position = Vector2(119.00001, -124.99999)
+scale = Vector2(0.088, 0.088)
+
+[node name="Titulo" type="Label" parent="." unique_id=904647761]
+offset_left = -132.0
+offset_top = -144.0
+offset_right = 79.0
+offset_bottom = -87.0
+text = "Documentacion de 
+Berazachusetts"
+label_settings = SubResource("LabelSettings_uf4da")
+metadata/_edit_use_anchors_ = true
+
+[node name="NombreContainer" type="Control" parent="." unique_id=1935420004]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Nombre" type="Label" parent="NombreContainer" unique_id=2109976756]
+layout_mode = 0
+offset_left = -130.0
+offset_top = -64.0
+offset_right = -62.0
+offset_bottom = -38.0
+text = "Nombre:"
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoNombre" type="Label" parent="NombreContainer" unique_id=123790604]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -59.0
+offset_top = -64.0
+offset_right = 136.0
+offset_bottom = -38.0
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="ClaseContainer" type="Control" parent="." unique_id=1004938729]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Clase" type="Label" parent="ClaseContainer" unique_id=1101741819]
+layout_mode = 0
+offset_left = -130.0
+offset_top = -36.0
+offset_right = -62.0
+offset_bottom = -10.0
+text = "Clase:"
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoClase" type="Label" parent="ClaseContainer" unique_id=1016115430]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -81.0
+offset_top = -38.0
+offset_right = 130.0
+offset_bottom = -12.0
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="RazaContainer" type="Control" parent="." unique_id=237734472]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Raza" type="Label" parent="RazaContainer" unique_id=595085622]
+layout_mode = 0
+offset_left = -130.0
+offset_top = -10.0
+offset_right = -62.0
+offset_bottom = 16.0
+text = "Raza:"
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoRaza" type="Label" parent="RazaContainer" unique_id=1526581951]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -81.0
+offset_top = -9.0
+offset_right = 130.0
+offset_bottom = 17.0
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="SimbolosElficos" type="Node2D" parent="." unique_id=1018017662]
+
+[node name="Simbolo1" type="Sprite2D" parent="SimbolosElficos" unique_id=1389845382]
+unique_name_in_owner = true
+position = Vector2(-105.99999, 106.935)
+scale = Vector2(0.1, 0.1)
+
+[node name="Simbolo2" type="Sprite2D" parent="SimbolosElficos" unique_id=196995367]
+unique_name_in_owner = true
+position = Vector2(-51.000004, 106.935)
+scale = Vector2(0.1, 0.1)
+
+[node name="Simbolo3" type="Sprite2D" parent="SimbolosElficos" unique_id=1444572247]
+unique_name_in_owner = true
+position = Vector2(7.6293945e-06, 106.935)
+scale = Vector2(0.1, 0.1)
+
+[node name="Simbolo4" type="Sprite2D" parent="SimbolosElficos" unique_id=269474712]
+unique_name_in_owner = true
+position = Vector2(55.000004, 106.935)
+scale = Vector2(0.1, 0.1)
+
+[node name="Simbolo5" type="Sprite2D" parent="SimbolosElficos" unique_id=1345182648]
+unique_name_in_owner = true
+position = Vector2(116.99999, 106.935)
+scale = Vector2(0.1, 0.1)
+
+[node name="ExpandirDoc" type="Button" parent="." unique_id=1721098863]
+texture_filter = 1
+offset_left = 171.0
+offset_top = -40.0
+offset_right = 248.0
+offset_bottom = -9.0
+rotation = 1.5707964
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_te1nm")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_4cj47")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ydl0o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ptwlb")
+text = "Expandir"
+
+[connection signal="input_event" from="Papiro/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="pressed" from="ExpandirDoc" to="." method="_on_expandir_doc_pressed"]

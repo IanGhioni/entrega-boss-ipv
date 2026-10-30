@@ -1,15 +1,25 @@
 ~ start
-Alto elfo: Hola buen dia.
+{{GameManager.getNombreNpcActual()}}: Hola buen dia, soy {{GameManager.getNombreNpcActual()}}.
 Inspector: Hola, que tal? Documentación por favor...
-Alto elfo: Si, como no...
+{{GameManager.getNombreNpcActual()}}: Si, como no...
 => END
 
 ~ aceptar
-Inspector: Todo parece en orden,pasa mostro.
-Alto elfo: Soy un elfo, pero gracias
+Inspector: Todo esta en orden, bienvenido a Berazachusetts.
+if not GameManager.esNpcValido()
+	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Aceptar")}}
+	Inspector: Mhmhmh...
+else 
+	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Aceptar")}}
+	{{GameManager.getNombreNpcActual()}}: Gracias loco, te deseo bondad y prosperidad.
+	Inspector: ...
 => END
 
 ~ rechazar
-Inspector: No pasas che, no tenes los papeles en regla.
-Alto elfo: :(
+Inspector: No podes ingresar al Reino. Tu documentacion no cumple con las reglas.
+if not GameManager.esNpcValido():
+	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Rechazar")}}
+	Inspector: Mhmhmh...
+else
+	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Rechazar")}}
 => END

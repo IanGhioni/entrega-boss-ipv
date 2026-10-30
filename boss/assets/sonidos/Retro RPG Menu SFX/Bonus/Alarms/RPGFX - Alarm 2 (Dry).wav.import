@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://db7hegfee7g58"
+path="res://.godot/imported/RPGFX - Alarm 2 (Dry).wav-773c05c430ec485156d748ec408fcc81.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Bonus/Alarms/RPGFX - Alarm 2 (Dry).wav"
+dest_files=["res://.godot/imported/RPGFX - Alarm 2 (Dry).wav-773c05c430ec485156d748ec408fcc81.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
