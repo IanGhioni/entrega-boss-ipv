@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://b60447dvmsxeh" path="res://Entities/NPCs/magoJoven.tscn" id="11_dkkva"]
 [ext_resource type="PackedScene" uid="uid://hnlsp22hx8yy" path="res://Entities/NPCs/nigromante.tscn" id="12_o1l7e"]
 [ext_resource type="PackedScene" uid="uid://cnm4qd1h1172u" path="res://scenes/PauseMenu.tscn" id="20_2eiu6"]
+[ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="24_c6td6"]
+[ext_resource type="Texture2D" uid="uid://d0y65a0ls7wpa" path="res://assets/Cells.png" id="26_6n11o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ax2d3"]
 atlas = ExtResource("2_olwyj")
@@ -168,6 +170,198 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="Animation" id="Animation_3ikal"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Multa/Scroll:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, -3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Multa/Scroll:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Multa/Scroll:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"desenrollar"]
+}
+
+[sub_resource type="Animation" id="Animation_c6td6"]
+resource_name = "mostar_multa"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Multa:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-381, 570), Vector2(238, 570), Vector2(238, 570), Vector2(-381, 570)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Multa:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Multa/Scroll:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Multa/Scroll:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Multa/Scroll:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"closed", &"desenrollar"]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Multa/Scroll")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"desenrollar"],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6n11o"]
+_data = {
+&"RESET": SubResource("Animation_3ikal"),
+&"mostar_multa": SubResource("Animation_c6td6")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mypxk"]
+texture = ExtResource("24_c6td6")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n11o"]
+atlas = ExtResource("26_6n11o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqw0u"]
+atlas = ExtResource("26_6n11o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf410"]
+atlas = ExtResource("26_6n11o")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yyk1"]
+atlas = ExtResource("26_6n11o")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ww1q"]
+atlas = ExtResource("26_6n11o")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjtf0"]
+atlas = ExtResource("26_6n11o")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_of656"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n11o")
+}],
+"loop": 0,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqw0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf410")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yyk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ww1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjtf0")
+}],
+"loop": 0,
+"name": &"desenrollar",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ikal"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pqw0u"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6n11o"]
 
 [node name="Presentacion" type="Control" unique_id=1286153324]
 layout_mode = 3
@@ -401,6 +595,73 @@ scale = Vector2(0.42335156, 1.2487328)
 texture = ExtResource("8_vif71")
 
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("20_2eiu6")]
+visible = false
+
+[node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=707517928]
+libraries/ = SubResource("AnimationLibrary_6n11o")
+
+[node name="Multa" type="Control" parent="." unique_id=657668407]
+anchors_preset = 0
+offset_left = -381.0
+offset_top = 570.0
+offset_right = -381.0
+offset_bottom = 570.0
+
+[node name="Panel" type="Panel" parent="Multa" unique_id=1952077279]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mypxk")
+
+[node name="Scroll" type="AnimatedSprite2D" parent="Multa" unique_id=777687912]
+position = Vector2(168, -3)
+scale = Vector2(2.6749713, 1.8421971)
+sprite_frames = SubResource("SpriteFrames_of656")
+animation = &"desenrollar"
+autoplay = "closed"
+
+[node name="PanelContainer" type="PanelContainer" parent="Multa" unique_id=3251579]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -78.0
+offset_right = 82.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3ikal")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Multa/PanelContainer" unique_id=338091564]
+layout_mode = 2
+
+[node name="MultaTitulo" type="Label" parent="Multa/PanelContainer/VBoxContainer" unique_id=947428355]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_pqw0u")
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.9882353, 0.7607843, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.78039217, 0.2509804, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_fonts/font = ExtResource("3_2eiu6")
+theme_override_font_sizes/font_size = 32
+text = "Multa"
+horizontal_alignment = 1
+
+[node name="MultaTexto" type="Label" parent="Multa/PanelContainer/VBoxContainer" unique_id=792906236]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_6n11o")
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9882353, 0.7607843, 0, 1)
+theme_override_fonts/font = ExtResource("3_2eiu6")
+autowrap_mode = 2
+justification_flags = 35
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
