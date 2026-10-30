@@ -4,7 +4,9 @@
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="2_komsw"]
 [ext_resource type="AudioStream" uid="uid://da8u3m3k3guk4" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 5.wav" id="2_yx35g"]
 [ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="3_5w6ei"]
+[ext_resource type="AudioStream" uid="uid://do8sefrnagbm7" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Confirm/RPGFX - Menu - Confirm 9.wav" id="3_vd2mf"]
 [ext_resource type="Texture2D" uid="uid://c7no2ykwub7ct" path="res://assets/Bordes/PNG/Default/Panel/panel-014.png" id="4_5w6ei"]
+[ext_resource type="AudioStream" uid="uid://ung64ne1xlth" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Pause Game/RPGFX - Menu - Pause Game 4.wav" id="4_abn1t"]
 [ext_resource type="Texture2D" uid="uid://c1q31s8e436n1" path="res://assets/Bordes/PNG/Default/Panel/panel-011.png" id="5_jiu6o"]
 [ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="6_40atx"]
 
@@ -47,6 +49,12 @@ script = ExtResource("1_jvnd5")
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1644922850]
 stream = ExtResource("2_yx35g")
+
+[node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=758059122]
+stream = ExtResource("3_vd2mf")
+
+[node name="PauseSound" type="AudioStreamPlayer2D" parent="." unique_id=1737876069]
+stream = ExtResource("4_abn1t")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2142094783]
 anchors_preset = 15
