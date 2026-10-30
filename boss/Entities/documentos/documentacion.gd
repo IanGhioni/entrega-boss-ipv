@@ -6,7 +6,8 @@ extends DocumentoBase
 @onready var sello: Sprite2D = %Sello
 @onready var simbolos := [%Simbolo1, %Simbolo2, %Simbolo3, %Simbolo4, %Simbolo5]
 var clickeado = false
-
+var posicionOriginal: Vector2;
+var is_active_expand:bool = false;
 func _process(delta: float) -> void:
 	if clickeado:
 		position = get_global_mouse_position();
@@ -29,3 +30,23 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		clickeado = true;
 	if Input.is_action_just_released("left_click"):
 		clickeado = false
+
+func _on_expandir_doc_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		posicionOriginal = position;
+		position = Vector2(556.0, 304.0);
+		scale = Vector2(1.4,1.7); 
+	else:
+		position = posicionOriginal;
+		scale = Vector2.ONE;
+
+func _on_expandir_doc_pressed() -> void:
+	if not is_active_expand:
+		posicionOriginal = position;
+		position = Vector2(556.0, 304.0);
+		scale = Vector2(1.4,1.7);
+	else:
+		position = posicionOriginal;
+		scale = Vector2.ONE;
+	is_active_expand = not is_active_expand;
+		 

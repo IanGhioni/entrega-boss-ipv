@@ -167,7 +167,7 @@ unique_name_in_owner = true
 position = Vector2(116.99999, 106.935)
 scale = Vector2(0.1, 0.1)
 
-[node name="Button" type="Button" parent="." unique_id=1721098863]
+[node name="ExpandirDoc" type="Button" parent="." unique_id=1721098863]
 offset_left = 159.0
 offset_top = -41.0
 offset_right = 236.0
@@ -180,3 +180,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_4cj47")
 text = "Expandir"
 
 [connection signal="input_event" from="Papiro/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="pressed" from="ExpandirDoc" to="." method="_on_expandir_doc_pressed"]
+[connection signal="toggled" from="ExpandirDoc" to="." method="_on_expandir_doc_toggled"]
