@@ -20,7 +20,7 @@ func actualizarRetratoNpc(indice: int) -> void:
 
 @warning_ignore("integer_division")
 func getRetrato(indice: int) -> AtlasTexture:
-	var celda := RETRATOS_SHEET.get_size() / Vector2(COLUMNAS, FILAS)
+	var _celda := RETRATOS_SHEET.get_size() / Vector2(COLUMNAS, FILAS)
 	var col := indice % COLUMNAS
 	var fila := indice / COLUMNAS
 	var atlas := AtlasTexture.new()

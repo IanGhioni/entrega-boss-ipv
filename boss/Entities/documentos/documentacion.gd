@@ -9,7 +9,7 @@ var clickeado = false
 var posicionOriginal: Vector2;
 var is_active_expand:bool = false;
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if clickeado:
 		var target_pos = get_global_mouse_position()
 		var screen_size = get_viewport_rect().size
@@ -32,7 +32,7 @@ func setup(d: DocData) -> void:
 		else:
 			simbolos[i].visible = false
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	if Input.is_action_pressed("left_click"):
 		clickeado = true;
 	if Input.is_action_just_released("left_click"):

@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="7_bosb2"]
 [ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="7_o0ldx"]
 [ext_resource type="Texture2D" uid="uid://c0bt35a8u8bt8" path="res://assets/Buttons/Green_Buttons_Pixel.png" id="7_olwyj"]
-[ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="7_yj3f0"]
 [ext_resource type="AudioStream" uid="uid://8jvppwoaymb" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 3.wav" id="8_6n11o"]
 [ext_resource type="Texture2D" uid="uid://ccmdkguf5lne5" path="res://assets/Buttons/Red_Buttons_Pixel.png" id="8_ax2d3"]
 [ext_resource type="AudioStream" uid="uid://dk7yv1epv6rco" path="res://assets/sonidos/tintintintintin67676767.mp3" id="8_c6td6"]
@@ -84,42 +83,81 @@ texture = ExtResource("9_xpv45")
 region_rect = Rect2(137, 2, 14, 18)
 
 [sub_resource type="Animation" id="Animation_c6td6"]
-length = 0.001
+resource_name = "mostar_multa"
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Multa:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(684, 280)]
+"values": [Vector2(-381, 570), Vector2(238, 570), Vector2(238, 570), Vector2(-381, 570)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
+tracks/1/path = NodePath("Multa:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.004247028]
+"values": [0.0, 0.0, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
+tracks/2/path = NodePath("Multa/Scroll:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(168, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Multa/Scroll:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Multa/Scroll:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"closed", &"desenrollar"]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Multa/Scroll")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"desenrollar"],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_6n11o"]
@@ -241,7 +279,7 @@ _data = {
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvrp7"]
-texture = ExtResource("7_yj3f0")
+texture = ExtResource("24_c6td6")
 texture_margin_left = 12.0
 texture_margin_top = 12.0
 texture_margin_right = 12.0
@@ -371,84 +409,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"desenrollar"]
-}
-
-[sub_resource type="Animation" id="Animation_c6td6"]
-resource_name = "mostar_multa"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Multa:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-381, 570), Vector2(238, 570), Vector2(238, 570), Vector2(-381, 570)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Multa:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Multa/Scroll:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(168, -3)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Multa/Scroll:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Multa/Scroll:animation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.8333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"closed", &"desenrollar"]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Multa/Scroll")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.099999994),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"desenrollar"],
-"method": &"play"
-}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6n11o"]
@@ -843,8 +803,6 @@ theme_override_colors/font_color = Color(0.9882353, 0.7607843, 0, 1)
 theme_override_fonts/font = ExtResource("3_2eiu6")
 autowrap_mode = 2
 justification_flags = 35
-
-[node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ContainerSiguienteButton/PanelContainer/Siguiente" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
