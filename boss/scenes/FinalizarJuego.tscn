@@ -130,6 +130,21 @@ theme_override_fonts/font = ExtResource("6_xr1xt")
 theme_override_font_sizes/font_size = 45
 text = "Fin del día"
 
+[node name="MatchStats" type="Button" parent="PanelContainer2/ContainerButtons" unique_id=1706708311]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.35644272, 0.096592925, 0.15599337, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_asbnv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sy67a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rfiop")
+text = "Jordana de hoy"
+
 [node name="Play" type="Button" parent="PanelContainer2/ContainerButtons" unique_id=240933830]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -182,6 +197,7 @@ pitch_scale = 0.69
 autoplay = true
 parameters/looping = true
 
+[connection signal="pressed" from="PanelContainer2/ContainerButtons/MatchStats" to="." method="_on_match_stats_pressed"]
 [connection signal="pressed" from="PanelContainer2/ContainerButtons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="PanelContainer2/ContainerButtons/BackMenuButton" to="." method="_on_back_menu_button_pressed"]
 [connection signal="pressed" from="PanelContainer2/ContainerButtons/Quit" to="." method="_on_quit_pressed"]
