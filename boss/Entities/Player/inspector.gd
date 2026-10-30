@@ -40,8 +40,8 @@ func _on_pressed_decline(_x) -> void:
 	
 	if cant_rondas == max_rondas:
 		ask_doc_button.disabled = true
-		await get_tree().create_timer(0.2).timeout
-		get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");
+		await get_tree().create_timer(5.0).timeout
+		Transicion.cambiar_escena("res://scenes/FinalizarJuego.tscn")
 
 func _on_ask_doc_button_pressed() -> void:
 	bell_animation.play("bell-pressed")
