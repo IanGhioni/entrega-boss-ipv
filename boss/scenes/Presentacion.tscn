@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dgo7bjcxfngo0"]
 
 [ext_resource type="Script" uid="uid://dkc8f7f0d6b5" path="res://Entities/documentos/presentacion.gd" id="1_jwdva"]
-[ext_resource type="AudioStream" uid="uid://cnehw74fdm0de" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 2.wav" id="2_3ikal"]
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="2_gy0o1"]
 [ext_resource type="Texture2D" uid="uid://d3sbbxo6wr0ws" path="res://assets/hourglass.png" id="2_olwyj"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="3_2eiu6"]
@@ -13,12 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="7_o0ldx"]
 [ext_resource type="Texture2D" uid="uid://c0bt35a8u8bt8" path="res://assets/Buttons/Green_Buttons_Pixel.png" id="7_olwyj"]
 [ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="7_yj3f0"]
+[ext_resource type="AudioStream" uid="uid://8jvppwoaymb" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 3.wav" id="8_6n11o"]
 [ext_resource type="Texture2D" uid="uid://ccmdkguf5lne5" path="res://assets/Buttons/Red_Buttons_Pixel.png" id="8_ax2d3"]
 [ext_resource type="AudioStream" uid="uid://dk7yv1epv6rco" path="res://assets/sonidos/tintintintintin67676767.mp3" id="8_c6td6"]
 [ext_resource type="PackedScene" uid="uid://b66ddft02sk8s" path="res://Entities/NPCs/mago.tscn" id="8_fkkrn"]
 [ext_resource type="PackedScene" uid="uid://dly5friiawrgf" path="res://Entities/NPCs/mercader.tscn" id="8_o1l7e"]
 [ext_resource type="PackedScene" uid="uid://dm7waf1f7blb4" path="res://Entities/NPCs/npc.tscn" id="8_vh5ls"]
 [ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="8_vif71"]
+[ext_resource type="AudioStream" uid="uid://h82mx5178m43" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Confirm/RPGFX - Menu - Confirm 6.wav" id="9_6n11o"]
 [ext_resource type="PackedScene" uid="uid://77dejf0lfjpk" path="res://Entities/NPCs/paladin.tscn" id="9_kfjds"]
 [ext_resource type="Texture2D" uid="uid://cs8be2nessdpk" path="res://assets/bells.png" id="9_xpv45"]
 [ext_resource type="Texture2D" uid="uid://b5jetdfe8gxpl" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Torch.png" id="9_ywfac"]
@@ -399,7 +400,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
 
 [node name="SonidoCampana" type="AudioStreamPlayer2D" parent="ContainerSiguienteButton/PanelContainer/Siguiente" unique_id=2076625379]
 stream = ExtResource("8_c6td6")
-volume_db = 12.0
+volume_db = 9.0
 
 [node name="BellAnimation" type="AnimationPlayer" parent="." unique_id=1327996737]
 root_node = NodePath("../ContainerSiguienteButton")
@@ -423,9 +424,12 @@ grow_vertical = 0
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="ButtonsContainer" unique_id=1593955590]
 position = Vector2(51, 86)
-stream = ExtResource("2_3ikal")
+stream = ExtResource("8_6n11o")
 volume_db = -1.0
 pitch_scale = 2.0
+
+[node name="ActionSound" type="AudioStreamPlayer2D" parent="ButtonsContainer" unique_id=2030370976]
+stream = ExtResource("9_6n11o")
 
 [node name="Container" type="PanelContainer" parent="ButtonsContainer" unique_id=1810073617]
 custom_minimum_size = Vector2(260, 100)

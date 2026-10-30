@@ -17,8 +17,9 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 @onready var buttons_container: Control = $"../../ButtonsContainer"
 @onready var aceptar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton"
 @onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/AudioStreamPlayer2D"
 @onready var fila_animation: Node2D = $"../../FilaAnimationController"
+@onready var sonido_campana: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/SonidoCampana"
+@onready var action_sound: AudioStreamPlayer2D = $"../../ButtonsContainer/ActionSound"
 
 func _ready() -> void:
 	
@@ -39,8 +40,6 @@ func _on_pressed_decline(_x) -> void:
 		ask_doc_button.disabled = true
 		await get_tree().create_timer(0.2).timeout
 		get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");
-
-@onready var sonido_campana: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/SonidoCampana"
 
 func _on_ask_doc_button_pressed() -> void:
 	bell_animation.play("bell-pressed")
@@ -68,8 +67,9 @@ func _on_ask_doc_button_pressed() -> void:
 	fila_animation.dejar_de_hablar_npc_actual()
 
 func _on_aceptar_button_pressed() -> void:
+	action_sound.play();
 	_accion_de_fila()
-
+	
 	var balloon = crear_balloon()
 	balloon.start(preguntar_doc, "aceptar")
 	
@@ -82,6 +82,7 @@ func _on_aceptar_button_pressed() -> void:
 	fila_animation.dejar_pasar()
 
 func _on_rechazar_button_pressed() -> void:
+	action_sound.play();
 	_accion_de_fila()
 
 	var balloon = crear_balloon()

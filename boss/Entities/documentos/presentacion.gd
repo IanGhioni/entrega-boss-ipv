@@ -12,6 +12,8 @@ extends Control
 
 @onready var siguiente: Button = $ContainerSiguienteButton/PanelContainer/Siguiente
 
+# Sonidos
+@onready var hover_sound: AudioStreamPlayer2D = $ButtonsContainer/HoverSound
 
 func _ready() -> void:
 	timer.start(time_level)
@@ -38,14 +40,6 @@ func limpiar_mesa() -> void:
 
 func _on_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");
-
-
-# Bug con el botón de "llamar siguiente"
-# porque reconoce que es otro botón, entonces tiene hover
-# :'(
-
-@onready var hover_sound: AudioStreamPlayer2D = $ButtonsContainer/HoverSound
-
 
 func _on_aceptar_button_mouse_entered() -> void:
 	hover_sound.play();
