@@ -10,8 +10,7 @@ var cant_rondas: int = 0;
 const Ballon = preload("res://dialogues/balloon.tscn");
 
 @export var preguntar_doc: DialogueResource
-@onready var multa_titulo: Label = $"../../Multa/MultaTitulo"
-@onready var multa_texto: Label = $"../../Multa/MultaTexto"
+@onready var multa_texto: Label = $"../../Multa/PanelContainer/VBoxContainer/MultaTexto"
 @onready var presentacion: Control = $"../.."
 @onready var contador: Label = $"../../ContadorContainer/Contador"
 @onready var ask_doc_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton"
@@ -116,11 +115,8 @@ func actualizar_multa(dejo_pasar: bool) -> void:
 	var valido: bool = npcActual.es_valido()
 
 	if (valido and dejo_pasar) or (!valido and !dejo_pasar):
-		multa_titulo.text = ""
 		multa_texto.text = ""
 		return
-
-	multa_titulo.text = "Multa"
 
 	if dejo_pasar:
 		multa_texto.text = npcActual.obtener_motivos_string()
