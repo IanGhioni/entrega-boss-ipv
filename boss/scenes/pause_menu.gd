@@ -22,3 +22,8 @@ func reanudar() -> void:
 func salir_al_menu() -> void:
 	get_tree().paused = false  # importante: despausar antes de cambiar de escena
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
+@onready var hover_sound: AudioStreamPlayer2D = $HoverSound
+
+func _on_mouse_entered() -> void:
+	hover_sound.play();

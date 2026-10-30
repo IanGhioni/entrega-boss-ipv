@@ -8,3 +8,8 @@ func _on_back_menu_button_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit();
+
+@onready var hover_sound: AudioStreamPlayer2D = $HoverSound
+
+func _on_mouse_entered() -> void:
+	hover_sound.play();

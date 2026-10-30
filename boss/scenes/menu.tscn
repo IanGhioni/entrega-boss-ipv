@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://doioip0au2nhl" path="res://scenes/menu.gd" id="1_vjb58"]
 [ext_resource type="AudioStream" uid="uid://cdou73uk22hcx" path="res://assets/music/menu_theme.mp3" id="2_13sgg"]
 [ext_resource type="PackedScene" uid="uid://br3syiwuo7nrp" path="res://scenes/FondoAnimado.tscn" id="2_70i5f"]
+[ext_resource type="AudioStream" uid="uid://cevug4x5lipnt" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 4.wav" id="3_70i5f"]
 [ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="4_i6lef"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="7_i6lef"]
 [ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="8_13sgg"]
@@ -66,6 +67,9 @@ stream = ExtResource("2_13sgg")
 volume_db = -7.776
 autoplay = true
 parameters/looping = true
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1610083750]
+stream = ExtResource("3_70i5f")
 
 [node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_70i5f")]
 position = Vector2(0, -45)
@@ -169,6 +173,9 @@ anchor_bottom = 0.5154321
 scale = Vector2(0.7588581, 0.7588581)
 metadata/_edit_use_anchors_ = true
 
+[connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Play" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Quit" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Quit" to="." method="_on_quit_pressed"]

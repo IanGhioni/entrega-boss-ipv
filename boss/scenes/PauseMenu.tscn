@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cf6i13i8r6no6" path="res://scenes/pause_menu.gd" id="1_jvnd5"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="2_komsw"]
+[ext_resource type="AudioStream" uid="uid://da8u3m3k3guk4" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 5.wav" id="2_yx35g"]
 [ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="3_5w6ei"]
 [ext_resource type="Texture2D" uid="uid://c7no2ykwub7ct" path="res://assets/Bordes/PNG/Default/Panel/panel-014.png" id="4_5w6ei"]
 [ext_resource type="Texture2D" uid="uid://c1q31s8e436n1" path="res://assets/Bordes/PNG/Default/Panel/panel-011.png" id="5_jiu6o"]
@@ -43,6 +44,9 @@ modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
 [node name="PauseMenu" type="CanvasLayer" unique_id=1909579655]
 process_mode = 3
 script = ExtResource("1_jvnd5")
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1644922850]
+stream = ExtResource("2_yx35g")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2142094783]
 anchors_preset = 15
@@ -101,3 +105,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_jvnd5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jiu6o")
 theme_override_styles/hover = SubResource("StyleBoxTexture_40atx")
 text = "Salir"
+
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Reanudar" to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Opciones" to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Salir" to="." method="_on_mouse_entered"]
