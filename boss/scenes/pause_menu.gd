@@ -27,8 +27,8 @@ func reanudar() -> void:
 
 func salir_al_menu() -> void:
 	action_sound.play();
-	get_tree().paused = false  # importante: despausar antes de cambiar de escena
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	get_tree().paused = false
+	Transicion.cambiar_escena("res://scenes/menu.tscn")
 
 func _on_mouse_entered() -> void:
 	hover_sound.play();
