@@ -521,8 +521,6 @@ position = Vector2(1204, 386)
 personajes_visuales = Array[PackedScene]([ExtResource("8_fkkrn"), ExtResource("11_dkkva"), ExtResource("8_o1l7e"), ExtResource("9_kfjds"), ExtResource("12_o1l7e")])
 escena_npc = ExtResource("8_vh5ls")
 
-[node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
-
 [node name="Puntos" type="Node2D" parent="." unique_id=384639048]
 
 [node name="Punto1" type="Marker2D" parent="Puntos" unique_id=1726543701]
@@ -662,6 +660,8 @@ theme_override_colors/font_color = Color(0.9882353, 0.7607843, 0, 1)
 theme_override_fonts/font = ExtResource("3_2eiu6")
 autowrap_mode = 2
 justification_flags = 35
+
+[node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
