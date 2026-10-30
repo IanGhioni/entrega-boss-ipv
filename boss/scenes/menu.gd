@@ -5,11 +5,8 @@ extends Control
 
 func _on_play_pressed() -> void:
 	action_sound.play();
-	get_tree().change_scene_to_file("res://scenes/Presentacion.tscn");
-	#Transicion.cambiar_escena("res://scenes/Presentacion.tscn")
-	# Lo dejo comentario por si las dudas se usa después
-	# Sino borro
-
+	Transicion.cambiar_escena("res://scenes/Presentacion.tscn")
+	
 func _on_how_to_play_pressed() -> void:
 	action_sound.play();
 	$ComoJugar.visible = true

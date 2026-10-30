@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="2_gy0o1"]
 [ext_resource type="Texture2D" uid="uid://d3sbbxo6wr0ws" path="res://assets/hourglass.png" id="2_olwyj"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="3_2eiu6"]
-[ext_resource type="FontFile" uid="uid://cflgn7k6r72r" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glyphs.ttf" id="3_ax2d3"]
+[ext_resource type="AudioStream" uid="uid://dky3dmhif4my1" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Unpause Game/RPGFX - Menu - Unpause Game 6.wav" id="4_bf410"]
 [ext_resource type="AudioStream" uid="uid://ctwjm7vbcfxqq" path="res://assets/music/game_theme.mp3" id="4_xpv45"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="5_ilnbs"]
 [ext_resource type="PackedScene" uid="uid://c343xmc4os8su" path="res://Entities/Enemies/NPC.tscn" id="7_1fek8"]
@@ -71,10 +71,6 @@ animations = [{
 "name": &"default",
 "speed": 7.0
 }]
-
-[sub_resource type="LabelSettings" id="LabelSettings_idfvx"]
-font = ExtResource("3_ax2d3")
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27kq1"]
 
@@ -506,17 +502,24 @@ autoplay = "default"
 frame_progress = 0.006113568
 
 [node name="TextTimer" type="Label" parent="Timer" unique_id=405606019]
-offset_left = 1003.0
-offset_top = 41.388996
-offset_right = 1043.0
-offset_bottom = 65.38899
+texture_filter = 1
+offset_left = 730.0
+offset_top = 31.0
+offset_right = 866.0
+offset_bottom = 61.0
 scale = Vector2(2.159995, 1.9200001)
-label_settings = SubResource("LabelSettings_idfvx")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2eiu6")
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=898732257]
+[node name="TiempoFinalizado" type="AudioStreamPlayer2D" parent="Timer" unique_id=256508017]
+position = Vector2(2, -45.000004)
+stream = ExtResource("4_bf410")
+
+[node name="MusicaJuego" type="AudioStreamPlayer2D" parent="." unique_id=898732257]
 process_mode = 3
 position = Vector2(575, 345)
 stream = ExtResource("4_xpv45")
@@ -651,7 +654,7 @@ text = "Rechazar"
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("5_ilnbs")]
 position = Vector2(387, 341.00003)
-max_rondas = 3
+max_rondas = 7
 
 [node name="NPC" parent="Personajes" unique_id=742967132 instance=ExtResource("7_1fek8")]
 position = Vector2(1204, 386)
