@@ -80,6 +80,163 @@ font_color = Color(0, 0, 0, 1)
 texture = ExtResource("9_xpv45")
 region_rect = Rect2(137, 2, 14, 18)
 
+[sub_resource type="Animation" id="Animation_c6td6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(684, 280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.004247028]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6n11o"]
+resource_name = "bell-idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.4984068, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(684, 280), Vector2(683.99994, 296.99997), Vector2(684, 280), Vector2(691, 266.99994), Vector2(684, 280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.4984068, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.6293825, 0.004247028, 0.6280697, 0.6300638599699534, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bf410"]
+resource_name = "bell-idle-alternate"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(684, 280), Vector2(678, 280), Vector2(684, 280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.004247028, 0.004247028, 0.004247028]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pqw0u"]
+resource_name = "bell-pressed"
+length = 1.1666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.4000001, 0.6666667, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(684, 280), Vector2(684, 288), Vector2(691, 266.99994), Vector2(684, 288), Vector2(691, 266.99994), Vector2(684, 280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.4000001, 0.6666667, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.3595148, 0.6300638599699534, -0.3595148, 0.6300638599699534, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqw0u"]
+_data = {
+&"RESET": SubResource("Animation_c6td6"),
+&"bell-idle": SubResource("Animation_6n11o"),
+&"bell-idle-alternate": SubResource("Animation_bf410"),
+&"bell-pressed": SubResource("Animation_pqw0u")
+}
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvrp7"]
 texture = ExtResource("7_yj3f0")
 texture_margin_left = 12.0
@@ -222,11 +379,12 @@ offset_left = 684.0
 offset_top = 280.0
 offset_right = 724.0
 offset_bottom = 320.0
+rotation = 0.004247028
 
 [node name="PanelContainer" type="PanelContainer" parent="ContainerSiguienteButton" unique_id=1565412015]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 50.0
+offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_27kq1")
 
 [node name="Siguiente" type="Button" parent="ContainerSiguienteButton/PanelContainer" unique_id=1250635226]
@@ -242,6 +400,11 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ContainerSiguienteButton/PanelContainer/Siguiente" unique_id=2076625379]
 stream = ExtResource("8_c6td6")
 volume_db = 12.0
+
+[node name="BellAnimation" type="AnimationPlayer" parent="." unique_id=1327996737]
+root_node = NodePath("../ContainerSiguienteButton")
+libraries/ = SubResource("AnimationLibrary_pqw0u")
+autoplay = &"bell-idle-alternate"
 
 [node name="ButtonsContainer" type="Control" parent="." unique_id=1765387972]
 visible = false
@@ -339,8 +502,6 @@ position = Vector2(1204, 386)
 personajes_visuales = Array[PackedScene]([ExtResource("8_fkkrn"), ExtResource("11_dkkva"), ExtResource("8_o1l7e"), ExtResource("9_kfjds"), ExtResource("12_o1l7e")])
 escena_npc = ExtResource("8_vh5ls")
 
-[node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
-
 [node name="Puntos" type="Node2D" parent="." unique_id=384639048]
 
 [node name="Punto1" type="Marker2D" parent="Puntos" unique_id=1726543701]
@@ -411,6 +572,10 @@ texture = ExtResource("8_vif71")
 position = Vector2(223.25002, 151.41006)
 scale = Vector2(0.42335156, 1.2487328)
 texture = ExtResource("8_vif71")
+
+[node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(0.99999994, 1)
 
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("20_2eiu6")]
 visible = false
