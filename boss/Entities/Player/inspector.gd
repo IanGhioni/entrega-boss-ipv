@@ -36,6 +36,7 @@ func _on_pressed_decline(_x) -> void:
 		var finJuego: Control = load("res://scenes/FinalizarJuego.tscn").instantiate();
 		finJuego.setUp(cant_aciertos)
 		get_tree().change_scene_to_file(finJuego.scene_file_path);
+		
 func _on_ask_doc_button_pressed() -> void:
 	await fila_animation.atender_siguiente()
 	fila_animation.mover_fila()
