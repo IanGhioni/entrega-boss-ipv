@@ -454,7 +454,7 @@ offset_top = -45.0
 offset_right = 2.0
 offset_bottom = -45.0
 script = ExtResource("1_jwdva")
-time_level = 90
+time_level = 9
 
 [node name="Timer" type="Timer" parent="." unique_id=1257900424]
 
@@ -618,7 +618,7 @@ text = "Rechazar"
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("5_ilnbs")]
 position = Vector2(387, 341.00003)
-max_rondas = 7
+max_rondas = 5
 
 [node name="NPC" parent="Personajes" unique_id=742967132 instance=ExtResource("7_1fek8")]
 position = Vector2(1204, 386)

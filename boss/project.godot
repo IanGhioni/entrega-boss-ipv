@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Transicion="*uid://fh3ftrv8rhw1"
 GameManager="*uid://fotfrajpi5nc"
 DialogueManager="*uid://c3rodes2l3gxb"
 VariablesGlobales="*uid://d8x06iy80kvg"
-Transicion="*uid://fh3ftrv8rhw1"
 
 [dialogue_manager]
 

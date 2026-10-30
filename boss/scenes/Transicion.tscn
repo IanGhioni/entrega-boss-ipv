@@ -34,6 +34,7 @@ shader_parameter/progress_bias = Vector2(10, 10)
 
 [node name="Transicion" type="CanvasLayer" unique_id=1171680773]
 layer = 100
+follow_viewport_enabled = true
 script = ExtResource("1_kk8xt")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1532004050]

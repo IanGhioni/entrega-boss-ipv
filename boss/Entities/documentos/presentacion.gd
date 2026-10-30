@@ -16,6 +16,10 @@ extends Control
 @onready var hover_sound: AudioStreamPlayer2D = $ButtonsContainer/HoverSound
 @onready var tiempo_finalizado: AudioStreamPlayer2D = $Timer/TiempoFinalizado
 
+@onready var inspector: CharacterBody2D = $Personajes/Inspector
+
+
+
 func _ready() -> void:
 	timer.start(time_level)
 
@@ -43,6 +47,7 @@ func _on_timer_timeout() -> void:
 	timer.stop()
 	timer_label.text = "Fin del juego"
 	tiempo_finalizado.play()
+	inspector.eliminar_dialogo()
 	await get_tree().create_timer(5.0).timeout
 	Transicion.cambiar_escena("res://scenes/FinalizarJuego.tscn")
 

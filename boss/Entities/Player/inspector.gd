@@ -1,33 +1,48 @@
 extends CharacterBody2D
 
+const Ballon = preload("res://dialogues/balloon.tscn");
+
 var terminoInspeccion: bool = false
-var is_dialogue_active:bool = false;
+var is_dialogue_active: bool = false;
 var npcActual;
 var cant_aciertos: int = 0;
 var cant_rondas: int = 0;
+var globo_actual: Node = null
+
 @export var max_rondas: int;
-
-const Ballon = preload("res://dialogues/balloon.tscn");
-@onready var siguienteBtn: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
-
 @export var preguntar_doc: DialogueResource
-@onready var multa_texto: Label = $"../../Multa/PanelContainer/VBoxContainer/MultaTexto"
-@onready var presentacion: Control = $"../.."
-@onready var bell_animation: AnimationPlayer = $"../../BellAnimation"
+
+# Botones
+@onready var siguienteBtn: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
 @onready var ask_doc_button: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
-@onready var buttons_container: Control = $"../../ButtonsContainer"
 @onready var aceptar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton"
 @onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
+@onready var buttons_container: Control = $"../../ButtonsContainer"
+
+# Labels
+@onready var multa_texto: Label = $"../../Multa/PanelContainer/VBoxContainer/MultaTexto"
+
+@onready var presentacion: Control = $"../.."
+
+# Animaciones
+@onready var bell_animation: AnimationPlayer = $"../../BellAnimation"
 @onready var fila_animation: Node2D = $"../../FilaAnimationController"
+@onready var animación_de_multa: AnimationPlayer = $"../../AnimaciónDeMulta"
+
+# Sonidos
 @onready var sonido_campana: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/SonidoCampana"
 @onready var action_sound: AudioStreamPlayer2D = $"../../ButtonsContainer/ActionSound"
-@onready var animación_de_multa: AnimationPlayer = $"../../AnimaciónDeMulta"
 
 
 func _ready() -> void:
 	
 	DialogueManager.dialogue_ended.connect(_on_pressed_decline);
 	fila_animation.tamanio = max_rondas;
+
+func eliminar_dialogo() -> void:
+	if is_instance_valid(globo_actual):
+		globo_actual.queue_free()
+		globo_actual = null
 
 # Observer de fin de un dialogo
 func _on_pressed_decline(_x) -> void:
@@ -47,11 +62,11 @@ func _on_pressed_decline(_x) -> void:
 func _on_ask_doc_button_pressed() -> void:
 	bell_animation.play("bell-pressed")
 	sonido_campana.play()
+	ask_doc_button.disabled = true;
 	await fila_animation.atender_siguiente()
 	fila_animation.mover_fila()
 	is_dialogue_active = true;
 	buttons_container.show();
-	ask_doc_button.disabled = true;
 	
 	# Generamos un nuevo NPC
 	npcActual = GeneradorNPC.generar()
@@ -87,6 +102,7 @@ func _on_aceptar_button_pressed() -> void:
 	bell_animation.play("bell-idle-alternate")
 	fila_animation.dejar_pasar()
 	siguienteBtn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
+
 func _on_rechazar_button_pressed() -> void:
 	action_sound.play();
 	_accion_de_fila()
@@ -112,7 +128,6 @@ func _accion_de_fila() -> void:
 	cant_rondas = cant_rondas + 1;
 	presentacion.limpiar_mesa()
 
-# Actualiza el contador del nivel por si elegiste correctamente
 func actualizarContador(botonApretado) -> void:
 	var valido: bool = npcActual.es_valido()
 	if (valido and botonApretado) or (!valido and !botonApretado):
@@ -124,9 +139,16 @@ func actualizarContador(botonApretado) -> void:
 	#contador.text = str(cant_aciertos)
 
 func crear_balloon() -> Node:
+	if is_instance_valid(globo_actual):
+		globo_actual.queue_free()
+		
 	var Balloon: Node = Ballon.instantiate();
 	Balloon.fila_animation = fila_animation
 	get_tree().current_scene.add_child(Balloon);
+	
+	# Guardamos la referencia para poder acceder a ella después
+	globo_actual = Balloon 
+	
 	return Balloon
 	
 func actualizar_multa(dejo_pasar: bool) -> void:
