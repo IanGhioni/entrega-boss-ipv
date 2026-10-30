@@ -267,6 +267,18 @@ tracks/20/keys = {
 "update": 1,
 "values": [&"idle"]
 }
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Paladin:flip_h")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_dnoi1"]
 resource_name = "simulated_gameplay"
@@ -447,7 +459,7 @@ tracks/14/path = NodePath("InspectorSprite:animation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(2, 2.3666666, 5.4, 7.3333335, 8.633333, 11.073042, 12.106376, 15, 16.1, 21.966667, 24, 29, 31.033333, 35.766666, 41.635834, 47, 48.833332),
+"times": PackedFloat32Array(2, 2.3666666, 5.4, 7.3333335, 8.633333, 11.073042, 12.106376, 15, 16.1, 21.966667, 24, 29, 31.033333, 35.766666, 39.433334, 47, 48.833332),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"talk", &"idle", &"idle", &"talk", &"idle", &"idle", &"idle", &"talk", &"idle", &"talk", &"idle", &"talk", &"idle", &"talk", &"idle", &"talk", &"idle"]
@@ -495,10 +507,10 @@ tracks/18/path = NodePath("Nigromante:animation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(4.4, 5.4333334, 20.033333, 21.033333, 32.066666, 34, 35.733334, 38.033333, 39.966667, 44.033333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(4.4, 5.4333334, 20.033333, 21.033333, 23.233334, 24.766666, 32.066666, 34, 35.733334, 38.033333, 39.966667, 44.033333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"walk", &"idle", &"walk", &"idle", &"walk", &"talk", &"idle", &"idle", &"walk", &"walk"]
+"values": [&"walk", &"idle", &"walk", &"idle", &"talk", &"idle", &"walk", &"talk", &"idle", &"idle", &"walk", &"walk"]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -507,10 +519,10 @@ tracks/19/path = NodePath("Paladin:animation")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(4.366667, 5.4, 20.033333, 21.033333, 25.033333, 27.066668, 28.966667, 30.933332, 45.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(4.366667, 5.4, 20.033333, 21.033333, 21.533333, 22.8, 25.3, 27.066668, 28.966667, 30.933332, 45.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"walk", &"idle", &"walk", &"idle", &"walk", &"idle", &"idle", &"walk", &"idle"]
+"values": [&"walk", &"idle", &"walk", &"idle", &"talk", &"idle", &"walk", &"talk", &"idle", &"walk", &"idle"]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
@@ -523,6 +535,18 @@ tracks/20/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"walk", &"idle", &"walk", &"talk", &"idle", &"walk", &"walk", &"idle", &"walk", &"idle"]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Paladin:flip_h")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0.06666667, 21.066668, 24.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewsda"]
@@ -583,7 +607,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"talk",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnidr"]
@@ -710,7 +734,6 @@ scale = Vector2(7.4401035, 7.4401035)
 sprite_frames = SubResource("SpriteFrames_wdi0k")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.513912
 
 [node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=960373658]
 position = Vector2(386, 339)
@@ -733,7 +756,7 @@ metadata/_edit_lock_ = true
 position = Vector2(799, 378.00003)
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.5559111
+frame_progress = 0.0
 
 [node name="MagoJoven" parent="." unique_id=855896646 instance=ExtResource("4_dnoi1")]
 position = Vector2(1389, 378)
@@ -746,24 +769,25 @@ frame_progress = 0.0
 
 [node name="Paladin" parent="." unique_id=2051076361 instance=ExtResource("6_let50")]
 position = Vector2(1139, 378)
-frame_progress = 0.5559111
+animation = &"idle"
+frame_progress = 0.0
 
 [node name="Elfo" parent="." unique_id=62742635 instance=ExtResource("7_rv23c")]
 position = Vector2(1029, 378)
 autoplay = "idle"
-frame_progress = 0.5559111
+frame_progress = 0.0
 
 [node name="Mercader" parent="." unique_id=1967655165 instance=ExtResource("8_wjuth")]
 position = Vector2(918, 378)
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.9299899
 
 [node name="Torch" type="AnimatedSprite2D" parent="." unique_id=2040803118]
-position = Vector2(709, 256)
+position = Vector2(708, 248)
 scale = Vector2(3.5720148, 3.687706)
 sprite_frames = SubResource("SpriteFrames_pc8n3")
 autoplay = "default"
+frame_progress = 0.5436612
 
 [node name="Wall4" type="Sprite2D" parent="." unique_id=1404384296]
 position = Vector2(722, 385.99997)
@@ -772,7 +796,6 @@ texture = ExtResource("3_u48nx")
 hframes = 26
 vframes = 8
 frame = 77
-metadata/_edit_lock_ = true
 
 [node name="Pasto" type="Sprite2D" parent="." unique_id=788589543]
 position = Vector2(44, 257)
