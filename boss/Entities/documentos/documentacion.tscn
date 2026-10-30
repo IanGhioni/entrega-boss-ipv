@@ -18,6 +18,22 @@ font = ExtResource("4_te1nm")
 font_size = 20
 font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptwlb"]
+bg_color = Color(0.6361294, 0.55157155, 0.38453722, 1)
+skew = Vector2(1.5, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 25
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 25
+shadow_color = Color(0.2568699, 0.25686994, 0.25686994, 0.38431373)
+shadow_size = 2
+shadow_offset = Vector2(-4, -3.5)
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cj47"]
+bg_color = Color(0.039215688, 0.05490196, 0.05490196, 1)
+
 [node name="Documentacion" type="Node2D" unique_id=2004003958]
 script = ExtResource("1_771ts")
 metadata/_custom_type_script = "uid://chaae57ebenim"
@@ -150,5 +166,17 @@ scale = Vector2(0.1, 0.1)
 unique_name_in_owner = true
 position = Vector2(116.99999, 106.935)
 scale = Vector2(0.1, 0.1)
+
+[node name="Button" type="Button" parent="." unique_id=1721098863]
+offset_left = 159.0
+offset_top = -41.0
+offset_right = 236.0
+offset_bottom = -10.0
+rotation = 1.5707964
+theme_override_fonts/font = ExtResource("4_te1nm")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptwlb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cj47")
+text = "Expandir"
 
 [connection signal="input_event" from="Papiro/Area2D" to="." method="_on_area_2d_input_event"]
