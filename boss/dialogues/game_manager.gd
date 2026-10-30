@@ -53,16 +53,6 @@ func actualizarMotivos(motivos: Array[String]) -> void:
 func getMotivos() -> Array[String]:
 	return motivosPorMostrar
 
-func mostrarMotivos() -> String:
-	if motivosPorMostrar.size() == 3:
-		return "1: " + motivosPorMostrar[0] + "  2: " + motivosPorMostrar[1] + "  3: " + motivosPorMostrar[2]
-	elif motivosPorMostrar.size() == 2:
-		return "1: " + motivosPorMostrar[0] + "  2: " + motivosPorMostrar[1]
-	elif motivosPorMostrar.size() == 1:
-		return "Única regla incumplida: " + motivosPorMostrar[0]
-	else:
-		return "Estaba todo en regla."
-
 func respuestaDeTipo_(decisionTexto: String) -> String:
 	var raza = dataNpcActual.raza
 	var clase = dataNpcActual.clase

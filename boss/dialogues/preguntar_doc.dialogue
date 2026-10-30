@@ -9,8 +9,6 @@ Inspector: Todo esta en orden, bienvenido a Berazachusetts.
 if not GameManager.esNpcValido()
 	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Aceptar")}}
 	Inspector: Mhmhmh...
-	Inspector: Uh, revise mal. No cumplia con: 
-	Inspector: {{GameManager.mostrarMotivos()}}
 else 
 	{{GameManager.getNombreNpcActual()}}: {{GameManager.respuestaDeTipo_("Aceptar")}}
 	{{GameManager.getNombreNpcActual()}}: Gracias loco, te deseo bondad y prosperidad.
