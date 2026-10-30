@@ -39,7 +39,6 @@ func limpiar_mesa() -> void:
 	for hijo in mesa_documentos.get_children():
 		hijo.queue_free()
 
-
 func _on_timer_timeout() -> void:
 	timer.stop()
 	timer_label.text = "Fin del juego"

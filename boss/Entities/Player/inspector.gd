@@ -116,8 +116,10 @@ func _accion_de_fila() -> void:
 func actualizarContador(botonApretado) -> void:
 	var valido: bool = npcActual.es_valido()
 	if (valido and botonApretado) or (!valido and !botonApretado):
+		VariablesGlobales.sumarAcierto();
 		cant_aciertos += 1
 	else:
+		VariablesGlobales.sumarFallo();
 		cant_aciertos -= 1
 	#contador.text = str(cant_aciertos)
 

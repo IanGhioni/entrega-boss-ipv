@@ -11,8 +11,6 @@
 [ext_resource type="AudioStream" uid="uid://da8u3m3k3guk4" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 5.wav" id="10_3adj8"]
 [ext_resource type="AudioStream" uid="uid://duja4p3msqi7m" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Confirm/RPGFX - Menu - Confirm 7.wav" id="11_sp00f"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_of656"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb6vr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_asbnv"]
@@ -51,6 +49,8 @@ texture_margin_right = 16.0
 texture_margin_bottom = 16.0
 modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3adj8"]
+
 [node name="FinalizarJuego" type="Control" unique_id=71790519]
 layout_mode = 3
 anchors_preset = 15
@@ -69,63 +69,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.57254905)
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1755634213]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_of656")
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=561889533]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+color = Color(0, 0, 0.0627451, 0.57254905)
 
 [node name="Titulo" parent="." unique_id=1903387969 instance=ExtResource("4_sp00f")]
 layout_mode = 0
 offset_left = -229.0
-offset_top = -25.0
+offset_top = 15.0
 offset_right = -189.0
-offset_bottom = 15.0
+offset_bottom = 55.0
 
-[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=2117669791]
+[node name="OptionsContainer" type="PanelContainer" parent="." unique_id=2117669791]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -76.0
-offset_top = -240.0
-offset_right = 433.0
-offset_bottom = 115.0
+offset_left = -25.0
+offset_top = -209.0
+offset_right = 488.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rb6vr")
 
-[node name="ContainerButtons" type="VBoxContainer" parent="PanelContainer2" unique_id=1750245893]
+[node name="ContainerButtons" type="VBoxContainer" parent="OptionsContainer" unique_id=1750245893]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 size_flags_stretch_ratio = 4.0
 theme_override_constants/separation = 60
 
-[node name="Label" type="Label" parent="PanelContainer2/ContainerButtons" unique_id=959848269]
+[node name="Label" type="Label" parent="OptionsContainer/ContainerButtons" unique_id=959848269]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_xr1xt")
 theme_override_font_sizes/font_size = 45
 text = "Fin del día"
 
-[node name="Play" type="Button" parent="PanelContainer2/ContainerButtons" unique_id=240933830]
+[node name="Play" type="Button" parent="OptionsContainer/ContainerButtons" unique_id=240933830]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -140,7 +123,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_sy67a")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rfiop")
 text = "Siguiente día"
 
-[node name="BackMenuButton" type="Button" parent="PanelContainer2/ContainerButtons" unique_id=2056438185]
+[node name="BackMenuButton" type="Button" parent="OptionsContainer/ContainerButtons" unique_id=2056438185]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -155,6 +138,66 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_sy67a")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rfiop")
 text = "Volver al menú"
 
+[node name="StatsContainer" type="PanelContainer" parent="." unique_id=1217198008]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 238.0
+offset_right = 553.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3adj8")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="StatsContainer" unique_id=2058138022]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="JornadaDeHoy" type="Label" parent="StatsContainer/VBoxContainer2" unique_id=2044890485]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 28
+text = "Jornada de hoy"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsContainer/VBoxContainer2" unique_id=445234163]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Tramitados" type="Label" parent="StatsContainer/VBoxContainer2/VBoxContainer" unique_id=2133076860]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 20
+text = "Gente tramitada:"
+
+[node name="Multas" type="Label" parent="StatsContainer/VBoxContainer2/VBoxContainer" unique_id=1764818255]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 20
+text = "Multas:"
+
+[node name="Tiempo" type="Label" parent="StatsContainer/VBoxContainer2/VBoxContainer" unique_id=220811325]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 20
+text = "Duración: 01:30"
+
+[node name="Ganancias" type="Label" parent="StatsContainer/VBoxContainer2" unique_id=1758663225]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("6_xr1xt")
+theme_override_font_sizes/font_size = 24
+text = "Ganancias: $"
+
 [node name="MusicaGameOver" type="AudioStreamPlayer2D" parent="." unique_id=373335318]
 position = Vector2(578, 310)
 stream = ExtResource("9_12s3c")
@@ -168,7 +211,7 @@ stream = ExtResource("10_3adj8")
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=183710232]
 stream = ExtResource("11_sp00f")
 
-[connection signal="mouse_entered" from="PanelContainer2/ContainerButtons/Play" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="PanelContainer2/ContainerButtons/Play" to="." method="_on_play_pressed"]
-[connection signal="mouse_entered" from="PanelContainer2/ContainerButtons/BackMenuButton" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="PanelContainer2/ContainerButtons/BackMenuButton" to="." method="_on_back_menu_button_pressed"]
+[connection signal="mouse_entered" from="OptionsContainer/ContainerButtons/Play" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="OptionsContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="OptionsContainer/ContainerButtons/BackMenuButton" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="OptionsContainer/ContainerButtons/BackMenuButton" to="." method="_on_back_menu_button_pressed"]
