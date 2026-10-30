@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d128hu8mpv2ag"
+path="res://.godot/imported/RPGFX - Menu - Block 4.wav-50fbac83a7e52fc695b371b747c1846e.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Menu/Block/RPGFX - Menu - Block 4.wav"
+dest_files=["res://.godot/imported/RPGFX - Menu - Block 4.wav-50fbac83a7e52fc695b371b747c1846e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxc8s4md7k5se"
+path="res://.godot/imported/RPGFX - Vocals - Dog 9.wav-e3816aa8bf37f34645347d15352027ba.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Animals/RPGFX - Vocals - Dog 9.wav"
+dest_files=["res://.godot/imported/RPGFX - Vocals - Dog 9.wav-e3816aa8bf37f34645347d15352027ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

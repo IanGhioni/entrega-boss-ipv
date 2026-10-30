@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cc645drdf7wrv"
+path="res://.godot/imported/RPGFX - Vocals - System 1.wav-8a705cc795a2fefc17bdb9a0c11442a8.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/System/RPGFX - Vocals - System 1.wav"
+dest_files=["res://.godot/imported/RPGFX - Vocals - System 1.wav-8a705cc795a2fefc17bdb9a0c11442a8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

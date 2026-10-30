@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0uqtin1kqwgn"
+path="res://.godot/imported/RPGFX - Menu - Pause Game 6.wav-61731a8508f10360b148738308b86094.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Menu/Pause Game/RPGFX - Menu - Pause Game 6.wav"
+dest_files=["res://.godot/imported/RPGFX - Menu - Pause Game 6.wav-61731a8508f10360b148738308b86094.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -7,7 +7,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70i5f"]
 texture = ExtResource("2_rm8c4")
 expand_margin_left = 80.0
-region_rect = Rect2(80, 84, 63, 25)
+region_rect = Rect2(80, 84, 64, 25)
 
 [node name="Titulo" type="Control" unique_id=1903387969]
 layout_mode = 3

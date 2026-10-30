@@ -10,13 +10,18 @@ var cant_rondas: int = 0;
 const Ballon = preload("res://dialogues/balloon.tscn");
 
 @export var preguntar_doc: DialogueResource
-
+@onready var multa_texto: Label = $"../../Multa/PanelContainer/VBoxContainer/MultaTexto"
 @onready var presentacion: Control = $"../.."
-@onready var contador: Label = $"../../ContadorContainer/Contador"
-@onready var ask_doc_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AskDocButton"
+@onready var bell_animation: AnimationPlayer = $"../../BellAnimation"
+@onready var ask_doc_button: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
+@onready var buttons_container: Control = $"../../ButtonsContainer"
 @onready var aceptar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton"
 @onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
 @onready var fila_animation: Node2D = $"../../FilaAnimationController"
+@onready var sonido_campana: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/SonidoCampana"
+@onready var action_sound: AudioStreamPlayer2D = $"../../ButtonsContainer/ActionSound"
+@onready var animación_de_multa: AnimationPlayer = $"../../AnimaciónDeMulta"
+
 
 func _ready() -> void:
 	
@@ -27,29 +32,36 @@ func _ready() -> void:
 func _on_pressed_decline(_x) -> void:
 	if terminoInspeccion:
 		terminoInspeccion = false
+		buttons_container.hide();
 	elif npcActual != null:
 		presentacion.entregar_documentos(npcActual)
+		aceptar_button.disabled = false;
+		rechazar_button.disabled = false;
 	
 	if cant_rondas == max_rondas:
 		ask_doc_button.disabled = true
-		await get_tree().create_timer(0.2).timeout;
-		get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");
-		
+		await get_tree().create_timer(5.0).timeout
+		Transicion.cambiar_escena("res://scenes/FinalizarJuego.tscn")
+
 func _on_ask_doc_button_pressed() -> void:
+	bell_animation.play("bell-pressed")
+	sonido_campana.play()
 	await fila_animation.atender_siguiente()
 	fila_animation.mover_fila()
 	is_dialogue_active = true;
-	aceptar_button.disabled = false;
-	rechazar_button.disabled = false;
+	buttons_container.show();
 	ask_doc_button.disabled = true;
 	
 	# Generamos un nuevo NPC
 	npcActual = GeneradorNPC.generar()
+	GameManager.voz_npc_actual = null
 	print("Motivo: ", npcActual.motivos)
-	print(npcActual.docs[0].raza)
+	
 	GameManager.actualizarDataNpcActual(npcActual.docs[0]);
 	GameManager.actualizarNombreNpcDialogo(npcActual.docs[0].nombre);
 	GameManager.actualizarMotivos(npcActual.motivos);
+	GameManager.actualizarRetratoNpc(GameManager.retratoAleatorio())
+	
 	var Balloon = crear_balloon()
 	Balloon.start(preguntar_doc, "start");
 	
@@ -58,8 +70,9 @@ func _on_ask_doc_button_pressed() -> void:
 	fila_animation.dejar_de_hablar_npc_actual()
 
 func _on_aceptar_button_pressed() -> void:
+	action_sound.play();
 	_accion_de_fila()
-
+	
 	var balloon = crear_balloon()
 	balloon.start(preguntar_doc, "aceptar")
 	
@@ -67,10 +80,13 @@ func _on_aceptar_button_pressed() -> void:
 	GameManager.actualizarMotivos([]);
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
+	actualizar_multa(true)
 	actualizarContador(true)
+	bell_animation.play("bell-idle-alternate")
 	fila_animation.dejar_pasar()
 
 func _on_rechazar_button_pressed() -> void:
+	action_sound.play();
 	_accion_de_fila()
 
 	var balloon = crear_balloon()
@@ -79,7 +95,9 @@ func _on_rechazar_button_pressed() -> void:
 	
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
+	actualizar_multa(false)
 	actualizarContador(false)
+	bell_animation.play("bell-idle-alternate")
 	fila_animation.no_dejar_pasar()
 
 
@@ -101,10 +119,23 @@ func actualizarContador(botonApretado) -> void:
 	else:
 		VariablesGlobales.sumarFallo();
 		cant_aciertos -= 1
-	contador.text = str(cant_aciertos)
+	#contador.text = str(cant_aciertos)
 
 func crear_balloon() -> Node:
 	var Balloon: Node = Ballon.instantiate();
 	Balloon.fila_animation = fila_animation
 	get_tree().current_scene.add_child(Balloon);
 	return Balloon
+	
+func actualizar_multa(dejo_pasar: bool) -> void:
+	var valido: bool = npcActual.es_valido()
+
+	if (valido and dejo_pasar) or (!valido and !dejo_pasar):
+		multa_texto.text = ""
+		return
+
+	if dejo_pasar:
+		multa_texto.text = npcActual.obtener_motivos_string()
+	else:
+		multa_texto.text = "Ciudadano con documentación valida"
+	animación_de_multa.play("mostar_multa")

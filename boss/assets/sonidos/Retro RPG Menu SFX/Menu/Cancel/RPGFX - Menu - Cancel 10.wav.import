@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://18d345fjup3f"
+path="res://.godot/imported/RPGFX - Menu - Cancel 10.wav-3f3f91464149daa7bd03aaa80579763e.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Menu/Cancel/RPGFX - Menu - Cancel 10.wav"
+dest_files=["res://.godot/imported/RPGFX - Menu - Cancel 10.wav-3f3f91464149daa7bd03aaa80579763e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
