@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-014.png" id="8_ci7af"]
 [ext_resource type="AudioStream" uid="uid://dstkfjugge13w" path="res://assets/music/game_over_song.mp3" id="9_12s3c"]
 [ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="9_sadjd"]
+[ext_resource type="AudioStream" uid="uid://da8u3m3k3guk4" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 5.wav" id="10_3adj8"]
+[ext_resource type="AudioStream" uid="uid://duja4p3msqi7m" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Confirm/RPGFX - Menu - Confirm 7.wav" id="11_sp00f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pmkph"]
 shader = ExtResource("2_12s3c")
@@ -160,28 +162,20 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_sy67a")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rfiop")
 text = "Volver al menú"
 
-[node name="Quit" type="Button" parent="PanelContainer2/ContainerButtons" unique_id=2121297139]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("6_xr1xt")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxTexture_asbnv")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_sy67a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_rfiop")
-text = "Salir"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=373335318]
+[node name="MusicaGameOver" type="AudioStreamPlayer2D" parent="." unique_id=373335318]
 position = Vector2(578, 310)
 stream = ExtResource("9_12s3c")
 pitch_scale = 0.69
 autoplay = true
 parameters/looping = true
 
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1462620789]
+stream = ExtResource("10_3adj8")
+
+[node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=183710232]
+stream = ExtResource("11_sp00f")
+
+[connection signal="mouse_entered" from="PanelContainer2/ContainerButtons/Play" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer2/ContainerButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="PanelContainer2/ContainerButtons/BackMenuButton" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer2/ContainerButtons/BackMenuButton" to="." method="_on_back_menu_button_pressed"]
-[connection signal="pressed" from="PanelContainer2/ContainerButtons/Quit" to="." method="_on_quit_pressed"]
