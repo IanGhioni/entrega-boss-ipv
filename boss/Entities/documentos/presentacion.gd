@@ -33,5 +33,4 @@ func limpiar_mesa() -> void:
 		hijo.queue_free()
 
 func _on_timer_timeout() -> void:
-	#Tambien tiene que pasarle los puntos
 	get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");

@@ -15,6 +15,4 @@ func _on_quit_pressed() -> void:
 	get_tree().quit();
 
 func _on_match_stats_pressed() -> void:
-	var estadisticaPartidaScene: Control = load("res://scenes/EstadisticasDePartida.tscn").instantiate();
-	estadisticaPartidaScene.setUp(aciertos);
-	get_tree().change_scene_to_file(estadisticaPartidaScene.scene_file_path);
+	get_tree().change_scene_to_file("res://scenes/EstadisticasDePartida.tscn");
