@@ -27,6 +27,8 @@ var fila_animation: Node
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var retrato: TextureRect = %Retrato
 
+@onready var talk_sound: AudioStreamPlayer = %TalkSound
+
 ## Temporary game states
 var temporary_game_states: Array = []
 
@@ -78,7 +80,8 @@ var mutation_cooldown: Timer = Timer.new()
 func _ready() -> void:
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
-
+	dialogue_label.spoke.connect(_on_spoke)
+	
 	# If the responses menu doesn't have a next action set, use this one
 	if responses_menu.next_action.is_empty():
 		responses_menu.next_action = next_action
@@ -242,5 +245,12 @@ func actualizar_retrato() -> void:
 	if habla_npc:
 		retrato.texture = GameManager.getRetrato(GameManager.retratoNpcActual)
 
+func _on_spoke(letter: String, letter_index: int, _speed: float) -> void:
+	if letter_index % 2 != 0:          # suena cada 2 letras, ajustalo a gusto
+		return
+	if letter.strip_edges().is_empty(): # no suena con espacios
+		return
+	talk_sound.pitch_scale = randf_range(0.9, 1.1)  # variación para que no sea monótono
+	talk_sound.play()
 
 #endregion

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="4_7c2jb"]
+[ext_resource type="AudioStream" uid="uid://hmwfylkdtfdh" path="res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 1 - Oneshot.wav" id="6_7c2jb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 20.0
@@ -236,8 +237,14 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
+stream = ExtResource("6_7c2jb")
 volume_db = -10.0
 pitch_scale = 1.1
+
+[node name="TalkSound" type="AudioStreamPlayer" parent="." unique_id=1898110265]
+unique_name_in_owner = true
+stream = ExtResource("6_7c2jb")
+volume_db = -15.451
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/CenterContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
