@@ -700,6 +700,12 @@ animations = [{
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_6p75r")]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1348338497]
+position = Vector2(595, 351)
+scale = Vector2(0.3600012, 0.3600012)
+offset = Vector2(-55, 0)
+zoom = Vector2(1.1, 1.1)
+
 [node name="Chair3" type="Sprite2D" parent="." unique_id=1788619101]
 position = Vector2(371, 411)
 scale = Vector2(4.400001, 4.400001)
