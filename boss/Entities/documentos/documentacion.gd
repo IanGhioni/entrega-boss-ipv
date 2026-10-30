@@ -11,8 +11,14 @@ var is_active_expand:bool = false;
 
 func _process(delta: float) -> void:
 	if clickeado:
+		var target_pos = get_global_mouse_position()
+		var screen_size = get_viewport_rect().size
+		var half_size = Vector2(208.0,223.0);
+		var min_pos = half_size
+		var max_pos = screen_size - half_size
+		global_position = target_pos.clamp(min_pos, max_pos)
 		position = get_global_mouse_position();
-
+	
 func setup(d: DocData) -> void:
 	campo_nombre.text = d.nombre
 	campo_clase.text = d.clase
@@ -36,9 +42,8 @@ func _on_expandir_doc_pressed() -> void:
 	if not is_active_expand:
 		posicionOriginal = position;
 		position = Vector2(556.0, 304.0);
-		scale = Vector2(1.4,1.7);
+		scale = Vector2(1.3,1.5);
 	else:
 		position = posicionOriginal;
 		scale = Vector2.ONE;
 	is_active_expand = not is_active_expand;
-		 
