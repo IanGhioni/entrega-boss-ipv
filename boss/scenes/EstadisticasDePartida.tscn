@@ -66,10 +66,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -133.0
-offset_top = 84.0
-offset_right = 132.0
-offset_bottom = 284.0
+offset_left = -377.0
+offset_top = 159.0
+offset_right = -112.0
+offset_bottom = 359.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4vnp5")
 
@@ -87,4 +87,13 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.8963674, 0.8963674, 0.8963674, 1)
 theme_override_fonts/font = ExtResource("3_0fka5")
 theme_override_font_sizes/font_size = 30
-text = "Aciertos"
+text = "Aciertos: "
+
+[node name="Ganancias" type="Label" parent="PanelContainer3/ContainerButtons" unique_id=1911465131]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.8963674, 0.8963674, 0.8963674, 1)
+theme_override_fonts/font = ExtResource("3_0fka5")
+theme_override_font_sizes/font_size = 30
+text = "Ganancias: "
