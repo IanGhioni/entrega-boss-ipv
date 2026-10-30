@@ -8,6 +8,7 @@ var cant_rondas: int = 0;
 @export var max_rondas: int;
 
 const Ballon = preload("res://dialogues/balloon.tscn");
+@onready var siguienteBtn: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
 
 @export var preguntar_doc: DialogueResource
 @onready var multa_texto: Label = $"../../Multa/PanelContainer/VBoxContainer/MultaTexto"
@@ -68,7 +69,8 @@ func _on_ask_doc_button_pressed() -> void:
 	await DialogueManager.dialogue_ended
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
-
+	siguienteBtn.mouse_default_cursor_shape = Control.CURSOR_ARROW;
+	
 func _on_aceptar_button_pressed() -> void:
 	action_sound.play();
 	_accion_de_fila()
@@ -84,7 +86,7 @@ func _on_aceptar_button_pressed() -> void:
 	actualizarContador(true)
 	bell_animation.play("bell-idle-alternate")
 	fila_animation.dejar_pasar()
-
+	siguienteBtn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
 func _on_rechazar_button_pressed() -> void:
 	action_sound.play();
 	_accion_de_fila()
@@ -99,7 +101,7 @@ func _on_rechazar_button_pressed() -> void:
 	actualizarContador(false)
 	bell_animation.play("bell-idle-alternate")
 	fila_animation.no_dejar_pasar()
-
+	siguienteBtn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
 
 # Método común entre aceptar/rechazar a alguien
 func _accion_de_fila() -> void:

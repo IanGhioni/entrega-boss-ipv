@@ -34,6 +34,7 @@ region_rect = Rect2(176, 80, 41, 12)
 modulate_color = Color(0.6745098, 0.6745098, 0.6745098, 1)
 
 [node name="Documentacion" type="Node2D" unique_id=2004003958]
+z_index = 1
 script = ExtResource("1_771ts")
 metadata/_custom_type_script = "uid://chaae57ebenim"
 
