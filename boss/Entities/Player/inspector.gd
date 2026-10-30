@@ -12,13 +12,12 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 @export var preguntar_doc: DialogueResource
 
 @onready var presentacion: Control = $"../.."
-
+@onready var bell_animation: AnimationPlayer = $"../../BellAnimation"
 @onready var ask_doc_button: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
-
 @onready var buttons_container: Control = $"../../ButtonsContainer"
 @onready var aceptar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton"
 @onready var rechazar_button: Button = $"../../ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton"
-
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/AudioStreamPlayer2D"
 @onready var fila_animation: Node2D = $"../../FilaAnimationController"
 
 func _ready() -> void:
@@ -44,6 +43,7 @@ func _on_pressed_decline(_x) -> void:
 @onready var sonido_campana: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/SonidoCampana"
 
 func _on_ask_doc_button_pressed() -> void:
+	bell_animation.play("bell-pressed")
 	sonido_campana.play()
 	await fila_animation.atender_siguiente()
 	fila_animation.mover_fila()
@@ -78,6 +78,7 @@ func _on_aceptar_button_pressed() -> void:
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
 	actualizarContador(true)
+	bell_animation.play("bell-idle-alternate")
 	fila_animation.dejar_pasar()
 
 func _on_rechazar_button_pressed() -> void:
@@ -90,6 +91,7 @@ func _on_rechazar_button_pressed() -> void:
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
 	actualizarContador(false)
+	bell_animation.play("bell-idle-alternate")
 	fila_animation.no_dejar_pasar()
 
 
