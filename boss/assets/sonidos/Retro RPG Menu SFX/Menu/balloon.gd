@@ -23,8 +23,6 @@ var fila_animation: Node
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
 
-## A sound player for voice lines (if they exist).
-@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var retrato: TextureRect = %Retrato
 
 @onready var inspector_talk_sound: AudioStreamPlayer = %InspectorsTalkSound
@@ -179,9 +177,6 @@ func apply_dialogue_line() -> void:
 
 	# Wait for next line
 	if dialogue_line.has_tag("voice"):
-		audio_stream_player.stream = load(dialogue_line.get_tag_value("voice"))
-		audio_stream_player.play()
-		await audio_stream_player.finished
 		next(dialogue_line.next_id)
 	elif dialogue_line.responses.size() > 0:
 		balloon.focus_mode = Control.FOCUS_NONE
