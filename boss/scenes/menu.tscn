@@ -70,9 +70,11 @@ autoplay = true
 parameters/looping = true
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1610083750]
+position = Vector2(558, 278)
 stream = ExtResource("3_70i5f")
 
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=992294297]
+position = Vector2(558, 278)
 stream = ExtResource("4_mj5lg")
 
 [node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_70i5f")]

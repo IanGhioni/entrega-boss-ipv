@@ -368,12 +368,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_3ikal"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6n11o"]
 _data = {
-&"RESET": SubResource("Animation_3ikal"),
 &"mostar_multa": SubResource("Animation_c6td6")
 }
 
@@ -454,7 +450,7 @@ offset_top = -45.0
 offset_right = 2.0
 offset_bottom = -45.0
 script = ExtResource("1_jwdva")
-time_level = 9
+time_level = 150
 
 [node name="Timer" type="Timer" parent="." unique_id=1257900424]
 
@@ -729,7 +725,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_mypxk")
 position = Vector2(168, -3)
 scale = Vector2(2.6749713, 1.8421971)
 sprite_frames = SubResource("SpriteFrames_of656")
-animation = &"desenrollar"
+animation = &"closed"
 autoplay = "closed"
 
 [node name="PanelContainer" type="PanelContainer" parent="Multa" unique_id=3251579]
