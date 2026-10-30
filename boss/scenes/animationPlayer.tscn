@@ -59,7 +59,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"talk",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnidr"]
@@ -110,9 +110,9 @@ autoplay = &"walk_cycle"
 position = Vector2(299, 339)
 scale = Vector2(7.4401035, 7.4401035)
 sprite_frames = SubResource("SpriteFrames_ol3ou")
-animation = &"idle"
+animation = &"talk"
 autoplay = "idle"
-frame_progress = 0.6301722
+frame_progress = 0.5365871
 
 [node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=1452189736]
 position = Vector2(386, 339)
