@@ -150,6 +150,8 @@ theme_override_constants/margin_right = 300
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=2145270309]
 clip_children = 2
+custom_minimum_size = Vector2(600, 0)
+custom_maximum_size = Vector2(1000, -1)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_gqa88")
