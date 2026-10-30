@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bv1qhwuuwix1v"
+path="res://.godot/imported/RPGFX - Menu - Hover 14.wav-8d2015b65d8a15bf4cf99efae218fca1.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 14.wav"
+dest_files=["res://.godot/imported/RPGFX - Menu - Hover 14.wav-8d2015b65d8a15bf4cf99efae218fca1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

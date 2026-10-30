@@ -10,12 +10,16 @@ extends Control
 @onready var label: Label = $Timer/TextTimer
 @onready var timer: Timer = $Timer
 
+@onready var siguiente: Button = $ContainerSiguienteButton/PanelContainer/Siguiente
+
+# Sonidos
+@onready var hover_sound: AudioStreamPlayer2D = $ButtonsContainer/HoverSound
 
 func _ready() -> void:
 	timer.start(time_level)
 
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	label.text = str(int(timer.time_left))
 
 func _posicion_libre(indice: int) -> Vector2:
@@ -36,3 +40,10 @@ func limpiar_mesa() -> void:
 
 func _on_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");
+
+func _on_aceptar_button_mouse_entered() -> void:
+	hover_sound.play();
+
+
+func _on_rechazar_button_mouse_entered() -> void:
+	hover_sound.play();

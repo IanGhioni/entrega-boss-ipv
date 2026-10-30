@@ -23,8 +23,22 @@ var fila_animation: Node
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
 
-## A sound player for voice lines (if they exist).
-@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+@onready var retrato: TextureRect = %Retrato
+
+@onready var inspector_talk_sound: AudioStreamPlayer = %InspectorsTalkSound
+@onready var npc_talk_sound: AudioStreamPlayer = %NpcTalkSound
+
+const SONIDOS_NPC = [
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 2 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 3 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 4 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 5 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 6 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 7 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 8 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 9 - Oneshot.wav",
+	"res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 10 - Oneshot.wav"
+]
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -39,6 +53,8 @@ var will_hide_balloon: bool = false
 var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
+
+var voz_npc_actual: AudioStream
 
 ## The current line
 var dialogue_line: DialogueLine:
@@ -77,7 +93,8 @@ var mutation_cooldown: Timer = Timer.new()
 func _ready() -> void:
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
-
+	dialogue_label.spoke.connect(_on_spoke)
+	
 	# If the responses menu doesn't have a next action set, use this one
 	if responses_menu.next_action.is_empty():
 		responses_menu.next_action = next_action
@@ -137,6 +154,10 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue");
 	
+	character_label.visible = not dialogue_line.character.is_empty()
+	character_label.text = tr(dialogue_line.character, "dialogue");
+
+	actualizar_retrato()
 	actualizar_animacion_hablante()
 
 	dialogue_label.hide()
@@ -156,9 +177,6 @@ func apply_dialogue_line() -> void:
 
 	# Wait for next line
 	if dialogue_line.has_tag("voice"):
-		audio_stream_player.stream = load(dialogue_line.get_tag_value("voice"))
-		audio_stream_player.play()
-		await audio_stream_player.finished
 		next(dialogue_line.next_id)
 	elif dialogue_line.responses.size() > 0:
 		balloon.focus_mode = Control.FOCUS_NONE
@@ -223,14 +241,41 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 func actualizar_animacion_hablante() -> void:
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
-	
-	match dialogue_line.character.to_lower():
-		"inspector":
-			fila_animation.hablar_inspector()
 
-		"npc":
-			fila_animation.hablar_npc_actual()
+	var personaje := dialogue_line.character.to_lower()
+	var nombre_npc := GameManager.getNombreNpcActual().to_lower()
 
+	if personaje == "inspector":
+		fila_animation.hablar_inspector()
 
+	elif personaje == nombre_npc:
+		fila_animation.hablar_npc_actual()
+
+		if GameManager.voz_npc_actual == null:
+			var sonido_random = SONIDOS_NPC.pick_random()
+			GameManager.voz_npc_actual = load(sonido_random)
+
+		npc_talk_sound.stream = GameManager.voz_npc_actual
+
+func actualizar_retrato() -> void:
+	var habla_npc := dialogue_line.character == GameManager.getNombreNpcActual()
+	retrato.visible = habla_npc
+	if habla_npc:
+		retrato.texture = GameManager.getRetrato(GameManager.retratoNpcActual)
+
+func _on_spoke(letter: String, letter_index: int, _speed: float) -> void:
+	if letter_index % 2 != 0:
+		return
+	if letter.strip_edges().is_empty():
+		return
+
+	if dialogue_line.character.to_lower() == "inspector":
+		inspector_talk_sound.pitch_scale = randf_range(0.9, 1.1)
+		inspector_talk_sound.play()
+
+	elif dialogue_line.character.to_lower() == GameManager.getNombreNpcActual().to_lower():
+		npc_talk_sound.pitch_scale = randf_range(0.9, 1.1)
+		npc_talk_sound.play()
+		
 
 #endregion

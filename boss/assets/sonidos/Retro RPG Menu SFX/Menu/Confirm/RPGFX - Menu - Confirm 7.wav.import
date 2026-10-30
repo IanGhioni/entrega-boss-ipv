@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://duja4p3msqi7m"
+path="res://.godot/imported/RPGFX - Menu - Confirm 7.wav-9a9384dcefcbf88b8c2ea6685fca267d.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Menu/Confirm/RPGFX - Menu - Confirm 7.wav"
+dest_files=["res://.godot/imported/RPGFX - Menu - Confirm 7.wav-9a9384dcefcbf88b8c2ea6685fca267d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

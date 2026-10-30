@@ -5,6 +5,36 @@ var esValido: bool
 var motivosPorMostrar: Array[String]
 var dataNpcActual: DocData
 
+const RETRATOS_SHEET: Texture2D = preload("res://assets/personajes_imagen.jpeg")
+const COLUMNAS := 8
+const FILAS := 6
+
+var voz_npc_actual: AudioStream = null
+var retratoNpcActual: int = 0
+
+func retratoAleatorio() -> int:
+	return randi() % (COLUMNAS * FILAS)
+
+func actualizarRetratoNpc(indice: int) -> void:
+	retratoNpcActual = indice
+
+@warning_ignore("integer_division")
+func getRetrato(indice: int) -> AtlasTexture:
+	var celda := RETRATOS_SHEET.get_size() / Vector2(COLUMNAS, FILAS)
+	var col := indice % COLUMNAS
+	var fila := indice / COLUMNAS
+	var atlas := AtlasTexture.new()
+	atlas.atlas = RETRATOS_SHEET
+	
+	const MARGEN := Vector2(85, 40)   # medilo en un editor de imagen
+	const TAMANO := Vector2(173, 173)
+	const PASO := Vector2(208, 188)   # tamaño + separación
+
+	atlas.region = Rect2(MARGEN + Vector2(col, fila) * PASO, TAMANO)
+	
+	#atlas.region = Rect2(Vector2(col, fila) * celda, celda)
+	return atlas
+
 func actualizarDataNpcActual(npcData: DocData) -> void:
 	dataNpcActual = npcData
 

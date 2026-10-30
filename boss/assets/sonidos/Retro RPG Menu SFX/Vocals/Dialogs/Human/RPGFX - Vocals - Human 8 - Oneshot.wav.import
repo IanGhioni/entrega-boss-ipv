@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8p8xy3ynssg3"
+path="res://.godot/imported/RPGFX - Vocals - Human 8 - Oneshot.wav-a124bfd52ada6d69b5a6c56906712df1.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 8 - Oneshot.wav"
+dest_files=["res://.godot/imported/RPGFX - Vocals - Human 8 - Oneshot.wav-a124bfd52ada6d69b5a6c56906712df1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpyw7ykah18tx"
+path="res://.godot/imported/RPGFX - Alarm 5 (Wet).wav-9577416e129fbc10d4653d71c279590c.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Bonus/Alarms/RPGFX - Alarm 5 (Wet).wav"
+dest_files=["res://.godot/imported/RPGFX - Alarm 5 (Wet).wav-9577416e129fbc10d4653d71c279590c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

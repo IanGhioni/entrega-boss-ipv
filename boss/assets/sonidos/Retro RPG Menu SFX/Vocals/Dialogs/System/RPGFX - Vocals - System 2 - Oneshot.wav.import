@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvjd1igljt6us"
+path="res://.godot/imported/RPGFX - Vocals - System 2 - Oneshot.wav-074f3cb9a8d977d10dfce18103431b16.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/System/RPGFX - Vocals - System 2 - Oneshot.wav"
+dest_files=["res://.godot/imported/RPGFX - Vocals - System 2 - Oneshot.wav-074f3cb9a8d977d10dfce18103431b16.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

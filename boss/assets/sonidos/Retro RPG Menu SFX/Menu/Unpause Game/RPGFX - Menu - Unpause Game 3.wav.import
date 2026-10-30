@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ch6g16knxsunj"
+path="res://.godot/imported/RPGFX - Menu - Unpause Game 3.wav-0fb560dfba29d9a2767c5290a72a3be3.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Menu/Unpause Game/RPGFX - Menu - Unpause Game 3.wav"
+dest_files=["res://.godot/imported/RPGFX - Menu - Unpause Game 3.wav-0fb560dfba29d9a2767c5290a72a3be3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
