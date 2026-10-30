@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lwokwm5021k7"
+path="res://.godot/imported/RPGFX - Vocals - Human 5.wav-373f0bfb4cc9df1d8d46f5e1ece876eb.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Human/RPGFX - Vocals - Human 5.wav"
+dest_files=["res://.godot/imported/RPGFX - Vocals - Human 5.wav-373f0bfb4cc9df1d8d46f5e1ece876eb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

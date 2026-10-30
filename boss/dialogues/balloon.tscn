@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://neffr4mxavci"]
 
-[ext_resource type="Script" uid="uid://dn4nmudqo4yof" path="res://dialogues/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" uid="uid://dn4nmudqo4yof" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/balloon.gd" id="1_36de5"]
 [ext_resource type="Texture2D" uid="uid://dl8q2o4aw4qd1" path="res://assets/Bordes/PNG/Default/Transparent border/panel-transparent-border-011.png" id="2_7c2jb"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
@@ -236,6 +236,8 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
+volume_db = -10.0
+pitch_scale = 1.1
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/CenterContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

@@ -40,8 +40,11 @@ func _on_pressed_decline(_x) -> void:
 		ask_doc_button.disabled = true
 		await get_tree().create_timer(0.2).timeout
 		get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");
-		
+
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/AudioStreamPlayer2D"
+
 func _on_ask_doc_button_pressed() -> void:
+	audio_stream_player_2d.play()
 	await fila_animation.atender_siguiente()
 	fila_animation.mover_fila()
 	is_dialogue_active = true;

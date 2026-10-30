@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bus1gl78ab1cu"
+path="res://.godot/imported/RPGFX - Vocals - Dog 5 - Oneshot.wav-00b51b2d49b3b29e955deb893730488f.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/Retro RPG Menu SFX/Vocals/Dialogs/Animals/RPGFX - Vocals - Dog 5 - Oneshot.wav"
+dest_files=["res://.godot/imported/RPGFX - Vocals - Dog 5 - Oneshot.wav-00b51b2d49b3b29e955deb893730488f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

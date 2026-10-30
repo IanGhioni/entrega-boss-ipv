@@ -10,9 +10,13 @@ extends Control
 @onready var label: Label = $Timer/TextTimer
 @onready var timer: Timer = $Timer
 
+@onready var siguiente: Button = $ContainerSiguienteButton/PanelContainer/Siguiente
+
 
 func _ready() -> void:
 	timer.start(time_level)
+	_conectar_botones(self)
+
 	
 func _process(_delta: float) -> void:
 	label.text = str(int(timer.time_left))
@@ -35,3 +39,16 @@ func limpiar_mesa() -> void:
 
 func _on_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/FinalizarJuego.tscn");
+
+
+# Bug con el botón de "llamar siguiente"
+# porque reconoce que es otro botón, entonces tiene hover
+# :'(
+
+@onready var hover_sound: AudioStreamPlayer2D = $ButtonsContainer/HoverSound
+
+func _conectar_botones(nodo: Node) -> void:
+	for hijo in nodo.get_children():
+		if hijo is BaseButton:
+			hijo.mouse_entered.connect(hover_sound.play)
+		_conectar_botones(hijo)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dgo7bjcxfngo0"]
 
 [ext_resource type="Script" uid="uid://dkc8f7f0d6b5" path="res://Entities/documentos/presentacion.gd" id="1_jwdva"]
+[ext_resource type="AudioStream" uid="uid://cnehw74fdm0de" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 2.wav" id="2_3ikal"]
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="2_gy0o1"]
 [ext_resource type="Texture2D" uid="uid://d3sbbxo6wr0ws" path="res://assets/hourglass.png" id="2_olwyj"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="3_2eiu6"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c0bt35a8u8bt8" path="res://assets/Buttons/Green_Buttons_Pixel.png" id="7_olwyj"]
 [ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="7_yj3f0"]
 [ext_resource type="Texture2D" uid="uid://ccmdkguf5lne5" path="res://assets/Buttons/Red_Buttons_Pixel.png" id="8_ax2d3"]
+[ext_resource type="AudioStream" uid="uid://dk7yv1epv6rco" path="res://assets/sonidos/tintintintintin67676767.mp3" id="8_c6td6"]
 [ext_resource type="PackedScene" uid="uid://b66ddft02sk8s" path="res://Entities/NPCs/mago.tscn" id="8_fkkrn"]
 [ext_resource type="PackedScene" uid="uid://dly5friiawrgf" path="res://Entities/NPCs/mercader.tscn" id="8_o1l7e"]
 [ext_resource type="PackedScene" uid="uid://dm7waf1f7blb4" path="res://Entities/NPCs/npc.tscn" id="8_vh5ls"]
@@ -237,6 +239,10 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_of656")
 theme_override_styles/hover = SubResource("StyleBoxTexture_of656")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ContainerSiguienteButton/PanelContainer/Siguiente" unique_id=2076625379]
+stream = ExtResource("8_c6td6")
+volume_db = 12.0
+
 [node name="ButtonsContainer" type="Control" parent="." unique_id=1765387972]
 visible = false
 z_index = 10
@@ -251,6 +257,12 @@ offset_right = 853.0
 offset_bottom = 444.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="ButtonsContainer" unique_id=1593955590]
+position = Vector2(51, 86)
+stream = ExtResource("2_3ikal")
+volume_db = -1.0
+pitch_scale = 2.0
 
 [node name="Container" type="PanelContainer" parent="ButtonsContainer" unique_id=1810073617]
 custom_minimum_size = Vector2(260, 100)
@@ -405,5 +417,6 @@ visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ContainerSiguienteButton/PanelContainer/Siguiente" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
+[connection signal="mouse_entered" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="." method="_on_aceptar_button_mouse_entered"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/AceptarButton" to="Personajes/Inspector" method="_on_aceptar_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Container/MarginContainer/ContainerPila/RechazarButton" to="Personajes/Inspector" method="_on_rechazar_button_pressed"]
