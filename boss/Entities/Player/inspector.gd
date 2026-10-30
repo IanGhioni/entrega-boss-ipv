@@ -10,7 +10,7 @@ var cant_rondas: int = 0;
 const Ballon = preload("res://dialogues/balloon.tscn");
 
 @export var preguntar_doc: DialogueResource
-
+@onready var multa_texto: Label = $"../../Multa/PanelContainer/VBoxContainer/MultaTexto"
 @onready var presentacion: Control = $"../.."
 @onready var bell_animation: AnimationPlayer = $"../../BellAnimation"
 @onready var ask_doc_button: Button = $"../../ContainerSiguienteButton/PanelContainer/Siguiente"
@@ -20,6 +20,8 @@ const Ballon = preload("res://dialogues/balloon.tscn");
 @onready var fila_animation: Node2D = $"../../FilaAnimationController"
 @onready var sonido_campana: AudioStreamPlayer2D = $"../../ContainerSiguienteButton/PanelContainer/Siguiente/SonidoCampana"
 @onready var action_sound: AudioStreamPlayer2D = $"../../ButtonsContainer/ActionSound"
+@onready var animación_de_multa: AnimationPlayer = $"../../AnimaciónDeMulta"
+
 
 func _ready() -> void:
 	
@@ -78,6 +80,7 @@ func _on_aceptar_button_pressed() -> void:
 	GameManager.actualizarMotivos([]);
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
+	actualizar_multa(true)
 	actualizarContador(true)
 	bell_animation.play("bell-idle-alternate")
 	fila_animation.dejar_pasar()
@@ -92,6 +95,7 @@ func _on_rechazar_button_pressed() -> void:
 	
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
+	actualizar_multa(false)
 	actualizarContador(false)
 	bell_animation.play("bell-idle-alternate")
 	fila_animation.no_dejar_pasar()
@@ -120,3 +124,16 @@ func crear_balloon() -> Node:
 	Balloon.fila_animation = fila_animation
 	get_tree().current_scene.add_child(Balloon);
 	return Balloon
+	
+func actualizar_multa(dejo_pasar: bool) -> void:
+	var valido: bool = npcActual.es_valido()
+
+	if (valido and dejo_pasar) or (!valido and !dejo_pasar):
+		multa_texto.text = ""
+		return
+
+	if dejo_pasar:
+		multa_texto.text = npcActual.obtener_motivos_string()
+	else:
+		multa_texto.text = "Ciudadano con documentación valida"
+	animación_de_multa.play("mostar_multa")

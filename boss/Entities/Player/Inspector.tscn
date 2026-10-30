@@ -58,7 +58,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"talk",
-"speed": 2.0
+"speed": 5.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnidr"]
@@ -124,9 +124,8 @@ visible = false
 position = Vector2(-83, 0)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_idfvx")
-animation = &"idle"
+animation = &"talk"
 autoplay = "idle"
-frame_progress = 0.39959317
 
 [node name="TecnicoSprite" type="AnimatedSprite2D" parent="." unique_id=1797999094]
 visible = false

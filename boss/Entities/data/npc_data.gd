@@ -12,3 +12,9 @@ func doc(tipo: String) -> DocData:
 		if d.tipo == tipo:
 			return d
 	return null
+
+func obtener_motivos_string() -> String:
+	if motivos.is_empty():
+		return "Sin motivos de invalidez."
+
+	return ", ".join(motivos)
