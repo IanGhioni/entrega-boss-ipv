@@ -490,10 +490,10 @@ metadata/_edit_lock_ = true
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("2_gy0o1")]
 
-[node name="Torch" type="AnimatedSprite2D" parent="." unique_id=1178871327]
+[node name="Torch" type="AnimatedSprite2D" parent="Background" unique_id=1178871327]
 y_sort_enabled = true
-position = Vector2(709, 256)
-scale = Vector2(3.5720148, 3.687706)
+position = Vector2(236.33333, 85.333336)
+scale = Vector2(1.1906717, 1.2292354)
 sprite_frames = SubResource("SpriteFrames_bosb2")
 autoplay = "default"
 

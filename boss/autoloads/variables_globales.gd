@@ -14,3 +14,7 @@ func sumarFallo()-> void:
 
 func getFallosTotales() -> int:
 	return self.fallos_totales;
+
+func resetarEstadistica() -> void:
+	puntos_totales = 0;
+	fallos_totales = 0;
