@@ -114,6 +114,35 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_jiu6o")
 theme_override_styles/hover = SubResource("StyleBoxTexture_40atx")
 text = "Salir"
 
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1275506423]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -456.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=403354799]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VolumenLabel" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1167035850]
+layout_mode = 2
+text = "Volumen"
+
+[node name="Volumn" type="HSlider" parent="PanelContainer/HBoxContainer" unique_id=576962356]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+value = 0.5
+tick_count = 10
+ticks_position = 3
+
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Reanudar" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Opciones" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Salir" to="." method="_on_mouse_entered"]
+[connection signal="value_changed" from="PanelContainer/HBoxContainer/Volumn" to="." method="_on_volumn_value_changed"]
