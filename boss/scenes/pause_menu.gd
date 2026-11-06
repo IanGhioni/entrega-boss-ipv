@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var action_sound: AudioStreamPlayer2D = $ActionSound
 @onready var hover_sound: AudioStreamPlayer2D = $HoverSound
 @onready var pause_sound: AudioStreamPlayer2D = $PauseSound
+@onready var opciones_container: PanelContainer = $OpcionesContainer
 
 func _ready() -> void:
 	visible = false
@@ -25,6 +26,10 @@ func reanudar() -> void:
 	get_tree().paused = false
 	visible = false
 
+func _on_opciones_pressed() -> void:
+	action_sound.play();
+	opciones_container.visible = not opciones_container.visible
+
 func salir_al_menu() -> void:
 	action_sound.play();
 	get_tree().paused = false
@@ -32,3 +37,17 @@ func salir_al_menu() -> void:
 
 func _on_mouse_entered() -> void:
 	hover_sound.play();
+
+func _on_volumn_value_changed(value: float) -> void:
+	var multiplicador := value * 2.0
+	AudioServer.set_bus_volume_db(0, linear_to_db(multiplicador))
+
+
+func _on_musica_value_changed(value: float) -> void:
+	var bus := AudioServer.get_bus_index("Musica")
+	AudioServer.set_bus_volume_db(bus, linear_to_db(value * 2.0))
+
+
+func _on_efectos_value_changed(value: float) -> void:
+	var bus := AudioServer.get_bus_index("Efectos")
+	AudioServer.set_bus_volume_db(bus, linear_to_db(value * 2.0))
