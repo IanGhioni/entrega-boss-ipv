@@ -43,17 +43,42 @@ expand_margin_top = 6.0
 expand_margin_right = 24.0
 modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_abn1t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27kq1"]
+texture = ExtResource("3_5w6ei")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_m0shj"]
+color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_shaba"]
+color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_abn1t"]
+color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+thickness = 8
+
 [node name="PauseMenu" type="CanvasLayer" unique_id=1909579655]
 process_mode = 3
 script = ExtResource("1_jvnd5")
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1644922850]
+position = Vector2(580, 312)
 stream = ExtResource("2_yx35g")
 
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=758059122]
+position = Vector2(580, 312)
 stream = ExtResource("3_vd2mf")
 
 [node name="PauseSound" type="AudioStreamPlayer2D" parent="." unique_id=1737876069]
+position = Vector2(580, 312)
 stream = ExtResource("4_abn1t")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2142094783]
@@ -114,7 +139,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_jiu6o")
 theme_override_styles/hover = SubResource("StyleBoxTexture_40atx")
 text = "Salir"
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1275506423]
+[node name="OpcionesContainer" type="PanelContainer" parent="." unique_id=1275506423]
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -123,26 +148,44 @@ offset_left = -456.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxEmpty_abn1t")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=403354799]
+[node name="Panel" type="Panel" parent="OpcionesContainer" unique_id=212459922]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_27kq1")
 
-[node name="VolumenLabel" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1167035850]
+[node name="MarginContainer" type="MarginContainer" parent="OpcionesContainer" unique_id=1017152622]
 layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 12
+
+[node name="OpcionVolumen" type="HBoxContainer" parent="OpcionesContainer/MarginContainer" unique_id=403354799]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="VolumenLabel" type="Label" parent="OpcionesContainer/MarginContainer/OpcionVolumen" unique_id=1167035850]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_komsw")
 text = "Volumen"
 
-[node name="Volumn" type="HSlider" parent="PanelContainer/HBoxContainer" unique_id=576962356]
+[node name="Volumn" type="HSlider" parent="OpcionesContainer/MarginContainer/OpcionVolumen" unique_id=576962356]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxLine_m0shj")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_shaba")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_abn1t")
 max_value = 1.0
 step = 0.01
 value = 0.5
-tick_count = 10
+ticks_on_borders = true
 ticks_position = 3
 
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Reanudar" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Opciones" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Salir" to="." method="_on_mouse_entered"]
-[connection signal="value_changed" from="PanelContainer/HBoxContainer/Volumn" to="." method="_on_volumn_value_changed"]
+[connection signal="value_changed" from="OpcionesContainer/MarginContainer/OpcionVolumen/Volumn" to="." method="_on_volumn_value_changed"]
