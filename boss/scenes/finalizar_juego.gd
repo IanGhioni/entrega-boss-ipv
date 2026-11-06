@@ -14,10 +14,11 @@ func setUp(cant_aciertos: int) -> void:
 func _on_play_pressed() -> void:
 	action_sound.play(); # elijo creer que cuando estén las transiciones, esto suene
 	Transicion.cambiar_escena("res://scenes/Presentacion.tscn")
-
+	VariablesGlobales.resetarEstadistica();
 func _on_back_menu_button_pressed() -> void:
 	action_sound.play();
 	Transicion.cambiar_escena("res://Main.tscn")
+	VariablesGlobales.resetarEstadistica();
 
 func _on_quit_pressed() -> void:
 	get_tree().quit();
