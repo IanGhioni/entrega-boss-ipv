@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://ietr1me2cqi2"]
+
+[ext_resource type="Texture2D" uid="uid://c2w41umwakb7j" path="res://assets/Texturas/descarga-removebg-preview.png" id="1_t1jr4"]
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="1_wbcg5"]
+[ext_resource type="Texture2D" uid="uid://b2ywbruyu26i6" path="res://assets/Texturas/luces-removebg-preview.png" id="2_4x8ga"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbcg5"]
+texture = ExtResource("1_t1jr4")
+expand_margin_top = 50.0
+expand_margin_bottom = 50.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_toa2b"]
+font = ExtResource("1_wbcg5")
+font_color = Color(0.53577083, 0.12029453, 0.19194633, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbcg5"]
+font = ExtResource("1_wbcg5")
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[node name="Instruccion" type="Control" unique_id=762380933]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 135.0
+offset_bottom = 80.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1981484382]
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wbcg5")
+
+[node name="Decoracion" type="Sprite2D" parent="Panel" unique_id=174964128]
+y_sort_enabled = true
+position = Vector2(49.624992, 111.5)
+scale = Vector2(0.093750015, 0.08196721)
+texture = ExtResource("2_4x8ga")
+flip_h = true
+
+[node name="Titulo" type="Label" parent="Panel" unique_id=70547643]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 23.0
+offset_top = 49.0
+offset_right = 194.0
+offset_bottom = 70.0
+text = "¡Que pase el siguiente!"
+label_settings = SubResource("LabelSettings_toa2b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Descripcion" type="Label" parent="Panel" unique_id=1065477364]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 51.0
+offset_top = 73.0
+offset_right = 189.0
+offset_bottom = 110.0
+text = "Toca la campana para llamar 
+a los siguientes fronterizos"
+label_settings = SubResource("LabelSettings_wbcg5")
