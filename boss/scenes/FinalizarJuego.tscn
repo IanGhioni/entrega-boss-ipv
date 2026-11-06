@@ -206,15 +206,18 @@ position = Vector2(578, 310)
 stream = ExtResource("9_12s3c")
 pitch_scale = 0.69
 autoplay = true
+bus = &"Musica"
 parameters/looping = true
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1462620789]
 position = Vector2(580, 343)
 stream = ExtResource("10_3adj8")
+bus = &"Efectos"
 
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=183710232]
 position = Vector2(580, 343)
 stream = ExtResource("11_sp00f")
+bus = &"Efectos"
 
 [connection signal="mouse_entered" from="OptionsContainer/ContainerButtons/Play" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="OptionsContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]

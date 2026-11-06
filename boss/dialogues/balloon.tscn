@@ -238,11 +238,13 @@ text = "Response example"
 [node name="NpcTalkSound" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
 volume_db = -15.451
+bus = &"Efectos"
 
 [node name="InspectorsTalkSound" type="AudioStreamPlayer" parent="." unique_id=1898110265]
 unique_name_in_owner = true
 stream = ExtResource("6_7c2jb")
 volume_db = -15.451
+bus = &"Efectos"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/CenterContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

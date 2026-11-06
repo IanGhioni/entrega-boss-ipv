@@ -72,14 +72,17 @@ script = ExtResource("1_jvnd5")
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1644922850]
 position = Vector2(580, 312)
 stream = ExtResource("2_yx35g")
+bus = &"Efectos"
 
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=758059122]
 position = Vector2(580, 312)
 stream = ExtResource("3_vd2mf")
+bus = &"Efectos"
 
 [node name="PauseSound" type="AudioStreamPlayer2D" parent="." unique_id=1737876069]
 position = Vector2(580, 312)
 stream = ExtResource("4_abn1t")
+bus = &"Efectos"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2142094783]
 anchors_preset = 15
@@ -140,6 +143,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_40atx")
 text = "Salir"
 
 [node name="OpcionesContainer" type="PanelContainer" parent="." unique_id=1275506423]
+visible = false
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -150,28 +154,93 @@ grow_vertical = 2
 size_flags_horizontal = 8
 theme_override_styles/panel = SubResource("StyleBoxEmpty_abn1t")
 
-[node name="Panel" type="Panel" parent="OpcionesContainer" unique_id=212459922]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_27kq1")
-
 [node name="MarginContainer" type="MarginContainer" parent="OpcionesContainer" unique_id=1017152622]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 12
 
-[node name="OpcionVolumen" type="HBoxContainer" parent="OpcionesContainer/MarginContainer" unique_id=403354799]
+[node name="VBoxContainer" type="VBoxContainer" parent="OpcionesContainer/MarginContainer" unique_id=1878814388]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="OpcionVolumen" type="PanelContainer" parent="OpcionesContainer/MarginContainer/VBoxContainer" unique_id=1361189515]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_27kq1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OpcionesContainer/MarginContainer/VBoxContainer/OpcionVolumen" unique_id=403354799]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 
-[node name="VolumenLabel" type="Label" parent="OpcionesContainer/MarginContainer/OpcionVolumen" unique_id=1167035850]
+[node name="VolumenLabel" type="Label" parent="OpcionesContainer/MarginContainer/VBoxContainer/OpcionVolumen/HBoxContainer" unique_id=1167035850]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_komsw")
-text = "Volumen"
+text = "General"
 
-[node name="Volumn" type="HSlider" parent="OpcionesContainer/MarginContainer/OpcionVolumen" unique_id=576962356]
+[node name="Volumen" type="HSlider" parent="OpcionesContainer/MarginContainer/VBoxContainer/OpcionVolumen/HBoxContainer" unique_id=576962356]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxLine_m0shj")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_shaba")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_abn1t")
+max_value = 1.0
+step = 0.01
+value = 0.5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="OpcionMusica" type="PanelContainer" parent="OpcionesContainer/MarginContainer/VBoxContainer" unique_id=578208508]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_27kq1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OpcionesContainer/MarginContainer/VBoxContainer/OpcionMusica" unique_id=1886062388]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="MusicaLabel" type="Label" parent="OpcionesContainer/MarginContainer/VBoxContainer/OpcionMusica/HBoxContainer" unique_id=1904241757]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_komsw")
+text = "Música"
+
+[node name="Musica" type="HSlider" parent="OpcionesContainer/MarginContainer/VBoxContainer/OpcionMusica/HBoxContainer" unique_id=668318258]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxLine_m0shj")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_shaba")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_abn1t")
+max_value = 1.0
+step = 0.01
+value = 0.5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="OpcionEfectos" type="PanelContainer" parent="OpcionesContainer/MarginContainer/VBoxContainer" unique_id=1647904245]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_27kq1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OpcionesContainer/MarginContainer/VBoxContainer/OpcionEfectos" unique_id=1674056393]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="EfectosLabel" type="Label" parent="OpcionesContainer/MarginContainer/VBoxContainer/OpcionEfectos/HBoxContainer" unique_id=211891869]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_komsw")
+text = "Efectos"
+
+[node name="Efectos" type="HSlider" parent="OpcionesContainer/MarginContainer/VBoxContainer/OpcionEfectos/HBoxContainer" unique_id=2064615660]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -188,4 +257,6 @@ ticks_position = 3
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Opciones" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Salir" to="." method="_on_mouse_entered"]
-[connection signal="value_changed" from="OpcionesContainer/MarginContainer/OpcionVolumen/Volumn" to="." method="_on_volumn_value_changed"]
+[connection signal="value_changed" from="OpcionesContainer/MarginContainer/VBoxContainer/OpcionVolumen/HBoxContainer/Volumen" to="." method="_on_volumn_value_changed"]
+[connection signal="value_changed" from="OpcionesContainer/MarginContainer/VBoxContainer/OpcionMusica/HBoxContainer/Musica" to="." method="_on_musica_value_changed"]
+[connection signal="value_changed" from="OpcionesContainer/MarginContainer/VBoxContainer/OpcionEfectos/HBoxContainer/Efectos" to="." method="_on_efectos_value_changed"]

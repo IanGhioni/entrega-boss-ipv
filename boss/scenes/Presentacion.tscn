@@ -485,6 +485,7 @@ position = Vector2(575, 345)
 stream = ExtResource("4_xpv45")
 volume_db = -7.776
 autoplay = true
+bus = &"Musica"
 parameters/looping = true
 metadata/_edit_lock_ = true
 
@@ -518,6 +519,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
 [node name="SonidoCampana" type="AudioStreamPlayer2D" parent="ContainerSiguienteButton/PanelContainer/Siguiente" unique_id=2076625379]
 stream = ExtResource("8_c6td6")
 volume_db = 9.0
+bus = &"Efectos"
 
 [node name="BellAnimation" type="AnimationPlayer" parent="." unique_id=1327996737]
 root_node = NodePath("../ContainerSiguienteButton")
@@ -544,9 +546,11 @@ position = Vector2(51, 86)
 stream = ExtResource("8_6n11o")
 volume_db = -1.0
 pitch_scale = 2.0
+bus = &"Efectos"
 
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="ButtonsContainer" unique_id=2030370976]
 stream = ExtResource("9_6n11o")
+bus = &"Efectos"
 
 [node name="Container" type="PanelContainer" parent="ButtonsContainer" unique_id=1810073617]
 custom_minimum_size = Vector2(260, 100)

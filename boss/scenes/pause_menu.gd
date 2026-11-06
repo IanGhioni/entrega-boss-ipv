@@ -41,3 +41,13 @@ func _on_mouse_entered() -> void:
 func _on_volumn_value_changed(value: float) -> void:
 	var multiplicador := value * 2.0
 	AudioServer.set_bus_volume_db(0, linear_to_db(multiplicador))
+
+
+func _on_musica_value_changed(value: float) -> void:
+	var bus := AudioServer.get_bus_index("Musica")
+	AudioServer.set_bus_volume_db(bus, linear_to_db(value * 2.0))
+
+
+func _on_efectos_value_changed(value: float) -> void:
+	var bus := AudioServer.get_bus_index("Efectos")
+	AudioServer.set_bus_volume_db(bus, linear_to_db(value * 2.0))
