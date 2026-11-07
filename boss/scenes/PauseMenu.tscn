@@ -72,16 +72,19 @@ script = ExtResource("1_jvnd5")
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1644922850]
 position = Vector2(580, 312)
 stream = ExtResource("2_yx35g")
+volume_db = -10.0
 bus = &"Efectos"
 
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=758059122]
 position = Vector2(580, 312)
 stream = ExtResource("3_vd2mf")
+volume_db = -10.0
 bus = &"Efectos"
 
 [node name="PauseSound" type="AudioStreamPlayer2D" parent="." unique_id=1737876069]
 position = Vector2(580, 312)
 stream = ExtResource("4_abn1t")
+volume_db = -10.0
 bus = &"Efectos"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2142094783]
