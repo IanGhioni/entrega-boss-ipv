@@ -84,7 +84,7 @@ texture_margin_left = 12.0
 texture_margin_top = 12.0
 texture_margin_right = 12.0
 texture_margin_bottom = 12.0
-modulate_color = Color(0.8921164, 0.72550815, 0.39966336, 1)
+modulate_color = Color(0.64102405, 0.5023673, 0.21225789, 1)
 
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
@@ -176,12 +176,11 @@ size_flags_horizontal = 3
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1567782692]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.52156866, 0.22352941, 1)
-theme_override_constants/shadow_offset_x = 4
+theme_override_colors/font_shadow_color = Color(0.27627003, 0.20804119, 0.06523093, 1)
+theme_override_constants/shadow_offset_x = 3
 theme_override_fonts/normal_font = ExtResource("4_7c2jb")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
@@ -195,8 +194,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.66642, 0.5206235, 0.22187185, 1)
-theme_override_constants/shadow_offset_x = 3
+theme_override_colors/font_shadow_color = Color(0.2632664, 0.19765756, 0.06120222, 1)
+theme_override_constants/shadow_offset_x = 2
 theme_override_fonts/normal_font = ExtResource("4_7c2jb")
 theme_override_font_sizes/normal_font_size = 25
 text = "Dialogue..."
@@ -238,11 +237,13 @@ text = "Response example"
 [node name="NpcTalkSound" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
 volume_db = -15.451
+bus = &"Efectos"
 
 [node name="InspectorsTalkSound" type="AudioStreamPlayer" parent="." unique_id=1898110265]
 unique_name_in_owner = true
 stream = ExtResource("6_7c2jb")
 volume_db = -15.451
+bus = &"Efectos"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/CenterContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

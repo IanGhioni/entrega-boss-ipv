@@ -204,17 +204,23 @@ text = "Ganancias: $"
 [node name="MusicaGameOver" type="AudioStreamPlayer2D" parent="." unique_id=373335318]
 position = Vector2(578, 310)
 stream = ExtResource("9_12s3c")
+volume_db = -10.0
 pitch_scale = 0.69
 autoplay = true
+bus = &"Musica"
 parameters/looping = true
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1462620789]
 position = Vector2(580, 343)
 stream = ExtResource("10_3adj8")
+volume_db = -10.0
+bus = &"Efectos"
 
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=183710232]
 position = Vector2(580, 343)
 stream = ExtResource("11_sp00f")
+volume_db = -10.0
+bus = &"Efectos"
 
 [connection signal="mouse_entered" from="OptionsContainer/ContainerButtons/Play" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="OptionsContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]

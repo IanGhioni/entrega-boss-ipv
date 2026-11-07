@@ -72,6 +72,56 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdi0d"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17wma"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36fx1"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvlju"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v517j"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d2mi"]
+atlas = ExtResource("9_ywfac")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bosb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdi0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17wma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36fx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvlju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v517j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d2mi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27kq1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of656"]
@@ -318,56 +368,6 @@ texture = ExtResource("12_c6td6")
 region_rect = Rect2(0, 16, 16, 16)
 modulate_color = Color(0.61960787, 0.61960787, 0.61960787, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdi0d"]
-atlas = ExtResource("9_ywfac")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_17wma"]
-atlas = ExtResource("9_ywfac")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_36fx1"]
-atlas = ExtResource("9_ywfac")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gvlju"]
-atlas = ExtResource("9_ywfac")
-region = Rect2(96, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v517j"]
-atlas = ExtResource("9_ywfac")
-region = Rect2(128, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5d2mi"]
-atlas = ExtResource("9_ywfac")
-region = Rect2(160, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bosb2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fdi0d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_17wma")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_36fx1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gvlju")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v517j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5d2mi")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 10.0
-}]
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6n11o"]
 _data = {
 &"mostar_multa": SubResource("Animation_c6td6")
@@ -483,15 +483,103 @@ stream = ExtResource("4_bf410")
 process_mode = 3
 position = Vector2(575, 345)
 stream = ExtResource("4_xpv45")
-volume_db = -7.776
+volume_db = -10.0
 autoplay = true
+bus = &"Musica"
 parameters/looping = true
 metadata/_edit_lock_ = true
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("2_gy0o1")]
 
+[node name="Torch" type="AnimatedSprite2D" parent="Background" unique_id=1178871327]
+y_sort_enabled = true
+position = Vector2(236.33333, 85.333336)
+scale = Vector2(1.1906717, 1.2292354)
+sprite_frames = SubResource("SpriteFrames_bosb2")
+autoplay = "default"
+
+[node name="Personajes" type="Node2D" parent="." unique_id=950768903]
+
+[node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("5_ilnbs")]
+position = Vector2(387, 341.00003)
+max_rondas = 5
+
+[node name="NPC" parent="Personajes" unique_id=742967132 instance=ExtResource("7_1fek8")]
+position = Vector2(1204, 386)
+
+[node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("7_bosb2")]
+personajes_visuales = Array[PackedScene]([ExtResource("8_fkkrn"), ExtResource("11_dkkva"), ExtResource("8_o1l7e"), ExtResource("9_kfjds"), ExtResource("12_o1l7e")])
+escena_npc = ExtResource("8_vh5ls")
+
+[node name="Puntos" type="Node2D" parent="." unique_id=384639048]
+
+[node name="Punto1" type="Marker2D" parent="Puntos" unique_id=1726543701]
+position = Vector2(275, 235)
+
+[node name="Punto2" type="Marker2D" parent="Puntos" unique_id=178473864]
+position = Vector2(627, 238)
+
+[node name="Wall4" type="Sprite2D" parent="." unique_id=1169578887]
+y_sort_enabled = true
+position = Vector2(722, 385.99997)
+scale = Vector2(4.188469, 3.7821314)
+texture = ExtResource("7_o0ldx")
+hframes = 26
+vframes = 8
+frame = 77
+
+[node name="Pasto" type="Sprite2D" parent="." unique_id=45139868]
+y_sort_enabled = true
+position = Vector2(44, 257)
+scale = Vector2(3.0208337, 1.3122786)
+
+[node name="TallGrass4" type="Sprite2D" parent="Pasto" unique_id=420017727]
+position = Vector2(259.31967, 154.92734)
+scale = Vector2(0.43260494, 1.0402395)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass2" type="Sprite2D" parent="Pasto" unique_id=735597737]
+position = Vector2(291.24643, 154.1401)
+scale = Vector2(0.4535004, 1.1017208)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass8" type="Sprite2D" parent="Pasto" unique_id=2116551306]
+position = Vector2(350.74643, 156.1401)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass10" type="Sprite2D" parent="Pasto" unique_id=1817532016]
+position = Vector2(366.7861, 150.8826)
+scale = Vector2(0.6057028, 1.4434731)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass9" type="Sprite2D" parent="Pasto" unique_id=1228628786]
+position = Vector2(323.75168, 155.45483)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass5" type="Sprite2D" parent="Pasto" unique_id=2063886087]
+position = Vector2(24.36366, 157.21342)
+scale = Vector2(0.78650594, 0.904909)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass7" type="Sprite2D" parent="Pasto" unique_id=528906378]
+position = Vector2(-24.629435, 152.64122)
+scale = Vector2(0.7765418, 1.1630355)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass6" type="Sprite2D" parent="Pasto" unique_id=679159205]
+position = Vector2(189.65146, 160.02696)
+scale = Vector2(0.4200383, 0.66861904)
+texture = ExtResource("8_vif71")
+
+[node name="TallGrass3" type="Sprite2D" parent="Pasto" unique_id=1784658073]
+position = Vector2(223.25002, 151.41006)
+scale = Vector2(0.42335156, 1.2487328)
+texture = ExtResource("8_vif71")
+
 [node name="ContainerSiguienteButton" type="Control" parent="." unique_id=1080081428]
-z_index = 1
+y_sort_enabled = true
 anchors_preset = 0
 offset_left = 684.0
 offset_top = 280.0
@@ -517,7 +605,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
 
 [node name="SonidoCampana" type="AudioStreamPlayer2D" parent="ContainerSiguienteButton/PanelContainer/Siguiente" unique_id=2076625379]
 stream = ExtResource("8_c6td6")
-volume_db = 9.0
+bus = &"Efectos"
 
 [node name="BellAnimation" type="AnimationPlayer" parent="." unique_id=1327996737]
 root_node = NodePath("../ContainerSiguienteButton")
@@ -526,7 +614,7 @@ autoplay = &"bell-idle-alternate"
 
 [node name="ButtonsContainer" type="Control" parent="." unique_id=1765387972]
 visible = false
-z_index = 10
+y_sort_enabled = true
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -542,11 +630,14 @@ grow_vertical = 0
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="ButtonsContainer" unique_id=1593955590]
 position = Vector2(51, 86)
 stream = ExtResource("8_6n11o")
-volume_db = -1.0
+volume_db = -10.0
 pitch_scale = 2.0
+bus = &"Efectos"
 
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="ButtonsContainer" unique_id=2030370976]
 stream = ExtResource("9_6n11o")
+volume_db = -10.0
+bus = &"Efectos"
 
 [node name="Container" type="PanelContainer" parent="ButtonsContainer" unique_id=1810073617]
 custom_minimum_size = Vector2(260, 100)
@@ -610,94 +701,6 @@ theme_override_colors/font_shadow_color = Color(0.8901961, 0.7254902, 0.4, 1)
 theme_override_fonts/font = ExtResource("3_2eiu6")
 text = "Rechazar"
 
-[node name="Personajes" type="Node2D" parent="." unique_id=950768903]
-
-[node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("5_ilnbs")]
-position = Vector2(387, 341.00003)
-max_rondas = 5
-
-[node name="NPC" parent="Personajes" unique_id=742967132 instance=ExtResource("7_1fek8")]
-position = Vector2(1204, 386)
-
-[node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("7_bosb2")]
-personajes_visuales = Array[PackedScene]([ExtResource("8_fkkrn"), ExtResource("11_dkkva"), ExtResource("8_o1l7e"), ExtResource("9_kfjds"), ExtResource("12_o1l7e")])
-escena_npc = ExtResource("8_vh5ls")
-
-[node name="Puntos" type="Node2D" parent="." unique_id=384639048]
-
-[node name="Punto1" type="Marker2D" parent="Puntos" unique_id=1726543701]
-position = Vector2(275, 235)
-
-[node name="Punto2" type="Marker2D" parent="Puntos" unique_id=178473864]
-position = Vector2(627, 238)
-
-[node name="Torch" type="AnimatedSprite2D" parent="." unique_id=1178871327]
-position = Vector2(709, 256)
-scale = Vector2(3.5720148, 3.687706)
-sprite_frames = SubResource("SpriteFrames_bosb2")
-autoplay = "default"
-
-[node name="Wall4" type="Sprite2D" parent="." unique_id=1169578887]
-position = Vector2(722, 385.99997)
-scale = Vector2(4.188469, 3.7821314)
-texture = ExtResource("7_o0ldx")
-hframes = 26
-vframes = 8
-frame = 77
-
-[node name="Pasto" type="Sprite2D" parent="." unique_id=45139868]
-position = Vector2(44, 257)
-scale = Vector2(3.0208337, 1.3122786)
-
-[node name="TallGrass4" type="Sprite2D" parent="Pasto" unique_id=420017727]
-position = Vector2(259.31967, 154.92734)
-scale = Vector2(0.43260494, 1.0402395)
-texture = ExtResource("8_vif71")
-
-[node name="TallGrass2" type="Sprite2D" parent="Pasto" unique_id=735597737]
-position = Vector2(291.24643, 154.1401)
-scale = Vector2(0.4535004, 1.1017208)
-texture = ExtResource("8_vif71")
-
-[node name="TallGrass8" type="Sprite2D" parent="Pasto" unique_id=2116551306]
-position = Vector2(350.74643, 156.1401)
-scale = Vector2(0.6057028, 1.1017208)
-texture = ExtResource("8_vif71")
-
-[node name="TallGrass10" type="Sprite2D" parent="Pasto" unique_id=1817532016]
-position = Vector2(366.7861, 150.8826)
-scale = Vector2(0.6057028, 1.4434731)
-texture = ExtResource("8_vif71")
-
-[node name="TallGrass9" type="Sprite2D" parent="Pasto" unique_id=1228628786]
-position = Vector2(323.75168, 155.45483)
-scale = Vector2(0.6057028, 1.1017208)
-texture = ExtResource("8_vif71")
-
-[node name="TallGrass5" type="Sprite2D" parent="Pasto" unique_id=2063886087]
-position = Vector2(24.36366, 157.21342)
-scale = Vector2(0.78650594, 0.904909)
-texture = ExtResource("8_vif71")
-
-[node name="TallGrass7" type="Sprite2D" parent="Pasto" unique_id=528906378]
-position = Vector2(-24.629435, 152.64122)
-scale = Vector2(0.7765418, 1.1630355)
-texture = ExtResource("8_vif71")
-
-[node name="TallGrass6" type="Sprite2D" parent="Pasto" unique_id=679159205]
-position = Vector2(189.65146, 160.02696)
-scale = Vector2(0.4200383, 0.66861904)
-texture = ExtResource("8_vif71")
-
-[node name="TallGrass3" type="Sprite2D" parent="Pasto" unique_id=1784658073]
-position = Vector2(223.25002, 151.41006)
-scale = Vector2(0.42335156, 1.2487328)
-texture = ExtResource("8_vif71")
-
-[node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
-position = Vector2(3.8146973e-06, 0)
-scale = Vector2(0.99999994, 1)
-
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("20_2eiu6")]
 visible = false
 
@@ -705,6 +708,7 @@ visible = false
 libraries/ = SubResource("AnimationLibrary_6n11o")
 
 [node name="Multa" type="Control" parent="." unique_id=657668407]
+y_sort_enabled = true
 anchors_preset = 0
 offset_left = -381.0
 offset_top = 570.0
@@ -766,6 +770,10 @@ theme_override_colors/font_color = Color(0.9882353, 0.7607843, 0, 1)
 theme_override_fonts/font = ExtResource("3_2eiu6")
 autowrap_mode = 2
 justification_flags = 35
+
+[node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
+y_sort_enabled = true
+scale = Vector2(0.99999994, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ContainerSiguienteButton/PanelContainer/Siguiente" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
