@@ -65,17 +65,22 @@ script = ExtResource("1_vjb58")
 position = Vector2(604, 301)
 scale = Vector2(56.919518, 23.715733)
 stream = ExtResource("2_13sgg")
-volume_db = -7.776
+volume_db = -10.0
 autoplay = true
+bus = &"Musica"
 parameters/looping = true
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1610083750]
 position = Vector2(558, 278)
 stream = ExtResource("3_70i5f")
+volume_db = -10.0
+bus = &"Efectos"
 
 [node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=992294297]
 position = Vector2(558, 278)
 stream = ExtResource("4_mj5lg")
+volume_db = -10.0
+bus = &"Efectos"
 
 [node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_70i5f")]
 position = Vector2(0, -45)
