@@ -17,3 +17,6 @@ func _on_quit_pressed() -> void:
 
 func _on_mouse_entered() -> void:
 	hover_sound.play();
+
+func _on_tutorial_pressed() -> void:
+	Transicion.cambiar_escena("res://scenes/Tutorial.tscn")
