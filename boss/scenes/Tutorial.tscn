@@ -346,5 +346,3 @@ layout_mode = 0
 
 [node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=1832700574]
 libraries/ = SubResource("AnimationLibrary_hf6er")
-
-[connection signal="se_activo_campana" from="CampanaContainer" to="FilaAnimationController" method="_on_campana_container_se_activo_campana"]

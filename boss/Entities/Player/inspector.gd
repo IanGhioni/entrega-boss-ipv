@@ -12,7 +12,6 @@ var globo_actual: Node = null
 @export var preguntar_doc: DialogueResource
 
 #Nodo raiz
-
 @onready var presentacion: Control = $"../../"
 
 # Container Campana y Botones
@@ -29,9 +28,12 @@ var globo_actual: Node = null
 
 
 func _ready() -> void:
-	DialogueManager.dialogue_ended.connect(_on_pressed_decline);
-	fila_animation.tamanio = max_rondas;
-	
+	DialogueManager.dialogue_ended.connect(_on_pressed_decline)
+	fila_animation.tamanio = max_rondas
+	aceptar_denegar_container.aceptar_presionado.connect(_on_aceptar_button_pressed)
+	aceptar_denegar_container.rechazar_presionado.connect(_on_rechazar_button_pressed)
+
+
 func eliminar_dialogo() -> void:
 	if is_instance_valid(globo_actual):
 		globo_actual.queue_free()
@@ -48,7 +50,7 @@ func _on_pressed_decline(_x) -> void:
 		aceptar_denegar_container.activarBotones();
 	
 	if cant_rondas == max_rondas:
-		campanaContainer.disabled = true
+		campanaContainer.desabilitarBoton();
 		await get_tree().create_timer(5.0).timeout
 		Transicion.cambiar_escena("res://scenes/FinalizarJuego.tscn")
 
@@ -111,8 +113,8 @@ func _on_rechazar_button_pressed() -> void:
 
 # Método común entre aceptar/rechazar a alguien
 func _accion_de_fila() -> void:
-	campanaContainer.disabled = false;
-	aceptar_denegar_container.disabled = true;
+	campanaContainer.habilitarBoton()
+	aceptar_denegar_container.desactivarBotones();
 	terminoInspeccion = true;
 	cant_rondas = cant_rondas + 1;
 	presentacion.limpiar_mesa()
@@ -139,16 +141,15 @@ func crear_balloon() -> Node:
 	globo_actual = Balloon 
 	
 	return Balloon
-	
+
 func actualizar_multa(dejo_pasar: bool) -> void:
 	var valido: bool = npcActual.es_valido()
-	var textoMullta: Label = multa_container.get_child(2).get_child(0).get_child(0);
 	if (valido and dejo_pasar) or (!valido and !dejo_pasar):
-		textoMullta.text = ""
+		multa_container.limpiar()
 		return
 
 	if dejo_pasar:
-		textoMullta.text = npcActual.obtener_motivos_string()
+		multa_container.set_texto(npcActual.obtener_motivos_string())
 	else:
-		textoMullta.text = "Ciudadano con documentación valida"
+		multa_container.set_texto("Ciudadano con documentación valida")
 	animación_de_multa.play("mostar_multa")

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://eg585i6i77hs"]
 
+[ext_resource type="Script" uid="uid://kdexe5qswayo" path="res://scenes/multa.gd" id="1_i22fy"]
 [ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="1_y62uy"]
 [ext_resource type="Texture2D" uid="uid://d0y65a0ls7wpa" path="res://assets/Cells.png" id="2_i22fy"]
 [ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="3_vcyoy"]
@@ -81,6 +82,7 @@ offset_left = -381.0
 offset_top = 570.0
 offset_right = -381.0
 offset_bottom = 570.0
+script = ExtResource("1_i22fy")
 
 [node name="Panel" type="Panel" parent="." unique_id=269267109]
 custom_minimum_size = Vector2(400, 200)
