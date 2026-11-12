@@ -312,10 +312,10 @@ escena_npc = ExtResource("8_1qfbs")
 [node name="Instruccion" parent="." unique_id=762380933 instance=ExtResource("4_y0w3d")]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 761.0
-offset_top = -20.0
-offset_right = 761.0
-offset_bottom = -20.0
+offset_left = 667.0067
+offset_top = 0.1672138
+offset_right = 667.0067
+offset_bottom = 0.1672138
 
 [node name="DocumentoBase" parent="." unique_id=822367475 instance=ExtResource("3_twv1b")]
 
@@ -407,13 +407,18 @@ offset_top = -221.0
 offset_right = 977.0
 offset_bottom = -221.0
 
-[node name="Multa" parent="." unique_id=47265771 instance=ExtResource("10_hvqni")]
-layout_mode = 0
-
 [node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=1832700574]
 libraries/ = SubResource("AnimationLibrary_hf6er")
 
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("14_lyiqi")]
 visible = false
+
+[node name="Multa" parent="." unique_id=47265771 instance=ExtResource("10_hvqni")]
+layout_mode = 0
+anchors_preset = 0
+offset_left = -381.0
+offset_top = 570.0
+offset_right = -381.0
+offset_bottom = 570.0
 
 [connection signal="se_activo_campana" from="CampanaContainer" to="FilaAnimationController" method="_on_campana_container_se_activo_campana"]

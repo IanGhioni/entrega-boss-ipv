@@ -77,11 +77,6 @@ animations = [{
 [node name="Multa" type="Control" unique_id=47265771]
 y_sort_enabled = true
 layout_mode = 3
-anchors_preset = 0
-offset_left = -381.0
-offset_top = 570.0
-offset_right = -381.0
-offset_bottom = 570.0
 script = ExtResource("1_i22fy")
 
 [node name="Panel" type="Panel" parent="." unique_id=269267109]
