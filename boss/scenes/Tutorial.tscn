@@ -427,8 +427,7 @@ offset_left = 667.0068
 offset_top = 0.16721392
 offset_right = 667.0068
 offset_bottom = 0.16721392
-titulo = "Bienvenido"
-descripcion = "Sos un capo "
+descripcion = " "
 
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("14_lyiqi")]
 visible = false

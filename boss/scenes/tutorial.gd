@@ -3,8 +3,29 @@ extends Control
 @onready var instruccion: Control = $TutorialLayout/Control/ColorRect/Instruccion
 @onready var tutorial_layout: CanvasLayer = $TutorialLayout
 
+var fase_tutorial: int = 0; 
+# Variable que vamos a usar para ordenar las escenas de tutorial. 
+# Usandolo como índice para los dialogos.
+
+var titulos_list: Array = [
+	"Bienvenido!",
+	"¡Que pase el siguiente!",
+	"Revisar documentos",
+]
+
+var descripcion_list: Array = [
+	"Saludos guardias!",
+	"Toca la campana para llamar a los siguientes fronterizos",
+	"Consultá con tu compañero como averiguar si son legales",
+]
+
+func _ready() -> void:
+	instruccion.setTitulo(titulos_list[fase_tutorial]);
+	instruccion.setInstruccion(descripcion_list[fase_tutorial]);
+
 func _on_campana_container_se_activo_campana() -> void:
 	await get_tree().create_timer(2.5).timeout
-	instruccion.setTitulo("Revisar documentos");
-	instruccion.setInstruccion("Consultá con tu compañero como averiguar si son legales");
+	fase_tutorial += 1;
+	instruccion.setTitulo(titulos_list[fase_tutorial]);
+	instruccion.setInstruccion(descripcion_list[fase_tutorial]);
 	tutorial_layout.show();
