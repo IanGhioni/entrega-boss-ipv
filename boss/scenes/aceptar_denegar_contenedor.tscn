@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cpgh3soflr7i0"]
 
 [ext_resource type="AudioStream" uid="uid://8jvppwoaymb" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 3.wav" id="1_hfaql"]
+[ext_resource type="Script" uid="uid://csfpykiic4juv" path="res://scenes/aceptar_denegar_contenedor.gd" id="1_k6ryg"]
 [ext_resource type="AudioStream" uid="uid://h82mx5178m43" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Confirm/RPGFX - Menu - Confirm 6.wav" id="2_k6ryg"]
 [ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="3_ul02u"]
 [ext_resource type="Texture2D" uid="uid://c0bt35a8u8bt8" path="res://assets/Buttons/Green_Buttons_Pixel.png" id="4_bmdy1"]
@@ -66,6 +67,7 @@ offset_right = 853.0
 offset_bottom = 444.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("1_k6ryg")
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1482543166]
 position = Vector2(51, 86)
@@ -140,3 +142,8 @@ offset_bottom = 35.0
 theme_override_colors/font_shadow_color = Color(0.8901961, 0.7254902, 0.4, 1)
 theme_override_fonts/font = ExtResource("6_2r27s")
 text = "Rechazar"
+
+[connection signal="mouse_entered" from="Container/MarginContainer/ContainerPila/AceptarButton" to="." method="_on_mouse_hovereo_boton_"]
+[connection signal="pressed" from="Container/MarginContainer/ContainerPila/AceptarButton" to="." method="_on_clickear_boton_"]
+[connection signal="mouse_entered" from="Container/MarginContainer/ContainerPila/RechazarButton" to="." method="_on_mouse_hovereo_boton_"]
+[connection signal="pressed" from="Container/MarginContainer/ContainerPila/RechazarButton" to="." method="_on_clickear_boton_"]
