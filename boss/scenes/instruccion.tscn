@@ -58,8 +58,8 @@ y_sort_enabled = true
 layout_mode = 0
 offset_left = 87.0
 offset_top = 141.0
-offset_right = 317.0
-offset_bottom = 196.0
+offset_right = 354.0
+offset_bottom = 207.0
 label_settings = SubResource("LabelSettings_wbcg5")
 autowrap_mode = 2
 

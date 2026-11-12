@@ -10,13 +10,17 @@ var fase_tutorial: int = 0;
 
 var titulos_list: Array = [
 	"¡Bienvenidos guardias!",
+	"Primeros pasos",
 	"¡Que pase el siguiente!",
+	"Revisar documentos",
 	"Revisar documentos",
 ]
 
 var descripcion_list: Array = [
 	"Ahora trabajan cuidando la entrada al reino con tu compañero",
+	"Aprederán lo básico para trabajar acá",
 	"Toca la campana para llamar a los siguientes fronterizos",
+	"Ahora los visitantes te darán los papeles correspondiente.",
 	"Consultá con tu compañero como averiguar si son legales",
 ]
 
@@ -38,13 +42,16 @@ func _mostrar_pantalla_tutorial() -> void:
 
 func _aumentar_fase() -> void:
 	fase_tutorial += 1;
+	if fase_tutorial == 3:
+		instruccion.cambiarBtn();
 
 func _actualizar_cuadro_tutorial() -> void:
 	instruccion.setTitulo(titulos_list[fase_tutorial]);
 	instruccion.setInstruccion(descripcion_list[fase_tutorial]);
 
 func _on_instruccion_siguiente_btn() -> void:
-	print("am");
 	_aumentar_fase();
 	_actualizar_cuadro_tutorial();
-	instruccion.cambiarBtn();
+	
+	if fase_tutorial in [2, 4]: # 2 por ser el índice de la campana, modificar en base a eso
+		instruccion.cambiarBtn();

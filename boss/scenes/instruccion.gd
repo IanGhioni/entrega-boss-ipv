@@ -27,9 +27,8 @@ func _on_cerrar_button_pressed() -> void:
 	tutorial_layout.hide();
 
 func cambiarBtn():
-	siguiente_button.hide();
-	cerrar_button.show();
-
+	siguiente_button.visible = not siguiente_button.visible
+	cerrar_button.visible    = not cerrar_button.visible
 
 func _on_siguiente_button_pressed() -> void:
 	siguiente_btn.emit();
