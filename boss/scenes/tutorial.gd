@@ -32,7 +32,9 @@ func _ready() -> void:
 
 func _on_campana_container_se_activo_campana() -> void:
 	campana_container.desabilitarBoton();
+	$BellAnimation.play("bell-pressed")
 	await get_tree().create_timer(2.5).timeout
+	$BellAnimation.play("RESET")
 	_aumentar_fase();
 	_actualizar_cuadro_tutorial()
 	_mostrar_pantalla_tutorial();
