@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="1_ebau5"]
 [ext_resource type="Script" uid="uid://4yuol7r8gbl1" path="res://scenes/tutorial.gd" id="1_l206y"]
-[ext_resource type="Resource" uid="uid://bjjs7ecgta0n5" path="res://dialogues/tutorial_dialogos.dialogue" id="2_lyiqi"]
+[ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_lyiqi"]
 [ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="3_0g6v0"]
 [ext_resource type="PackedScene" uid="uid://cystjmae774e7" path="res://Entities/documentos/documento_base.tscn" id="3_twv1b"]
 [ext_resource type="PackedScene" uid="uid://ietr1me2cqi2" path="res://scenes/instruccion.tscn" id="4_y0w3d"]
