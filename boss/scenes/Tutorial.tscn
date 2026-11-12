@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xb6a46dqhvc1"]
 
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="1_ebau5"]
+[ext_resource type="Script" uid="uid://4yuol7r8gbl1" path="res://scenes/tutorial.gd" id="1_l206y"]
 [ext_resource type="PackedScene" uid="uid://br3syiwuo7nrp" path="res://scenes/FondoAnimado.tscn" id="2_288ch"]
 [ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="3_0g6v0"]
 [ext_resource type="PackedScene" uid="uid://cystjmae774e7" path="res://Entities/documentos/documento_base.tscn" id="3_twv1b"]
@@ -10,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cpgh3soflr7i0" path="res://scenes/aceptar_denegar_contenedor.tscn" id="6_twv1b"]
 [ext_resource type="PackedScene" uid="uid://dm7waf1f7blb4" path="res://Entities/NPCs/npc.tscn" id="8_1qfbs"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="8_u5f0c"]
+[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="9_hf6er"]
+[ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="10_calcg"]
 [ext_resource type="PackedScene" uid="uid://eg585i6i77hs" path="res://scenes/Multa.tscn" id="10_hvqni"]
+[ext_resource type="PackedScene" uid="uid://cnm4qd1h1172u" path="res://scenes/PauseMenu.tscn" id="14_lyiqi"]
 
 [sub_resource type="Animation" id="Animation_c6td6"]
 resource_name = "mostar_multa"
@@ -126,7 +130,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("CampanaContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -138,11 +142,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
+tracks/1/path = NodePath("CampanaContainer:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
+"times": PackedFloat32Array(0, 0.5, 0.9916667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.004247028, 0.004247028, 0.004247028]
@@ -150,7 +154,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
+tracks/2/path = NodePath("CampanaContainer:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -294,10 +298,13 @@ _data = {
 [node name="Level0" type="Control" unique_id=256354659]
 layout_mode = 3
 anchors_preset = 0
+rotation = 0.004247028
+script = ExtResource("1_l206y")
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_ebau5")]
 
 [node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_288ch")]
+visible = false
 
 [node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("3_0g6v0")]
 escena_npc = ExtResource("8_1qfbs")
@@ -318,15 +325,74 @@ layout_mode = 1
 [node name="Personajes" type="Node2D" parent="." unique_id=621004219]
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("8_u5f0c")]
-position = Vector2(11.999999, -54.999996)
+position = Vector2(374.4661, 344.41272)
 
 [node name="NPC" parent="Personajes" unique_id=1095373652 instance=ExtResource("8_1qfbs")]
 
+[node name="Wall4" type="Sprite2D" parent="." unique_id=1884218557]
+y_sort_enabled = true
+position = Vector2(721.7008, 398.9385)
+scale = Vector2(4.188469, 3.7821314)
+texture = ExtResource("9_hf6er")
+hframes = 26
+vframes = 8
+frame = 77
+
+[node name="Pasto" type="Sprite2D" parent="." unique_id=1703241790]
+y_sort_enabled = true
+position = Vector2(44.00006, 257.00003)
+scale = Vector2(3.020834, 1.3122787)
+
+[node name="TallGrass4" type="Sprite2D" parent="Pasto" unique_id=1193822802]
+position = Vector2(259.31967, 154.92734)
+scale = Vector2(0.43260494, 1.0402395)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass2" type="Sprite2D" parent="Pasto" unique_id=1841771407]
+position = Vector2(291.24643, 154.1401)
+scale = Vector2(0.4535004, 1.1017208)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass8" type="Sprite2D" parent="Pasto" unique_id=1689209759]
+position = Vector2(350.74643, 156.1401)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass10" type="Sprite2D" parent="Pasto" unique_id=1849975253]
+position = Vector2(366.7861, 150.8826)
+scale = Vector2(0.6057028, 1.4434731)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass9" type="Sprite2D" parent="Pasto" unique_id=1319404078]
+position = Vector2(323.75168, 155.45483)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass5" type="Sprite2D" parent="Pasto" unique_id=1846511053]
+position = Vector2(24.36366, 157.21342)
+scale = Vector2(0.78650594, 0.904909)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass7" type="Sprite2D" parent="Pasto" unique_id=936128204]
+position = Vector2(-24.629435, 152.64122)
+scale = Vector2(0.7765418, 1.1630355)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass6" type="Sprite2D" parent="Pasto" unique_id=864804967]
+position = Vector2(189.65146, 160.02696)
+scale = Vector2(0.4200383, 0.66861904)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass3" type="Sprite2D" parent="Pasto" unique_id=499986542]
+position = Vector2(223.25002, 151.41006)
+scale = Vector2(0.42335156, 1.2487328)
+texture = ExtResource("10_calcg")
+
 [node name="CampanaContainer" parent="." unique_id=1830816740 instance=ExtResource("5_288ch")]
 layout_mode = 0
-offset_left = 685.0
+offset_left = 684.0
 offset_top = 280.0
-offset_right = 725.0
+offset_right = 724.0
 offset_bottom = 320.0
 
 [node name="BellAnimation" type="AnimationPlayer" parent="." unique_id=147057910]
@@ -346,3 +412,8 @@ layout_mode = 0
 
 [node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=1832700574]
 libraries/ = SubResource("AnimationLibrary_hf6er")
+
+[node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("14_lyiqi")]
+visible = false
+
+[connection signal="se_activo_campana" from="CampanaContainer" to="FilaAnimationController" method="_on_campana_container_se_activo_campana"]

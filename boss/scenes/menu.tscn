@@ -201,6 +201,7 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Play" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Tutorial" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_how_to_play_pressed"]
