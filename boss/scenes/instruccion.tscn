@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ietr1me2cqi2"]
 
+[ext_resource type="Script" uid="uid://dii3sflaukx8" path="res://scenes/instruccion.gd" id="1_r5fjl"]
 [ext_resource type="Texture2D" uid="uid://c2w41umwakb7j" path="res://assets/Texturas/descarga-removebg-preview.png" id="1_t1jr4"]
 [ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="1_wbcg5"]
 [ext_resource type="Texture2D" uid="uid://b2ywbruyu26i6" path="res://assets/Texturas/luces-removebg-preview.png" id="2_4x8ga"]
@@ -26,9 +27,10 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 135.0
 offset_bottom = 80.0
+script = ExtResource("1_r5fjl")
 
 [node name="Panel" type="Panel" parent="." unique_id=1981484382]
-layout_mode = 0
+layout_mode = 1
 offset_right = 395.0
 offset_bottom = 311.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_wbcg5")
@@ -62,3 +64,20 @@ offset_bottom = 196.0
 text = "Toca la campana para llamar 
 a los siguientes fronterizos"
 label_settings = SubResource("LabelSettings_wbcg5")
+
+[node name="SiguienteButton" type="Button" parent="." unique_id=1256172617]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 183.5
+offset_top = 175.0
+offset_right = 263.5
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Siguiente"
+
+[connection signal="pressed" from="SiguienteButton" to="." method="_on_siguiente_button_pressed"]

@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="1_ebau5"]
 [ext_resource type="Script" uid="uid://4yuol7r8gbl1" path="res://scenes/tutorial.gd" id="1_l206y"]
-[ext_resource type="PackedScene" uid="uid://br3syiwuo7nrp" path="res://scenes/FondoAnimado.tscn" id="2_288ch"]
 [ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="3_0g6v0"]
 [ext_resource type="PackedScene" uid="uid://cystjmae774e7" path="res://Entities/documentos/documento_base.tscn" id="3_twv1b"]
 [ext_resource type="PackedScene" uid="uid://ietr1me2cqi2" path="res://scenes/instruccion.tscn" id="4_y0w3d"]
@@ -298,29 +297,14 @@ _data = {
 [node name="Level0" type="Control" unique_id=256354659]
 layout_mode = 3
 anchors_preset = 0
-rotation = 0.004247028
 script = ExtResource("1_l206y")
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_ebau5")]
 
-[node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_288ch")]
-visible = false
-
 [node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("3_0g6v0")]
 escena_npc = ExtResource("8_1qfbs")
 
-[node name="Instruccion" parent="." unique_id=762380933 instance=ExtResource("4_y0w3d")]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 667.0067
-offset_top = 0.1672138
-offset_right = 667.0067
-offset_bottom = 0.1672138
-
 [node name="DocumentoBase" parent="." unique_id=822367475 instance=ExtResource("3_twv1b")]
-
-[node name="InicioTutorialUI" parent="." unique_id=769771554 instance=ExtResource("5_y0w3d")]
-layout_mode = 1
 
 [node name="Personajes" type="Node2D" parent="." unique_id=621004219]
 
@@ -410,9 +394,6 @@ offset_bottom = -221.0
 [node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=1832700574]
 libraries/ = SubResource("AnimationLibrary_hf6er")
 
-[node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("14_lyiqi")]
-visible = false
-
 [node name="Multa" parent="." unique_id=47265771 instance=ExtResource("10_hvqni")]
 layout_mode = 0
 anchors_preset = 0
@@ -421,4 +402,42 @@ offset_top = 570.0
 offset_right = -381.0
 offset_bottom = 570.0
 
+[node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("14_lyiqi")]
+visible = false
+
+[node name="InicioTutorialUI" parent="." unique_id=769771554 instance=ExtResource("5_y0w3d")]
+visible = false
+y_sort_enabled = true
+layout_mode = 1
+
+[node name="TutorialLayout" type="Control" parent="." unique_id=706182930]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1154.9098
+offset_bottom = 644.455
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TutorialLayout" unique_id=887543695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.52156866)
+
+[node name="Instruccion" parent="TutorialLayout/ColorRect" unique_id=762380933 instance=ExtResource("4_y0w3d")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 667.0068
+offset_top = 0.16721392
+offset_right = 667.0068
+offset_bottom = 0.16721392
+titulo = "Bienvenido"
+descripcion = "Sos un capo "
+
 [connection signal="se_activo_campana" from="CampanaContainer" to="FilaAnimationController" method="_on_campana_container_se_activo_campana"]
+[connection signal="siguiente_btn" from="TutorialLayout/ColorRect/Instruccion" to="." method="_on_instruccion_siguiente_btn"]
