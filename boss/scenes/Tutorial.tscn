@@ -291,16 +291,19 @@ _data = {
 &"mostar_multa": SubResource("Animation_1qfbs")
 }
 
-[node name="Level0" type="Node" unique_id=1939475274]
+[node name="Level0" type="Control" unique_id=256354659]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_ebau5")]
 
 [node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_288ch")]
 
 [node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("3_0g6v0")]
+escena_npc = ExtResource("8_1qfbs")
 
 [node name="Instruccion" parent="." unique_id=762380933 instance=ExtResource("4_y0w3d")]
-visible = false
+layout_mode = 1
 anchors_preset = -1
 offset_left = 761.0
 offset_top = -20.0
@@ -310,16 +313,17 @@ offset_bottom = -20.0
 [node name="DocumentoBase" parent="." unique_id=822367475 instance=ExtResource("3_twv1b")]
 
 [node name="InicioTutorialUI" parent="." unique_id=769771554 instance=ExtResource("5_y0w3d")]
+layout_mode = 1
 
 [node name="Personajes" type="Node2D" parent="." unique_id=621004219]
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("8_u5f0c")]
-visible = false
 position = Vector2(11.999999, -54.999996)
 
 [node name="NPC" parent="Personajes" unique_id=1095373652 instance=ExtResource("8_1qfbs")]
 
 [node name="CampanaContainer" parent="." unique_id=1830816740 instance=ExtResource("5_288ch")]
+layout_mode = 0
 offset_left = 685.0
 offset_top = 280.0
 offset_right = 725.0
@@ -330,15 +334,17 @@ libraries/ = SubResource("AnimationLibrary_288ch")
 autoplay = &"bell-idle-alternate"
 
 [node name="AceptarDenegarContainer" parent="." unique_id=329845636 instance=ExtResource("6_twv1b")]
+visible = true
+layout_mode = 1
 offset_left = 977.0
 offset_top = -221.0
 offset_right = 977.0
 offset_bottom = -221.0
 
 [node name="Multa" parent="." unique_id=47265771 instance=ExtResource("10_hvqni")]
+layout_mode = 0
 
 [node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=1832700574]
 libraries/ = SubResource("AnimationLibrary_hf6er")
 
-[connection signal="activar_campana" from="CampanaContainer" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
-[connection signal="activar_sonido" from="AceptarDenegarContainer" to="AceptarDenegarContainer" method="_on_aceptar_button_mouse_entered"]
+[connection signal="se_activo_campana" from="CampanaContainer" to="FilaAnimationController" method="_on_campana_container_se_activo_campana"]

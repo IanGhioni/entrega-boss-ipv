@@ -12,6 +12,7 @@ var globo_actual: Node = null
 @export var preguntar_doc: DialogueResource
 
 #Nodo raiz
+
 @onready var presentacion: Control = $"../../"
 
 # Container Campana y Botones

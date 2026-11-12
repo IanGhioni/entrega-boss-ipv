@@ -466,6 +466,7 @@ libraries/ = SubResource("AnimationLibrary_pqw0u")
 autoplay = &"bell-idle-alternate"
 
 [node name="AceptarDenegarContainer" parent="." unique_id=329845636 instance=ExtResource("20_xpv45")]
+visible = true
 layout_mode = 1
 
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("20_2eiu6")]
@@ -477,6 +478,10 @@ libraries/ = SubResource("AnimationLibrary_6n11o")
 [node name="Multa" parent="." unique_id=47265771 instance=ExtResource("22_ax2d3")]
 visible = false
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
 y_sort_enabled = true
