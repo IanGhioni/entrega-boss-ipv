@@ -116,84 +116,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_1qfbs"]
-resource_name = "mostar_multa"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Multa:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-381, 570), Vector2(238, 570), Vector2(238, 570), Vector2(-381, 570)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Multa:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Multa/Scroll:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(168, -3)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Multa/Scroll:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Multa/Scroll:animation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.8333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"closed", &"desenrollar"]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Multa/Scroll")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.099999994),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"desenrollar"],
-"method": &"play"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_6n11o"]
 resource_name = "bell-idle"
 length = 4.0
@@ -306,10 +228,87 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pqw0u"]
 _data = {
-&"RESET": SubResource("Animation_1qfbs"),
 &"bell-idle": SubResource("Animation_6n11o"),
 &"bell-idle-alternate": SubResource("Animation_bf410"),
 &"bell-pressed": SubResource("Animation_pqw0u")
+}
+
+[sub_resource type="Animation" id="Animation_1qfbs"]
+resource_name = "mostar_multa"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Multa:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-381, 570), Vector2(238, 570), Vector2(238, 570), Vector2(-381, 570)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Multa:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Multa/Scroll:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Multa/Scroll:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Multa/Scroll:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"closed", &"desenrollar"]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Multa/Scroll")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"desenrollar"],
+"method": &"play"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6n11o"]
@@ -456,9 +455,10 @@ texture = ExtResource("8_vif71")
 [node name="CampanaContainer" parent="." unique_id=1830816740 instance=ExtResource("19_6n11o")]
 layout_mode = 0
 offset_left = 684.0
-offset_top = 283.0
+offset_top = 280.0
 offset_right = 724.0
-offset_bottom = 323.0
+offset_bottom = 320.0
+rotation = 0.0
 
 [node name="BellAnimation" type="AnimationPlayer" parent="." unique_id=1327996737]
 root_node = NodePath("../CampanaContainer")
@@ -477,10 +477,6 @@ libraries/ = SubResource("AnimationLibrary_6n11o")
 [node name="Multa" parent="." unique_id=47265771 instance=ExtResource("22_ax2d3")]
 visible = false
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
 
 [node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
 y_sort_enabled = true

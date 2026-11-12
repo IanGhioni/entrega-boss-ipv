@@ -11,14 +11,15 @@ var globo_actual: Node = null
 @export var max_rondas: int;
 @export var preguntar_doc: DialogueResource
 
+#Nodo raiz
+@onready var presentacion: Control = $"../../"
+
 # Container Campana y Botones
 @onready var campanaContainer: Control = $"../../CampanaContainer"
 @onready var aceptar_denegar_container: Control = $"../../AceptarDenegarContainer"
 
 # Container Multa
 @onready var multa_container: Control = $"../../Multa"
-
-@onready var presentacion: Control = $"../../"
 
 # Animaciones
 @onready var bell_animation: AnimationPlayer = $"../../BellAnimation"
@@ -90,7 +91,7 @@ func _on_aceptar_button_pressed() -> void:
 	actualizarContador(true)
 	bell_animation.play("bell-idle-alternate")
 	fila_animation.dejar_pasar()
-	campanaContainer.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
+	campanaContainer.desactivarDeteccionMouse();
 
 func _on_rechazar_button_pressed() -> void:
 	_accion_de_fila()
@@ -105,7 +106,7 @@ func _on_rechazar_button_pressed() -> void:
 	actualizarContador(false)
 	bell_animation.play("bell-idle-alternate")
 	fila_animation.no_dejar_pasar()
-	campanaContainer.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
+	campanaContainer.activarDeteccionMouse();
 
 # Método común entre aceptar/rechazar a alguien
 func _accion_de_fila() -> void:
