@@ -42,7 +42,10 @@ func _mostrar_pantalla_tutorial() -> void:
 
 func _aumentar_fase() -> void:
 	fase_tutorial += 1;
-	if fase_tutorial == 3:
+	
+	# La lista son los índice de las instrucciones 
+	# que son inicio de ese dialogo de instrucciones
+	if fase_tutorial in [3]:
 		instruccion.cambiarBtn();
 
 func _actualizar_cuadro_tutorial() -> void:
@@ -53,5 +56,7 @@ func _on_instruccion_siguiente_btn() -> void:
 	_aumentar_fase();
 	_actualizar_cuadro_tutorial();
 	
-	if fase_tutorial in [2, 4]: # 2 por ser el índice de la campana, modificar en base a eso
+	# La lista son los índice de las instrucciones 
+	# que son finales de ese dialogo
+	if fase_tutorial in [2, 4]: 
 		instruccion.cambiarBtn();
