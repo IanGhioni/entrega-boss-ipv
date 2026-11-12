@@ -9,6 +9,7 @@ func _on_siguiente_pressed() -> void:
 
 func desabilitarBoton() -> void:
 	boton_campana.disabled = true;
+	boton_campana.mouse_default_cursor_shape = Control.CURSOR_ARROW;
 
 func habilitarBoton() -> void:
 	boton_campana.disabled = false;

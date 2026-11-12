@@ -153,3 +153,7 @@ func actualizar_multa(dejo_pasar: bool) -> void:
 	else:
 		multa_container.set_texto("Ciudadano con documentación valida")
 	animación_de_multa.play("mostar_multa")
+
+func setNPCActual(npc: NPCData) -> void:
+	self.npcActual = npc;
+	

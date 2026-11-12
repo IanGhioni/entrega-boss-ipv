@@ -4,6 +4,14 @@ extends Control
 @onready var tutorial_layout: CanvasLayer = $TutorialLayout
 @onready var campana_container: Control = $CampanaContainer
 @onready var aceptar_denegar_container: Control = $AceptarDenegarContainer
+@onready var inspector: CharacterBody2D = $Personajes/Inspector
+
+@export var escenas_documentos: Dictionary = {
+	"comun": preload("res://Entities/documentos/documentacion.tscn"),
+}
+
+@onready var mesa_documentos: Node2D = $MesaDocumentos;
+@onready var puntos: Array[Node] = $Puntos.get_children();
 
 # Animaciones
 @onready var bell_animation: AnimationPlayer = $BellAnimation
@@ -58,6 +66,8 @@ func _on_campana_container_se_activo_campana() -> void:
 	else:
 		npcActual = GeneradorNPC.generarInvalido();
 	
+	inspector.setNPCActual(npcActual);
+	
 	GameManager.voz_npc_actual = null
 	GameManager.actualizarDataNpcActual(npcActual.docs[0]);
 	GameManager.actualizarNombreNpcDialogo(npcActual.docs[0].nombre);
@@ -75,8 +85,10 @@ func _on_campana_container_se_activo_campana() -> void:
 	await DialogueManager.dialogue_ended
 	fila_animation_controller.dejar_de_hablar_inspector()
 	fila_animation_controller.dejar_de_hablar_npc_actual()
-	campana_container.mouse_default_cursor_shape = Control.CURSOR_ARROW;
-	 
+	
+	aceptar_denegar_container.activarBotones();
+	self.entregar_documentos(npcActual)
+
 func _esperar_cierre_tutorial() -> void:
 	while tutorial_layout.visible:
 		await tutorial_layout.visibility_changed
@@ -117,3 +129,19 @@ func _on_instruccion_siguiente_btn() -> void:
 	# que son finales de ese dialogo
 	if fase_tutorial in [2, 4]: 
 		instruccion.cambiarBtn();
+
+func entregar_documentos(npc: NPCData) -> void:
+	limpiar_mesa()
+	for i in npc.docs.size():
+		var doc: DocumentoBase = escenas_documentos[npc.docs[i].tipo].instantiate()
+		mesa_documentos.add_child(doc)
+		doc.setup(npc.docs[i])
+		doc.global_position = _posicion_libre(i)
+
+func limpiar_mesa() -> void:
+	for hijo in mesa_documentos.get_children():
+		hijo.queue_free()
+
+func _posicion_libre(indice: int) -> Vector2:
+	return puntos[indice % puntos.size()].position
+	

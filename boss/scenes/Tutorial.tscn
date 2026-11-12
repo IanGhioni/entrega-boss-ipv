@@ -404,6 +404,18 @@ offset_top = 570.0
 offset_right = -381.0
 offset_bottom = 570.0
 
+[node name="Puntos" type="Node2D" parent="." unique_id=1950869190]
+
+[node name="Punto1" type="Marker2D" parent="Puntos" unique_id=815552540]
+position = Vector2(275, 235)
+
+[node name="Punto2" type="Marker2D" parent="Puntos" unique_id=1513367566]
+position = Vector2(627, 238)
+
+[node name="MesaDocumentos" type="Node2D" parent="." unique_id=958159235]
+y_sort_enabled = true
+scale = Vector2(0.99999994, 1)
+
 [node name="TutorialLayout" type="CanvasLayer" parent="." unique_id=1878315140]
 
 [node name="Control" type="Control" parent="TutorialLayout" unique_id=159360566]
