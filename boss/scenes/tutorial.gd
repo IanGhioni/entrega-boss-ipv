@@ -21,13 +21,21 @@ var descripcion_list: Array = [
 ]
 
 func _ready() -> void:
-	instruccion.setTitulo(titulos_list[fase_tutorial]);
-	instruccion.setInstruccion(descripcion_list[fase_tutorial]);
+	_actualizar_cuadro_tutorial();
 
 func _on_campana_container_se_activo_campana() -> void:
 	campana_container.desabilitarBoton();
 	await get_tree().create_timer(2.5).timeout
+	_aumentar_fase();
+	_actualizar_cuadro_tutorial()
+	_mostrar_pantalla_tutorial();
+
+func _mostrar_pantalla_tutorial() -> void:
+	tutorial_layout.show();
+
+func _aumentar_fase() -> void:
 	fase_tutorial += 1;
+
+func _actualizar_cuadro_tutorial() -> void:
 	instruccion.setTitulo(titulos_list[fase_tutorial]);
 	instruccion.setInstruccion(descripcion_list[fase_tutorial]);
-	tutorial_layout.show();
