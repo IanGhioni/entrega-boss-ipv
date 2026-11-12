@@ -2,11 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="1_ebau5"]
 [ext_resource type="PackedScene" uid="uid://br3syiwuo7nrp" path="res://scenes/FondoAnimado.tscn" id="2_288ch"]
+[ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="3_0g6v0"]
 [ext_resource type="PackedScene" uid="uid://cystjmae774e7" path="res://Entities/documentos/documento_base.tscn" id="3_twv1b"]
 [ext_resource type="PackedScene" uid="uid://ietr1me2cqi2" path="res://scenes/instruccion.tscn" id="4_y0w3d"]
 [ext_resource type="PackedScene" uid="uid://co3antgkd766o" path="res://scenes/PasarSiguiente.tscn" id="5_288ch"]
 [ext_resource type="PackedScene" uid="uid://0ufcnmwrb6td" path="res://scenes/inicio_tutorial_ui.tscn" id="5_y0w3d"]
 [ext_resource type="PackedScene" uid="uid://cpgh3soflr7i0" path="res://scenes/aceptar_denegar_contenedor.tscn" id="6_twv1b"]
+[ext_resource type="PackedScene" uid="uid://dm7waf1f7blb4" path="res://Entities/NPCs/npc.tscn" id="8_1qfbs"]
+[ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="8_u5f0c"]
+[ext_resource type="PackedScene" uid="uid://eg585i6i77hs" path="res://scenes/Multa.tscn" id="10_hvqni"]
 
 [sub_resource type="Animation" id="Animation_c6td6"]
 resource_name = "mostar_multa"
@@ -204,11 +208,96 @@ _data = {
 &"bell-pressed": SubResource("Animation_pqw0u")
 }
 
+[sub_resource type="Animation" id="Animation_1qfbs"]
+resource_name = "mostar_multa"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Multa:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-381, 570), Vector2(238, 570), Vector2(238, 570), Vector2(-381, 570)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Multa:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Multa/Scroll:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Multa/Scroll:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Multa/Scroll:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"closed", &"desenrollar"]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Multa/Scroll")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"desenrollar"],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hf6er"]
+_data = {
+&"mostar_multa": SubResource("Animation_1qfbs")
+}
+
 [node name="Level0" type="Node" unique_id=1939475274]
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_ebau5")]
 
 [node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("2_288ch")]
+
+[node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("3_0g6v0")]
 
 [node name="Instruccion" parent="." unique_id=762380933 instance=ExtResource("4_y0w3d")]
 visible = false
@@ -222,6 +311,14 @@ offset_bottom = -20.0
 
 [node name="InicioTutorialUI" parent="." unique_id=769771554 instance=ExtResource("5_y0w3d")]
 
+[node name="Personajes" type="Node2D" parent="." unique_id=621004219]
+
+[node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("8_u5f0c")]
+visible = false
+position = Vector2(11.999999, -54.999996)
+
+[node name="NPC" parent="Personajes" unique_id=1095373652 instance=ExtResource("8_1qfbs")]
+
 [node name="CampanaContainer" parent="." unique_id=1830816740 instance=ExtResource("5_288ch")]
 offset_left = 685.0
 offset_top = 280.0
@@ -233,3 +330,15 @@ libraries/ = SubResource("AnimationLibrary_288ch")
 autoplay = &"bell-idle-alternate"
 
 [node name="AceptarDenegarContainer" parent="." unique_id=329845636 instance=ExtResource("6_twv1b")]
+offset_left = 977.0
+offset_top = -221.0
+offset_right = 977.0
+offset_bottom = -221.0
+
+[node name="Multa" parent="." unique_id=47265771 instance=ExtResource("10_hvqni")]
+
+[node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=1832700574]
+libraries/ = SubResource("AnimationLibrary_hf6er")
+
+[connection signal="activar_campana" from="CampanaContainer" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
+[connection signal="activar_sonido" from="AceptarDenegarContainer" to="AceptarDenegarContainer" method="_on_aceptar_button_mouse_entered"]
