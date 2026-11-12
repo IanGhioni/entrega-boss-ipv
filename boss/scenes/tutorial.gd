@@ -52,9 +52,8 @@ func _on_campana_container_se_activo_campana() -> void:
 	_actualizar_cuadro_tutorial()
 	_mostrar_pantalla_tutorial();
 	
-	aceptar_denegar_container.show();
-	
-	if fase_tutorial == 4: # <-- acá el número de fase para el primer
+	# Se decide acá, ANTES del await (ver nota abajo)
+	if fase_tutorial == 4:
 		npcActual = GeneradorNPC.generarValido();
 	else:
 		npcActual = GeneradorNPC.generarInvalido();
@@ -65,6 +64,10 @@ func _on_campana_container_se_activo_campana() -> void:
 	GameManager.actualizarMotivos(npcActual.motivos);
 	GameManager.actualizarRetratoNpc(GameManager.retratoAleatorio())
 	
+	# Recién cuando el jugador cierra el tutorial arranca el diálogo
+	await _esperar_cierre_tutorial()
+	
+	aceptar_denegar_container.show();
 	is_dialogue_active = true;
 	var Balloon = crear_balloon()
 	Balloon.start(tutorial_dialogo, "start");
@@ -74,6 +77,9 @@ func _on_campana_container_se_activo_campana() -> void:
 	fila_animation_controller.dejar_de_hablar_npc_actual()
 	campana_container.mouse_default_cursor_shape = Control.CURSOR_ARROW;
 	 
+func _esperar_cierre_tutorial() -> void:
+	while tutorial_layout.visible:
+		await tutorial_layout.visibility_changed
 
 func crear_balloon() -> Node:
 	if is_instance_valid(globo_actual):
