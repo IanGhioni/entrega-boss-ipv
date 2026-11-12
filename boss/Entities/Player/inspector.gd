@@ -141,16 +141,15 @@ func crear_balloon() -> Node:
 	globo_actual = Balloon 
 	
 	return Balloon
-	
+
 func actualizar_multa(dejo_pasar: bool) -> void:
 	var valido: bool = npcActual.es_valido()
-	var textoMullta: Label = multa_container.get_child(2).get_child(0).get_child(0);
 	if (valido and dejo_pasar) or (!valido and !dejo_pasar):
-		textoMullta.text = ""
+		multa_container.limpiar()
 		return
 
 	if dejo_pasar:
-		textoMullta.text = npcActual.obtener_motivos_string()
+		multa_container.set_texto(npcActual.obtener_motivos_string())
 	else:
-		textoMullta.text = "Ciudadano con documentación valida"
+		multa_container.set_texto("Ciudadano con documentación valida")
 	animación_de_multa.play("mostar_multa")
