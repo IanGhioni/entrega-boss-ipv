@@ -9,18 +9,21 @@ var fase_tutorial: int = 0;
 # Usandolo como índice para los dialogos.
 
 var titulos_list: Array = [
-	"¡Bienvenido,",
+	"¡Bienvenidos guardias!",
 	"¡Que pase el siguiente!",
 	"Revisar documentos",
 ]
 
 var descripcion_list: Array = [
-	"guardia de la frontera!",
+	"Ahora trabajan cuidando la entrada al reino con tu compañero",
 	"Toca la campana para llamar a los siguientes fronterizos",
 	"Consultá con tu compañero como averiguar si son legales",
 ]
 
 func _ready() -> void:
+	if descripcion_list.size() != titulos_list.size():
+		push_error("Las descripciones y los titulos no están 1:1")
+	
 	_actualizar_cuadro_tutorial();
 
 func _on_campana_container_se_activo_campana() -> void:
@@ -39,3 +42,9 @@ func _aumentar_fase() -> void:
 func _actualizar_cuadro_tutorial() -> void:
 	instruccion.setTitulo(titulos_list[fase_tutorial]);
 	instruccion.setInstruccion(descripcion_list[fase_tutorial]);
+
+func _on_instruccion_siguiente_btn() -> void:
+	print("am");
+	_aumentar_fase();
+	_actualizar_cuadro_tutorial();
+	instruccion.cambiarBtn();
