@@ -10,10 +10,10 @@ extends Control
 @onready var timer_label: Label = $Timer/TextTimer
 @onready var timer: Timer = $Timer
 
-@onready var siguiente: Button = $ContainerSiguienteButton/PanelContainer/Siguiente
+@onready var siguiente: Button = $CampanaContainer/PanelContainer/Siguiente
 
 # Sonidos
-@onready var hover_sound: AudioStreamPlayer2D = $ButtonsContainer/HoverSound
+@onready var hover_sound: AudioStreamPlayer2D = $AceptarDenegarContainer/HoverSound
 @onready var tiempo_finalizado: AudioStreamPlayer2D = $Timer/TiempoFinalizado
 
 @onready var inspector: CharacterBody2D = $Personajes/Inspector
@@ -50,10 +50,3 @@ func _on_timer_timeout() -> void:
 	inspector.eliminar_dialogo()
 	await get_tree().create_timer(5.0).timeout
 	Transicion.cambiar_escena("res://scenes/FinalizarJuego.tscn")
-
-func _on_aceptar_button_mouse_entered() -> void:
-	hover_sound.play();
-
-
-func _on_rechazar_button_mouse_entered() -> void:
-	hover_sound.play();
