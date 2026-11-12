@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="1_ebau5"]
 [ext_resource type="Script" uid="uid://4yuol7r8gbl1" path="res://scenes/tutorial.gd" id="1_l206y"]
+[ext_resource type="Resource" uid="uid://bjjs7ecgta0n5" path="res://dialogues/tutorial_dialogos.dialogue" id="2_lyiqi"]
 [ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="3_0g6v0"]
 [ext_resource type="PackedScene" uid="uid://cystjmae774e7" path="res://Entities/documentos/documento_base.tscn" id="3_twv1b"]
 [ext_resource type="PackedScene" uid="uid://ietr1me2cqi2" path="res://scenes/instruccion.tscn" id="4_y0w3d"]
@@ -223,7 +224,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 5, 6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-381, 570), Vector2(238, 570), Vector2(238, 570), Vector2(-381, 570)]
+"values": [Vector2(-381, 512), Vector2(238, 512), Vector2(238, 512), Vector2(-381, 512)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -297,6 +298,7 @@ _data = {
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_l206y")
+tutorial_dialogo = ExtResource("2_lyiqi")
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_ebau5")]
 
@@ -310,6 +312,7 @@ tamanio = 3
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("8_u5f0c")]
 position = Vector2(374.4661, 344.41272)
+max_rondas = 3
 
 [node name="NPC" parent="Personajes" unique_id=1095373652 instance=ExtResource("8_1qfbs")]
 

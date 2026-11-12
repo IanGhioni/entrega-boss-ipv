@@ -141,3 +141,28 @@ static func _es_cadena_valida(s: Array[int]) -> bool:
 		if i > 0 and s[i] <= s[i - 1]:
 			return false
 	return true
+
+# para el tutorial
+
+static func generarValido() -> NPCData:
+	var npc := NPCData.new()
+	var d := _doc_valido()
+	npc.docs.append(d)
+
+	npc.motivos = validar(npc)
+	return npc
+
+static func generarInvalido() -> NPCData:
+	var npc := NPCData.new()
+	var d := _doc_valido()
+	npc.docs.append(d)
+
+# Quizás cambiar este algoritmo para en vez de que sea aleatorio
+# tener un error específico y decir en el tuto "Buscá en esta página que dice"
+	var defectos := _defectos_aplicables(d)
+	defectos.shuffle()
+	for i in randi_range(1, mini(1, defectos.size())):
+		_aplicar(d, defectos[i])
+
+	npc.motivos = validar(npc)
+	return npc

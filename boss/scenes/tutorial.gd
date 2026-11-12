@@ -3,6 +3,18 @@ extends Control
 @onready var instruccion: Control = $TutorialLayout/Control/ColorRect/Instruccion
 @onready var tutorial_layout: CanvasLayer = $TutorialLayout
 @onready var campana_container: Control = $CampanaContainer
+@onready var aceptar_denegar_container: Control = $AceptarDenegarContainer
+
+# Animaciones
+@onready var bell_animation: AnimationPlayer = $BellAnimation
+@onready var fila_animation_controller: Node2D = $FilaAnimationController
+
+const Ballon = preload("res://dialogues/balloon.tscn");
+var is_dialogue_active: bool = false;
+var npcActual;
+var globo_actual: Node = null
+
+@export var tutorial_dialogo: DialogueResource
 
 var fase_tutorial: int = 0; 
 # Variable que vamos a usar para ordenar las escenas de tutorial. 
@@ -32,12 +44,49 @@ func _ready() -> void:
 
 func _on_campana_container_se_activo_campana() -> void:
 	campana_container.desabilitarBoton();
-	$BellAnimation.play("bell-pressed")
+	bell_animation.play("bell-pressed")
 	await get_tree().create_timer(2.5).timeout
-	$BellAnimation.play("RESET")
+	bell_animation.play("RESET")
+	
 	_aumentar_fase();
 	_actualizar_cuadro_tutorial()
 	_mostrar_pantalla_tutorial();
+	
+	aceptar_denegar_container.show();
+	
+	if fase_tutorial == 4: # <-- acá el número de fase para el primer
+		npcActual = GeneradorNPC.generarValido();
+	else:
+		npcActual = GeneradorNPC.generarInvalido();
+	
+	GameManager.voz_npc_actual = null
+	GameManager.actualizarDataNpcActual(npcActual.docs[0]);
+	GameManager.actualizarNombreNpcDialogo(npcActual.docs[0].nombre);
+	GameManager.actualizarMotivos(npcActual.motivos);
+	GameManager.actualizarRetratoNpc(GameManager.retratoAleatorio())
+	
+	is_dialogue_active = true;
+	var Balloon = crear_balloon()
+	Balloon.start(tutorial_dialogo, "start");
+	
+	await DialogueManager.dialogue_ended
+	fila_animation_controller.dejar_de_hablar_inspector()
+	fila_animation_controller.dejar_de_hablar_npc_actual()
+	campana_container.mouse_default_cursor_shape = Control.CURSOR_ARROW;
+	 
+
+func crear_balloon() -> Node:
+	if is_instance_valid(globo_actual):
+		globo_actual.queue_free()
+		
+	var Balloon: Node = Ballon.instantiate();
+	Balloon.fila_animation = fila_animation_controller
+	get_tree().current_scene.add_child(Balloon);
+	
+	# Guardamos la referencia para poder acceder a ella después
+	globo_actual = Balloon 
+	
+	return Balloon
 
 func _mostrar_pantalla_tutorial() -> void:
 	tutorial_layout.show();
