@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cystjmae774e7" path="res://Entities/documentos/documento_base.tscn" id="3_twv1b"]
 [ext_resource type="PackedScene" uid="uid://ietr1me2cqi2" path="res://scenes/instruccion.tscn" id="4_y0w3d"]
 [ext_resource type="PackedScene" uid="uid://co3antgkd766o" path="res://scenes/PasarSiguiente.tscn" id="5_288ch"]
-[ext_resource type="PackedScene" uid="uid://0ufcnmwrb6td" path="res://scenes/inicio_tutorial_ui.tscn" id="5_y0w3d"]
 [ext_resource type="PackedScene" uid="uid://cpgh3soflr7i0" path="res://scenes/aceptar_denegar_contenedor.tscn" id="6_twv1b"]
 [ext_resource type="PackedScene" uid="uid://dm7waf1f7blb4" path="res://Entities/NPCs/npc.tscn" id="8_1qfbs"]
 [ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="8_u5f0c"]
@@ -294,7 +293,7 @@ _data = {
 &"mostar_multa": SubResource("Animation_1qfbs")
 }
 
-[node name="Level0" type="Control" unique_id=256354659]
+[node name="Tutorial" type="Control" unique_id=256354659]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_l206y")
@@ -303,6 +302,7 @@ script = ExtResource("1_l206y")
 
 [node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("3_0g6v0")]
 escena_npc = ExtResource("8_1qfbs")
+tamanio = 3
 
 [node name="DocumentoBase" parent="." unique_id=822367475 instance=ExtResource("3_twv1b")]
 
@@ -384,12 +384,11 @@ libraries/ = SubResource("AnimationLibrary_288ch")
 autoplay = &"bell-idle-alternate"
 
 [node name="AceptarDenegarContainer" parent="." unique_id=329845636 instance=ExtResource("6_twv1b")]
-visible = true
 layout_mode = 1
-offset_left = 977.0
-offset_top = -221.0
-offset_right = 977.0
-offset_bottom = -221.0
+offset_left = 843.0
+offset_top = 402.0
+offset_right = 843.0
+offset_bottom = 402.0
 
 [node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=1832700574]
 libraries/ = SubResource("AnimationLibrary_hf6er")
@@ -402,25 +401,17 @@ offset_top = 570.0
 offset_right = -381.0
 offset_bottom = 570.0
 
-[node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("14_lyiqi")]
-visible = false
+[node name="TutorialLayout" type="CanvasLayer" parent="." unique_id=1878315140]
 
-[node name="InicioTutorialUI" parent="." unique_id=769771554 instance=ExtResource("5_y0w3d")]
-visible = false
-y_sort_enabled = true
-layout_mode = 1
-
-[node name="TutorialLayout" type="Control" parent="." unique_id=706182930]
-layout_mode = 1
+[node name="Control" type="Control" parent="TutorialLayout" unique_id=159360566]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1154.9098
-offset_bottom = 644.455
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="TutorialLayout" unique_id=887543695]
+[node name="ColorRect" type="ColorRect" parent="TutorialLayout/Control" unique_id=887543695]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -429,7 +420,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.52156866)
 
-[node name="Instruccion" parent="TutorialLayout/ColorRect" unique_id=762380933 instance=ExtResource("4_y0w3d")]
+[node name="Instruccion" parent="TutorialLayout/Control/ColorRect" unique_id=762380933 instance=ExtResource("4_y0w3d")]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 667.0068
@@ -439,5 +430,9 @@ offset_bottom = 0.16721392
 titulo = "Bienvenido"
 descripcion = "Sos un capo "
 
+[node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("14_lyiqi")]
+visible = false
+
+[connection signal="se_activo_campana" from="CampanaContainer" to="." method="_on_campana_container_se_activo_campana"]
 [connection signal="se_activo_campana" from="CampanaContainer" to="FilaAnimationController" method="_on_campana_container_se_activo_campana"]
-[connection signal="siguiente_btn" from="TutorialLayout/ColorRect/Instruccion" to="." method="_on_instruccion_siguiente_btn"]
+[connection signal="siguiente_btn" from="TutorialLayout/Control/ColorRect/Instruccion" to="." method="_on_instruccion_siguiente_btn"]
