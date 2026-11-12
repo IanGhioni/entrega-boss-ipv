@@ -339,6 +339,3 @@ offset_bottom = -221.0
 
 [node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=1832700574]
 libraries/ = SubResource("AnimationLibrary_hf6er")
-
-[connection signal="activar_campana" from="CampanaContainer" to="Personajes/Inspector" method="_on_ask_doc_button_pressed"]
-[connection signal="activar_sonido" from="AceptarDenegarContainer" to="AceptarDenegarContainer" method="_on_aceptar_button_mouse_entered"]

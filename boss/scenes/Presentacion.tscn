@@ -477,6 +477,10 @@ libraries/ = SubResource("AnimationLibrary_6n11o")
 [node name="Multa" parent="." unique_id=47265771 instance=ExtResource("22_ax2d3")]
 visible = false
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
 y_sort_enabled = true
