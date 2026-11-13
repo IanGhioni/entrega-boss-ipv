@@ -55,6 +55,7 @@ var descripcionFase2: Array = [
 	"El visitante no puede pasar",
 	"Se te hace una multa"
 ]
+
 # Variable que vamos a usar para ordenar las escenas de tutorial. 
 # Usandolo como índice para los dialogos.
 var fase_tutorial: int = 0; 
@@ -101,10 +102,21 @@ func _on_campana_container_se_activo_campana() -> void:
 	
 	print(fase_tutorial)
 	# Se decide acá, ANTES del await (ver nota abajo)
+	var npc_es_valido: bool = false
+
+	# al generar el NPC:
 	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 2:
 		npcActual = GeneradorNPC.generarValido();
+		npc_es_valido = true
 	elif faseConCantidadDeIndicaciones.get(fase_tutorial) == 1:
-			npcActual = GeneradorNPC.generarInvalido();
+		npcActual = GeneradorNPC.generarInvalido();
+		npc_es_valido = false
+
+	# después del diálogo:
+	if npc_es_valido:
+		aceptar_denegar_container.desactivarBotonRechazar();
+	else:
+		aceptar_denegar_container.desactivarBotonAceptar();
 	
 	inspector.setNPCActual(npcActual);
 	
@@ -162,14 +174,14 @@ func _actualizar_cuadro_tutorial() -> void:
 	instruccion.setTitulo(titulos_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)-1]);
 	instruccion.setInstruccion(descripcion_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)-1]);
 
-#Señales de los botones de instruccion
+## Señales de los botones de instruccion
 func _on_instruccion_siguiente_btn() -> void:
 	faseConCantidadDeIndicaciones.set(
 		fase_tutorial,
-		(faseConCantidadDeIndicaciones.get(fase_tutorial) - 1)
+		faseConCantidadDeIndicaciones.get(fase_tutorial) - 1
 	)
-	#Si es el ultimo mensaje, cambiar el boton a "cerrar"
-	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 0:
+	# El último mensaje se muestra cuando queda 1
+	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 1:
 		instruccion.cambiarBtn();
 	_actualizar_cuadro_tutorial();
 
