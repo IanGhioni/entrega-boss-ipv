@@ -33,3 +33,9 @@ func activarBotones() -> void:
 func desactivarBotones() -> void:
 	aceptar_button.disabled = true;
 	rechazar_button.disabled = true;
+
+func desactivarBotonRechazar() -> void:
+	rechazar_button.disabled = true
+	
+func desactivarBotonAceptar() -> void:
+	aceptar_button.disabled = true
