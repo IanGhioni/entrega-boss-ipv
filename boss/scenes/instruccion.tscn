@@ -42,24 +42,26 @@ scale = Vector2(0.2066567, 0.18676813)
 texture = ExtResource("2_4x8ga")
 flip_h = true
 
-[node name="Titulo" type="Label" parent="Panel" unique_id=70547643]
-y_sort_enabled = true
+[node name="TextoContainer" type="MarginContainer" parent="Panel" unique_id=394973443]
 layout_mode = 0
-offset_left = 99.0
-offset_top = 94.0
-offset_right = 299.0
-offset_bottom = 126.0
+offset_left = 59.0
+offset_top = 99.0
+offset_right = 346.0
+offset_bottom = 191.0
+
+[node name="Titulo" type="Label" parent="Panel/TextoContainer" unique_id=70547643]
+y_sort_enabled = true
+layout_mode = 2
+size_flags_vertical = 0
 label_settings = SubResource("LabelSettings_toa2b")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Descripcion" type="Label" parent="Panel" unique_id=1065477364]
+[node name="Descripcion" type="Label" parent="Panel/TextoContainer" unique_id=1065477364]
 y_sort_enabled = true
-layout_mode = 0
-offset_left = 87.0
-offset_top = 141.0
-offset_right = 354.0
-offset_bottom = 207.0
+layout_mode = 2
+size_flags_vertical = 8
+size_flags_stretch_ratio = 3.0
 label_settings = SubResource("LabelSettings_wbcg5")
 autowrap_mode = 2
 

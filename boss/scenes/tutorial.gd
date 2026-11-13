@@ -24,47 +24,73 @@ var globo_actual: Node = null
 
 @export var tutorial_dialogo: DialogueResource
 
+var terminoFase: bool = false;
 var fase_tutorial: int = 0; 
 # Variable que vamos a usar para ordenar las escenas de tutorial. 
 # Usandolo como índice para los dialogos.
-
-var titulos_list: Array = [
+var faseConCantidadDeIndicaciones: Dictionary[int,int] = {
+	0: 2,
+	1: 1,
+	2: 2
+}
+var titulosFase0: Array = [
 	"¡Bienvenidos guardias!",
 	"Primeros pasos",
 	"¡Que pase el siguiente!",
-	"Revisar documentos",
-	"Revisar documentos",
 ]
 
-var descripcion_list: Array = [
-	"Ahora trabajan cuidando la entrada al reino con tu compañero",
-	"Aprederán lo básico para trabajar acá",
-	"Toca la campana para llamar a los siguientes fronterizos",
-	"Ahora los visitantes te darán los papeles correspondiente.",
-	"Consultá con tu compañero como averiguar si son legales",
+var titulosFase1: Array = [
+	"Revisar documentos",
+	"Revisar documentos",
 ]
+#var titulosFase2: Array = [""]
+var titulos_list: Array = [titulosFase0,titulosFase1]
+
+var descripcionFase0: Array = [
+	"Empezamos trabajando cuidando la entrada al reino con tu compañero",
+	"Aprederán lo básico para trabajar acá",
+	"Tocá la campana para llamar a los siguientes visitantes",
+]
+var descripcionFase1: Array = [
+	"Los visitantes te darán un Documento para que lo analices.",
+	"Consultá con tu compañero. Averigua si son legales",
+]
+var descripcion_list: Array = [descripcionFase0,descripcionFase1];
 
 func _ready() -> void:
 	if descripcion_list.size() != titulos_list.size():
 		push_error("Las descripciones y los titulos no están 1:1")
-	
+	#Para el map asi los puede ir contando...
+	   #Al instanciar seguimos el orden. En la implementacion va al reves.
+	reordenarParaMap();
 	_actualizar_cuadro_tutorial();
 
+#La fase 3 es cuando le da aceptar o rechazar.
+#La fase 4 es cuando termino el juego.
+func reordenarParaMap():
+	titulosFase0.reverse();
+	titulosFase1.reverse();
+	descripcionFase0.reverse();
+	descripcionFase1.reverse();
+#Campana seria Fase 2
 func _on_campana_container_se_activo_campana() -> void:
 	campana_container.desabilitarBoton();
 	bell_animation.play("bell-pressed")
 	await get_tree().create_timer(2.5).timeout
 	bell_animation.play("RESET")
 	
-	_aumentar_fase();
 	_actualizar_cuadro_tutorial()
 	_mostrar_pantalla_tutorial();
 	
 	# Se decide acá, ANTES del await (ver nota abajo)
-	if fase_tutorial == 4:
+	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 3:
 		npcActual = GeneradorNPC.generarValido();
+	elif faseConCantidadDeIndicaciones.get(fase_tutorial) == 2:
+			#Generar uno sin runas)?
+			npcActual = GeneradorNPC.generarInvalido();
 	else:
-		npcActual = GeneradorNPC.generarInvalido();
+			#Generar uno con runas)?
+			npcActual = GeneradorNPC.generarInvalido(); 
 	
 	inspector.setNPCActual(npcActual);
 	
@@ -111,23 +137,20 @@ func _mostrar_pantalla_tutorial() -> void:
 
 func _aumentar_fase() -> void:
 	fase_tutorial += 1;
-	
-	# La lista son los índice de las instrucciones 
-	# que son inicio de ese dialogo de instrucciones
-	if fase_tutorial in [3]:
-		instruccion.cambiarBtn();
 
 func _actualizar_cuadro_tutorial() -> void:
-	instruccion.setTitulo(titulos_list[fase_tutorial]);
-	instruccion.setInstruccion(descripcion_list[fase_tutorial]);
+	instruccion.setTitulo(titulos_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)]);
+	instruccion.setInstruccion(descripcion_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)]);
 
 func _on_instruccion_siguiente_btn() -> void:
-	_aumentar_fase();
 	_actualizar_cuadro_tutorial();
-	
+	faseConCantidadDeIndicaciones.set(
+		fase_tutorial,
+		faseConCantidadDeIndicaciones.get(fase_tutorial) - 1
+	)
 	# La lista son los índice de las instrucciones 
 	# que son finales de ese dialogo
-	if fase_tutorial in [2, 4]: 
+	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 0:
 		instruccion.cambiarBtn();
 
 func entregar_documentos(npc: NPCData) -> void:
@@ -144,4 +167,6 @@ func limpiar_mesa() -> void:
 
 func _posicion_libre(indice: int) -> Vector2:
 	return puntos[indice % puntos.size()].position
-	
+
+func _on_instruccion_cerrar_btn() -> void:
+	_aumentar_fase();

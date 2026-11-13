@@ -449,4 +449,5 @@ visible = false
 
 [connection signal="se_activo_campana" from="CampanaContainer" to="." method="_on_campana_container_se_activo_campana"]
 [connection signal="se_activo_campana" from="CampanaContainer" to="FilaAnimationController" method="_on_campana_container_se_activo_campana"]
+[connection signal="cerrar_btn" from="TutorialLayout/Control/ColorRect/Instruccion" to="." method="_on_instruccion_cerrar_btn"]
 [connection signal="siguiente_btn" from="TutorialLayout/Control/ColorRect/Instruccion" to="." method="_on_instruccion_siguiente_btn"]

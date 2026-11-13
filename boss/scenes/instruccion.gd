@@ -3,8 +3,8 @@ extends Control
 signal siguiente_btn;
 signal cerrar_btn;
 
-@onready var titulo_label: Label = $Panel/Titulo
-@onready var descripcion_label: Label = $Panel/Descripcion
+@onready var titulo_label: Label = $Panel/TextoContainer/Titulo
+@onready var descripcion_label: Label = $Panel/TextoContainer/Descripcion
 @onready var tutorial_layout: CanvasLayer = $"../../.."
 
 @onready var siguiente_button: Button = $Panel/SiguienteButton
