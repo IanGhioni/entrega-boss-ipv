@@ -43,6 +43,13 @@ var titulosFase3: Array = [
 	"Documentos ilegales",
 	"Documentos ilegales"
 ]
+
+var titulosFase5: Array = [
+	"Multas",
+	"Multas",
+	"Multas"
+]
+
 # DESCRIPCIONES
 var descripcionFase0: Array = [
 	"Comienzan con tu compañero a trabajar cuidando la entrada al reino",
@@ -66,6 +73,12 @@ var descripcionFase3: Array = [
 	"Va a notar una discrepancia."
 ]
 
+var descripcionFase5: Array = [
+	"El siguiente no tiene los documentos bien",
+	"Pero esta vez lo vamos a dejar pasar",
+	"Así notás bien que sucede..."
+]
+
 # Variable que vamos a usar para ordenar las escenas de tutorial. 
 # Usandolo como índice para los dialogos.
 var fase_tutorial: int = 0; 
@@ -79,9 +92,9 @@ var faseConCantidadDeIndicaciones: Dictionary[int,int] = {
 	4: 1,
 	5: 3
 }
-var titulos_list: Array = [titulosFase0,titulosFase1, titulosFase2, titulosFase3, titulosFase2]
+var titulos_list: Array = [titulosFase0,titulosFase1, titulosFase2, titulosFase3, titulosFase2, titulosFase5]
 
-var descripcion_list: Array = [descripcionFase0,descripcionFase1,descripcionFase2, descripcionFase3, descripcionFase2];
+var descripcion_list: Array = [descripcionFase0,descripcionFase1,descripcionFase2, descripcionFase3, descripcionFase2, descripcionFase5];
 
 func _ready() -> void:
 	if descripcion_list.size() != titulos_list.size():
@@ -105,6 +118,8 @@ func reordenarParaMap():
 	descripcionFase1.reverse();
 	titulosFase3.reverse();
 	descripcionFase3.reverse();
+	titulosFase5.reverse();
+	descripcionFase5.reverse();
 	
 #Campana seria Fase 2
 func _on_campana_container_se_activo_campana() -> void:
@@ -145,8 +160,8 @@ func _on_campana_container_se_activo_campana() -> void:
 	await DialogueManager.dialogue_ended
 	fila_animation_controller.dejar_de_hablar_inspector()
 	fila_animation_controller.dejar_de_hablar_npc_actual()
-
-	if npcActual.es_valido():
+	
+	if npcActual.es_valido() or fase_tutorial == 6:
 		aceptar_denegar_container.desactivarBotonRechazar();
 	else:
 		aceptar_denegar_container.desactivarBotonAceptar();
