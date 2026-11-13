@@ -130,9 +130,6 @@ func _on_campana_container_se_activo_campana() -> void:
 	bell_animation.play("RESET")
 	fila_animation_controller.mover_fila()
 	
-	print("fase: " + str(fase_tutorial))
-	# Se decide acá, ANTES del await (ver nota abajo)
-	
 	# al generar el NPC:
 	if fase_tutorial == 1:
 		npcActual = GeneradorNPC.generarValido();
