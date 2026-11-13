@@ -25,6 +25,7 @@ func setInstruccion(desc: String) -> void:
 
 func _on_cerrar_button_pressed() -> void:
 	tutorial_layout.hide();
+	cerrar_btn.emit();
 
 func cambiarBtn():
 	siguiente_button.visible = not siguiente_button.visible

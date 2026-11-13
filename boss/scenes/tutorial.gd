@@ -23,16 +23,8 @@ var npcActual;
 var globo_actual: Node = null
 
 @export var tutorial_dialogo: DialogueResource
-
-var terminoFase: bool = false;
-var fase_tutorial: int = 0; 
-# Variable que vamos a usar para ordenar las escenas de tutorial. 
-# Usandolo como índice para los dialogos.
-var faseConCantidadDeIndicaciones: Dictionary[int,int] = {
-	0: 2,
-	1: 1,
-	2: 2
-}
+# Instancias para los mensajes del tutorial
+# TITULOS
 var titulosFase0: Array = [
 	"¡Bienvenidos guardias!",
 	"Primeros pasos",
@@ -43,9 +35,12 @@ var titulosFase1: Array = [
 	"Revisar documentos",
 	"Revisar documentos",
 ]
-#var titulosFase2: Array = [""]
-var titulos_list: Array = [titulosFase0,titulosFase1]
-
+var titulosFase2: Array = [
+	"Todo Legal",
+	"Todo ilegal",
+	"Todo ilegal pero aceptado."
+]
+# DESCRIPCIONES
 var descripcionFase0: Array = [
 	"Empezamos trabajando cuidando la entrada al reino con tu compañero",
 	"Aprederán lo básico para trabajar acá",
@@ -55,7 +50,24 @@ var descripcionFase1: Array = [
 	"Los visitantes te darán un Documento para que lo analices.",
 	"Consultá con tu compañero. Averigua si son legales",
 ]
-var descripcion_list: Array = [descripcionFase0,descripcionFase1];
+var descripcionFase2: Array = [
+	"El visitante puede pasar",
+	"El visitante no puede pasar",
+	"Se te hace una multa"
+]
+# Variable que vamos a usar para ordenar las escenas de tutorial. 
+# Usandolo como índice para los dialogos.
+var fase_tutorial: int = 0; 
+
+# MAP para fase y cantidad de mensajes del tutorial
+var faseConCantidadDeIndicaciones: Dictionary[int,int] = {
+	0: 3,
+	1: 2,
+	2: 2
+}
+var titulos_list: Array = [titulosFase0,titulosFase1,titulosFase2]
+
+var descripcion_list: Array = [descripcionFase0,descripcionFase1,descripcionFase2];
 
 func _ready() -> void:
 	if descripcion_list.size() != titulos_list.size():
@@ -67,11 +79,17 @@ func _ready() -> void:
 
 #La fase 3 es cuando le da aceptar o rechazar.
 #La fase 4 es cuando termino el juego.
+
 func reordenarParaMap():
+	# Para ir restando las indicaciones(mensajes) del Map 
+	# en el orden correcto (Esta ordenado del primero al ultimo en las instancias 1:1)
 	titulosFase0.reverse();
-	titulosFase1.reverse();
 	descripcionFase0.reverse();
+	titulosFase1.reverse();
 	descripcionFase1.reverse();
+	titulosFase2.reverse();
+	descripcionFase2.reverse();
+	
 #Campana seria Fase 2
 func _on_campana_container_se_activo_campana() -> void:
 	campana_container.desabilitarBoton();
@@ -79,18 +97,12 @@ func _on_campana_container_se_activo_campana() -> void:
 	await get_tree().create_timer(2.5).timeout
 	bell_animation.play("RESET")
 	
-	_actualizar_cuadro_tutorial()
-	_mostrar_pantalla_tutorial();
-	
+	print(fase_tutorial)
 	# Se decide acá, ANTES del await (ver nota abajo)
-	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 3:
+	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 2:
 		npcActual = GeneradorNPC.generarValido();
-	elif faseConCantidadDeIndicaciones.get(fase_tutorial) == 2:
-			#Generar uno sin runas)?
+	elif faseConCantidadDeIndicaciones.get(fase_tutorial) == 1:
 			npcActual = GeneradorNPC.generarInvalido();
-	else:
-			#Generar uno con runas)?
-			npcActual = GeneradorNPC.generarInvalido(); 
 	
 	inspector.setNPCActual(npcActual);
 	
@@ -100,6 +112,8 @@ func _on_campana_container_se_activo_campana() -> void:
 	GameManager.actualizarMotivos(npcActual.motivos);
 	GameManager.actualizarRetratoNpc(GameManager.retratoAleatorio())
 	
+	_actualizar_cuadro_tutorial();
+	_mostrar_pantalla_tutorial();
 	# Recién cuando el jugador cierra el tutorial arranca el diálogo
 	await _esperar_cierre_tutorial()
 	
@@ -112,7 +126,11 @@ func _on_campana_container_se_activo_campana() -> void:
 	fila_animation_controller.dejar_de_hablar_inspector()
 	fila_animation_controller.dejar_de_hablar_npc_actual()
 	
-	aceptar_denegar_container.activarBotones();
+	#En esta fase, 
+	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 2:
+		aceptar_denegar_container.desactivarBotonRechazar();
+	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 1:
+		aceptar_denegar_container.desactivarBotonAceptar();
 	self.entregar_documentos(npcActual)
 
 func _esperar_cierre_tutorial() -> void:
@@ -139,20 +157,23 @@ func _aumentar_fase() -> void:
 	fase_tutorial += 1;
 
 func _actualizar_cuadro_tutorial() -> void:
-	instruccion.setTitulo(titulos_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)]);
-	instruccion.setInstruccion(descripcion_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)]);
+	instruccion.setTitulo(titulos_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)-1]);
+	instruccion.setInstruccion(descripcion_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)-1]);
 
+#Señales de los botones de instruccion
 func _on_instruccion_siguiente_btn() -> void:
 	faseConCantidadDeIndicaciones.set(
 		fase_tutorial,
-		faseConCantidadDeIndicaciones.get(fase_tutorial) - 1
+		(faseConCantidadDeIndicaciones.get(fase_tutorial) - 1)
 	)
-	_actualizar_cuadro_tutorial();
-	# La lista son los índice de las instrucciones 
-	# que son finales de ese dialogo
+	#Si es el ultimo mensaje, cambiar el boton a "cerrar"
 	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 0:
 		instruccion.cambiarBtn();
+	_actualizar_cuadro_tutorial();
 
+func _on_instruccion_cerrar_btn() -> void:
+	_aumentar_fase();
+	
 func entregar_documentos(npc: NPCData) -> void:
 	limpiar_mesa()
 	for i in npc.docs.size():
@@ -167,6 +188,3 @@ func limpiar_mesa() -> void:
 
 func _posicion_libre(indice: int) -> Vector2:
 	return puntos[indice % puntos.size()].position
-
-func _on_instruccion_cerrar_btn() -> void:
-	_aumentar_fase();
