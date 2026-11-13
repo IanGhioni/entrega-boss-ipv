@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://co3antgkd766o"]
+
+[ext_resource type="Script" uid="uid://cmp5a8pai8t4r" path="res://scenes/pasar_siguiente.gd" id="1_616l0"]
+[ext_resource type="Texture2D" uid="uid://cs8be2nessdpk" path="res://assets/bells.png" id="1_qgg2u"]
+[ext_resource type="AudioStream" uid="uid://dk7yv1epv6rco" path="res://assets/sonidos/tintintintintin67676767.mp3" id="2_616l0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27kq1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of656"]
+texture = ExtResource("1_qgg2u")
+region_rect = Rect2(137, 2, 14, 18)
+
+[node name="CampanaContainer" type="Control" unique_id=1830816740]
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+rotation = 0.004247028
+script = ExtResource("1_616l0")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=930926676]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_27kq1")
+
+[node name="Siguiente" type="Button" parent="PanelContainer" unique_id=2096482502]
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_of656")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_of656")
+theme_override_styles/hover = SubResource("StyleBoxTexture_of656")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_of656")
+
+[node name="SonidoCampana" type="AudioStreamPlayer2D" parent="PanelContainer/Siguiente" unique_id=145889508]
+stream = ExtResource("2_616l0")
+bus = &"Efectos"
+
+[connection signal="pressed" from="PanelContainer/Siguiente" to="." method="_on_siguiente_pressed"]

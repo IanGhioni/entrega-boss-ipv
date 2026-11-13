@@ -141,3 +141,23 @@ static func _es_cadena_valida(s: Array[int]) -> bool:
 		if i > 0 and s[i] <= s[i - 1]:
 			return false
 	return true
+
+# para el tutorial
+
+static func generarValido() -> NPCData:
+	var npc := NPCData.new()
+	var d := _doc_valido()
+	npc.docs.append(d)
+
+	npc.motivos = validar(npc)
+	return npc
+
+static func generarInvalido() -> NPCData:
+	var npc := NPCData.new()
+	var d := _doc_valido()
+	npc.docs.append(d)
+	
+	_aplicar(d, "sello_falso")
+
+	npc.motivos = validar(npc)
+	return npc

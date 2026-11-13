@@ -1,0 +1,386 @@
+[gd_scene format=3 uid="uid://xb6a46dqhvc1"]
+
+[ext_resource type="PackedScene" uid="uid://mvors4jv2j0d" path="res://scenes/Background.tscn" id="1_ebau5"]
+[ext_resource type="Script" uid="uid://4yuol7r8gbl1" path="res://scenes/tutorial.gd" id="1_l206y"]
+[ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_lyiqi"]
+[ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="3_0g6v0"]
+[ext_resource type="PackedScene" uid="uid://cystjmae774e7" path="res://Entities/documentos/documento_base.tscn" id="3_twv1b"]
+[ext_resource type="AudioStream" uid="uid://l3o7ejw1dahl" path="res://assets/music/Friday I'm in Love [Bardcore].mp3" id="4_l206y"]
+[ext_resource type="PackedScene" uid="uid://ietr1me2cqi2" path="res://scenes/instruccion.tscn" id="4_y0w3d"]
+[ext_resource type="PackedScene" uid="uid://co3antgkd766o" path="res://scenes/PasarSiguiente.tscn" id="5_288ch"]
+[ext_resource type="PackedScene" uid="uid://cpgh3soflr7i0" path="res://scenes/aceptar_denegar_contenedor.tscn" id="6_twv1b"]
+[ext_resource type="PackedScene" uid="uid://dm7waf1f7blb4" path="res://Entities/NPCs/npc.tscn" id="8_1qfbs"]
+[ext_resource type="PackedScene" uid="uid://dfp2y77kvavq1" path="res://Entities/Player/Inspector.tscn" id="8_u5f0c"]
+[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="9_hf6er"]
+[ext_resource type="Texture2D" uid="uid://bgkigf4udjb0f" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Tall Grass.png" id="10_calcg"]
+[ext_resource type="PackedScene" uid="uid://eg585i6i77hs" path="res://scenes/Multa.tscn" id="10_hvqni"]
+[ext_resource type="PackedScene" uid="uid://cnm4qd1h1172u" path="res://scenes/PauseMenu.tscn" id="14_lyiqi"]
+
+[sub_resource type="Animation" id="Animation_c6td6"]
+resource_name = "mostar_multa"
+length = 6.0
+
+[sub_resource type="Animation" id="Animation_6n11o"]
+resource_name = "bell-idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.4984068, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(684, 280), Vector2(683.99994, 296.99997), Vector2(684, 280), Vector2(691, 266.99994), Vector2(684, 280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.4984068, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.6293825, 0.004247028, 0.6280697, 0.6300638599699534, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bf410"]
+resource_name = "bell-idle-alternate"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CampanaContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(684, 280), Vector2(678, 280), Vector2(684, 280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CampanaContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9916667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.004247028, 0.004247028, 0.004247028]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CampanaContainer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pqw0u"]
+resource_name = "bell-pressed"
+length = 1.1666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CampanaContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.4000001, 0.6666667, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(684, 280), Vector2(684, 288), Vector2(691, 266.99994), Vector2(684, 288), Vector2(691, 266.99994), Vector2(684, 280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CampanaContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.4000001, 0.6666667, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.3595148, 0.6300638599699534, -0.3595148, 0.6300638599699534, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CampanaContainer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_288ch"]
+_data = {
+&"RESET": SubResource("Animation_c6td6"),
+&"bell-idle": SubResource("Animation_6n11o"),
+&"bell-idle-alternate": SubResource("Animation_bf410"),
+&"bell-pressed": SubResource("Animation_pqw0u")
+}
+
+[sub_resource type="Animation" id="Animation_1qfbs"]
+resource_name = "mostar_multa"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Multa:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-381, 512), Vector2(238, 512), Vector2(238, 512), Vector2(-381, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Multa:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Multa/Scroll:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Multa/Scroll:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Multa/Scroll:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"closed", &"desenrollar"]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Multa/Scroll")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"desenrollar"],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hf6er"]
+_data = {
+&"mostar_multa": SubResource("Animation_1qfbs")
+}
+
+[node name="Tutorial" type="Control" unique_id=256354659]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l206y")
+tutorial_dialogo = ExtResource("2_lyiqi")
+
+[node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_ebau5")]
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1646909692]
+stream = ExtResource("4_l206y")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
+
+[node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("3_0g6v0")]
+escena_npc = ExtResource("8_1qfbs")
+tamanio = 3
+
+[node name="DocumentoBase" parent="." unique_id=822367475 instance=ExtResource("3_twv1b")]
+
+[node name="Personajes" type="Node2D" parent="." unique_id=621004219]
+
+[node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("8_u5f0c")]
+position = Vector2(374.4661, 344.41272)
+scale = Vector2(1.5520699, 0.22690117)
+max_rondas = 3
+
+[node name="NPC" parent="Personajes" unique_id=1095373652 instance=ExtResource("8_1qfbs")]
+
+[node name="Wall4" type="Sprite2D" parent="." unique_id=1884218557]
+y_sort_enabled = true
+position = Vector2(726.00006, 390.99997)
+scale = Vector2(4.705349, 4.1235285)
+texture = ExtResource("9_hf6er")
+hframes = 26
+vframes = 8
+frame = 77
+
+[node name="Pasto" type="Sprite2D" parent="." unique_id=1703241790]
+y_sort_enabled = true
+position = Vector2(44.00006, 257.00003)
+scale = Vector2(3.020834, 1.3122787)
+
+[node name="TallGrass4" type="Sprite2D" parent="Pasto" unique_id=1193822802]
+position = Vector2(259.31967, 154.92734)
+scale = Vector2(0.43260494, 1.0402395)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass2" type="Sprite2D" parent="Pasto" unique_id=1841771407]
+position = Vector2(291.24643, 154.1401)
+scale = Vector2(0.4535004, 1.1017208)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass8" type="Sprite2D" parent="Pasto" unique_id=1689209759]
+position = Vector2(350.74643, 156.1401)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass10" type="Sprite2D" parent="Pasto" unique_id=1849975253]
+position = Vector2(366.7861, 150.8826)
+scale = Vector2(0.6057028, 1.4434731)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass9" type="Sprite2D" parent="Pasto" unique_id=1319404078]
+position = Vector2(323.75168, 155.45483)
+scale = Vector2(0.6057028, 1.1017208)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass5" type="Sprite2D" parent="Pasto" unique_id=1846511053]
+position = Vector2(24.36366, 157.21342)
+scale = Vector2(0.78650594, 0.904909)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass7" type="Sprite2D" parent="Pasto" unique_id=936128204]
+position = Vector2(-24.629435, 152.64122)
+scale = Vector2(0.7765418, 1.1630355)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass6" type="Sprite2D" parent="Pasto" unique_id=864804967]
+position = Vector2(189.65146, 160.02696)
+scale = Vector2(0.4200383, 0.66861904)
+texture = ExtResource("10_calcg")
+
+[node name="TallGrass3" type="Sprite2D" parent="Pasto" unique_id=499986542]
+position = Vector2(223.25002, 151.41006)
+scale = Vector2(0.42335156, 1.2487328)
+texture = ExtResource("10_calcg")
+
+[node name="CampanaContainer" parent="." unique_id=1830816740 instance=ExtResource("5_288ch")]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 280.0
+offset_right = 724.0
+offset_bottom = 320.0
+
+[node name="BellAnimation" type="AnimationPlayer" parent="." unique_id=147057910]
+libraries/ = SubResource("AnimationLibrary_288ch")
+autoplay = &"bell-idle-alternate"
+
+[node name="AceptarDenegarContainer" parent="." unique_id=329845636 instance=ExtResource("6_twv1b")]
+layout_mode = 1
+offset_left = 843.0
+offset_top = 402.0
+offset_right = 843.0
+offset_bottom = 402.0
+
+[node name="AnimaciónDeMulta" type="AnimationPlayer" parent="." unique_id=1832700574]
+libraries/ = SubResource("AnimationLibrary_hf6er")
+
+[node name="Multa" parent="." unique_id=47265771 instance=ExtResource("10_hvqni")]
+layout_mode = 0
+anchors_preset = 0
+offset_left = -381.0
+offset_top = 570.0
+offset_right = -381.0
+offset_bottom = 570.0
+
+[node name="Puntos" type="Node2D" parent="." unique_id=1950869190]
+
+[node name="Punto1" type="Marker2D" parent="Puntos" unique_id=815552540]
+position = Vector2(275, 235)
+
+[node name="Punto2" type="Marker2D" parent="Puntos" unique_id=1513367566]
+position = Vector2(627, 238)
+
+[node name="MesaDocumentos" type="Node2D" parent="." unique_id=958159235]
+y_sort_enabled = true
+scale = Vector2(0.99999994, 1)
+
+[node name="TutorialLayout" type="CanvasLayer" parent="." unique_id=1878315140]
+
+[node name="Control" type="Control" parent="TutorialLayout" unique_id=159360566]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TutorialLayout/Control" unique_id=887543695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.52156866)
+
+[node name="Instruccion" parent="TutorialLayout/Control/ColorRect" unique_id=762380933 instance=ExtResource("4_y0w3d")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 667.0068
+offset_top = 0.16721392
+offset_right = 667.0068
+offset_bottom = 0.16721392
+descripcion = " "
+
+[node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("14_lyiqi")]
+visible = false
+
+[connection signal="se_activo_campana" from="CampanaContainer" to="." method="_on_campana_container_se_activo_campana"]
+[connection signal="cerrar_btn" from="TutorialLayout/Control/ColorRect/Instruccion" to="." method="_on_instruccion_cerrar_btn"]
+[connection signal="siguiente_btn" from="TutorialLayout/Control/ColorRect/Instruccion" to="." method="_on_instruccion_siguiente_btn"]

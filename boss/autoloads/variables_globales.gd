@@ -2,6 +2,7 @@ extends Node
 
 @export var puntos_totales:int;
 @export var fallos_totales:int;
+@export var estaEnTutorial:bool;
 
 func getPuntosTotales() -> int:
 	return self.puntos_totales;

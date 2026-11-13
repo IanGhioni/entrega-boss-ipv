@@ -2040,3 +2040,23 @@ autoplay = &"sun-moving"
 [node name="EasterEggsAnimation" type="AnimationPlayer" parent="." unique_id=1135512083]
 libraries/ = SubResource("AnimationLibrary_nh0tw")
 autoplay = &"new_animation"
+
+[node name="Sillas" type="Node2D" parent="." unique_id=1861543612]
+position = Vector2(127.666664, 109.33332)
+scale = Vector2(0.30666763, 0.30666763)
+
+[node name="Chair2" type="Sprite2D" parent="Sillas" unique_id=1016069996]
+position = Vector2(-98.35287, 94.79791)
+scale = Vector2(4.400001, 4.400001)
+texture = ExtResource("2_dpw2a")
+hframes = 13
+vframes = 17
+frame = 9
+
+[node name="Chair3" type="Sprite2D" parent="Sillas" unique_id=1896799644]
+position = Vector2(-16.589642, 94.797935)
+scale = Vector2(4.400001, 4.400001)
+texture = ExtResource("2_dpw2a")
+hframes = 13
+vframes = 17
+frame = 9
