@@ -52,7 +52,10 @@ func _on_pressed_decline(_x) -> void:
 	if cant_rondas == max_rondas:
 		campanaContainer.desabilitarBoton();
 		await get_tree().create_timer(5.0).timeout
-		Transicion.cambiar_escena("res://scenes/FinalizarJuego.tscn")
+		if !VariablesGlobales.estaEnTutorial :
+			Transicion.cambiar_escena("res://scenes/FinalizarJuego.tscn")
+		else:
+			Transicion.cambiar_escena("res://scenes/FinalizarTutorial.tscn")
 
 func _on_ask_doc_button_pressed() -> void:
 	bell_animation.play("bell-pressed")

@@ -99,15 +99,13 @@ var descripcion_list: Array = [descripcionFase0,descripcionFase1,descripcionFase
 func _ready() -> void:
 	if descripcion_list.size() != titulos_list.size():
 		push_error("Las descripciones y los titulos no están 1:1")
+	VariablesGlobales.estaEnTutorial = true;
 	#Para el map asi los puede ir contando...
 	   #Al instanciar seguimos el orden. En la implementacion va al reves.
 	reordenarParaMap();
 	_actualizar_cuadro_tutorial();
 	aceptar_denegar_container.aceptar_presionado.connect(_on_decision_tomada)
 	aceptar_denegar_container.rechazar_presionado.connect(_on_decision_tomada)
-
-#La fase 3 es cuando le da aceptar o rechazar.
-#La fase 4 es cuando termino el juego.
 
 func reordenarParaMap():
 	# Para ir restando las indicaciones(mensajes) del Map 

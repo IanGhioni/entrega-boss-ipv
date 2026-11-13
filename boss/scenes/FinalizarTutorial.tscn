@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://bif6tuopgpmue"]
+
+[ext_resource type="Script" uid="uid://c3yg4olldhd4f" path="res://scenes/finalizar_tutorial.gd" id="1_ja5b0"]
+[ext_resource type="PackedScene" uid="uid://br3syiwuo7nrp" path="res://scenes/FondoAnimado.tscn" id="1_p83b7"]
+[ext_resource type="PackedScene" uid="uid://cgwrrcmpele7n" path="res://Entities/UI/titulo.tscn" id="2_xcy2c"]
+[ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="3_flg72"]
+[ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="4_1cdcb"]
+[ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="4_55e4s"]
+[ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-014.png" id="5_55e4s"]
+[ext_resource type="Texture2D" uid="uid://c5luah2mlxulg" path="res://assets/Bordes/PNG/Default/Panel/panel-013.png" id="6_bt71v"]
+[ext_resource type="AudioStream" uid="uid://dstkfjugge13w" path="res://assets/music/game_over_song.mp3" id="8_7mxo8"]
+[ext_resource type="AudioStream" uid="uid://da8u3m3k3guk4" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 5.wav" id="9_ja5b0"]
+[ext_resource type="AudioStream" uid="uid://duja4p3msqi7m" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Confirm/RPGFX - Menu - Confirm 7.wav" id="10_qamnw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mxo8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ja5b0"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("4_1cdcb")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qamnw"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("5_55e4s")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u45cv"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 6.0
+texture = ExtResource("6_bt71v")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u45cv"]
+
+[node name="FinalizarTutorial" type="Control" unique_id=1375505880]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ja5b0")
+
+[node name="FondoAnimado" parent="." unique_id=245480886 instance=ExtResource("1_p83b7")]
+
+[node name="Titulo" parent="." unique_id=1903387969 instance=ExtResource("2_xcy2c")]
+layout_mode = 0
+offset_left = -229.0
+offset_top = 15.0
+offset_right = -189.0
+offset_bottom = 55.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1823629003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.0627451, 0.57254905)
+
+[node name="OptionsContainer" type="PanelContainer" parent="." unique_id=756023652]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -209.0
+offset_right = 482.5
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7mxo8")
+
+[node name="ContainerButtons" type="VBoxContainer" parent="OptionsContainer" unique_id=989621819]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 4.0
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="OptionsContainer/ContainerButtons" unique_id=560487393]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_flg72")
+theme_override_font_sizes/font_size = 45
+text = "Tutorial Terminado"
+
+[node name="Label3" type="Label" parent="OptionsContainer/ContainerButtons" unique_id=531773584]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_55e4s")
+theme_override_font_sizes/font_size = 30
+text = "Mi loco, gran trabajo. 
+Completaste el primer nivel. "
+
+[node name="BackMenuButton" type="Button" parent="OptionsContainer/ContainerButtons" unique_id=1663218515]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.35644272, 0.096592925, 0.15599337, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_flg72")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_ja5b0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qamnw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u45cv")
+text = "Volver al menú"
+
+[node name="StatsContainer" type="PanelContainer" parent="." unique_id=1669412514]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 238.0
+offset_right = 535.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u45cv")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="StatsContainer" unique_id=330821790]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="JornadaDeHoy" type="Label" parent="StatsContainer/VBoxContainer2" unique_id=1732317613]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_flg72")
+theme_override_font_sizes/font_size = 28
+text = "Jornada de hoy"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsContainer/VBoxContainer2" unique_id=1665175076]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Tramitados" type="Label" parent="StatsContainer/VBoxContainer2/VBoxContainer" unique_id=1675912566]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("3_flg72")
+theme_override_font_sizes/font_size = 20
+text = "Gente tramitada:"
+
+[node name="Multas" type="Label" parent="StatsContainer/VBoxContainer2/VBoxContainer" unique_id=1303321347]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("3_flg72")
+theme_override_font_sizes/font_size = 20
+text = "Multas:"
+
+[node name="Tiempo" type="Label" parent="StatsContainer/VBoxContainer2/VBoxContainer" unique_id=1823966068]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("3_flg72")
+theme_override_font_sizes/font_size = 20
+text = "Duración: 01:30"
+
+[node name="Ganancias" type="Label" parent="StatsContainer/VBoxContainer2" unique_id=569305507]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("3_flg72")
+theme_override_font_sizes/font_size = 24
+text = "Ganancias: $"
+
+[node name="MusicaGameOver" type="AudioStreamPlayer2D" parent="." unique_id=582530419]
+position = Vector2(578, 310)
+stream = ExtResource("8_7mxo8")
+volume_db = -10.0
+pitch_scale = 0.69
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1695896689]
+position = Vector2(580, 343)
+stream = ExtResource("9_ja5b0")
+volume_db = -10.0
+bus = &"Efectos"
+
+[node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=1060195601]
+position = Vector2(580, 343)
+stream = ExtResource("10_qamnw")
+volume_db = -10.0
+bus = &"Efectos"
+
+[connection signal="pressed" from="OptionsContainer/ContainerButtons/BackMenuButton" to="." method="_on_back_menu_button_pressed"]

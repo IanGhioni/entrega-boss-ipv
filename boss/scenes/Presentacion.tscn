@@ -466,7 +466,6 @@ libraries/ = SubResource("AnimationLibrary_pqw0u")
 autoplay = &"bell-idle-alternate"
 
 [node name="AceptarDenegarContainer" parent="." unique_id=329845636 instance=ExtResource("20_xpv45")]
-visible = true
 layout_mode = 1
 
 [node name="PauseMenu" parent="." unique_id=1909579655 instance=ExtResource("20_2eiu6")]
