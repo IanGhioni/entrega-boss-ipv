@@ -143,11 +143,11 @@ func _actualizar_cuadro_tutorial() -> void:
 	instruccion.setInstruccion(descripcion_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)]);
 
 func _on_instruccion_siguiente_btn() -> void:
-	_actualizar_cuadro_tutorial();
 	faseConCantidadDeIndicaciones.set(
 		fase_tutorial,
 		faseConCantidadDeIndicaciones.get(fase_tutorial) - 1
 	)
+	_actualizar_cuadro_tutorial();
 	# La lista son los índice de las instrucciones 
 	# que son finales de ese dialogo
 	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 0:
