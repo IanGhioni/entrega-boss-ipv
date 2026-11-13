@@ -39,9 +39,9 @@ var titulosFase1: Array = [
 ]
 var titulosFase2: Array = ["¡Que pase el siguiente!"]
 var titulosFase3: Array = [
-	"Todo Legal",
-	"Todo ilegal",
-	"Todo ilegal pero aceptado."
+	"Documentos ilegales",
+	"Documentos ilegales",
+	"Documentos ilegales"
 ]
 # DESCRIPCIONES
 var descripcionFase0: Array = [
@@ -61,9 +61,9 @@ var descripcionFase2: Array = [
 ]
 
 var descripcionFase3: Array = [
-	"El visitante puede pasar",
-	"El visitante no puede pasar",
-	"Se te hace una multa"
+	"El siguiente no tiene los documentos bien",
+	"Preguntale a tu compañero por su sello familiar",
+	"Va a notar una discrepancia."
 ]
 
 # Variable que vamos a usar para ordenar las escenas de tutorial. 
@@ -75,11 +75,13 @@ var faseConCantidadDeIndicaciones: Dictionary[int,int] = {
 	0: 3,
 	1: 2,
 	2: 1,
-	3: 3
+	3: 3,
+	4: 1,
+	5: 3
 }
-var titulos_list: Array = [titulosFase0,titulosFase1,titulosFase2, titulosFase3]
+var titulos_list: Array = [titulosFase0,titulosFase1, titulosFase2, titulosFase3, titulosFase2]
 
-var descripcion_list: Array = [descripcionFase0,descripcionFase1,descripcionFase2, descripcionFase3];
+var descripcion_list: Array = [descripcionFase0,descripcionFase1,descripcionFase2, descripcionFase3, descripcionFase2];
 
 func _ready() -> void:
 	if descripcion_list.size() != titulos_list.size():
@@ -115,16 +117,12 @@ func _on_campana_container_se_activo_campana() -> void:
 	
 	print("fase: " + str(fase_tutorial))
 	# Se decide acá, ANTES del await (ver nota abajo)
-	var npc_es_valido: bool = false
-
+	
 	# al generar el NPC:
 	if fase_tutorial == 1:
 		npcActual = GeneradorNPC.generarValido();
-		npc_es_valido = true
 	else:
 		npcActual = GeneradorNPC.generarInvalido();
-		npc_es_valido = false
-	print(npc_es_valido)
 	
 	inspector.setNPCActual(npcActual);
 	
@@ -148,7 +146,7 @@ func _on_campana_container_se_activo_campana() -> void:
 	fila_animation_controller.dejar_de_hablar_inspector()
 	fila_animation_controller.dejar_de_hablar_npc_actual()
 
-	if npc_es_valido:
+	if npcActual.es_valido():
 		aceptar_denegar_container.desactivarBotonRechazar();
 	else:
 		aceptar_denegar_container.desactivarBotonAceptar();
