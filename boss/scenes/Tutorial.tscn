@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_lyiqi"]
 [ext_resource type="PackedScene" uid="uid://4mc5gcpecfsn" path="res://scenes/animationPlayer.tscn" id="3_0g6v0"]
 [ext_resource type="PackedScene" uid="uid://cystjmae774e7" path="res://Entities/documentos/documento_base.tscn" id="3_twv1b"]
+[ext_resource type="AudioStream" uid="uid://l3o7ejw1dahl" path="res://assets/music/Friday I'm in Love [Bardcore].mp3" id="4_l206y"]
 [ext_resource type="PackedScene" uid="uid://ietr1me2cqi2" path="res://scenes/instruccion.tscn" id="4_y0w3d"]
 [ext_resource type="PackedScene" uid="uid://co3antgkd766o" path="res://scenes/PasarSiguiente.tscn" id="5_288ch"]
 [ext_resource type="PackedScene" uid="uid://cpgh3soflr7i0" path="res://scenes/aceptar_denegar_contenedor.tscn" id="6_twv1b"]
@@ -228,6 +229,12 @@ tutorial_dialogo = ExtResource("2_lyiqi")
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_ebau5")]
 
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1646909692]
+stream = ExtResource("4_l206y")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
+
 [node name="FilaAnimationController" parent="." unique_id=1166857726 instance=ExtResource("3_0g6v0")]
 escena_npc = ExtResource("8_1qfbs")
 tamanio = 3
@@ -238,14 +245,15 @@ tamanio = 3
 
 [node name="Inspector" parent="Personajes" unique_id=2082265465 instance=ExtResource("8_u5f0c")]
 position = Vector2(374.4661, 344.41272)
+scale = Vector2(1.5520699, 0.22690117)
 max_rondas = 3
 
 [node name="NPC" parent="Personajes" unique_id=1095373652 instance=ExtResource("8_1qfbs")]
 
 [node name="Wall4" type="Sprite2D" parent="." unique_id=1884218557]
 y_sort_enabled = true
-position = Vector2(721.7008, 398.9385)
-scale = Vector2(4.188469, 3.7821314)
+position = Vector2(726.00006, 390.99997)
+scale = Vector2(4.705349, 4.1235285)
 texture = ExtResource("9_hf6er")
 hframes = 26
 vframes = 8

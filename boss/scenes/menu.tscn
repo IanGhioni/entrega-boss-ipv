@@ -158,21 +158,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_i6lef")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kvt2x")
 text = "Tutorial"
 
-[node name="HowToPlay" type="Button" parent="PanelContainer/ContainerButtons" unique_id=1224966245]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("7_i6lef")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxTexture_4ousb")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_i6lef")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kvt2x")
-text = "Reglas"
-
 [node name="Quit" type="Button" parent="PanelContainer/ContainerButtons" unique_id=2091157976]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -203,7 +188,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Tutorial" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Tutorial" to="." method="_on_tutorial_pressed"]
-[connection signal="mouse_entered" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_how_to_play_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Quit" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Quit" to="." method="_on_quit_pressed"]
