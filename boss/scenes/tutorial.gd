@@ -34,23 +34,33 @@ var titulosFase0: Array = [
 var titulosFase1: Array = [
 	"Revisar documentos",
 	"Revisar documentos",
+	"Revisar documentos",
+	"Revisar documentos",
 ]
-var titulosFase2: Array = [
+var titulosFase2: Array = ["¡Que pase el siguiente!"]
+var titulosFase3: Array = [
 	"Todo Legal",
 	"Todo ilegal",
 	"Todo ilegal pero aceptado."
 ]
 # DESCRIPCIONES
 var descripcionFase0: Array = [
-	"Empezamos trabajando cuidando la entrada al reino con tu compañero",
+	"Comienzan con tu compañero a trabajar cuidando la entrada al reino",
 	"Aprederán lo básico para trabajar acá",
 	"Tocá la campana para llamar a los siguientes visitantes",
 ]
 var descripcionFase1: Array = [
 	"Los visitantes te darán un documento para que lo analices.",
 	"Consultá con tu compañero. Averigua si son legales",
+	"Preguntá por su raza, clase, sello, etc.",
+	"Todo lo que uno puede necesitar saber..."
 ]
+
 var descripcionFase2: Array = [
+	"Tocá la campana para llamar a los siguientes visitantes"
+]
+
+var descripcionFase3: Array = [
 	"El visitante puede pasar",
 	"El visitante no puede pasar",
 	"Se te hace una multa"
@@ -64,11 +74,12 @@ var fase_tutorial: int = 0;
 var faseConCantidadDeIndicaciones: Dictionary[int,int] = {
 	0: 3,
 	1: 2,
-	2: 2
+	2: 1,
+	3: 3
 }
-var titulos_list: Array = [titulosFase0,titulosFase1,titulosFase2]
+var titulos_list: Array = [titulosFase0,titulosFase1,titulosFase2, titulosFase3]
 
-var descripcion_list: Array = [descripcionFase0,descripcionFase1,descripcionFase2];
+var descripcion_list: Array = [descripcionFase0,descripcionFase1,descripcionFase2, descripcionFase3];
 
 func _ready() -> void:
 	if descripcion_list.size() != titulos_list.size():
@@ -77,6 +88,8 @@ func _ready() -> void:
 	   #Al instanciar seguimos el orden. En la implementacion va al reves.
 	reordenarParaMap();
 	_actualizar_cuadro_tutorial();
+	aceptar_denegar_container.aceptar_presionado.connect(_on_decision_tomada)
+	aceptar_denegar_container.rechazar_presionado.connect(_on_decision_tomada)
 
 #La fase 3 es cuando le da aceptar o rechazar.
 #La fase 4 es cuando termino el juego.
@@ -88,8 +101,8 @@ func reordenarParaMap():
 	descripcionFase0.reverse();
 	titulosFase1.reverse();
 	descripcionFase1.reverse();
-	titulosFase2.reverse();
-	descripcionFase2.reverse();
+	titulosFase3.reverse();
+	descripcionFase3.reverse();
 	
 #Campana seria Fase 2
 func _on_campana_container_se_activo_campana() -> void:
@@ -112,12 +125,6 @@ func _on_campana_container_se_activo_campana() -> void:
 		npcActual = GeneradorNPC.generarInvalido();
 		npc_es_valido = false
 	print(npc_es_valido)
-
-	# después del diálogo:
-	if npc_es_valido:
-		aceptar_denegar_container.desactivarBotonRechazar();
-	else:
-		aceptar_denegar_container.desactivarBotonAceptar();
 	
 	inspector.setNPCActual(npcActual);
 	
@@ -140,11 +147,12 @@ func _on_campana_container_se_activo_campana() -> void:
 	await DialogueManager.dialogue_ended
 	fila_animation_controller.dejar_de_hablar_inspector()
 	fila_animation_controller.dejar_de_hablar_npc_actual()
-	
-	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 2:
+
+	if npc_es_valido:
 		aceptar_denegar_container.desactivarBotonRechazar();
-	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 1:
+	else:
 		aceptar_denegar_container.desactivarBotonAceptar();
+
 	self.entregar_documentos(npcActual)
 
 func _esperar_cierre_tutorial() -> void:
@@ -201,3 +209,16 @@ func limpiar_mesa() -> void:
 
 func _posicion_libre(indice: int) -> Vector2:
 	return puntos[indice % puntos.size()].position
+
+func _on_decision_tomada() -> void:
+	# Espera a que termine el diálogo de aceptar/rechazar
+	await DialogueManager.dialogue_ended
+	# Margen para que la fila termine de moverse (ajustalo a tu animación)
+	await get_tree().create_timer(1.0).timeout
+	_mostrar_cartel_post_decision()
+
+func _mostrar_cartel_post_decision() -> void:
+	if fase_tutorial >= titulos_list.size():
+		return # ya no quedan fases de tutorial
+	_actualizar_cuadro_tutorial()
+	_mostrar_pantalla_tutorial()

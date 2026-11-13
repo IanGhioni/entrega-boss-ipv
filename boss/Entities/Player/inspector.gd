@@ -156,4 +156,3 @@ func actualizar_multa(dejo_pasar: bool) -> void:
 
 func setNPCActual(npc: NPCData) -> void:
 	self.npcActual = npc;
-	
