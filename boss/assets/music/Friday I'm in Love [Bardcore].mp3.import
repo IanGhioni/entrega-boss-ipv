@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://l3o7ejw1dahl"
+path="res://.godot/imported/Friday I'm in Love [Bardcore].mp3-5efc61c4e4de43ff044c5b56fc9a1d0f.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Friday I'm in Love [Bardcore].mp3"
+dest_files=["res://.godot/imported/Friday I'm in Love [Bardcore].mp3-5efc61c4e4de43ff044c5b56fc9a1d0f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

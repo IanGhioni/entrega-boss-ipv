@@ -477,6 +477,7 @@ libraries/ = SubResource("AnimationLibrary_6n11o")
 
 [node name="Multa" parent="." unique_id=47265771 instance=ExtResource("22_ax2d3")]
 layout_mode = 0
+anchors_preset = 0
 offset_left = -280.0
 offset_top = 550.0
 offset_right = -280.0
@@ -484,6 +485,7 @@ offset_bottom = 550.0
 
 [node name="MesaDocumentos" type="Node2D" parent="." unique_id=1174233937]
 y_sort_enabled = true
+position = Vector2(12.000001, 59)
 scale = Vector2(0.99999994, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

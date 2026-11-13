@@ -2042,7 +2042,7 @@ libraries/ = SubResource("AnimationLibrary_nh0tw")
 autoplay = &"new_animation"
 
 [node name="Sillas" type="Node2D" parent="." unique_id=1861543612]
-position = Vector2(127.66666, 110.33332)
+position = Vector2(127.666664, 109.33332)
 scale = Vector2(0.30666763, 0.30666763)
 
 [node name="Chair2" type="Sprite2D" parent="Sillas" unique_id=1016069996]
