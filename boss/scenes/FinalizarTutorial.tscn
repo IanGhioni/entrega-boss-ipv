@@ -185,14 +185,6 @@ theme_override_fonts/font = ExtResource("3_flg72")
 theme_override_font_sizes/font_size = 20
 text = "Multas:"
 
-[node name="Tiempo" type="Label" parent="StatsContainer/VBoxContainer2/VBoxContainer" unique_id=1823966068]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_fonts/font = ExtResource("3_flg72")
-theme_override_font_sizes/font_size = 20
-text = "Duración: 01:30"
-
 [node name="Ganancias" type="Label" parent="StatsContainer/VBoxContainer2" unique_id=569305507]
 layout_mode = 2
 size_flags_vertical = 8
