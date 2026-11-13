@@ -298,6 +298,7 @@ _data = {
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_l206y")
+escenas_documentos = null
 tutorial_dialogo = ExtResource("2_lyiqi")
 
 [node name="Background" parent="." unique_id=340376222 instance=ExtResource("1_ebau5")]
@@ -448,6 +449,5 @@ descripcion = " "
 visible = false
 
 [connection signal="se_activo_campana" from="CampanaContainer" to="." method="_on_campana_container_se_activo_campana"]
-[connection signal="se_activo_campana" from="CampanaContainer" to="FilaAnimationController" method="_on_campana_container_se_activo_campana"]
 [connection signal="cerrar_btn" from="TutorialLayout/Control/ColorRect/Instruccion" to="." method="_on_instruccion_cerrar_btn"]
 [connection signal="siguiente_btn" from="TutorialLayout/Control/ColorRect/Instruccion" to="." method="_on_instruccion_siguiente_btn"]

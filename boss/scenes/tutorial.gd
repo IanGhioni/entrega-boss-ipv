@@ -5,6 +5,7 @@ extends Control
 @onready var campana_container: Control = $CampanaContainer
 @onready var aceptar_denegar_container: Control = $AceptarDenegarContainer
 @onready var inspector: CharacterBody2D = $Personajes/Inspector
+@onready var fila_animation_controller: Node2D = $FilaAnimationController
 
 @export var escenas_documentos: Dictionary = {
 	"comun": preload("res://Entities/documentos/documentacion.tscn"),
@@ -15,7 +16,6 @@ extends Control
 
 # Animaciones
 @onready var bell_animation: AnimationPlayer = $BellAnimation
-@onready var fila_animation_controller: Node2D = $FilaAnimationController
 
 const Ballon = preload("res://dialogues/balloon.tscn");
 var is_dialogue_active: bool = false;
@@ -93,9 +93,11 @@ func reordenarParaMap():
 #Campana seria Fase 2
 func _on_campana_container_se_activo_campana() -> void:
 	campana_container.desabilitarBoton();
+	fila_animation_controller.atender_siguiente()
 	bell_animation.play("bell-pressed")
 	await get_tree().create_timer(2.5).timeout
 	bell_animation.play("RESET")
+	fila_animation_controller.mover_fila()
 	
 	print(fase_tutorial)
 	# Se decide acá, ANTES del await (ver nota abajo)
