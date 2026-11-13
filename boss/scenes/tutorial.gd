@@ -47,7 +47,7 @@ var descripcionFase0: Array = [
 	"Tocá la campana para llamar a los siguientes visitantes",
 ]
 var descripcionFase1: Array = [
-	"Los visitantes te darán un Documento para que lo analices.",
+	"Los visitantes te darán un documento para que lo analices.",
 	"Consultá con tu compañero. Averigua si son legales",
 ]
 var descripcionFase2: Array = [
@@ -55,6 +55,7 @@ var descripcionFase2: Array = [
 	"El visitante no puede pasar",
 	"Se te hace una multa"
 ]
+
 # Variable que vamos a usar para ordenar las escenas de tutorial. 
 # Usandolo como índice para los dialogos.
 var fase_tutorial: int = 0; 
@@ -99,12 +100,24 @@ func _on_campana_container_se_activo_campana() -> void:
 	bell_animation.play("RESET")
 	fila_animation_controller.mover_fila()
 	
-	print(fase_tutorial)
+	print("fase: " + str(fase_tutorial))
 	# Se decide acá, ANTES del await (ver nota abajo)
-	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 2:
+	var npc_es_valido: bool = false
+
+	# al generar el NPC:
+	if fase_tutorial == 1:
 		npcActual = GeneradorNPC.generarValido();
-	elif faseConCantidadDeIndicaciones.get(fase_tutorial) == 1:
-			npcActual = GeneradorNPC.generarInvalido();
+		npc_es_valido = true
+	else:
+		npcActual = GeneradorNPC.generarInvalido();
+		npc_es_valido = false
+	print(npc_es_valido)
+
+	# después del diálogo:
+	if npc_es_valido:
+		aceptar_denegar_container.desactivarBotonRechazar();
+	else:
+		aceptar_denegar_container.desactivarBotonAceptar();
 	
 	inspector.setNPCActual(npcActual);
 	
@@ -128,7 +141,6 @@ func _on_campana_container_se_activo_campana() -> void:
 	fila_animation_controller.dejar_de_hablar_inspector()
 	fila_animation_controller.dejar_de_hablar_npc_actual()
 	
-	#En esta fase, 
 	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 2:
 		aceptar_denegar_container.desactivarBotonRechazar();
 	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 1:
@@ -159,19 +171,18 @@ func _aumentar_fase() -> void:
 	fase_tutorial += 1;
 
 func _actualizar_cuadro_tutorial() -> void:
-	instruccion.setTitulo(titulos_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)-1]);
-	instruccion.setInstruccion(descripcion_list[fase_tutorial][faseConCantidadDeIndicaciones.get(fase_tutorial)-1]);
-
-#Señales de los botones de instruccion
+	var restantes: int = faseConCantidadDeIndicaciones.get(fase_tutorial)
+	instruccion.setTitulo(titulos_list[fase_tutorial][restantes - 1])
+	instruccion.setInstruccion(descripcion_list[fase_tutorial][restantes - 1])
+	instruccion.setEsUltimo(restantes == 1)
+	
+## Señales de los botones de instruccion
 func _on_instruccion_siguiente_btn() -> void:
 	faseConCantidadDeIndicaciones.set(
 		fase_tutorial,
-		(faseConCantidadDeIndicaciones.get(fase_tutorial) - 1)
+		faseConCantidadDeIndicaciones.get(fase_tutorial) - 1
 	)
-	#Si es el ultimo mensaje, cambiar el boton a "cerrar"
-	if faseConCantidadDeIndicaciones.get(fase_tutorial) == 0:
-		instruccion.cambiarBtn();
-	_actualizar_cuadro_tutorial();
+	_actualizar_cuadro_tutorial()
 
 func _on_instruccion_cerrar_btn() -> void:
 	_aumentar_fase();

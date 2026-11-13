@@ -27,9 +27,9 @@ func _on_cerrar_button_pressed() -> void:
 	tutorial_layout.hide();
 	cerrar_btn.emit();
 
-func cambiarBtn():
-	siguiente_button.visible = not siguiente_button.visible
-	cerrar_button.visible    = not cerrar_button.visible
-
 func _on_siguiente_button_pressed() -> void:
 	siguiente_btn.emit();
+
+func setEsUltimo(es_ultimo: bool) -> void:
+	siguiente_button.visible = not es_ultimo
+	cerrar_button.visible = es_ultimo
