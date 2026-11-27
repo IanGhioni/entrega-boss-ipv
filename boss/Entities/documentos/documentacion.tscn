@@ -101,7 +101,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Clase" type="Label" parent="ClaseContainer" unique_id=1101741819]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = -0.525
 offset_left = -130.0
 offset_top = -36.0
 offset_right = -62.0
@@ -143,6 +145,40 @@ offset_left = -81.0
 offset_top = -9.0
 offset_right = 130.0
 offset_bottom = 17.0
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="VencimientoContainer" type="Control" parent="." unique_id=490835501]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Vencimiento" type="Label" parent="VencimientoContainer" unique_id=267493752]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 2.0
+anchor_right = 0.7
+anchor_bottom = 2.0
+offset_left = -130.0
+offset_top = -64.0
+offset_right = -62.0
+offset_bottom = -38.0
+text = "Vencimiento:"
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoVencimiento" type="Label" parent="VencimientoContainer" unique_id=697121699]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675
+anchor_top = 2.0
+anchor_bottom = 2.0
+offset_left = -59.0
+offset_top = -64.0
+offset_right = 136.0
+offset_bottom = -38.0
 label_settings = SubResource("LabelSettings_3nx7v")
 metadata/_edit_use_anchors_ = true
 
