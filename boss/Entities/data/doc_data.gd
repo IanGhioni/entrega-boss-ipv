@@ -7,3 +7,5 @@ extends Resource
 @export var raza: String
 @export var sello: String = ""
 @export var simbolos: Array[int] = []
+@export var tiene_pase_vacaciones: bool = true # solo para bajitos
+@export var pase_vacaciones_valido: bool = true

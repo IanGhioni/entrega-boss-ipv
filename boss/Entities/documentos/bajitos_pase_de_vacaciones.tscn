@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dcj04hjaf852i"]
+
+[ext_resource type="Texture2D" uid="uid://t5wiq6416kk4" path="res://assets/documentacion/bajitos/1.png" id="1_y6xef"]
+[ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://assets/fonts/Brixton-Outline.ttf" id="2_a8tya"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_idfvx"]
+font = ExtResource("2_a8tya")
+font_size = 52
+font_color = Color(0.14, 0.14, 0.14, 1)
+
+[node name="PaseDeVacaciones" type="Node2D" unique_id=2034737927]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1411929074]
+modulate = Color(1.1755697, 1.1755697, 1.1755697, 1)
+texture_filter = 1
+texture = ExtResource("1_y6xef")
+region_enabled = true
+region_rect = Rect2(15.990416, 32.04939, 385.00958, 144.4506)
+
+[node name="Pase_de" type="Label" parent="Background" unique_id=792765303]
+offset_left = -163.0
+offset_top = -52.0
+offset_right = -103.0
+offset_bottom = -29.0
+text = "Pase de"
+label_settings = SubResource("LabelSettings_idfvx")
+
+[node name="Vacaciones" type="Label" parent="Background" unique_id=1216025537]
+offset_left = -156.0
+offset_top = 7.0
+offset_right = 96.0
+offset_bottom = 59.0
+text = "Vacaciones"
+label_settings = SubResource("LabelSettings_idfvx")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=337711701]
+position = Vector2(137, -5)
+scale = Vector2(0.88377386, 0.88377386)

@@ -6,3 +6,4 @@ extends Resource
 @export var raza: String
 @export var simbolos: Array[int] = []   # para los documentos élficos
 @export var tiene_sello: bool = true
+@export var tiene_pase_vacaciones: bool = true # solo para bajitos
