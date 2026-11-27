@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://assets/fonts/Brixton-Outline.ttf" id="3_e1ovm"]
 [ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="4_te1nm"]
 [ext_resource type="Texture2D" uid="uid://d1kus4q5f8ydg" path="res://assets/Ribbons/01.png" id="5_4cj47"]
+[ext_resource type="Texture2D" uid="uid://t5wiq6416kk4" path="res://assets/documentacion/bajitos/1.png" id="6_ydl0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptwlb"]
 size = Vector2(321, 368)
@@ -32,6 +33,11 @@ modulate_color = Color(0.6745098, 0.6745098, 0.6745098, 1)
 texture = ExtResource("5_4cj47")
 region_rect = Rect2(176, 80, 41, 12)
 modulate_color = Color(0.6745098, 0.6745098, 0.6745098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5uf8"]
+font = ExtResource("3_e1ovm")
+font_size = 52
+font_color = Color(0.14, 0.14, 0.14, 1)
 
 [node name="Documentacion" type="Node2D" unique_id=2004003958]
 z_index = 1
@@ -62,83 +68,104 @@ Berazachusetts"
 label_settings = SubResource("LabelSettings_uf4da")
 metadata/_edit_use_anchors_ = true
 
-[node name="NombreContainer" type="Control" parent="." unique_id=1935420004]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="InfoPila" type="VBoxContainer" parent="." unique_id=475508769]
+offset_left = -132.0
+offset_top = -87.0
+offset_right = 137.0
+offset_bottom = 37.0
 
-[node name="Nombre" type="Label" parent="NombreContainer" unique_id=2109976756]
-layout_mode = 0
-offset_left = -130.0
-offset_top = -64.0
-offset_right = -62.0
-offset_bottom = -38.0
+[node name="Campo1" type="HBoxContainer" parent="InfoPila" unique_id=1424807320]
+layout_mode = 2
+
+[node name="Nombre" type="Label" parent="InfoPila/Campo1" unique_id=2109976756]
+layout_mode = 2
 text = "Nombre:"
 label_settings = SubResource("LabelSettings_3nx7v")
 metadata/_edit_use_anchors_ = true
 
-[node name="CampoNombre" type="Label" parent="NombreContainer" unique_id=123790604]
+[node name="CampoNombre" type="Label" parent="InfoPila/Campo1" unique_id=123790604]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -59.0
-offset_top = -64.0
-offset_right = 136.0
-offset_bottom = -38.0
+layout_mode = 2
 label_settings = SubResource("LabelSettings_3nx7v")
 metadata/_edit_use_anchors_ = true
 
-[node name="ClaseContainer" type="Control" parent="." unique_id=1004938729]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Campo2" type="HBoxContainer" parent="InfoPila" unique_id=1882692218]
+layout_mode = 2
 
-[node name="Clase" type="Label" parent="ClaseContainer" unique_id=1101741819]
-layout_mode = 0
-offset_left = -130.0
-offset_top = -36.0
-offset_right = -62.0
-offset_bottom = -10.0
+[node name="Clase" type="Label" parent="InfoPila/Campo2" unique_id=1101741819]
+layout_mode = 2
 text = "Clase:"
 label_settings = SubResource("LabelSettings_3nx7v")
 metadata/_edit_use_anchors_ = true
 
-[node name="CampoClase" type="Label" parent="ClaseContainer" unique_id=1016115430]
+[node name="CampoClase" type="Label" parent="InfoPila/Campo2" unique_id=1016115430]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -81.0
-offset_top = -38.0
-offset_right = 130.0
-offset_bottom = -12.0
+layout_mode = 2
 label_settings = SubResource("LabelSettings_3nx7v")
 metadata/_edit_use_anchors_ = true
 
-[node name="RazaContainer" type="Control" parent="." unique_id=237734472]
+[node name="Campo3" type="HBoxContainer" parent="InfoPila" unique_id=1524962809]
+layout_mode = 2
+
+[node name="Raza" type="Label" parent="InfoPila/Campo3" unique_id=595085622]
+layout_mode = 2
+text = "Raza:"
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoRaza" type="Label" parent="InfoPila/Campo3" unique_id=1526581951]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Campo4" type="HBoxContainer" parent="InfoPila" unique_id=642132357]
+layout_mode = 2
+
+[node name="Vencimiento" type="Label" parent="InfoPila/Campo4" unique_id=267493752]
+layout_mode = 2
+text = "Vencimiento:"
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoVencimiento" type="Label" parent="InfoPila/Campo4" unique_id=697121699]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_3nx7v")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="IconoCalendario" type="Sprite2D" parent="InfoPila/Campo4" unique_id=992470112]
+position = Vector2(157.99998, 15.999992)
+scale = Vector2(0.14646465, 0.12244898)
+
+[node name="NombreContainer" type="Control" parent="." unique_id=1935420004]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Raza" type="Label" parent="RazaContainer" unique_id=595085622]
-layout_mode = 0
-offset_left = -130.0
-offset_top = -10.0
-offset_right = -62.0
-offset_bottom = 16.0
-text = "Raza:"
-label_settings = SubResource("LabelSettings_3nx7v")
-metadata/_edit_use_anchors_ = true
+[node name="ClaseContainer" type="Control" parent="." unique_id=1004938729]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="CampoRaza" type="Label" parent="RazaContainer" unique_id=1526581951]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -81.0
-offset_top = -9.0
-offset_right = 130.0
-offset_bottom = 17.0
-label_settings = SubResource("LabelSettings_3nx7v")
-metadata/_edit_use_anchors_ = true
+[node name="RazaContainer" type="Control" parent="." unique_id=237734472]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VencimientoContainer" type="Control" parent="." unique_id=490835501]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="SimbolosElficos" type="Node2D" parent="." unique_id=1018017662]
 
@@ -182,6 +209,37 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_4cj47")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ydl0o")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ptwlb")
 text = "Expandir"
+
+[node name="PaseDeVacaciones" type="Node2D" parent="." unique_id=2133889395]
+position = Vector2(0, 95)
+scale = Vector2(0.7114614, 0.7114614)
+
+[node name="Background" type="Sprite2D" parent="PaseDeVacaciones" unique_id=899273154]
+modulate = Color(1.1755697, 1.1755697, 1.1755697, 1)
+texture_filter = 1
+texture = ExtResource("6_ydl0o")
+region_enabled = true
+region_rect = Rect2(15.990416, 32.04939, 385.00958, 144.4506)
+
+[node name="Pase_de" type="Label" parent="PaseDeVacaciones/Background" unique_id=1535792015]
+offset_left = -163.0
+offset_top = -52.0
+offset_right = -103.0
+offset_bottom = -29.0
+text = "Pase de"
+label_settings = SubResource("LabelSettings_y5uf8")
+
+[node name="Vacaciones" type="Label" parent="PaseDeVacaciones/Background" unique_id=1479446988]
+offset_left = -156.0
+offset_top = 7.0
+offset_right = 96.0
+offset_bottom = 59.0
+text = "Vacaciones"
+label_settings = SubResource("LabelSettings_y5uf8")
+
+[node name="Icon" type="Sprite2D" parent="PaseDeVacaciones" unique_id=762066416]
+position = Vector2(133.52797, 1.4055529)
+scale = Vector2(1.035, 1.035)
 
 [connection signal="input_event" from="Papiro/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="pressed" from="ExpandirDoc" to="." method="_on_expandir_doc_pressed"]

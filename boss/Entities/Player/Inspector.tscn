@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dsfx3dtjp5ba2" path="res://Entities/Player/inspector.gd" id="1_jo3jf"]
 [ext_resource type="Resource" uid="uid://bey6re30uv5mq" path="res://dialogues/preguntar_doc.dialogue" id="2_uedj5"]
-[ext_resource type="Texture2D" uid="uid://civwd10oh8u2q" path="res://assets/Personajes/GandalfHardcore FREE Platformer Assets/Decor.png" id="3_blj0n"]
 [ext_resource type="Texture2D" uid="uid://dn8sr0e0a7tjx" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniSpearMan.png" id="3_uedj5"]
 [ext_resource type="Texture2D" uid="uid://dn71hf07pa6bs" path="res://assets/Personajes/MinifolksHumans/Without Outline/MiniSwordMan.png" id="4_uedj5"]
 
@@ -102,22 +101,6 @@ position = Vector2(0, -1)
 scale = Vector2(0.8439002, 0.8439002)
 script = ExtResource("1_jo3jf")
 preguntar_doc = ExtResource("2_uedj5")
-
-[node name="Chair2" type="Sprite2D" parent="." unique_id=1425754029]
-position = Vector2(-98.35285, 94.79791)
-scale = Vector2(4.400001, 4.400001)
-texture = ExtResource("3_blj0n")
-hframes = 13
-vframes = 17
-frame = 9
-
-[node name="Chair3" type="Sprite2D" parent="." unique_id=630497411]
-position = Vector2(-16.589642, 94.79793)
-scale = Vector2(4.400001, 4.400001)
-texture = ExtResource("3_blj0n")
-hframes = 13
-vframes = 17
-frame = 9
 
 [node name="InspectorSprite" type="AnimatedSprite2D" parent="." unique_id=1188422115]
 visible = false

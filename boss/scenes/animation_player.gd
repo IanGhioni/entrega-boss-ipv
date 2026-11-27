@@ -104,3 +104,5 @@ func _iniciar_modo_menu() -> void:
 	for sprite in [inspector]:
 		if sprite.sprite_frames.has_animation("idle"):
 			sprite.play("idle")
+
+	

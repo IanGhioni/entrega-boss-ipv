@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="8_70i5f"]
 [ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-014.png" id="9_70i5f"]
 [ext_resource type="PackedScene" uid="uid://dh8uexm8qlt0j" path="res://scenes/ComoJugar.tscn" id="9_i6lef"]
+[ext_resource type="Texture2D" uid="uid://b15ar7nggdfqv" path="res://assets/QR/QR-Manual.png" id="12_6cdou"]
+[ext_resource type="Texture2D" uid="uid://d1iyf0psg8a4h" path="res://assets/Bordes/PNG/Double/Panel/panel-009.png" id="12_i42df"]
+[ext_resource type="FontFile" uid="uid://cflgn7k6r72r" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glyphs.ttf" id="13_6cdou"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oucw"]
 
@@ -49,6 +52,20 @@ texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
 modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i42df"]
+texture = ExtResource("12_i42df")
+texture_margin_left = 55.0
+texture_margin_top = 55.0
+texture_margin_right = 55.0
+texture_margin_bottom = 55.0
+modulate_color = Color(0.6698945, 0.22037454, 0.31794477, 0.6862745)
+
+[sub_resource type="LabelSettings" id="LabelSettings_toa2b"]
+line_spacing = 10.0
+font = ExtResource("13_6cdou")
+outline_size = 5
+outline_color = Color(0.35686275, 0.09803922, 0.15686275, 1)
 
 [node name="Menu" type="Control" unique_id=559569269]
 layout_mode = 3
@@ -143,7 +160,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_i6lef")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kvt2x")
 text = "Jugar"
 
-[node name="HowToPlay" type="Button" parent="PanelContainer/ContainerButtons" unique_id=1224966245]
+[node name="Tutorial" type="Button" parent="PanelContainer/ContainerButtons" unique_id=304334802]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -156,7 +173,7 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_4ousb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i6lef")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kvt2x")
-text = "Reglas"
+text = "Tutorial"
 
 [node name="Quit" type="Button" parent="PanelContainer/ContainerButtons" unique_id=2091157976]
 layout_mode = 2
@@ -184,9 +201,42 @@ anchor_bottom = 0.5154321
 scale = Vector2(0.7588581, 0.7588581)
 metadata/_edit_use_anchors_ = true
 
+[node name="PanelQr" type="Panel" parent="." unique_id=2143716271]
+custom_maximum_size = Vector2(-1, 150)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 448.0
+offset_right = 543.0
+offset_bottom = 582.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_i42df")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelQr" unique_id=1397870214]
+custom_maximum_size = Vector2(-1, 150)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 510.0
+offset_bottom = 116.0
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="QR" type="TextureRect" parent="PanelQr/HBoxContainer" unique_id=1758047570]
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 2
+texture = ExtResource("12_6cdou")
+expand_mode = 2
+
+[node name="Descripcion QR" type="Label" parent="PanelQr/HBoxContainer" unique_id=1491217156]
+layout_mode = 2
+text = "Escanea el QR para ver el manual"
+label_settings = SubResource("LabelSettings_toa2b")
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Play" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
-[connection signal="mouse_entered" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="PanelContainer/ContainerButtons/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Tutorial" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/ContainerButtons/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Quit" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Quit" to="." method="_on_quit_pressed"]

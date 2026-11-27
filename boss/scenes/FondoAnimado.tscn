@@ -706,24 +706,6 @@ scale = Vector2(0.3600012, 0.3600012)
 offset = Vector2(-55, 0)
 zoom = Vector2(1.1, 1.1)
 
-[node name="Chair3" type="Sprite2D" parent="." unique_id=1788619101]
-position = Vector2(371, 411)
-scale = Vector2(4.400001, 4.400001)
-texture = ExtResource("3_u48nx")
-hframes = 13
-vframes = 17
-frame = 9
-metadata/_edit_lock_ = true
-
-[node name="Chair2" type="Sprite2D" parent="." unique_id=708288244]
-position = Vector2(288, 410)
-scale = Vector2(4.400001, 4.400001)
-texture = ExtResource("3_u48nx")
-hframes = 13
-vframes = 17
-frame = 9
-metadata/_edit_lock_ = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1538223747]
 libraries/ = SubResource("AnimationLibrary_ewsda")
 autoplay = &"simulated_gameplay"
@@ -750,7 +732,6 @@ texture = ExtResource("3_u48nx")
 hframes = 8
 vframes = 17
 frame = 21
-metadata/_edit_lock_ = true
 
 [node name="Archero" parent="." unique_id=1204063223 instance=ExtResource("3_dnl66")]
 position = Vector2(799, 378.00003)

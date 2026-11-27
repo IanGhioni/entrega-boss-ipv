@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cpgh3soflr7i0"]
+
+[ext_resource type="AudioStream" uid="uid://8jvppwoaymb" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Hover/RPGFX - Menu - Hover 3.wav" id="1_hfaql"]
+[ext_resource type="Script" uid="uid://csfpykiic4juv" path="res://scenes/aceptar_denegar_contenedor.gd" id="1_k6ryg"]
+[ext_resource type="AudioStream" uid="uid://h82mx5178m43" path="res://assets/sonidos/Retro RPG Menu SFX/Menu/Confirm/RPGFX - Menu - Confirm 6.wav" id="2_k6ryg"]
+[ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="3_ul02u"]
+[ext_resource type="Texture2D" uid="uid://c0bt35a8u8bt8" path="res://assets/Buttons/Green_Buttons_Pixel.png" id="4_bmdy1"]
+[ext_resource type="Texture2D" uid="uid://bro5uixjmtyeu" path="res://assets/Buttons/Gray_Buttons_Pixel.png" id="5_ccv0f"]
+[ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="6_2r27s"]
+[ext_resource type="Texture2D" uid="uid://ccmdkguf5lne5" path="res://assets/Buttons/Red_Buttons_Pixel.png" id="7_27tuo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvrp7"]
+texture = ExtResource("3_ul02u")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.8901961, 0.7254902, 0.4, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27kq1"]
+texture = ExtResource("4_bmdy1")
+region_rect = Rect2(0, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ax2d3"]
+texture = ExtResource("4_bmdy1")
+region_rect = Rect2(160, 32, 16, 16)
+modulate_color = Color(0.846616, 0.846616, 0.8466159, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_olwyj"]
+texture = ExtResource("4_bmdy1")
+region_rect = Rect2(160, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6td6"]
+texture = ExtResource("5_ccv0f")
+region_rect = Rect2(0, 32, 16, 16)
+modulate_color = Color(0.61960787, 0.61960787, 0.61960787, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xpv45"]
+texture = ExtResource("7_27tuo")
+region_rect = Rect2(0, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yj3f0"]
+texture = ExtResource("7_27tuo")
+region_rect = Rect2(160, 16, 16, 16)
+modulate_color = Color(0.84705883, 0.84705883, 0.84705883, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ikal"]
+texture = ExtResource("7_27tuo")
+region_rect = Rect2(160, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6n11o"]
+texture = ExtResource("5_ccv0f")
+region_rect = Rect2(0, 16, 16, 16)
+modulate_color = Color(0.61960787, 0.61960787, 0.61960787, 1)
+
+[node name="AceptarDenegarContainer" type="Control" unique_id=329845636]
+visible = false
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 853.0
+offset_top = 444.0
+offset_right = 853.0
+offset_bottom = 444.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_k6ryg")
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1482543166]
+position = Vector2(51, 86)
+stream = ExtResource("1_hfaql")
+volume_db = -10.0
+pitch_scale = 2.0
+bus = &"Efectos"
+
+[node name="ActionSound" type="AudioStreamPlayer2D" parent="." unique_id=1722293035]
+stream = ExtResource("2_k6ryg")
+volume_db = -10.0
+bus = &"Efectos"
+
+[node name="Container" type="PanelContainer" parent="." unique_id=944281819]
+custom_minimum_size = Vector2(260, 100)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 74.0
+offset_right = 281.0
+offset_bottom = 214.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rvrp7")
+
+[node name="MarginContainer" type="CenterContainer" parent="Container" unique_id=1200367044]
+clip_contents = true
+layout_mode = 2
+
+[node name="ContainerPila" type="VBoxContainer" parent="Container/MarginContainer" unique_id=1701835625]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(500, 120)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="AceptarButton" type="Button" parent="Container/MarginContainer/ContainerPila" unique_id=785400015]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_27kq1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ax2d3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_olwyj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c6td6")
+disabled = true
+
+[node name="AceptarLabel" type="Label" parent="Container/MarginContainer/ContainerPila/AceptarButton" unique_id=1117162547]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 11.0
+offset_right = 339.0
+offset_bottom = 34.0
+theme_override_colors/font_shadow_color = Color(0.8901961, 0.7254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("6_2r27s")
+text = "Aceptar"
+
+[node name="RechazarButton" type="Button" parent="Container/MarginContainer/ContainerPila" unique_id=1867349718]
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_xpv45")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yj3f0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3ikal")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6n11o")
+disabled = true
+
+[node name="RechazarLabel" type="Label" parent="Container/MarginContainer/ContainerPila/RechazarButton" unique_id=1987703887]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 12.0
+offset_right = 339.0
+offset_bottom = 35.0
+theme_override_colors/font_shadow_color = Color(0.8901961, 0.7254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("6_2r27s")
+text = "Rechazar"
+
+[connection signal="mouse_entered" from="Container/MarginContainer/ContainerPila/AceptarButton" to="." method="_on_mouse_hovereo_boton_"]
+[connection signal="pressed" from="Container/MarginContainer/ContainerPila/AceptarButton" to="." method="_on_clickear_boton_"]
+[connection signal="mouse_entered" from="Container/MarginContainer/ContainerPila/RechazarButton" to="." method="_on_mouse_hovereo_boton_"]
+[connection signal="pressed" from="Container/MarginContainer/ContainerPila/RechazarButton" to="." method="_on_clickear_boton_"]

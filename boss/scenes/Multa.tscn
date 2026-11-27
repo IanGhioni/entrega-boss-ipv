@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://eg585i6i77hs"]
+
+[ext_resource type="Script" uid="uid://kdexe5qswayo" path="res://scenes/multa.gd" id="1_i22fy"]
+[ext_resource type="Texture2D" uid="uid://6m571djpmcyt" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-011.png" id="1_y62uy"]
+[ext_resource type="Texture2D" uid="uid://d0y65a0ls7wpa" path="res://assets/Cells.png" id="2_i22fy"]
+[ext_resource type="FontFile" uid="uid://dadn7fhrdg35x" path="res://assets/fonts/Fabled-Font-All/Fabled_Font.ttf" id="3_vcyoy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mypxk"]
+texture = ExtResource("1_y62uy")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n11o"]
+atlas = ExtResource("2_i22fy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqw0u"]
+atlas = ExtResource("2_i22fy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf410"]
+atlas = ExtResource("2_i22fy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yyk1"]
+atlas = ExtResource("2_i22fy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ww1q"]
+atlas = ExtResource("2_i22fy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjtf0"]
+atlas = ExtResource("2_i22fy")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_of656"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n11o")
+}],
+"loop": 0,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqw0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf410")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yyk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ww1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjtf0")
+}],
+"loop": 0,
+"name": &"desenrollar",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ikal"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pqw0u"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6n11o"]
+
+[node name="Multa" type="Control" unique_id=47265771]
+y_sort_enabled = true
+layout_mode = 3
+script = ExtResource("1_i22fy")
+
+[node name="Panel" type="Panel" parent="." unique_id=269267109]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mypxk")
+
+[node name="Scroll" type="AnimatedSprite2D" parent="." unique_id=1440796272]
+position = Vector2(168, -3)
+scale = Vector2(2.6749713, 1.8421971)
+sprite_frames = SubResource("SpriteFrames_of656")
+animation = &"closed"
+autoplay = "closed"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=324171187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -78.0
+offset_right = 82.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3ikal")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=869975464]
+layout_mode = 2
+
+[node name="MultaTitulo" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1897397115]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_pqw0u")
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.9882353, 0.7607843, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.78039217, 0.2509804, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_fonts/font = ExtResource("3_vcyoy")
+theme_override_font_sizes/font_size = 32
+text = "Multa"
+horizontal_alignment = 1
+
+[node name="MultaTexto" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1433648856]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_6n11o")
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9882353, 0.7607843, 0, 1)
+theme_override_fonts/font = ExtResource("3_vcyoy")
+autowrap_mode = 2
+justification_flags = 35
