@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cbv7rym33juuw" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-013.png" id="8_70i5f"]
 [ext_resource type="Texture2D" uid="uid://dr6xuckcjtst0" path="res://assets/Bordes/PNG/Default/Transparent center/panel-transparent-center-014.png" id="9_70i5f"]
 [ext_resource type="PackedScene" uid="uid://dh8uexm8qlt0j" path="res://scenes/ComoJugar.tscn" id="9_i6lef"]
+[ext_resource type="Texture2D" uid="uid://b4wfftr0063ab" path="res://assets/QR/Manual de Instrucciones.png" id="12_ufwb2"]
+[ext_resource type="FontFile" uid="uid://cflgn7k6r72r" path="res://assets/fonts/Fabled-Font-All/Fabled_Font_Alt_Glyphs.ttf" id="13_6cdou"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oucw"]
 
@@ -49,6 +51,27 @@ texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
 modulate_color = Color(0.7607843, 0.25490198, 0.3647059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cdou"]
+bg_color = Color(0.114694454, 0.030560018, 0.03819078, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0.80784315, 0.7294118, 0.7490196, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_toa2b"]
+line_spacing = 10.0
+font = ExtResource("13_6cdou")
 
 [node name="Menu" type="Control" unique_id=559569269]
 layout_mode = 3
@@ -183,6 +206,37 @@ anchor_right = 0.6588542
 anchor_bottom = 0.5154321
 scale = Vector2(0.7588581, 0.7588581)
 metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=2143716271]
+custom_maximum_size = Vector2(-1, 150)
+layout_mode = 0
+offset_left = 28.0
+offset_top = 466.0
+offset_right = 520.0
+offset_bottom = 582.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6cdou")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1397870214]
+custom_maximum_size = Vector2(-1, 150)
+layout_mode = 0
+offset_right = 492.0
+offset_bottom = 116.0
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer" unique_id=1758047570]
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 2
+texture = ExtResource("12_ufwb2")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer" unique_id=1491217156]
+layout_mode = 2
+text = "Escanea el QR para ver el manual"
+label_settings = SubResource("LabelSettings_toa2b")
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="PanelContainer/ContainerButtons/Play" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/ContainerButtons/Play" to="." method="_on_play_pressed"]
