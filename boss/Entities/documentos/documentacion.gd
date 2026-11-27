@@ -8,6 +8,11 @@ extends DocumentoBase
 @onready var pase_de_vacaciones: Node2D = $PaseDeVacaciones
 @onready var icon_pase_vacaciones: Sprite2D = $PaseDeVacaciones/Icon
 
+@onready var campo_vencimiento: Label = %CampoVencimiento
+@onready var icono_vencimiento: Sprite2D = $InfoPila/Campo4/IconoCalendario
+
+const ICONO_VENCIMIENTO := "res://assets/iconos-vencimiento/%s-icon.png"
+
 const ICONOS_PASES_VALIDOS := "res://assets/documentacion/bajitos/iconosValidos/"
 const ICONOS_PASES_INVALIDOS := "res://assets/documentacion/bajitos/iconosInvalidos/"
 
@@ -29,6 +34,8 @@ func setup(d: DocData) -> void:
 	campo_nombre.text = d.nombre
 	campo_clase.text = d.clase
 	campo_raza.text = d.raza
+	campo_vencimiento.text = str(d.vencimiento_anio)
+	icono_vencimiento.texture = load(ICONO_VENCIMIENTO % d.vencimiento_elemento)
 	sello.texture = load("res://assets/documentacion/sellos/sello%s.png" % d.sello)
 
 	pase_de_vacaciones.visible = (
