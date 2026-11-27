@@ -21,9 +21,9 @@ extends Control
 
 
 func _ready() -> void:
-	timer.start(time_level)
+	timer.wait_time = time_level
+	timer.one_shot = true
 
-	
 func _process(_delta: float) -> void:
 	if not timer.is_stopped():
 		timer_label.text = str(int(timer.time_left))

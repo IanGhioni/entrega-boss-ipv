@@ -7,6 +7,7 @@ var npcActual;
 var cant_aciertos: int = 0;
 var cant_rondas: int = 0;
 var globo_actual: Node = null
+var partida_arrancando = true
 
 @export var max_rondas: int;
 @export var preguntar_doc: DialogueResource
@@ -66,6 +67,10 @@ func _on_ask_doc_button_pressed() -> void:
 	aceptar_denegar_container.show();
 	
 	# Generamos un nuevo NPC
+	if partida_arrancando:
+		timer.start() # xd
+		partida_arrancando = false
+	
 	if (timer != null):
 		timer.set_paused(true)
 	npcActual = GeneradorNPC.generar()
