@@ -45,6 +45,13 @@ const SIMBOLOS_TOTAL := 17
 const SIMBOLOS_CANTIDAD := 5
 const PROB_INVALIDO := 0.55
 
+const RAZAS_CON_PASE_VACACIONES := [
+	"Enano",
+	"Mediano",
+	"Goblin",
+	"Gnomo"
+]
+
 static func generar() -> NPCData:
 	var npc := NPCData.new()
 	var d := _doc_valido()
@@ -53,7 +60,10 @@ static func generar() -> NPCData:
 	if randf() < PROB_INVALIDO:
 		var defectos := _defectos_aplicables(d)
 		defectos.shuffle()
-		for i in randi_range(1, mini(2, defectos.size())):
+		var cantidad_defectos := randi_range(1, mini(2, defectos.size()))
+		defectos.shuffle()
+
+		for i in cantidad_defectos:
 			_aplicar(d, defectos[i])
 
 	npc.motivos = validar(npc)
@@ -69,6 +79,12 @@ static func _doc_valido() -> DocData:
 
 	if d.raza == "Elfo" || d.raza == "Drow":
 		d.simbolos = _cadena_valida()
+	
+	if d.raza in RAZAS_CON_PASE_VACACIONES:
+		d.tiene_pase_vacaciones = true
+	else:
+		d.tiene_pase_vacaciones = false
+	
 	return d
 
 static func _defectos_aplicables(d: DocData) -> Array:
@@ -76,7 +92,10 @@ static func _defectos_aplicables(d: DocData) -> Array:
 	if SELLOS_POR_RAZA.has(d.raza):
 		defectos.append("sello_falso")
 	if d.raza == "Elfo":
-		defectos.append("simbolos_incorrectos")
+		defectos.append("simbolos_incorrectos")	
+	if d.raza in RAZAS_CON_PASE_VACACIONES:
+		defectos.append("pase_vacaciones_ausente")
+		defectos.append("pase_vacaciones_invalido")
 	return defectos
 
 static func _aplicar(d: DocData, defecto: String) -> void:
@@ -92,6 +111,10 @@ static func _aplicar(d: DocData, defecto: String) -> void:
 			d.sello = candidatas.pick_random()
 		"simbolos_incorrectos":
 			d.simbolos = _cadena_invalida()
+		"pase_vacaciones_ausente":
+			d.tiene_pase_vacaciones = false
+		"pase_vacaciones_invalido":
+			d.pase_vacaciones_valido = false
 
 static func validar(npc: NPCData) -> Array[String]:
 	var m: Array[String] = []
@@ -105,6 +128,13 @@ static func validar(npc: NPCData) -> Array[String]:
 
 	if d.raza == "Elfo" and not _es_cadena_valida(d.simbolos):
 		m.append("Símbolos élficos incorrectos")
+	
+	if d.raza in RAZAS_CON_PASE_VACACIONES:
+		if not d.tiene_pase_vacaciones:
+			m.append("No presenta el pase de vacaciones obligatorio")
+		elif not d.pase_vacaciones_valido:
+			m.append("Pase de vacaciones inválido")
+		
 	return m
 
 static func _clases_permitidas(raza: String) -> Array:

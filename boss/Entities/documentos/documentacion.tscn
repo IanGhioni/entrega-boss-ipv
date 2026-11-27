@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bfp73qd23wcpx" path="res://assets/fonts/Brixton-Outline.ttf" id="3_e1ovm"]
 [ext_resource type="FontFile" uid="uid://b70jfeeqahqoe" path="res://assets/fonts/Anaktoria.ttf" id="4_te1nm"]
 [ext_resource type="Texture2D" uid="uid://d1kus4q5f8ydg" path="res://assets/Ribbons/01.png" id="5_4cj47"]
+[ext_resource type="Texture2D" uid="uid://t5wiq6416kk4" path="res://assets/documentacion/bajitos/1.png" id="6_ydl0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptwlb"]
 size = Vector2(321, 368)
@@ -32,6 +33,11 @@ modulate_color = Color(0.6745098, 0.6745098, 0.6745098, 1)
 texture = ExtResource("5_4cj47")
 region_rect = Rect2(176, 80, 41, 12)
 modulate_color = Color(0.6745098, 0.6745098, 0.6745098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5uf8"]
+font = ExtResource("3_e1ovm")
+font_size = 52
+font_color = Color(0.14, 0.14, 0.14, 1)
 
 [node name="Documentacion" type="Node2D" unique_id=2004003958]
 z_index = 1
@@ -182,6 +188,37 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_4cj47")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ydl0o")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ptwlb")
 text = "Expandir"
+
+[node name="PaseDeVacaciones" type="Node2D" parent="." unique_id=2133889395]
+position = Vector2(0, 95)
+scale = Vector2(0.7114614, 0.7114614)
+
+[node name="Background" type="Sprite2D" parent="PaseDeVacaciones" unique_id=899273154]
+modulate = Color(1.1755697, 1.1755697, 1.1755697, 1)
+texture_filter = 1
+texture = ExtResource("6_ydl0o")
+region_enabled = true
+region_rect = Rect2(15.990416, 32.04939, 385.00958, 144.4506)
+
+[node name="Pase_de" type="Label" parent="PaseDeVacaciones/Background" unique_id=1535792015]
+offset_left = -163.0
+offset_top = -52.0
+offset_right = -103.0
+offset_bottom = -29.0
+text = "Pase de"
+label_settings = SubResource("LabelSettings_y5uf8")
+
+[node name="Vacaciones" type="Label" parent="PaseDeVacaciones/Background" unique_id=1479446988]
+offset_left = -156.0
+offset_top = 7.0
+offset_right = 96.0
+offset_bottom = 59.0
+text = "Vacaciones"
+label_settings = SubResource("LabelSettings_y5uf8")
+
+[node name="Icon" type="Sprite2D" parent="PaseDeVacaciones" unique_id=762066416]
+position = Vector2(133.52797, 1.4055529)
+scale = Vector2(1.035, 1.035)
 
 [connection signal="input_event" from="Papiro/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="pressed" from="ExpandirDoc" to="." method="_on_expandir_doc_pressed"]
