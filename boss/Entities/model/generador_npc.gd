@@ -52,6 +52,25 @@ const RAZAS_CON_PASE_VACACIONES := [
 	"Gnomo"
 ]
 
+const ELEMENTOS := ["aire", "fuego", "tierra", "agua"]
+
+const ELEMENTO_POR_RAZA := {
+	"Humano": "aire", "Tiefling": "aire", "Semi bestia": "aire",
+	"Elfo": "agua", "Drow": "agua", "Sátiro": "agua", "Tritón": "agua",
+	"Enano": "tierra", "Mediano": "tierra", "Goblin": "tierra", "Gnomo": "tierra",
+	"Orco": "fuego", "Dracónido": "fuego", "Goliat": "fuego",
+}
+
+# Años legales por elemento (los ✓ de la tabla).
+const ANIOS_POR_ELEMENTO := {
+	"fuego":  [1361, 1363, 1365, 1367, 1369],
+	"agua":   [1362, 1364, 1366, 1369],
+	"tierra": [1361, 1362, 1365, 1366, 1368],
+	"aire":   [1363, 1364, 1367, 1368],
+}
+const ANIO_MIN := 1361
+const ANIO_MAX := 1369
+
 static func generar() -> NPCData:
 	var npc := NPCData.new()
 	var d := _doc_valido()
@@ -61,10 +80,13 @@ static func generar() -> NPCData:
 		var defectos := _defectos_aplicables(d)
 		defectos.shuffle()
 		var cantidad_defectos := randi_range(1, mini(2, defectos.size()))
-		defectos.shuffle()
+		var elegidos := defectos.slice(0, cantidad_defectos)
 
-		for i in cantidad_defectos:
-			_aplicar(d, defectos[i])
+		if "elemento_incorrecto" in elegidos:
+			elegidos.erase("anio_ilegal")
+
+		for defecto in elegidos:
+			_aplicar(d, defecto)
 
 	npc.motivos = validar(npc)
 	return npc
@@ -85,10 +107,13 @@ static func _doc_valido() -> DocData:
 	else:
 		d.tiene_pase_vacaciones = false
 	
+	d.vencimiento_elemento = ELEMENTO_POR_RAZA[d.raza]
+	d.vencimiento_anio = ANIOS_POR_ELEMENTO[d.vencimiento_elemento].pick_random()
+	
 	return d
 
 static func _defectos_aplicables(d: DocData) -> Array:
-	var defectos: Array = ["combinacion_invalida"]
+	var defectos: Array = ["combinacion_invalida", "elemento_incorrecto", "anio_ilegal"]
 	if SELLOS_POR_RAZA.has(d.raza):
 		defectos.append("sello_falso")
 	if d.raza == "Elfo":
@@ -115,6 +140,17 @@ static func _aplicar(d: DocData, defecto: String) -> void:
 			d.tiene_pase_vacaciones = false
 		"pase_vacaciones_invalido":
 			d.pase_vacaciones_valido = false
+		"elemento_incorrecto":
+			var otros := ELEMENTOS.filter(
+					func(e): return e != ELEMENTO_POR_RAZA[d.raza])
+			d.vencimiento_elemento = otros.pick_random()
+			# El año es legal para el elemento mostrado: el único error es el elemento.
+			d.vencimiento_anio = ANIOS_POR_ELEMENTO[d.vencimiento_elemento].pick_random()
+		"anio_ilegal":
+			var legales: Array = ANIOS_POR_ELEMENTO[d.vencimiento_elemento]
+			var ilegales := range(ANIO_MIN, ANIO_MAX + 1).filter(
+					func(a): return a not in legales)
+			d.vencimiento_anio = ilegales.pick_random()
 
 static func validar(npc: NPCData) -> Array[String]:
 	var m: Array[String] = []
@@ -134,7 +170,12 @@ static func validar(npc: NPCData) -> Array[String]:
 			m.append("No presenta el pase de vacaciones obligatorio")
 		elif not d.pase_vacaciones_valido:
 			m.append("Pase de vacaciones inválido")
-		
+			
+	if ELEMENTO_POR_RAZA[d.raza] != d.vencimiento_elemento:
+		m.append("Elemento de vencimiento no corresponde a su raza")
+	elif d.vencimiento_anio not in ANIOS_POR_ELEMENTO[d.vencimiento_elemento]:
+		m.append("Año de vencimiento no permitido para su elemento")
+	
 	return m
 
 static func _clases_permitidas(raza: String) -> Array:

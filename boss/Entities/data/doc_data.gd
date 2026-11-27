@@ -9,3 +9,5 @@ extends Resource
 @export var simbolos: Array[int] = []
 @export var tiene_pase_vacaciones: bool = true # solo para bajitos
 @export var pase_vacaciones_valido: bool = true
+@export var vencimiento_anio: int = 0
+@export var vencimiento_elemento: String = ""  # "aire", "fuego", "tierra" o "agua"

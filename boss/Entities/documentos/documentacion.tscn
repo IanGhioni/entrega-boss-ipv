@@ -68,83 +68,104 @@ Berazachusetts"
 label_settings = SubResource("LabelSettings_uf4da")
 metadata/_edit_use_anchors_ = true
 
-[node name="NombreContainer" type="Control" parent="." unique_id=1935420004]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="InfoPila" type="VBoxContainer" parent="." unique_id=475508769]
+offset_left = -132.0
+offset_top = -87.0
+offset_right = 137.0
+offset_bottom = 37.0
 
-[node name="Nombre" type="Label" parent="NombreContainer" unique_id=2109976756]
-layout_mode = 0
-offset_left = -130.0
-offset_top = -64.0
-offset_right = -62.0
-offset_bottom = -38.0
+[node name="Campo1" type="HBoxContainer" parent="InfoPila" unique_id=1424807320]
+layout_mode = 2
+
+[node name="Nombre" type="Label" parent="InfoPila/Campo1" unique_id=2109976756]
+layout_mode = 2
 text = "Nombre:"
 label_settings = SubResource("LabelSettings_3nx7v")
 metadata/_edit_use_anchors_ = true
 
-[node name="CampoNombre" type="Label" parent="NombreContainer" unique_id=123790604]
+[node name="CampoNombre" type="Label" parent="InfoPila/Campo1" unique_id=123790604]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -59.0
-offset_top = -64.0
-offset_right = 136.0
-offset_bottom = -38.0
+layout_mode = 2
 label_settings = SubResource("LabelSettings_3nx7v")
 metadata/_edit_use_anchors_ = true
 
-[node name="ClaseContainer" type="Control" parent="." unique_id=1004938729]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Campo2" type="HBoxContainer" parent="InfoPila" unique_id=1882692218]
+layout_mode = 2
 
-[node name="Clase" type="Label" parent="ClaseContainer" unique_id=1101741819]
-layout_mode = 0
-offset_left = -130.0
-offset_top = -36.0
-offset_right = -62.0
-offset_bottom = -10.0
+[node name="Clase" type="Label" parent="InfoPila/Campo2" unique_id=1101741819]
+layout_mode = 2
 text = "Clase:"
 label_settings = SubResource("LabelSettings_3nx7v")
 metadata/_edit_use_anchors_ = true
 
-[node name="CampoClase" type="Label" parent="ClaseContainer" unique_id=1016115430]
+[node name="CampoClase" type="Label" parent="InfoPila/Campo2" unique_id=1016115430]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -81.0
-offset_top = -38.0
-offset_right = 130.0
-offset_bottom = -12.0
+layout_mode = 2
 label_settings = SubResource("LabelSettings_3nx7v")
 metadata/_edit_use_anchors_ = true
 
-[node name="RazaContainer" type="Control" parent="." unique_id=237734472]
+[node name="Campo3" type="HBoxContainer" parent="InfoPila" unique_id=1524962809]
+layout_mode = 2
+
+[node name="Raza" type="Label" parent="InfoPila/Campo3" unique_id=595085622]
+layout_mode = 2
+text = "Raza:"
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoRaza" type="Label" parent="InfoPila/Campo3" unique_id=1526581951]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Campo4" type="HBoxContainer" parent="InfoPila" unique_id=642132357]
+layout_mode = 2
+
+[node name="Vencimiento" type="Label" parent="InfoPila/Campo4" unique_id=267493752]
+layout_mode = 2
+text = "Vencimiento:"
+label_settings = SubResource("LabelSettings_3nx7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="CampoVencimiento" type="Label" parent="InfoPila/Campo4" unique_id=697121699]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_3nx7v")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="IconoCalendario" type="Sprite2D" parent="InfoPila/Campo4" unique_id=992470112]
+position = Vector2(157.99998, 15.999992)
+scale = Vector2(0.14646465, 0.12244898)
+
+[node name="NombreContainer" type="Control" parent="." unique_id=1935420004]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Raza" type="Label" parent="RazaContainer" unique_id=595085622]
-layout_mode = 0
-offset_left = -130.0
-offset_top = -10.0
-offset_right = -62.0
-offset_bottom = 16.0
-text = "Raza:"
-label_settings = SubResource("LabelSettings_3nx7v")
-metadata/_edit_use_anchors_ = true
+[node name="ClaseContainer" type="Control" parent="." unique_id=1004938729]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="CampoRaza" type="Label" parent="RazaContainer" unique_id=1526581951]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -81.0
-offset_top = -9.0
-offset_right = 130.0
-offset_bottom = 17.0
-label_settings = SubResource("LabelSettings_3nx7v")
-metadata/_edit_use_anchors_ = true
+[node name="RazaContainer" type="Control" parent="." unique_id=237734472]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VencimientoContainer" type="Control" parent="." unique_id=490835501]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="SimbolosElficos" type="Node2D" parent="." unique_id=1018017662]
 
