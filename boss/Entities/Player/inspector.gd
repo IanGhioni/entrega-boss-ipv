@@ -66,7 +66,8 @@ func _on_ask_doc_button_pressed() -> void:
 	aceptar_denegar_container.show();
 	
 	# Generamos un nuevo NPC
-	timer.set_paused(true)
+	if (timer != null):
+		timer.set_paused(true)
 	npcActual = GeneradorNPC.generar()
 	GameManager.voz_npc_actual = null
 	print("Motivo: ", npcActual.motivos)
@@ -80,19 +81,22 @@ func _on_ask_doc_button_pressed() -> void:
 	Balloon.start(preguntar_doc, "start");
 	
 	await DialogueManager.dialogue_ended
-	timer.set_paused(false)
+	if (timer != null):
+		timer.set_paused(false)
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
 	campanaContainer.mouse_default_cursor_shape = Control.CURSOR_ARROW;
 	
 func _on_aceptar_button_pressed() -> void:
 	_accion_de_fila()
-	timer.set_paused(true)
+	if (timer != null):
+		timer.set_paused(true)
 	var balloon = crear_balloon()
 	balloon.start(preguntar_doc, "aceptar")
 	
 	await DialogueManager.dialogue_ended
-	timer.set_paused(false)
+	if (timer != null):
+		timer.set_paused(false)
 	GameManager.actualizarMotivos([]);
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
@@ -104,11 +108,13 @@ func _on_aceptar_button_pressed() -> void:
 
 func _on_rechazar_button_pressed() -> void:
 	_accion_de_fila()
-	timer.set_paused(true)
+	if (timer != null):
+		timer.set_paused(true)
 	var balloon = crear_balloon()
 	balloon.start(preguntar_doc, "rechazar")
 	await DialogueManager.dialogue_ended
-	timer.set_paused(false)
+	if (timer != null):	
+		timer.set_paused(false)
 	fila_animation.dejar_de_hablar_inspector()
 	fila_animation.dejar_de_hablar_npc_actual()
 	actualizar_multa(false)
